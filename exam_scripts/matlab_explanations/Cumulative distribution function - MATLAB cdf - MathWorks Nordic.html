@@ -1,0 +1,2842 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cumulative distribution function - MATLAB cdf
+- MathWorks Nordic</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6.css" rel="stylesheet" type="text/css">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6_offcanvas.css" rel="stylesheet" type="text/css">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/site6_crux.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" async="" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/elqCfg.min.js.download"></script><script async="" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/uwt.js.download"></script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/quant.js.download" async="" type="text/javascript"></script><script async="" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/fbevents.js.download"></script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/jquery-latest.js.download"></script>
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/jquery.mobile.custom.min.js.download"></script>
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/bootstrap.min.js.download"></script>
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/global.js.download"></script>
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/xvy5baa.css" rel="stylesheet">
+<!-- BEGIN Adobe DTM -->
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/satelliteLib-e8d23c2e444abadc572df06537e2def59c01db09.js.download"></script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js.download"></script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/satellite-58fe08cb64746d190500a115.js.download"></script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/satellite-56972e2c64746d54aa00cb73.js.download"></script><style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility:hidden;}
+</style><script async="" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1023777138');
+</script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/last-event-tag-latest.min.js.download"></script>
+<script>AdCloudEvent("B1441C8B533095C00A490D4D@AdobeOrg","mathwgbl");</script>
+<!-- END Adobe DTM -->
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/doc_center.css" rel="stylesheet" type="text/css">
+<link href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/matlab_dialog.js.download"></script>
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/livecontrolpopoverhandler.js.download"></script>
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/openwith.js.download"></script>
+<style>
+.examples_short_list a.btn {display: none;}
+</style>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "discrete-distributions.html",
+"name": "Discrete Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "binomial-distribution-1.html",
+"name": "Binomial Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "discrete-distributions.html",
+"name": "Discrete Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "multinomial-distribution-1.html",
+"name": "Multinomial Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "discrete-distributions.html",
+"name": "Discrete Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "negative-binomial-distribution-1.html",
+"name": "Negative Binomial Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "discrete-distributions.html",
+"name": "Discrete Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "poisson-distribution-1.html",
+"name": "Poisson Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "beta-distribution-1.html",
+"name": "Beta Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "birnbaum-saunders-distribution-1.html",
+"name": "Birnbaum-Saunders Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "burr-type-xii-distribution-1.html",
+"name": "Burr Type XII Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "exponential-distribution-1.html",
+"name": "Exponential Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "extreme-value-distribution-1.html",
+"name": "Extreme Value Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "gamma-distribution-1.html",
+"name": "Gamma Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "generalized-extreme-value-distribution-1.html",
+"name": "Generalized Extreme Value Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "generalized-pareto-distribution-1.html",
+"name": "Generalized Pareto Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "generalized-pareto-distribution-1.html",
+"name": "Generalized Pareto Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "half-normal-distribution-1.html",
+"name": "Half-Normal Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "inverse-gaussian-distribution-1.html",
+"name": "Inverse Gaussian Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "kernel-distribution-1.html",
+"name": "Kernel Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "logistic-distribution-1.html",
+"name": "Logistic Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "loglogistic-distribution-1.html",
+"name": "Loglogistic Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "lognormal-distribution-1.html",
+"name": "Lognormal Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "nakagami-distribution-1.html",
+"name": "Nakagami Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "normal-distribution-1.html",
+"name": "Normal Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "piecewise-linear-distribution.html",
+"name": "Piecewise Linear Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "rayleigh-distribution-1.html",
+"name": "Rayleigh Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "rician-distribution-1.html",
+"name": "Rician Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "stable-distribution-1.html",
+"name": "Stable Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "t-location-scale-distribution-1.html",
+"name": "t Location-Scale Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "triangular-distribution-1.html",
+"name": "Triangular Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "uniform-distribution-continuous-1.html",
+"name": "Uniform Distribution (Continuous)"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "weibull-distribution-1.html",
+"name": "Weibull Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "VisibleBreadcrumbs",
+"itemListElement":
+[
+"binomial-distribution-1",
+"multinomial-distribution-1",
+"negative-binomial-distribution-1",
+"poisson-distribution-1",
+"beta-distribution-1",
+"birnbaum-saunders-distribution-1",
+"burr-type-xii-distribution-1",
+"exponential-distribution-1",
+"extreme-value-distribution-1",
+"gamma-distribution-1",
+"generalized-extreme-value-distribution-1",
+"generalized-pareto-distribution-1",
+"generalized-pareto-distribution-1",
+"half-normal-distribution-1",
+"inverse-gaussian-distribution-1",
+"kernel-distribution-1",
+"logistic-distribution-1",
+"loglogistic-distribution-1",
+"lognormal-distribution-1",
+"nakagami-distribution-1",
+"normal-distribution-1",
+"piecewise-linear-distribution",
+"rayleigh-distribution-1",
+"rician-distribution-1",
+"stable-distribution-1",
+"t-location-scale-distribution-1",
+"triangular-distribution-1",
+"uniform-distribution-continuous-1",
+"weibull-distribution-1"
+],
+"itemListOrder": "http://schema.org/ItemListOrderAscending"
+}
+</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "ExtendedCapabilities",
+"itemListElement":
+[
+{
+"@type": "ListItem",
+"position": 1,
+"item":
+{
+"@context": "http://schema.org",
+"@type": "PropertyValue",
+"name": "codegen",
+"value": "limited"
+}
+}
+]
+}
+</script>
+<meta xmlns="http://www.w3.org/1999/xhtml" name="chunktype" content="refpage"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="function:cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.NormalDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.KernelDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.MultinomialDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.PiecewiseLinearDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.TriangularDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.UniformDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.BetaDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.BinomialDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.BurrDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.BirnbaumSaundersDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.ExponentialDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.GammaDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.ExtremeValueDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.GeneralizedExtremeValueDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.GeneralizedParetoDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.HalfNormalDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.InverseGaussianDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.LogisticDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.LoglogisticDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.LognormalDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.NakagamiDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.NegativeBinomialDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.PoissonDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.RayleighDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.RicianDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.tLocationScaleDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.StableDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:prob.WeibullDistribution.cdf"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="method:paretotails.cdf">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fcn">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ref/function">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This MATLAB function returns the cumulative distribution function (cdf) for the one-parameter distribution family specified by &#39;name&#39; and the distribution parameter A, evaluated at the values in x."><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/l10n.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/docscripts.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/f1help.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/mw.toc_2.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/mw.imagescaling.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/mw.imageanimation.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/mw.breadcrumb.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/jquery.highlight.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/underscore-min.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/examples.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/doc_omniture.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/overload.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/helpservices.js.download"></script>
+<!-- Additions/overrides from the doc side -->
+<script type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/docsearch.js.download"></script>
+<script type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/jquery.toggleval.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/MathRenderer.js.download"></script><style type="text/css">math { visibility: hidden; }</style><link type="text/css" rel="stylesheet" href="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/main.css"><script type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/dojo.js.download"></script>
+<script type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/jquery.cookie.js.download"></script>
+<script type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/akamai-country-code.js.download"></script>
+<script type="text/javascript">
+var domainCountryCodeMap = new Map();
+var countryCodeToDomainMap = new Map();
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('la.mathworks.com', 'la');
+countryCodeToDomainMap.set('la','la.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('ww2.mathworks.cn', 'ww2');
+countryCodeToDomainMap.set('ww2','ww2.mathworks.cn')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('fr.mathworks.com', 'fr');
+countryCodeToDomainMap.set('fr','fr.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('in.mathworks.com', 'in');
+countryCodeToDomainMap.set('in','in.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+domainCountryCodeMap.set('it.mathworks.com', 'it');
+countryCodeToDomainMap.set('it','it.mathworks.com')
+domainCountryCodeMap.set('jp.mathworks.com', 'jp');
+countryCodeToDomainMap.set('jp','jp.mathworks.com')
+domainCountryCodeMap.set('kr.mathworks.com', 'kr');
+countryCodeToDomainMap.set('kr','kr.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('es.mathworks.com', 'es');
+countryCodeToDomainMap.set('es','es.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('ch.mathworks.com', 'ch');
+countryCodeToDomainMap.set('ch','ch.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+var countrySubdomains = {
+US: {name: 'United States', subdomain: 'www'},
+AD: {name: 'Andorra', subdomain: 'es'},
+AR: {name: 'Argentina', subdomain: 'la'},
+AU: {name: 'Australia', subdomain: 'au'},
+AT: {name: 'Austria', subdomain: 'de'},
+BE: {name: 'Belgium', subdomain: 'nl'},
+BO: {name: 'Bolivia', subdomain: 'la'},
+BV: {name: 'Bouvet Islands', subdomain: 'se'},
+CA: {name: 'Canada', subdomain: 'www'},
+CL: {name: 'Chile', subdomain: 'la'},
+CN: {name: 'China', subdomain: 'cn'},
+CX: {name: 'Christmas Island', subdomain: 'au'},
+CC: {name: 'Cocos-Keeling Islands', subdomain: 'au'},
+CO: {name: 'Colombia', subdomain: 'la'},
+CR: {name: 'Costa Rica', subdomain: 'la'},
+DK: {name: 'Denmark', subdomain: 'se'},
+DO: {name: 'Dominican Republic', subdomain: 'la'},
+EC: {name: 'Ecuador', subdomain: 'la'},
+SV: {name: 'El Salvador', subdomain: 'la'},
+EE: {name: 'Estonia', subdomain: 'se'},
+FO: {name: 'Faroe Islands', subdomain: 'se'},
+FJ: {name: 'Fiji', subdomain: 'au'},
+FI: {name: 'Finland', subdomain: 'se'},
+FR: {name: 'France', subdomain: 'fr'},
+GF: {name: 'French Guiana', subdomain: 'fr'},
+PF: {name: 'French Polynesia', subdomain: 'fr'},
+DE: {name: 'Germany', subdomain: 'de'},
+GL: {name: 'Greenland', subdomain: 'se'},
+GP: {name: 'Guadalupe', subdomain: 'fr'},
+GT: {name: 'Guatemala', subdomain: 'la'},
+HN: {name: 'Honduras', subdomain: 'la'},
+IS: {name: 'Iceland', subdomain: 'se'},
+IN: {name: 'India', subdomain: 'in'},
+IE: {name: 'Ireland', subdomain: 'uk'},
+IT: {name: 'Italy', subdomain: 'it'},
+JP: {name: 'Japan', subdomain: 'jp'},
+KR: {name: 'Korea', subdomain: 'kr'},
+LV: {name: 'Latvia', subdomain: 'se'},
+LI: {name: 'Liechtenstein', subdomain: 'ch'},
+LT: {name: 'Lithuania', subdomain: 'se'},
+LU: {name: 'Luxembourg', subdomain: 'nl'},
+MQ: {name: 'Martinique', subdomain: 'fr'},
+YT: {name: 'Mayotte Island', subdomain: 'fr'},
+MX: {name: 'Mexico', subdomain: 'la'},
+MC: {name: 'Monaco', subdomain: 'fr'},
+NL: {name: 'Netherlands', subdomain: 'nl'},
+NC: {name: 'New Caledonia', subdomain: 'fr'},
+NZ: {name: 'New Zealand', subdomain: 'au'},
+NI: {name: 'Nicaragua', subdomain: 'la'},
+NO: {name: 'Norway', subdomain: 'se'},
+PA: {name: 'Panama', subdomain: 'la'},
+PG: {name: 'Papua New Guinea', subdomain: 'au'},
+PY: {name: 'Paraguay', subdomain: 'la'},
+PE: {name: 'Peru', subdomain: 'la'},
+PT: {name: 'Portugal', subdomain: 'www'},
+PR: {name: 'Puerto Rico', subdomain: 'la'},
+RE: {name: 'Reunion Island', subdomain: 'fr'},
+ES: {name: 'Spain', subdomain: 'es'},
+LK: {name: 'Sri Lanka', subdomain: 'in'},
+SE: {name: 'Sweden', subdomain: 'se'},
+CH: {name: 'Switzerland', subdomain: 'ch'},
+GB: {name: 'United Kingdom', subdomain: 'uk'},
+UY: {name: 'Uruguay', subdomain: 'la'},
+VA: {name: 'Vatican City', subdomain: 'it'},
+VE: {name: 'Venezuela', subdomain: 'la'},
+};
+var domainUtils = {
+isExemptUrl: function (url) {
+if(window.overrideDomainSelector){
+return true;
+}
+var exemptions = [
+'/api/parts/',
+'nocookie=true',
+'client=addons',
+'requestedDomain'
+];
+return exemptions.some(function (exemption) {
+return url.indexOf(exemption) != -1;
+});
+},
+endsWith: function( str, suffix ) {
+return str.substring( str.length - suffix.length, str.length ) === suffix;
+},
+getDomain: function (url) {
+var segments = url.split('/');
+return segments[2];
+},
+getSubdomain: function (domain) {
+return domainCountryCodeMap.get(domain);
+},
+setCookies: function (domain, lang) {
+var domainCookie = 'mathworks.com';
+if (this.endsWith(location.host, 'mathworks.cn')) {
+domainCookie = 'mathworks.cn';
+}
+var selectedSubdomain = this.getSubdomain(domain);
+if (this.endsWith(domain, 'mathworks.cn')) {
+selectedSubdomain = 'cn';
+}
+if (selectedSubdomain === 'www') {
+// This is what ePS did in EQUUS and Ruby, so...
+// we're just following suit.
+selectedSubdomain = 'us';
+}
+if (selectedSubdomain !== 'cn' && selectedSubdomain !== 'ch') {
+lang = '';
+}
+var cookieNames = this.getCookieNames(domain);
+var expires = new Date();
+expires.setFullYear(expires.getFullYear() + 68);
+var myJSON = JSON.stringify({
+domain: selectedSubdomain,
+lang: lang,
+v: 2
+});
+$.cookie(cookieNames.mwaPrefsCookieName, myJSON, {path: '/', expires: 20*365, domain: domainCookie});
+},
+getCookieNames: function (domain) {
+var mwaLoginCookieName = 'mwa';
+var mwaPrefsCookieName = 'mwa_prefs';
+var subdomainSuffix = '';
+if (subdomainSuffix != "") {
+mwaLoginCookieName = mwaLoginCookieName + subdomainSuffix;
+mwaPrefsCookieName = mwaPrefsCookieName + subdomainSuffix;
+}
+return {
+mwaLoginCookieName: mwaLoginCookieName,
+mwaPrefsCookieName: mwaPrefsCookieName,
+};
+},
+switchDomain: function (targetDomain, targetLang) {
+var targetUri = location.pathname;
+targetLang = this.getValidLang(this.getSubdomain(targetDomain), targetLang);
+var url = '//' + targetDomain;
+url += targetUri + location.search;
+url = url.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+url = url.replace(/\&$/, '');
+url = url.replace(/\?$/, '');
+var requestedDomainParam = 'requestedDomain=' + targetLang;
+if (url.indexOf('?') > -1) {
+url = url + '&' + requestedDomainParam;
+} else {
+url = url + '?' + requestedDomainParam;
+}
+window.location = url;
+},
+getPrefCookie: function(currentDomain) {
+var cookieNames = this.getCookieNames(currentDomain);
+// regex from: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+var cookieRegex = new RegExp("(?:(?:^|.*;\\s*)"+cookieNames.mwaPrefsCookieName+"\\s*\\=\\s*([^;]*).*$)|^.*$");
+if (document.cookie) {
+var cookieValue = document.cookie.replace(cookieRegex, "$1");
+if (cookieValue) {
+return JSON.parse(decodeURIComponent(cookieValue));
+}
+}
+return "";
+},
+getPrefDomain: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var visitorPrefDomain;
+if (!!mwaPrefsCookieJsonObject) {
+visitorPrefDomain = mwaPrefsCookieJsonObject.domain;
+if (visitorPrefDomain === 'us') {
+visitorPrefDomain = 'www';
+}else if (visitorPrefDomain === 'cn') {
+visitorPrefDomain = 'ww2';
+}
+}
+return countryCodeToDomainMap.get(visitorPrefDomain);
+},
+getPrefLang: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[mwaPrefsCookieJsonObject.domain];
+if (currentDomainLangOptions) {
+var cookiePrefLang = mwaPrefsCookieJsonObject.lang;
+if (currentDomainLangOptions.indexOf(cookiePrefLang) >= 0) {
+return cookiePrefLang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+getCookieVersion: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+return mwaPrefsCookieJsonObject.v;
+},
+getTargetDomainForCookies: function() {
+var targetDomain = "";
+if (this.endsWith(location.host, 'mathworks.cn')) {
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('www');
+}else{
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('ww2');
+}
+return targetDomain;
+},
+getValidLang: function (subdomain, lang) {
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+multilingualDomainLanguageSupport['ww2'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[subdomain];
+if (currentDomainLangOptions) {
+if (currentDomainLangOptions.indexOf(lang) >= 0) {
+return lang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+isDefaultLang: function (subdomain, lang) {
+var multilingualDomainLanguageDefault = {};
+multilingualDomainLanguageDefault['ch'] = 'en';
+multilingualDomainLanguageDefault['cn'] = 'zh';
+multilingualDomainLanguageDefault['ww2'] = 'zh';
+var currentDomainLang = multilingualDomainLanguageDefault[subdomain];
+if (currentDomainLang) {
+if (currentDomainLang === lang) {
+return true;
+} else {
+return false;
+}
+} else if (lang) {
+return false;
+}
+return true;
+}
+};
+$(window).on('load', function() {
+var currentUrl = window.location.href;
+var currentDomain = domainUtils.getDomain(currentUrl);
+var currentSubdomain = domainUtils.getSubdomain(currentDomain);
+var requestedDomainLangRegEx = RegExp('[?&]requestedDomain=([^&]*)').exec(window.location.search);
+if (requestedDomainLangRegEx) {
+var setLang = domainUtils.getValidLang(currentSubdomain, requestedDomainLangRegEx[1])
+domainUtils.setCookies(currentDomain, setLang);
+var URLWithoutRequestedDomain = window.location.href.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\&$/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\?$/, '');
+history.replaceState({}, document.title, URLWithoutRequestedDomain);
+window.location = URLWithoutRequestedDomain;
+}
+$('body').on('click', '.domain_selector_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+var currentCountryText =
+$('a[data-subdomain=\'' + currentSubdomain + '\'][data-default-lang=\'true\'][data-selected-text]')
+.data('selected-text');
+$('#countrySelectorButtonText').text(currentCountryText);
+var visitorPrefDomain = domainUtils.getPrefDomain(currentDomain);
+var visitorPrefLang = domainUtils.getPrefLang(currentDomain);
+var akamaiCountryCode;
+var akamaiprofile = CQ_Analytics.ClientContextMgr.getRegisteredStore('akamaiprofile');
+if (akamaiprofile) {
+akamaiCountryCode = akamaiprofile.getProperty('countryCode');
+}
+var recommendedSubdomain;
+var recommendedLink;
+if (akamaiCountryCode) {
+if (countrySubdomains[akamaiCountryCode] !== undefined) {
+recommendedSubdomain = countrySubdomains[akamaiCountryCode].subdomain;
+} else {
+recommendedSubdomain = 'www';
+}
+if (recommendedSubdomain === 'us') {
+recommendedSubdomain = 'www';
+}else if (recommendedSubdomain === 'cn') {
+recommendedSubdomain = 'ww2';
+}
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+} else if (visitorPrefDomain) {
+recommendedSubdomain = domainUtils.getSubdomain(visitorPrefDomain);
+if (visitorPrefLang) {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-lang=\'' + visitorPrefLang + '\']');
+} else {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-default-lang=\'true\']');
+}
+}
+if (!recommendedLink) {
+recommendedSubdomain = 'www';
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+}
+$('.recommended-country').text(recommendedLink.data('recommended-text'));
+$('#recommended_domain_button').attr('href', recommendedLink.attr('href'));
+$('#recommended_domain_button').attr('data-lang', recommendedLink.attr('data-lang'));
+$('body').on('click', '#recommended_domain_button', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+$('a.worldwide_link').attr('href', recommendedLink.attr('href'));
+$('a.worldwide_link').data('lang', recommendedLink.data('lang'));
+$('body').on('click', 'a.worldwide_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+var href = e.target.getAttribute('href');
+var worldwideLink = '/company/worldwide.html?s_tid=dmselect_cta&requestedDomain=';
+if(href) {
+location.href = href + worldwideLink;
+}
+});
+if (akamaiCountryCode === 'CN') {
+$('#china_performance_alert').show();
+}
+var crossDomain = "";
+if(domainUtils.endsWith(currentDomain, '.mathworks.cn')){
+crossDomain = countryCodeToDomainMap.get('www');
+}else{
+crossDomain = countryCodeToDomainMap.get('ww2');
+}
+if ((!domainUtils.endsWith(currentDomain, '.mathworks.com') && !domainUtils.endsWith(currentDomain, '.mathworks.cn')) || domainUtils.isExemptUrl(currentUrl)) {
+return;
+}
+if (!visitorPrefDomain) {
+if (akamaiCountryCode) {
+var akamaiDeterminedSubdomain = $('a[data-country-code=\'' + akamaiCountryCode + '\']').data('subdomain');
+if ((akamaiCountryCode.toLowerCase() === currentSubdomain) || (akamaiDeterminedSubdomain === currentSubdomain)) {
+domainUtils.setCookies(currentDomain, "");
+} else {
+$('#country-unselected').modal('show');
+}
+return;
+}
+if (currentSubdomain === 'www') {
+domainUtils.setCookies(currentDomain, '');
+} else {
+$('#country-unselected').modal('show');
+}
+} else if (akamaiCountryCode === 'CN' && !(visitorPrefDomain === 'CN') && !domainUtils.getCookieVersion(currentDomain)) {
+$('#country-unselected').modal('show');
+}
+});
+</script> <script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/global_nav.js.download"></script>
+<script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/satellite-5a6285a664746d3edc002109.js.download"></script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/s-code-contents-73da148cb454c4f6e395aa8df704854c99540662.js.download"></script></head>
+  
+<body id="responsive_offcanvas" class="no_animate" style="">
+
+  <!-- Mobile TopNav: Start -->
+<div class="header visible-xs visible-sm" id="header_mobile" translate="no" style="">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle topnav_toggle" data-toggle="collapse" data-target="#topnav_collapse">
+<span class="sr-only">Toggle Main Navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link navbar-brand">
+<img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+</div>
+</div>
+<div class="row visible-xs visible-sm">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse" id="topnav_collapse">
+<ul class="nav navbar-nav" id="topnav"><li class="headernav_login dropdown"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#" class="dropdown-toggle mwa_image_drop_down" data-toggle="dropdown" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)" title="Arianna" role="button"><span class="visible-xs visible-sm"><span class="mobile_account_image" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)"></span>Arianna<b class="caret"></b></span></a><ul class="dropdown-menu" role="menu"><li class="mwa-nav_account"><a href="https://se.mathworks.com/mwaccount/">My Account</a></li><li class="mwa-nav_community"><a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile?s_tid=gn_comm">My Community Profile</a></li><li class="mwa-nav_associate"><a href="https://se.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Link License</a></li><li class="mwa-nav_logout"><a href="https://se.mathworks.com/login/logout?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fstats%2Fprob.normaldistribution.cdf.html">Sign Out</a></li></ul></li>
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml">Get MATLAB</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Mobile TopNav: End -->
+<!-- Desktop TopNav: Start -->
+<div class="header hidden-xs hidden-sm" id="header_desktop" translate="no">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-9">
+<div class="navbar-header">
+<div class="logo_container hidden-xs hidden-sm">
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link pull-left">
+<img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+<div class="navbar-collapse collapse hidden-xs hidden-sm">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="collapse navbar-collapse" id="headernav_collapse">
+<ul class="nav navbar-nav navbar-right" id="headernav">
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml" class="btn btn_color_blue companion_btn btn-xs">Get MATLAB</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus" title="Contact Us"></a></li>
+<li class="headernav_login dropdown"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#" class="dropdown-toggle mwa_image_drop_down" data-toggle="dropdown" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)" title="Arianna" role="button"><span class="visible-xs visible-sm"><span class="mobile_account_image" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)"></span>Arianna<b class="caret"></b></span></a><ul class="dropdown-menu" role="menu"><li class="mwa-nav_account"><a href="https://se.mathworks.com/mwaccount/">My Account</a></li><li class="mwa-nav_community"><a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile?s_tid=gn_comm">My Community Profile</a></li><li class="mwa-nav_associate"><a href="https://se.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Link License</a></li><li class="mwa-nav_logout"><a href="https://se.mathworks.com/login/logout?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fstats%2Fprob.normaldistribution.cdf.html">Sign Out</a></li></ul></li></ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Desktop TopNav: End -->
+<!-- Conjoined Header: Start -->
+<div class="sticky_header_container includes_subnav affix">
+<!-- Section Header: Start -->
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 has_horizontal_local_nav" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title add_cursor_pointer">
+<p class="h1">Documentation</p>
+</div>
+<button type="button" class="navbar-toggle collapsed subnav visible-xs" data-toggle="collapse" data-target=".mobile_subnav_content"> <span class="icon-arrow-down icon_24"></span> </button>
+</div>
+<div class="crux_nav_container hidden-xs">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" id="crux_nav_desktop"><li id="crux_nav_documentation" class="crux_nav_active active"><a>All</a></li><li id="crux_nav_example"><a href="https://se.mathworks.com/help/stats/examples.html?category=binomial-distribution-1&amp;s_tid=CRUX_gn_example">Examples</a></li><li id="crux_nav_function"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;category=binomial-distribution-1&amp;s_tid=CRUX_gn_function">Functions</a></li><li id="crux_nav_app"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=app&amp;category=binomial-distribution-1&amp;s_tid=CRUX_gn_app">Apps</a></li><li role="presentation" class="dropdown" id="topnav_more" style="display: none;"><a class="dropdown-toggle" data-toggle="dropdown" href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#?s_tid=CRUX_gn_topnav_more" role="button" aria-haspopup="true" aria-expanded="false"> More <span class="caret"></span></a><ul class="dropdown-menu"></ul></li></ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12" id="mobile_search">
+<div class="search_nested_content_container">
+<div id="search_scope_doc" class="collapse in">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2019b" data-language="en" action="https://se.mathworks.com/help/search.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search MATLAB Documentation</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search R2019b Documentation" id="docsearch">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Documentation</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<!-- <li data-toggle="collapse" data-target="#search_scope_doc"><a href="#">Documentation</a></li> -->
+<li data-toggle="collapse" data-target="#search_scope_support" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#">Support</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".doc_search_scope_trigger").click(function() {
+$("#search_scope_doc").removeClass("in");
+$("#search").val($("#docsearch").val());
+$("#query").val($("#docsearch").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1" disabled=""></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_support" class="collapse">
+<form id="support_search" action="https://se.mathworks.com/support/search_results.html" method="get" accept-charset="utf-8">
+<div class="input-group">
+<label class="sr-only">Search All Support Resources</label>
+<input id="suggestion" type="hidden" name="suggestion" value="">
+<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+<input id="search" class="form-control conjoined_search" type="text" name="q" placeholder="Search All Support Resources" autocomplete="off">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Support</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#">Documentation</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_support"><a href="#">Support</a></li>-->
+<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger").click(function() {
+$("#search_scope_support").removeClass("in");
+$("#docsearch").val($("#search").val());
+$("#query").val($("#search").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="support_submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_site" class="collapse">
+<form name="search" id="site_search" class="site_search" action="https://se.mathworks.com/search/site_search.html" method="get">
+<div class="input-group">
+<label class="sr-only">Search MathWorks.com</label>
+<input type="hidden" name="c[]" value="entire_site">
+<input type="text" name="q" id="query" class="form-control conjoined_search" placeholder="Search MathWorks.com" autocomplete="off" \="">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">MathWorks</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#">Documentation</a></li>
+<li data-toggle="collapse" data-target="#search_scope_support" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#">Support</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="#">MathWorks</a></li>-->
+</ul>
+<script>
+$(".site_search_scope_trigger").click(function() {
+$("#search_scope_site").removeClass("in");
+$("#search").val($("#query").val());
+$("#docsearch").val($("#query").val());
+});
+</script>
+<button type="submit" id="searchbutton" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Close Mobile Search</span></button>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Open Mobile Search</span></button>
+</div>
+</div>
+<script>
+$(".section_header_title").click(function(){
+$(window.location).attr('href', '../index.html');
+});
+</script>
+<!-- Section Header: End -->
+<!-- Mobile Local Nav: Start -->
+<div class="row visible-xs" id="mobile_subnav">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse mobile_subnav_content">
+<div class="crux_nav_container">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav subnav" id="crux_nav_mobile"><li id="crux_nav_mobile_documentation" class="crux_nav_active"><a>All</a></li><li id="crux_nav_mobile_example"><a href="https://se.mathworks.com/help/stats/examples.html?category=binomial-distribution-1">Examples</a></li><li id="crux_nav_mobile_function"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;category=binomial-distribution-1">Functions</a></li><li id="crux_nav_mobile_app"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=app&amp;category=binomial-distribution-1">Apps</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Local Nav: End -->
+</div>
+</div>
+<!-- Horo Nav: Start -->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator active" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="javascript:void(0)" class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="0"></a>
+<a href="javascript:void(0)" class="offcanvas_actuator_close" tabindex="0"></a>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm">
+<div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ST&amp;s_iid=doc_trial_ST_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Horo Nav: End -->
+</div>
+<!-- Conjoined Header: End -->
+
+  <div class="row-offcanvas row-offcanvas-left active">
+  
+    <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+      <nav class="offcanvas_nav" role="navigation">
+          <ul xmlns="http://www.w3.org/1999/xhtml" class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/index.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Probability Distributions</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/discrete-distributions.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Discrete Distributions</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/binomial-distribution-1.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Binomial Distribution</span></a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/discrete-distributions.html?s_tid=CRUX_lftnav">Discrete Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/multinomial-distribution-1.html?s_tid=CRUX_lftnav">Multinomial Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/discrete-distributions.html?s_tid=CRUX_lftnav">Discrete Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/negative-binomial-distribution-1.html?s_tid=CRUX_lftnav">Negative Binomial Distribution</a></li></ul><div class="nav_disambiguation_overflow">
+<div class="collapse" id="nav_disambiguation_overflow_content">
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/discrete-distributions.html?s_tid=CRUX_lftnav">Discrete Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/poisson-distribution-1.html?s_tid=CRUX_lftnav">Poisson Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/beta-distribution-1.html?s_tid=CRUX_lftnav">Beta Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/birnbaum-saunders-distribution-1.html?s_tid=CRUX_lftnav">Birnbaum-Saunders Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/burr-type-xii-distribution-1.html?s_tid=CRUX_lftnav">Burr Type XII Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/exponential-distribution-1.html?s_tid=CRUX_lftnav">Exponential Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/extreme-value-distribution-1.html?s_tid=CRUX_lftnav">Extreme Value Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/gamma-distribution-1.html?s_tid=CRUX_lftnav">Gamma Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/generalized-extreme-value-distribution-1.html?s_tid=CRUX_lftnav">Generalized Extreme Value Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/generalized-pareto-distribution-1.html?s_tid=CRUX_lftnav">Generalized Pareto Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/half-normal-distribution-1.html?s_tid=CRUX_lftnav">Half-Normal Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/inverse-gaussian-distribution-1.html?s_tid=CRUX_lftnav">Inverse Gaussian Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/kernel-distribution-1.html?s_tid=CRUX_lftnav">Kernel Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/logistic-distribution-1.html?s_tid=CRUX_lftnav">Logistic Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/loglogistic-distribution-1.html?s_tid=CRUX_lftnav">Loglogistic Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/lognormal-distribution-1.html?s_tid=CRUX_lftnav">Lognormal Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/nakagami-distribution-1.html?s_tid=CRUX_lftnav">Nakagami Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/normal-distribution-1.html?s_tid=CRUX_lftnav">Normal Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/piecewise-linear-distribution.html?s_tid=CRUX_lftnav">Piecewise Linear Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/rayleigh-distribution-1.html?s_tid=CRUX_lftnav">Rayleigh Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/rician-distribution-1.html?s_tid=CRUX_lftnav">Rician Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/stable-distribution-1.html?s_tid=CRUX_lftnav">Stable Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/t-location-scale-distribution-1.html?s_tid=CRUX_lftnav">t Location-Scale Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/triangular-distribution-1.html?s_tid=CRUX_lftnav">Triangular Distribution</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/uniform-distribution-continuous-1.html?s_tid=CRUX_lftnav">Uniform Distribution (Continuous)</a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav">Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav">Continuous Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/weibull-distribution-1.html?s_tid=CRUX_lftnav">Weibull Distribution</a></li></ul></div>
+<span xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation_overflow_control" data-toggle="collapse" data-target="#nav_disambiguation_overflow_content" aria-expanded="false" aria-controls="nav_disambiguation_overflow_content"></span></div>
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function notranslate"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#responsive_offcanvas"><span class="refname">cdf</span></a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li class=""><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e152731" class="intrnllnk">Syntax</a></li><li class=""><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#description" class="intrnllnk">Description</a></li><li class="active"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-4" class="intrnllnk">Examples</a><ul class="nav"><li class="active"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulronc-1" class="intrnllnk">Compute Normal Distribution cdf</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulronc-2" class="intrnllnk">Compute Poisson Distribution cdf</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#mw_02100260-a8e5-46d6-b0fd-7742be01d19e" class="intrnllnk">Plot Standard Normal Distribution cdf</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e154325" class="intrnllnk">Plot Gamma Distribution cdf</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e154397" class="intrnllnk">Fit Pareto Tails to t Distribution and Compute the cdf</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-2" class="intrnllnk">Input Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk">'name'</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk">x</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk">A</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk">B</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk">C</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk">D</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-pd" class="intrnllnk">pd</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-3" class="intrnllnk">Output Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-y" class="intrnllnk">y</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e154452" class="intrnllnk">Alternative Functionality</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bvmb2aj-1" class="intrnllnk">Extended Capabilities</a></li><li><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_seealso" class="intrnllnk">See Also</a></li></ul>
+
+      </nav>
+      <script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/offcanvas.js.download"></script>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <!-- MOBILE CTA - End -->
+
+
+    <div class="content_container" id="content_container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+                       
+
+
+
+
+
+                   
+    
+                                   
+<section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref">                
+
+       <span id="bulrohu" class="anchor_target"></span><h1 class="r2019b notranslate" itemprop="title"><span class="refname">cdf</span></h1><div class="doc_topic_desc"><div class="purpose_container mwExpandToggle0"><p itemprop="purpose">Cumulative distribution function</p><div class="switch mwToggle0"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div>
+<div class="ref_sect"><h2 id="d117e152731">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e152741" class="intrnllnk">y = cdf('name',x,A)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e152774" class="intrnllnk">y = cdf('name',x,A,B)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e152813" class="intrnllnk">y = cdf('name',x,A,B,C)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e152855" class="intrnllnk">y = cdf('name',x,A,B,C,D)</a></code></div></div><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e152907" class="intrnllnk">y = cdf(pd,x)</a></code></div></div><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#d117e152936" class="intrnllnk">y = cdf(<span class="argument_placeholder">___</span>,'upper')</a></code></div></div></div></div><div class="clear"></div><span id="bulrohu-1" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><span id="bulroif" class="anchor_target"></span>
+            <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulronc-2" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e152741" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-y" class="intrnllnk"><code class="argument">y</code></a> = cdf(<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>)</code></span>
+                    returns the cumulative distribution function (cdf) for the one-parameter
+                    distribution family specified by <code class="argument">'name'</code> and the
+                    distribution parameter <code class="argument">A</code>, evaluated at the values in
+                        <code class="argument">x</code>.</p></div></div>
+            <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulronc-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e152774" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-y" class="intrnllnk"><code class="argument">y</code></a> = cdf(<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>)</code></span>
+                    returns the cdf for the two-parameter distribution family specified by
+                        <code class="argument">'name'</code> and the distribution parameters
+                        <code class="argument">A</code> and <code class="argument">B</code>, evaluated at the values
+                    in <code class="argument">x</code>.</p></div></div>
+            <div class="description_element"><div class="code_responsive"><p><span id="d117e152813" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-y" class="intrnllnk"><code class="argument">y</code></a> = cdf(<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a>)</code></span>
+                    returns the cdf for the three-parameter distribution family specified by
+                        <code class="argument">'name'</code> and the distribution parameters
+                        <code class="argument">A</code>, <code class="argument">B</code>, and <code class="argument">C</code>,
+                    evaluated at the values in <code class="argument">x</code>.</p></div></div>
+            <div class="description_element"><div class="code_responsive"><p><span id="d117e152855" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-y" class="intrnllnk"><code class="argument">y</code></a> = cdf(<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk"><code class="argument">D</code></a>)</code></span>
+                    returns the cdf for the four-parameter distribution family specified by
+                        <code class="argument">'name'</code> and the distribution parameters
+                        <code class="argument">A</code>, <code class="argument">B</code>, <code class="argument">C</code>, and
+                        <code class="argument">D</code>, evaluated at the values in
+                    <code class="argument">x</code>.</p></div></div>
+        </div><div class="description_module"><span id="bulroiv" class="anchor_target"></span>
+            <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#mw_02100260-a8e5-46d6-b0fd-7742be01d19e" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e152907" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-y" class="intrnllnk"><code class="argument">y</code></a> = cdf(<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-pd" class="intrnllnk"><code class="argument">pd</code></a>,<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>)</code></span>
+                    returns the cdf of the probability distribution object <code class="argument">pd</code>,
+                    evaluated at the values in <code class="argument">x</code>.</p></div></div>
+        </div><div class="description_module"><span id="bulro8x" class="anchor_target"></span>
+            <div class="description_element"><div class="code_responsive"><p><span id="d117e152936" itemprop="syntax"><code class="synopsis">y = cdf(<span class="argument_placeholder">___</span>,'upper')</code></span> returns the complement
+                    of the cdf using an algorithm that more accurately computes the extreme
+                    upper-tail probabilities. <code class="literal">'upper'</code> can follow any of the input
+                    arguments in the previous syntaxes.</p></div></div>
+        </div></div><div class="clear"></div><div class="examples"><h2 id="bulrohu-4">Examples</h2><div class="expandableContent mwExpandToggle1" id="expandableExamples"><p class="switch mwToggle1"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bulronc-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulronc-1" data-target="#expand_panel_body_bulronc-1" aria-controls="expand_panel_body_bulronc-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bulronc-1">Compute Normal Distribution cdf<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulronc-1" aria-labelledby="expand_panel_heading_bulronc-1" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ComputeTheNormalDistributionCdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Compute Normal Distribution cdf",
+          "description": "Create a standard normal distribution object with the mean, μ, equal to 0 and the standard deviation, σ, equal to 1.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "prob.normaldistribution.cdf.html"
+
+        },
+          "identifier": "stats.ComputeTheNormalDistributionCdfExample",
+          "name": "ComputeTheNormalDistributionCdfExample",
+          "url": "prob.normaldistribution.cdf.html#bulronc-1"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ComputeTheNormalDistributionCdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ComputeTheNormalDistributionCdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Create a standard normal distribution object with the mean, <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.05em; font-style: italic;">μ</span></span></span></span></span></span>, equal to 0 and the standard deviation, <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.05em; font-style: italic;">σ</span></span></span></span></span></span>, equal to 1.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>mu = 0;
+sigma = 1;
+pd = makedist(<span style="color:#A020F0">'Normal'</span>,<span style="color:#A020F0">'mu'</span>,mu,<span style="color:#A020F0">'sigma'</span>,sigma);</pre></div></div></div><p>Define the input vector <span class="emphasis"><em>x</em></span> to contain the values at which to calculate the cdf.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x = [-2,-1,0,1,2];</pre></div></div></div><p>Compute the cdf values for the standard normal distribution at the values in <span class="emphasis"><em>x</em></span>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>y = cdf(pd,x)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>y = <span class="emphasis"><em>1×5</em></span>
+
+    0.0228    0.1587    0.5000    0.8413    0.9772
+
+</pre></div></div></div><p>Each value in <span class="emphasis"><em>y</em></span> corresponds to a value in the input vector <span class="emphasis"><em>x</em></span>. For example, at the value <span class="emphasis"><em>x</em></span> equal to 1, the corresponding cdf value <span class="emphasis"><em>y</em></span> is equal to 0.8413.</p><p>Alternatively, you can compute the same cdf values without creating a probability distribution object. Use the <code class="literal">cdf</code> function, and specify a standard normal distribution using the same parameter values for <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.05em; font-style: italic;">μ</span></span></span></span></span></span> and <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.05em; font-style: italic;">σ</span></span></span></span></span></span>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>y2 = cdf(<span style="color:#A020F0">'Normal'</span>,x,mu,sigma)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>y2 = <span class="emphasis"><em>1×5</em></span>
+
+    0.0228    0.1587    0.5000    0.8413    0.9772
+
+</pre></div></div></div><p>The cdf values are the same as those computed using the probability distribution object.</p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ComputeTheNormalDistributionCdfExample"><meta itemprop="exampletitle" content="Compute Normal Distribution cdf"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bulronc-2"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulronc-2" data-target="#expand_panel_body_bulronc-2" aria-controls="expand_panel_body_bulronc-2" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bulronc-2">Compute Poisson Distribution cdf<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulronc-2" aria-labelledby="expand_panel_heading_bulronc-2" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ComputeThePoissonDistributionCdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Compute Poisson Distribution cdf",
+          "description": "Create a Poisson distribution object with the rate parameter, λ, equal to 2.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "prob.normaldistribution.cdf.html"
+
+        },
+          "identifier": "stats.ComputeThePoissonDistributionCdfExample",
+          "name": "ComputeThePoissonDistributionCdfExample",
+          "url": "prob.normaldistribution.cdf.html#bulronc-2"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ComputeThePoissonDistributionCdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ComputeThePoissonDistributionCdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Create a Poisson distribution object with the rate parameter, <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.05em; font-style: italic;">λ</span></span></span></span></span></span>, equal to 2.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>lambda = 2;
+pd = makedist(<span style="color:#A020F0">'Poisson'</span>,<span style="color:#A020F0">'lambda'</span>,lambda);</pre></div></div></div><p>Define the input vector <span class="emphasis"><em>x</em></span> to contain the values at which to calculate the cdf.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x = [0,1,2,3,4];</pre></div></div></div><p>Compute the cdf values for the Poisson distribution at the values in <span class="emphasis"><em>x</em></span>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>y = cdf(pd,x)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>y = <span class="emphasis"><em>1×5</em></span>
+
+    0.1353    0.4060    0.6767    0.8571    0.9473
+
+</pre></div></div></div><p>Each value in <span class="emphasis"><em>y</em></span> corresponds to a value in the input vector <span class="emphasis"><em>x</em></span>. For example, at the value <span class="emphasis"><em>x</em></span> equal to 3, the corresponding cdf value <span class="emphasis"><em>y</em></span> is equal to 0.8571.</p><p>Alternatively, you can compute the same cdf values without creating a probability distribution object. Use the <code class="literal">cdf</code> function, and specify a Poisson distribution using the same value for the rate parameter, <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.05em; font-style: italic;">λ</span></span></span></span></span></span>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>y2 = cdf(<span style="color:#A020F0">'Poisson'</span>,x,lambda)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>y2 = <span class="emphasis"><em>1×5</em></span>
+
+    0.1353    0.4060    0.6767    0.8571    0.9473
+
+</pre></div></div></div><p>The cdf values are the same as those computed using the probability distribution object.</p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ComputeThePoissonDistributionCdfExample"><meta itemprop="exampletitle" content="Compute Poisson Distribution cdf"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_mw_02100260-a8e5-46d6-b0fd-7742be01d19e"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_mw_02100260-a8e5-46d6-b0fd-7742be01d19e" data-target="#expand_panel_body_mw_02100260-a8e5-46d6-b0fd-7742be01d19e" aria-controls="expand_panel_body_mw_02100260-a8e5-46d6-b0fd-7742be01d19e" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="mw_02100260-a8e5-46d6-b0fd-7742be01d19e">Plot Standard Normal Distribution cdf<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_mw_02100260-a8e5-46d6-b0fd-7742be01d19e" aria-labelledby="expand_panel_heading_mw_02100260-a8e5-46d6-b0fd-7742be01d19e" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/PlotStandardNormalDistributioncdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Plot Standard Normal Distribution cdf",
+          "description": "Create a standard normal distribution object.",
+          "thumbnailURL": "../examples/stats/win64/PlotStandardNormalDistributioncdfExample_01.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "prob.normaldistribution.cdf.html"
+
+        },
+          "identifier": "stats.PlotStandardNormalDistributioncdfExample",
+          "name": "PlotStandardNormalDistributioncdfExample",
+          "url": "prob.normaldistribution.cdf.html#mw_02100260-a8e5-46d6-b0fd-7742be01d19e"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/PlotStandardNormalDistributioncdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "PlotStandardNormalDistributioncdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Create a standard normal distribution object. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>pd = makedist(<span style="color:#A020F0">'Normal'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>pd = 
+  NormalDistribution
+
+  Normal distribution
+       mu = 0
+    sigma = 1
+
+</pre></div></div></div><p>Specify the <code class="literal">x</code> values and compute the cdf. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x = -3:.1:3;
+p = cdf(pd,x);</pre></div></div></div><p>Plot the cdf of the standard normal distribution. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>plot(x,p)</pre></div></div></div><div class="informalfigure"><div id="d117e154321" class="mediaobject"><p><img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/PlotStandardNormalDistributioncdfExample_01.png" alt="" width="583"></p></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-PlotStandardNormalDistributioncdfExample"><meta itemprop="exampletitle" content="Plot Standard Normal Distribution cdf"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_d117e154325"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e154325" data-target="#expand_panel_body_d117e154325" aria-controls="expand_panel_body_d117e154325" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="d117e154325">Plot Gamma Distribution cdf<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e154325" aria-labelledby="expand_panel_heading_d117e154325" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/PlotGammaDistributioncdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Plot Gamma Distribution cdf",
+          "description": "",
+          "thumbnailURL": "",
+          "genre": "Live Script",
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "prob.normaldistribution.cdf.html"
+
+        },
+          "identifier": "stats.PlotGammaDistributioncdfExample",
+          "name": "PlotGammaDistributioncdfExample",
+          "url": "prob.normaldistribution.cdf.html#d117e154325"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/PlotGammaDistributioncdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "PlotGammaDistributioncdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Create three gamma distribution objects. The first uses the default parameter values. The second specifies <code class="literal">a = 1</code> and <code class="literal">b = 2</code>. The third specifies <code class="literal">a = 2</code> and <code class="literal">b = 1</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>pd_gamma = makedist(<span style="color:#A020F0">'Gamma'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>pd_gamma = 
+  GammaDistribution
+
+  Gamma distribution
+    a = 1
+    b = 1
+
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>pd_12 = makedist(<span style="color:#A020F0">'Gamma'</span>,<span style="color:#A020F0">'a'</span>,1,<span style="color:#A020F0">'b'</span>,2)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>pd_12 = 
+  GammaDistribution
+
+  Gamma distribution
+    a = 1
+    b = 2
+
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>pd_21 = makedist(<span style="color:#A020F0">'Gamma'</span>,<span style="color:#A020F0">'a'</span>,2,<span style="color:#A020F0">'b'</span>,1)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>pd_21 = 
+  GammaDistribution
+
+  Gamma distribution
+    a = 2
+    b = 1
+
+</pre></div></div></div><p>Specify the <code class="literal">x</code> values and compute the cdf for each distribution. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x = 0:.1:5;
+cdf_gamma = cdf(pd_gamma,x);
+cdf_12 = cdf(pd_12,x);
+cdf_21 = cdf(pd_21,x);</pre></div></div></div><p>Create a plot to visualize how the cdf of the gamma distribution changes when you specify different values for the shape parameters <code class="literal">a</code> and <code class="literal">b</code>. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>figure;
+J = plot(x,cdf_gamma);
+hold <span style="color:#A020F0">on</span>;
+K = plot(x,cdf_12,<span style="color:#A020F0">'r--'</span>);
+L = plot(x,cdf_21,<span style="color:#A020F0">'k-.'</span>);
+set(J,<span style="color:#A020F0">'LineWidth'</span>,2);
+set(K,<span style="color:#A020F0">'LineWidth'</span>,2);
+legend([J K L],<span style="color:#A020F0">'a = 1, b = 1'</span>,<span style="color:#A020F0">'a = 1, b = 2'</span>,<span style="color:#A020F0">'a = 2, b = 1'</span>,<span style="color:#A020F0">'Location'</span>,<span style="color:#A020F0">'southeast'</span>);
+hold <span style="color:#A020F0">off</span>;</pre></div></div></div><div class="informalfigure"><div id="d117e154393" class="mediaobject"><p><img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/PlotGammaDistributioncdfExample_01.png" alt="" width="583"></p></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-PlotGammaDistributioncdfExample"><meta itemprop="exampletitle" content="Plot Gamma Distribution cdf"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_d117e154397"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e154397" data-target="#expand_panel_body_d117e154397" aria-controls="expand_panel_body_d117e154397" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="d117e154397">Fit Pareto Tails to t Distribution and Compute the cdf<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e154397" aria-labelledby="expand_panel_heading_d117e154397" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/FitParetoTailstotDistributionExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Fit Pareto Tails to t Distribution and Compute the cdf",
+          "description": "",
+          "thumbnailURL": "",
+          "genre": "Live Script",
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "prob.normaldistribution.cdf.html"
+
+        },
+          "identifier": "stats.FitParetoTailstotDistributionExample",
+          "name": "FitParetoTailstotDistributionExample",
+          "url": "prob.normaldistribution.cdf.html#d117e154397"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/FitParetoTailstotDistributionExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "FitParetoTailstotDistributionExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Fit Pareto tails to a <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-right: 0.03em;">t</span></span></span></span></span></span> distribution at cumulative probabilities 0.1 and 0.9.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>t = trnd(3,100,1);
+obj = paretotails(t,0.1,0.9);
+[p,q] = boundary(obj)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>p = <span class="emphasis"><em>2×1</em></span>
+
+    0.1000
+    0.9000
+
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>q = <span class="emphasis"><em>2×1</em></span>
+
+   -1.8487
+    2.0766
+
+</pre></div></div></div><p>Compute the cdf at the values in <code class="literal">q</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>cdf(obj,q)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>ans = <span class="emphasis"><em>2×1</em></span>
+
+    0.1000
+    0.9000
+
+</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-FitParetoTailstotDistributionExample"><meta itemprop="exampletitle" content="Fit Pareto Tails to t Distribution and Compute the cdf"></div></div></div><div class="ref_sect"><h2 id="bulrohu-2">Input Arguments</h2><div class="expandableContent mwExpandToggle2"><p class="switch  mwToggle2"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bulrohu-2_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bulrohu_sep_shared-name"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu_sep_shared-name" data-target="#expand_panel_body_bulrohu_sep_shared-name" aria-controls="expand_panel_body_bulrohu_sep_shared-name" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_name" class="anchor_target"></span><h3 class="panel-title" id="bulrohu_sep_shared-name"><code itemprop="name">'name'</code> — <span itemprop="purpose">Probability distribution name</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">character vector or string scalar of probability distribution name</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu_sep_shared-name" aria-labelledby="expand_panel_heading_bulrohu_sep_shared-name" class="panel-collapse collapse in"><div class="panel-body">
+<p>Probability distribution name, specified as one of the probability distribution names in this
+                        table.</p>
+<div class="table-responsive"><table class="table table-condensed" width="100%"><colgroup><col class="tcol1" width="17%"><col class="tcol2" width="32%"><col class="tcol3" width="13%"><col class="tcol4" width="13%"><col class="tcol5" width="13%"><col class="tcol6" width="13%"></colgroup><thead><tr><th><code class="literal">'name'</code></th><th>Distribution</th><th>Input Parameter <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a></th><th>Input Parameter <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a></th><th>Input Parameter <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a></th><th>Input Parameter <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk"><code class="argument">D</code></a></th></tr></thead><tbody><tr><td><code class="literal">'Beta'</code></td><td><a href="https://se.mathworks.com/help/stats/beta-distribution.html" class="a">Beta Distribution</a></td><td><em class="varname">a</em> first shape parameter</td><td><em class="varname">b</em> second shape parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Binomial'</code></td><td><a href="https://se.mathworks.com/help/stats/binomial-distribution.html" class="a">Binomial Distribution</a></td><td><em class="varname">n</em> number of trials</td><td><em class="varname">p</em> probability of success for each trial</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'BirnbaumSaunders'</code></td><td><a href="https://se.mathworks.com/help/stats/birnbaum-saunders-distribution.html" class="a">Birnbaum-Saunders Distribution</a></td><td><em class="varname">β</em> scale parameter</td><td><em class="varname">γ</em> shape parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Burr'</code></td><td><a href="https://se.mathworks.com/help/stats/burr-type-xii-distribution.html" class="a">Burr Type XII Distribution</a></td><td><em class="varname">α</em> scale parameter</td><td><em class="varname">c</em> first shape parameter</td><td><em class="varname">k</em> second shape parameter</td><td>—</td></tr><tr><td><code class="literal">'Chisquare'</code></td><td><a href="https://se.mathworks.com/help/stats/chi-square-distribution.html" class="a">Chi-Square Distribution</a></td><td><em class="varname">ν</em> degrees of freedom</td><td>—</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Exponential'</code></td><td><a href="https://se.mathworks.com/help/stats/exponential-distribution.html" class="a">Exponential Distribution</a></td><td><em class="varname">μ</em> mean</td><td>—</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Extreme Value'</code></td><td><a href="https://se.mathworks.com/help/stats/extreme-value-distribution.html" class="a">Extreme Value Distribution</a></td><td><em class="varname">μ</em> location parameter</td><td><em class="varname">σ</em> scale parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'F'</code></td><td><a href="https://se.mathworks.com/help/stats/f-distribution.html" class="a">F Distribution</a></td><td><span class="inlineequation"><em class="varname">ν<sub>1</sub></em></span> numerator degrees of
+                                                  freedom</td><td><span class="inlineequation"><em class="varname">ν<sub>2</sub></em></span> denominator degrees of
+                                                  freedom</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Gamma'</code></td><td class="Gamma Distribution"><a href="https://se.mathworks.com/help/stats/gamma-distribution.html" class="a">Gamma Distribution</a></td><td><em class="varname">a</em> shape parameter</td><td><em class="varname">b</em> scale parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Generalized Extreme Value'</code></td><td><a href="https://se.mathworks.com/help/stats/generalized-extreme-value-distribution.html" class="a">Generalized Extreme Value Distribution</a></td><td><em class="varname">k</em> shape parameter</td><td><em class="varname">σ</em> scale parameter</td><td><em class="varname">μ</em> location parameter</td><td>—</td></tr><tr><td><code class="literal">'Generalized Pareto'</code></td><td><a href="https://se.mathworks.com/help/stats/generalized-pareto-distribution.html" class="a">Generalized Pareto Distribution</a></td><td><em class="varname">k</em> tail index (shape) parameter</td><td><em class="varname">σ</em> scale parameter</td><td><em class="varname">μ</em> threshold (location) parameter</td><td>—</td></tr><tr><td><code class="literal">'Geometric'</code></td><td><a href="https://se.mathworks.com/help/stats/geometric-distribution.html" class="a">Geometric Distribution</a></td><td><em class="varname">p</em> probability parameter</td><td>—</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'HalfNormal'</code></td><td><a href="https://se.mathworks.com/help/stats/half-normal-distribution.html" class="a">Half-Normal Distribution</a></td><td><em class="varname">μ</em> location parameter</td><td><em class="varname">σ</em> scale parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Hypergeometric'</code></td><td><a href="https://se.mathworks.com/help/stats/hypergeometric-distribution.html" class="a">Hypergeometric Distribution</a></td><td><em class="varname">m</em> size of the population</td><td><em class="varname">k</em> number of items with the desired characteristic in the
+                                                  population</td><td><em class="varname">n</em> number of samples drawn</td><td>—</td></tr><tr><td><code class="literal">'InverseGaussian'</code></td><td><a href="https://se.mathworks.com/help/stats/inverse-gaussian-distribution.html" class="a">Inverse Gaussian Distribution</a></td><td><em class="varname">μ</em> scale parameter</td><td><em class="varname">λ</em> shape parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Logistic'</code></td><td><a href="https://se.mathworks.com/help/stats/logistic-distribution.html" class="a">Logistic Distribution</a></td><td><em class="varname">μ</em> mean</td><td><em class="varname">σ</em> scale parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'LogLogistic'</code></td><td><a href="https://se.mathworks.com/help/stats/loglogistic-distribution.html" class="a">Loglogistic Distribution</a></td><td><em class="varname">μ</em> mean of logarithmic values</td><td><em class="varname">σ</em> scale parameter of logarithmic values</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Lognormal'</code></td><td><a href="https://se.mathworks.com/help/stats/lognormal-distribution.html" class="a">Lognormal Distribution</a></td><td><em class="varname">μ</em> mean of logarithmic values</td><td><em class="varname">σ</em> standard deviation of logarithmic values</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Nakagami'</code></td><td><a href="https://se.mathworks.com/help/stats/nakagami-distribution.html" class="a">Nakagami Distribution</a></td><td><em class="varname">μ</em> shape parameter</td><td><em class="varname">ω</em> scale parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Negative Binomial'</code></td><td><a href="https://se.mathworks.com/help/stats/negative-binomial-distribution.html" class="a">Negative Binomial Distribution</a></td><td><em class="varname">r</em> number of successes</td><td><em class="varname">p</em> probability of success in a single trial</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Noncentral F'</code></td><td><a href="https://se.mathworks.com/help/stats/noncentral-f-distribution.html" class="a">Noncentral F Distribution</a></td><td><span class="inlineequation"><em class="varname">ν<sub>1</sub></em></span> numerator degrees of
+                                                  freedom</td><td><span class="inlineequation"><em class="varname">ν<sub>2</sub></em></span> denominator degrees of
+                                                  freedom</td><td><em class="varname">δ</em> noncentrality parameter</td><td>—</td></tr><tr><td><code class="literal">'Noncentral t'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/noncentral-t-distribution.html" class="a">Noncentral t Distribution</a></td><td><em class="varname">ν</em> degrees of freedom</td><td><em class="varname">δ</em> noncentrality parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Noncentral Chi-square'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/noncentral-chi-square-distribution.html" class="a">Noncentral Chi-Square Distribution</a></td><td><em class="varname">ν</em> degrees of freedom</td><td><em class="varname">δ</em> noncentrality parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Normal'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/normal-distribution.html" class="a">Normal Distribution</a></td><td><em class="varname">μ</em> mean </td><td><em class="varname">σ</em> standard deviation</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Poisson'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/poisson-distribution.html" class="a">Poisson Distribution</a></td><td><em class="varname">λ</em> mean</td><td>—</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Rayleigh'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/rayleigh-distribution.html" class="a">Rayleigh Distribution</a></td><td><em class="varname">b</em> scale parameter</td><td>—</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Rician'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/rician-distribution.html" class="a">Rician Distribution</a></td><td><em class="varname">s</em> noncentrality parameter</td><td><em class="varname">σ</em> scale parameter</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Stable'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/stable-distribution.html" class="a">Stable Distribution</a></td><td><em class="varname">α</em> first shape parameter</td><td><em class="varname">β</em> second shape parameter</td><td><em class="varname">γ</em> scale parameter</td><td><em class="varname">δ</em> location parameter</td></tr><tr><td><code class="literal">'T'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/students-t-distribution.html" class="a">Student's t Distribution</a></td><td><em class="varname">ν</em> degrees of freedom</td><td>—</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'tLocationScale'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/t-location-scale-distribution.html" class="a">t Location-Scale Distribution</a></td><td><em class="varname">μ</em> location parameter</td><td><em class="varname">σ</em> scale parameter</td><td><em class="varname">ν</em> shape parameter</td><td>—</td></tr><tr><td><code class="literal">'Uniform'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/uniform-distribution-continuous.html" class="a">Uniform Distribution (Continuous)</a></td><td><em class="varname">a</em> lower endpoint (minimum)</td><td><em class="varname">b</em> upper endpoint (maximum)</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Discrete Uniform'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/uniform-distribution-discrete.html" class="a">Uniform Distribution (Discrete)</a></td><td><em class="varname">n</em> maximum observable value</td><td>—</td><td>—</td><td>—</td></tr><tr><td><code class="literal">'Weibull'</code></td><td class="Noncentral t Distribution"><a href="https://se.mathworks.com/help/stats/weibull-distribution.html" class="a">Weibull Distribution</a></td><td><em class="varname">a</em> scale parameter</td><td><em class="varname">b</em> shape parameter</td><td>—</td><td>—</td></tr></tbody></table></div>
+        <p class="description_valueexample"><strong>Example: </strong><code class="literal">'Normal'</code></p>
+</div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bulrohu-x"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu-x" data-target="#expand_panel_body_bulrohu-x" aria-controls="expand_panel_body_bulrohu-x" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_x" class="anchor_target"></span><h3 class="panel-title" id="bulrohu-x"><code itemprop="name">x</code> — <span itemprop="purpose">Values at which to evaluate cdf</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">scalar value</span> | <span itemprop="inputvalue">array of scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu-x" aria-labelledby="expand_panel_heading_bulrohu-x" class="panel-collapse collapse in"><div class="panel-body">
+                    <p>Values at which to evaluate the cdf, specified as a scalar value or an
+                        array of scalar values.</p>
+                    <p>If one or more of the input arguments <code class="argument">x</code>,
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a>, and
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk"><code class="argument">D</code></a> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">cdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. See <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a> for the definitions of
+        <code class="argument">A</code>, <code class="argument">B</code>, <code class="argument">C</code>, and
+        <code class="argument">D</code> for each distribution.</p>
+                    <p class="description_valueexample"><strong>Example: </strong><code class="literal">[0.1,0.25,0.5,0.75,0.9]</code></p>
+                <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bulrohu_sep_shared-A"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu_sep_shared-A" data-target="#expand_panel_body_bulrohu_sep_shared-A" aria-controls="expand_panel_body_bulrohu_sep_shared-A" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_A" class="anchor_target"></span><h3 class="panel-title" id="bulrohu_sep_shared-A"><code itemprop="name">A</code> — <span itemprop="purpose">First probability distribution parameter</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">scalar value</span> | <span itemprop="inputvalue">array of scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu_sep_shared-A" aria-labelledby="expand_panel_heading_bulrohu_sep_shared-A" class="panel-collapse collapse in"><div class="panel-body">
+<p>First probability distribution parameter, specified as a scalar value or an array of scalar
+            values.</p>
+        <p>If one or more of the input arguments <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,
+        <code class="argument">A</code>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a>, and
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk"><code class="argument">D</code></a> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">cdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. See <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a> for the definitions of
+        <code class="argument">A</code>, <code class="argument">B</code>, <code class="argument">C</code>, and
+        <code class="argument">D</code> for each distribution.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bulrohu_sep_shared-B"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu_sep_shared-B" data-target="#expand_panel_body_bulrohu_sep_shared-B" aria-controls="expand_panel_body_bulrohu_sep_shared-B" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_B" class="anchor_target"></span><h3 class="panel-title" id="bulrohu_sep_shared-B"><code itemprop="name">B</code> — <span itemprop="purpose">Second probability distribution parameter</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">scalar value</span> | <span itemprop="inputvalue">array of scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu_sep_shared-B" aria-labelledby="expand_panel_heading_bulrohu_sep_shared-B" class="panel-collapse collapse in"><div class="panel-body">
+<p>Second probability distribution parameter, specified as a scalar value or an array of scalar
+            values.</p>
+        <p>If one or more of the input arguments <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>, <code class="argument">B</code>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a>, and
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk"><code class="argument">D</code></a> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">cdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. See <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a> for the definitions of
+        <code class="argument">A</code>, <code class="argument">B</code>, <code class="argument">C</code>, and
+        <code class="argument">D</code> for each distribution.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bulrohu_sep_shared-C"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu_sep_shared-C" data-target="#expand_panel_body_bulrohu_sep_shared-C" aria-controls="expand_panel_body_bulrohu_sep_shared-C" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_C" class="anchor_target"></span><h3 class="panel-title" id="bulrohu_sep_shared-C"><code itemprop="name">C</code> — <span itemprop="purpose">Third probability distribution parameter</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">scalar value</span> | <span itemprop="inputvalue">array of scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu_sep_shared-C" aria-labelledby="expand_panel_heading_bulrohu_sep_shared-C" class="panel-collapse collapse in"><div class="panel-body">
+<p>Third probability distribution parameter, specified as a scalar value or an array of scalar
+            values.</p>
+        <p>If one or more of the input arguments <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>, <code class="argument">C</code>, and
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk"><code class="argument">D</code></a> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">cdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. See <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a> for the definitions of
+        <code class="argument">A</code>, <code class="argument">B</code>, <code class="argument">C</code>, and
+        <code class="argument">D</code> for each distribution.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bulrohu_sep_shared-D"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu_sep_shared-D" data-target="#expand_panel_body_bulrohu_sep_shared-D" aria-controls="expand_panel_body_bulrohu_sep_shared-D" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_D" class="anchor_target"></span><h3 class="panel-title" id="bulrohu_sep_shared-D"><code itemprop="name">D</code> — <span itemprop="purpose">Fourth probability distribution parameter</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">scalar value</span> | <span itemprop="inputvalue">array of scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu_sep_shared-D" aria-labelledby="expand_panel_heading_bulrohu_sep_shared-D" class="panel-collapse collapse in"><div class="panel-body">
+        <p>Fourth probability distribution parameter, specified as a scalar value or an array of
+            scalar values.</p>
+        <p>If one or more of the input arguments <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a>,
+        <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a>, and
+        <code class="argument">D</code> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">cdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. See <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-name" class="intrnllnk"><code class="argument">'name'</code></a> for the definitions of
+        <code class="argument">A</code>, <code class="argument">B</code>, <code class="argument">C</code>, and
+        <code class="argument">D</code> for each distribution.</p>
+    <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bulrohu_sep_shared-pd"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu_sep_shared-pd" data-target="#expand_panel_body_bulrohu_sep_shared-pd" aria-controls="expand_panel_body_bulrohu_sep_shared-pd" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_pd" class="anchor_target"></span><h3 class="panel-title" id="bulrohu_sep_shared-pd"><code itemprop="name">pd</code> — <span itemprop="purpose">Probability distribution</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">probability distribution object</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu_sep_shared-pd" aria-labelledby="expand_panel_heading_bulrohu_sep_shared-pd" class="panel-collapse collapse in"><div class="panel-body">
+        <p>Probability distribution, specified as a probability distribution object created with
+            a function or app in this table.</p>
+        <div class="table-responsive"><table class="table table-condensed"><colgroup><col class="tcol1" width="25%"><col class="tcol2" width="75%"></colgroup><thead><tr><th>Function or App</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://se.mathworks.com/help/stats/makedist.html"><code class="function">makedist</code></a></td><td>Create a probability distribution object using specified parameter
+                            values.</td></tr><tr><td><a href="https://se.mathworks.com/help/stats/fitdist.html"><code class="function">fitdist</code></a></td><td>Fit a probability distribution object to sample data.</td></tr><tr><td><strong class="app"><a href="https://se.mathworks.com/help/stats/distributionfitter-app.html">Distribution Fitter</a></strong></td><td>Fit a probability distribution to sample data using the interactive
+                            Distribution Fitter app and export the fitted object to the
+                            workspace.</td></tr><tr><td><a href="https://se.mathworks.com/help/stats/paretotails.html"><code class="object">paretotails</code></a></td><td>Create a piecewise distribution object that has generalized Pareto
+                            distributions in the tails.</td></tr></tbody></table></div>
+    </div></div></div></div></div></div></div></div><div class="ref_sect"><h2 id="bulrohu-3">Output Arguments</h2><div class="expandableContent mwExpandToggle3"><p class="switch  mwToggle3"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bulrohu-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bulrohu-y" data-target="#expand_panel_body_bulrohu-y" aria-controls="expand_panel_body_bulrohu-y" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_y" class="anchor_target"></span><h3 class="panel-title" id="bulrohu-y"><code class="name">y</code> — cdf values<br> <span class="add_font_color_general remove_bold"><span class="example_desc">scalar value | array of scalar values</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bulrohu-y" aria-labelledby="expand_panel_heading_bulrohu-y" class="panel-collapse collapse in"><div class="panel-body">
+                    <p>cdf values, returned as a scalar value or an array of scalar values.
+                            <code class="argument">y</code> is the same size as <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu-x" class="intrnllnk"><code class="argument">x</code></a> after
+                        any necessary scalar expansion. Each element in <code class="argument">y</code> is
+                        the cdf value of the distribution, specified by the corresponding elements
+                        in the distribution parameters (<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-A" class="intrnllnk"><code class="argument">A</code></a>,
+                            <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-B" class="intrnllnk"><code class="argument">B</code></a>, <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-C" class="intrnllnk"><code class="argument">C</code></a>, and
+                            <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-D" class="intrnllnk"><code class="argument">D</code></a>) or the probability distribution object
+                            (<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#bulrohu_sep_shared-pd" class="intrnllnk"><code class="argument">pd</code></a>), evaluated at the corresponding element in
+                            <code class="argument">x</code>.</p>
+                </div></div></div></div></div></div></div><div id="d117e154452_div" class="ref_sect"><h2 id="d117e154452">Alternative Functionality</h2><div class="itemizedlist"><ul><li><p><code class="function">cdf</code> is a generic function that accepts either a
+                    distribution by its name <code class="argument">'name'</code> or a probability
+                    distribution object <code class="argument">pd</code>. It is faster to use a
+                    distribution-specific function, such as <a href="https://se.mathworks.com/help/stats/normcdf.html"><code class="function">normcdf</code></a> for the normal
+                    distribution and <a href="https://se.mathworks.com/help/stats/binocdf.html"><code class="function">binocdf</code></a> for the binomial
+                    distribution. For a list of distribution-specific functions, see <a href="https://se.mathworks.com/help/stats/supported-distributions.html" class="a">Supported Distributions</a>.</p></li><li><p>Use the <strong class="app"><a href="https://se.mathworks.com/help/stats/probabilitydistributionfunction-app.html">Probability Distribution Function</a></strong> app to create an
+    interactive plot of the cumulative distribution function (cdf) or probability density function
+    (pdf) for a probability distribution.</p></li></ul></div></div><div class="ref_sect"><h2 id="bvmb2aj-1">Extended Capabilities</h2><div class="expand_collapse" id="accordion_bvmb2aj-1" role="tablist" aria-multiselectable="true"><span id="bvmb2aj-2" class="anchor_target"></span><span id="bulrohu" class="anchor_target"></span><h3 class="expand_trigger collapsed" id="bulrohu_codegen" aria-expanded="false" data-toggle="collapse" data-target="#expand_body_bulrohu_codegen" aria-controls="expand_body_bulrohu_codegen"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>C/C++ Code Generation<br> <span class=" remove_bold add_font_color_general">Generate C and C++ code using MATLAB® Coder™.</span></h3><div id="expand_body_bulrohu_codegen" class="collapsible_content collapse" aria-expanded="false"><p>
+                <span>Usage notes and limitations:</span>
+            </p><p>
+                </p>
+<div class="itemizedlist"><ul><li><p>
+                            <span>The input argument <code class="argument">'name'</code> must be a compile-time constant. For example, to use the normal distribution, include <code class="literal">coder.Constant('Normal')</code> in the <code class="literal remove_text_wrapping">-args</code> value of <a href="https://se.mathworks.com/help/coder/ref/codegen.html"><code class="function">codegen</code></a>.</span>
+                        </p></li><li><p>
+                            <span>The input argument <code class="argument">pd</code> can be a fitted
+    probability distribution object for beta, exponential, extreme value, lognormal, normal, and
+    Weibull distributions. Create <code class="argument">pd</code> by fitting a probability distribution to
+    sample data from the <a href="https://se.mathworks.com/help/stats/fitdist.html"><code class="function">fitdist</code></a> function. For an example, see <a href="https://se.mathworks.com/help/stats/code-generation-for-probability-distribution-objects.html" class="a">Code Generation for Probability Distribution Objects</a>.</span>
+                        </p></li></ul></div><p>
+
+            </p><p>For more information on code generation, see <a href="https://se.mathworks.com/help/stats/introduction-to-code-generation.html" class="a">Introduction to Code Generation</a> and <a href="https://se.mathworks.com/help/stats/general-code-generation-workflow.html" class="a">General Code Generation Workflow</a>.</p></div></div></div><div class="ref_sect"><h2 id="bulrohu_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/distributionfitter-app.html"><span itemprop="name">Distribution Fitter</span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/ecdf.html"><span itemprop="name"><code class="function">ecdf</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/fitdist.html"><span itemprop="name"><code class="function">fitdist</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/prob.normaldistribution.icdf.html"><span itemprop="name"><code class="function">icdf</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/makedist.html"><span itemprop="name"><code class="function">makedist</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/mle.html"><span itemprop="name"><code class="function">mle</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/paretotails.html"><span itemprop="name"><code class="object">paretotails</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/prob.normaldistribution.pdf.html"><span itemprop="name"><code class="function">pdf</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/prob.normaldistribution.random.html"><span itemprop="name"><code class="function">random</code></span></a></span></p><div class="examples_container"><h3 class="remove_border">Topics</h3><div itemprop="content"><ul class="list-unstyled"><li><a href="https://se.mathworks.com/help/stats/working-with-probability-distributions.html" class="a">Working with Probability Distributions</a></li><li><a href="https://se.mathworks.com/help/stats/supported-distributions.html" class="a">Supported Distributions</a></li></ul></div></div></div><div class="release_introduced"><h4>Introduced before R2006a</h4></div>
+</div></div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">Open Example</h4> 
+      </div> 
+      <div class="modal-body" id="dialog-body"> 
+        <p>A modified version of this example exists on your system. Do you want to open this version instead?</p> 
+      </div> 
+      <div class="modal-footer"> 
+        <a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, overwrite the modified version</a>
+        <a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a>
+      </div> 
+    </div> 
+  </div> 
+</div><div class="clearfix"></div>
+<div align="center" class="feedbackblock"><iframe id="doc_survey" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/bounce_hub_help.html" style=""></iframe></div><script type="text/javascript" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/docsurvey.js.download"></script>
+
+</section>
+<div class="modal fade" id="matlab-command-dialog" tabindex="-1" role="dialog" aria-labelledby="matlabCommandDialogLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">MATLAB Command</h4>
+      </div>
+      <div class="modal-body" id="dialog-body">
+        <p>You clicked a link that corresponds to this MATLAB command: </p>
+        <pre id="dialog-matlab-command"></pre>
+        <p>Run the command by entering it in the MATLAB Command Window.
+        Web browsers do not support MATLAB commands.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn_secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function registerOpenExampleAction() {
+    var openExampleButtons = $('.examples_short_list a.btn[href^="matlab:"]');
+    $.each(openExampleButtons, function() {
+        var href = $(this).attr('href');
+        $(this).removeClass();
+        $(this).closest('.panel').addClass('panel-default');
+        $(this).closest('.panel-body').removeAttr('style').addClass('add_padding_10');
+        var inBox = false;
+        if ($(this).closest('.panel-body').find('.example_product_list').length >= 1) {
+            inBox=true;
+        }
+        var parentDiv = $(this).parent();
+        var parentPara = $('<p class="text-center add_margin_0"></p>')
+        parentDiv.append(parentPara);
+        parentPara.append($(this));
+        $(this).html('View MATLAB Command');
+        addOpenExampleLinkClickHandler($(this));
+        var matlabCommand = getMatlabCommand(href);
+        var openWithCommand = getOpenWithCommand(matlabCommand);
+        if (window.ow !== undefined &&  openWithCommand) {
+            var component = openWithCommand.split("/")[0];
+            var exampleName = openWithCommand.split("/")[1];
+            var config = {
+                repository: "MATLAB Examples", 
+                component: component,
+                exampleId: exampleName
+            }
+            ow.doesExampleExist(config, function (status) {
+                var matlabLink = $('a[href="matlab:openExample(\'' + openWithCommand+ '\')"]');
+                if (status === 'true') {
+                    var dropDown = $('<button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">'+ getLocalizedString("Try This Example") + '</button>');
+                    parentDiv.prepend(dropDown);
+                    $(dropDown).on('click', function(e) {
+                        e.preventDefault();
+                        ow.load(config);
+                    });
+                    matlabLink.css('display', 'inline-block');
+                } else {
+                    matlabLink.css('display', 'inline-block');
+                    if (inBox) {
+                        matlabLink.parent().addClass('add_padding_top_15 add_border_top');
+                    }
+                }
+                
+            });
+        } else {
+            if (inBox) {
+                $(this).parent().addClass('add_padding_top_15 add_border_top');
+            }
+            $(this).css('display', 'inline-block');
+        }
+    });
+}
+</script>
+
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<div id="location_content" style="display:none;"></div>
+
+
+<div class="modal fade" id="country-unselected" tabindex="-1" role="dialog" aria-labelledby="country-unselected-title" translate="no">
+<div id="country-select-container">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <img alt="MathWorks" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/pic-header-mathworks-logo2.svg" style="width:167px; height:auto;">
+      </div>
+      <div class="modal-body">
+        <div class="row add_margin_40">
+          <div class="col-xs-12">
+            <h1 class="icon-globe icon_color_secondary" id="country-unselected-title">Select a Web Site</h1>
+            <p>Choose a web site to get translated content where available and see local events and offers. Based on your location, we recommend that you select: <strong class="recommended-country">Sweden</strong>.</p>
+            <a href="https://se.mathworks.com/" id="recommended_domain_button" class="btn btn_color_blue containsResourceName resourceClass-button" data-lang="en">Select <span class="recommended-country">Sweden</span> web site</a>
+          </div>
+        </div>
+        <p>You can also select a web site from the following list:</p>
+				<div class="alert alert-warning" id="china_performance_alert" style="display:none;"> <span class="alert_icon icon-alert-warning"></span>
+					<h3>How to Get Best Site Performance</h3>
+					<p>Select the China site (in Chinese or English) for best site performance. Other MathWorks country sites are not optimized for visits from your location.</p>
+				</div>
+        <div class="row add_margin_30">
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Americas</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://la.mathworks.com/" class="domain_selector_link" data-country-code="LA" data-subdomain="la" data-lang="es" data-default-lang="true" data-selected-text="América Latina" data-recommended-text="América Latina" data-do-not-rewrite="true">América Latina</a> (Español)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="CA" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Canada</a> (English)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="US" data-subdomain="www" data-lang="en" data-default-lang="true" data-selected-text="United States" data-recommended-text="United States" data-do-not-rewrite="true">United States</a> (English)</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <h3 class="add_bottom_rule">Europe</h3>
+            <div class="row">
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled add_margin_0_sm">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="BE" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Belgium</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="DK" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Denmark</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="DE" data-subdomain="de" data-lang="de" data-default-lang="true" data-selected-text="Deutschland" data-recommended-text="Deutschland" data-do-not-rewrite="true">Deutschland</a> (Deutsch)</li>
+                  <li><a href="https://es.mathworks.com/" class="domain_selector_link" data-country-code="ES" data-subdomain="es" data-lang="es" data-default-lang="true" data-selected-text="España" data-recommended-text="España" data-do-not-rewrite="true">España</a> (Español)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="FI" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Finland</a> (English)</li>
+                  <li><a href="https://fr.mathworks.com/" class="domain_selector_link" data-country-code="FR" data-subdomain="fr" data-lang="fr" data-default-lang="true" data-selected-text="France" data-recommended-text="France" data-do-not-rewrite="true">France</a> (Français)</li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="IE" data-subdomain="uk" data-lang="en" data-do-not-rewrite="true">Ireland</a> (English)</li>
+                  <li><a href="https://it.mathworks.com/" class="domain_selector_link" data-country-code="IT" data-subdomain="it" data-lang="it" data-default-lang="true" data-selected-text="Italia" data-recommended-text="Italia" data-do-not-rewrite="true">Italia</a> (Italiano)</li>
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="LU" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Luxembourg</a> (English)</li>
+                </ul>
+              </div>
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="NL" data-subdomain="nl" data-lang="en" data-default-lang="true" data-selected-text="Benelux" data-recommended-text="Netherlands" data-do-not-rewrite="true">Netherlands</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="NO" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Norway</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="AT" data-subdomain="de" data-lang="de" data-do-not-rewrite="true">Österreich</a> (Deutsch)</li>
+                  <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="PT" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Portugal</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="Sweden" data-subdomain="se" data-lang="en" data-default-lang="true" data-selected-text="Nordic" data-recommended-text="Sweden" data-do-not-rewrite="true">Sweden</a> (English)</li>
+                  <li>Switzerland
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="de" data-selected-text="Schweiz" data-recommended-text="Schweiz" data-do-not-rewrite="true">Deutsch</a></li>
+                      <li><a href="https://ch.mathworks.com/" id="swiss_english" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="en" data-default-lang="true" data-selected-text="Switzerland" data-recommended-text="Switzerland" data-do-not-rewrite="true">English</a></li>
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="fr" data-selected-text="Suisse" data-recommended-text="Suisse" data-do-not-rewrite="true">Français</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="GB" data-subdomain="uk" data-lang="en" data-default-lang="true" data-selected-text="United Kingdom" data-recommended-text="United Kingdom" data-do-not-rewrite="true">United Kingdom</a> (English)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Asia Pacific</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="AU" data-subdomain="au" data-lang="en" data-default-lang="true" data-selected-text="Australia" data-recommended-text="Australia" data-do-not-rewrite="true">Australia</a> (English)</li>
+              <li><a href="https://in.mathworks.com/" class="domain_selector_link" data-country-code="IN" data-subdomain="in" data-lang="en" data-default-lang="true" data-selected-text="India" data-recommended-text="India" data-do-not-rewrite="true">India</a> (English)</li>
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="NZ" data-subdomain="au" data-lang="en" data-do-not-rewrite="true">New Zealand</a> (English)</li>
+              <li>中国
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="zh" data-default-lang="true" data-selected-text="中国" data-recommended-text="中国" data-do-not-rewrite="true">简体中文</a></li>
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="en" data-default-lang="true" data-selected-text="China" data-recommended-text="China" data-do-not-rewrite="true">English</a></li>
+                    </ul>
+               </li>
+              <li><a href="https://jp.mathworks.com/" class="domain_selector_link" data-country-code="JP" data-subdomain="jp" data-lang="ja" data-default-lang="true" data-selected-text="日本" data-recommended-text="日本" data-do-not-rewrite="true">日本</a> (日本語)</li>
+              <li><a href="https://kr.mathworks.com/" class="domain_selector_link" data-country-code="KR" data-subdomain="kr" data-lang="ko" data-default-lang="true" data-selected-text="한국" data-recommended-text="한국" data-do-not-rewrite="true">한국</a> (한국어)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center"><a href="https://se.mathworks.com/" class="worldwide_link">Contact your local office</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <div class="cta_container_mobile visible-sm visible-xs">
+      <div class="container-fluid">      
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ST&amp;s_iid=doc_trial_ST_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MOBILE CTA - End -->
+
+        <!-- BODY TRAIL - Begin -->
+        <div class="body_trail_container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="row"><div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/help/stats/index.html?s_cid=doc_ftr">Statistics and Machine Learning Toolbox Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="https://se.mathworks.com/help/stats/release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+<li><a href="https://se.mathworks.com/help/pdf_doc/stats/index.html?s_cid=doc_ftr">PDF Documentation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/support.html?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="https://se.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="https://se.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="https://se.mathworks.com/products/availability.html?s_cid=doc_ftr">Product Requirements</a></li><li><a href="https://se.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-4">
+<div class="panel panel_color_transparent panel_color_fill">
+<div class="panel-body">
+<div class="thumbnail add_margin_5">
+<a href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer"><img class="fluid_image" alt="Mastering Machine Learning: A Step-by-Step Guide with MATLAB" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/mastering-machine-learning-with-matlab-thumbanail.jpg"></a>
+</div>
+<h4><a href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer">Mastering Machine Learning: A Step-by-Step Guide with MATLAB</a></h4>
+<a class="icon-download" href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer">Download ebook</a>
+</div>
+</div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BODY TRAIL - End -->
+
+    <footer id="footer" class="bs-footer">
+        <!-- FAT FOOTER - Begin --> 
+        <div class="container-fluid">
+          <div class="fat_footer_container">
+            <div class="execmatlabweb"> <!--Requried for Doc Test -->
+<div class="row">
+<div class="col-xs-12 col-md-12 col-lg-9 col-lg-push-3 add_margin_20">
+<div class="row">
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Explore Products</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/products/matlab.html?s_tid=hp_ff_p_matlab">MATLAB</a></li>
+<li><a href="https://se.mathworks.com/products/simulink.html?s_tid=hp_ff_p_simulink">Simulink</a></li>
+<li><a href="https://se.mathworks.com/products/matlab/student.html?s_tid=hp_ff_p_student">Student Software</a></li>
+<li><a href="https://se.mathworks.com/hardware-support/home.html?s_tid=hp_ff_p_hwsupport">Hardware Support</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/fileexchange/?s_tid=hp_ff_p_fx">File Exchange</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Try or Buy</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/downloads/web_downloads/?s_iid=hp_ff_t_downloads">Downloads</a></li>
+<li><a href="https://se.mathworks.com/campaigns/products/trials.html?s_iid=hp_ff_p_trial">Trial Software</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us/contact_sales.html?s_iid=hp_ff_t_sales">Contact Sales</a></li>
+<li><a href="https://se.mathworks.com/pricing-licensing.html?s_iid=hp_ff_t_pricing">Pricing and Licensing</a></li>
+<li><a href="https://se.mathworks.com/store/?s_tid=hp_ff_t_buy">How to Buy</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Learn to Use</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/help/?s_tid=hp_ff_l_doc">Documentation</a></li>
+<li><a href="https://se.mathworks.com/support/learn-with-matlab-tutorials.html?s_tid=hp_ff_l_tutorials">Tutorials</a></li>
+<li><a href="https://se.mathworks.com/help/examples.html?s_tid=hp_ff_l_examples">Examples</a></li>
+<li><a href="https://se.mathworks.com/videos.html?s_tid=hp_ff_l_videos">Videos and Webinars</a></li>
+<li><a href="https://se.mathworks.com/services/training.html?s_tid=hp_ff_l_training">Training</a></li>
+</ul>
+</div>
+<div class="clearfix" id="offcanvas_clearfix" style="display:none"></div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Get Support</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/support/install-matlab.html?s_tid=hp_ff_s_install">Installation Help</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_tid=hp_ff_s_answers">Answers</a></li>
+<li><a href="https://se.mathworks.com/services/consulting.html?s_tid=hp_ff_s_consulting">Consulting</a></li>
+<li><a href="https://se.mathworks.com/licensecenter/?s_tid=hp_ff_s_license">License Center</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">About MathWorks</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/company/jobs/opportunities/?s_tid=hp_ff_a_careers">Careers</a></li>
+<li><a href="https://se.mathworks.com/company/newsroom.html?s_tid=hp_ff_a_newsroom">Newsroom</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/soc_mission.html?s_tid=hp_ff_a_socialmission">Social Mission</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=hp_ff_a_contact">Contact Us</a></li>
+<li><a href="https://se.mathworks.com/company.html?s_tid=hp_ff_a_company">About MathWorks</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-3 col-lg-pull-9">
+<p class="h4 add_font_futura_medium add_margin_0"><span translate="no">MathWorks</span></p>
+<p><em>Accelerating the pace of engineering and science</em></p>
+<p>MathWorks is the leading developer of mathematical computing software for engineers and scientists.</p>
+<p><a href="https://se.mathworks.com/discovery.html?s_tid=all_disc_mw_ff">Discover...</a></p>
+</div>
+</div>
+</div>
+          </div>
+        </div>
+        <!-- FAT FOOTER - End -->
+      <div class="container-fluid">
+       <div class="footer" translate="no">
+<div class="row">
+<div class="col-xs-12 col-lg-9">
+<ul class="countrynav" id="countrynav">
+<li class="footernav_country">
+<a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html#" data-toggle="modal" data-target="#country-unselected">
+<span class="icon-globe icon_color_quinary icon_16"></span>Nordic
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<ul class="footernav">
+<li class="footernav_patents"><a href="https://se.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a></li>
+<li class="footernav_trademarks"><a href="https://se.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a></li>
+<li class="footernav_privacy"><a href="https://se.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a></li>
+<li class="footernav_piracy"><a href="https://se.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a></li>
+<li class="footernav_status"><a href="https://status.mathworks.com/?s_tid=gf_application">Application Status</a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p class="copyright" translate="no">© 1994-2019 The MathWorks, Inc.</p>
+</div>
+<div class="clearfix visible-sm add_margin_10"></div>
+<div class="col-xs-12 col-lg-3">
+<div class="social_media">
+<ul class="social_media_icons">
+<li>
+<a href="http://www.facebook.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/ico-facebook.svg" alt="Facebook" class="ico_facebook">
+</a>
+</li>
+<li>
+<a href="http://www.twitter.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/ico-twitter.svg" alt="Twitter" class="ico_twitter">
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/matlab/" class="svg_link" target="_blank">
+<img class="ico_instagram" alt="Instagram" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/ico-instagram.svg">
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/MATLAB" class="svg_link" target="_blank">
+<img class="ico_youtube" alt="YouTube" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/ico-youtube.svg">
+</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/company/the-mathworks_2" target="_blank" class="svg_link">
+<img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/ico-linkedin.svg" alt="LinkedIn" class="ico_linkedin">
+</a>
+</li>
+<li>
+<a href="https://se.mathworks.com/company/rss.html" class="svg_link">
+<img src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/ico-rss.svg" alt="RSS" class="ico_rss">
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<p><em>Join the conversation</em></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cookie-banner-text" style="display:none;">This website uses cookies to improve your user experience, personalize content and ads, and analyze website traffic. By continuing to use this website, you consent to our use of cookies. Please see our <a href="https://se.mathworks.com/company/aboutus/policies_statements.html">Privacy Policy</a> to learn more about cookies and how to change your settings.</div>
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript">
+try {
+_satellite.pageBottom();
+} catch (e) {
+//something went wrong
+}
+</script><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/satellite-5672ffbd64746d5bd3002853.js.download"></script><!--DTM LinkedIn Pixel-->
+<img height="1" width="1" style="display:none;" alt="" src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/saved_resource"><script src="./Cumulative distribution function - MATLAB cdf - MathWorks Nordic_files/8664" type="text/javascript"> </script>
+<!-- END Adobe DTM -->
+      </div>
+    </footer>
+
+  </div>
+
+
+
+<a class="btn btn_color_mediumgray" id="go-top" style="display: inline;"><span class="icon-arrow-open-up icon_24"></span></a><span id="MathEquationRendererScratch" class="MathEquation" style="position: absolute; right: -1000px; bottom: -1000px; white-space: pre-wrap; font-size: 15px;"></span></body></html>

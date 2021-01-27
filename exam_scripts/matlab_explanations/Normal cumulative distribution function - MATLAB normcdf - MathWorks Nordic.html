@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://se.mathworks.com/help/stats/normcdf.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Normal cumulative distribution function - MATLAB normcdf
+- MathWorks Nordic</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6.css" rel="stylesheet" type="text/css">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6_offcanvas.css" rel="stylesheet" type="text/css">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/site6_crux.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" async="" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/elqCfg.min.js.download"></script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/quant.js.download" async="" type="text/javascript"></script><script async="" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/uwt.js.download"></script><script async="" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/fbevents.js.download"></script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/jquery-latest.js.download"></script>
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/jquery.mobile.custom.min.js.download"></script>
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/bootstrap.min.js.download"></script>
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/global.js.download"></script>
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/xvy5baa.css" rel="stylesheet">
+<!-- BEGIN Adobe DTM -->
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/satelliteLib-e8d23c2e444abadc572df06537e2def59c01db09.js.download"></script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js.download"></script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/satellite-58fe08cb64746d190500a115.js.download"></script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/satellite-56972e2c64746d54aa00cb73.js.download"></script><style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility:hidden;}
+</style><script async="" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1023777138');
+</script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/last-event-tag-latest.min.js.download"></script>
+<script>AdCloudEvent("B1441C8B533095C00A490D4D@AdobeOrg","mathwgbl");</script>
+<!-- END Adobe DTM -->
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/doc_center.css" rel="stylesheet" type="text/css">
+<link href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/matlab_dialog.js.download"></script>
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/livecontrolpopoverhandler.js.download"></script>
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/openwith.js.download"></script>
+<style>
+.examples_short_list a.btn {display: none;}
+</style>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "probability-distributions-1.html",
+"name": "Probability Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "continuous-distributions.html",
+"name": "Continuous Distributions"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 4,
+"item": {
+"@id": "normal-distribution-1.html",
+"name": "Normal Distribution"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "VisibleBreadcrumbs",
+"itemListElement":
+[
+"normal-distribution-1"
+],
+"itemListOrder": "http://schema.org/ItemListOrderAscending"
+}
+</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "ExtendedCapabilities",
+"itemListElement":
+[
+{
+"@type": "ListItem",
+"position": 1,
+"item":
+{
+"@context": "http://schema.org",
+"@type": "PropertyValue",
+"name": "codegen",
+"value": "full"
+}
+},
+{
+"@type": "ListItem",
+"position": 2,
+"item":
+{
+"@context": "http://schema.org",
+"@type": "PropertyValue",
+"name": "gpuarrays",
+"value": "full"
+}
+}
+]
+}
+</script>
+<meta xmlns="http://www.w3.org/1999/xhtml" name="chunktype" content="refpage"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="function:normcdf">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fcn">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ref/function">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This MATLAB function returns the cumulative distribution function (cdf) of the standard normal distribution, evaluated at the values in x."><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/l10n.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/docscripts.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/f1help.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/mw.toc_2.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/mw.imagescaling.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/mw.imageanimation.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/mw.breadcrumb.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/jquery.highlight.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/underscore-min.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/examples.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/doc_omniture.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/overload.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/helpservices.js.download"></script>
+<!-- Additions/overrides from the doc side -->
+<script type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/docsearch.js.download"></script>
+<script type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/jquery.toggleval.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/MathRenderer.js.download"></script><style type="text/css">math { visibility: hidden; }</style><link type="text/css" rel="stylesheet" href="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/main.css"><script type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/dojo.js.download"></script>
+<script type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/jquery.cookie.js.download"></script>
+<script type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/akamai-country-code.js.download"></script>
+<script type="text/javascript">
+var domainCountryCodeMap = new Map();
+var countryCodeToDomainMap = new Map();
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('la.mathworks.com', 'la');
+countryCodeToDomainMap.set('la','la.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('ww2.mathworks.cn', 'ww2');
+countryCodeToDomainMap.set('ww2','ww2.mathworks.cn')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('fr.mathworks.com', 'fr');
+countryCodeToDomainMap.set('fr','fr.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('in.mathworks.com', 'in');
+countryCodeToDomainMap.set('in','in.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+domainCountryCodeMap.set('it.mathworks.com', 'it');
+countryCodeToDomainMap.set('it','it.mathworks.com')
+domainCountryCodeMap.set('jp.mathworks.com', 'jp');
+countryCodeToDomainMap.set('jp','jp.mathworks.com')
+domainCountryCodeMap.set('kr.mathworks.com', 'kr');
+countryCodeToDomainMap.set('kr','kr.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('es.mathworks.com', 'es');
+countryCodeToDomainMap.set('es','es.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('ch.mathworks.com', 'ch');
+countryCodeToDomainMap.set('ch','ch.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+var countrySubdomains = {
+US: {name: 'United States', subdomain: 'www'},
+AD: {name: 'Andorra', subdomain: 'es'},
+AR: {name: 'Argentina', subdomain: 'la'},
+AU: {name: 'Australia', subdomain: 'au'},
+AT: {name: 'Austria', subdomain: 'de'},
+BE: {name: 'Belgium', subdomain: 'nl'},
+BO: {name: 'Bolivia', subdomain: 'la'},
+BV: {name: 'Bouvet Islands', subdomain: 'se'},
+CA: {name: 'Canada', subdomain: 'www'},
+CL: {name: 'Chile', subdomain: 'la'},
+CN: {name: 'China', subdomain: 'cn'},
+CX: {name: 'Christmas Island', subdomain: 'au'},
+CC: {name: 'Cocos-Keeling Islands', subdomain: 'au'},
+CO: {name: 'Colombia', subdomain: 'la'},
+CR: {name: 'Costa Rica', subdomain: 'la'},
+DK: {name: 'Denmark', subdomain: 'se'},
+DO: {name: 'Dominican Republic', subdomain: 'la'},
+EC: {name: 'Ecuador', subdomain: 'la'},
+SV: {name: 'El Salvador', subdomain: 'la'},
+EE: {name: 'Estonia', subdomain: 'se'},
+FO: {name: 'Faroe Islands', subdomain: 'se'},
+FJ: {name: 'Fiji', subdomain: 'au'},
+FI: {name: 'Finland', subdomain: 'se'},
+FR: {name: 'France', subdomain: 'fr'},
+GF: {name: 'French Guiana', subdomain: 'fr'},
+PF: {name: 'French Polynesia', subdomain: 'fr'},
+DE: {name: 'Germany', subdomain: 'de'},
+GL: {name: 'Greenland', subdomain: 'se'},
+GP: {name: 'Guadalupe', subdomain: 'fr'},
+GT: {name: 'Guatemala', subdomain: 'la'},
+HN: {name: 'Honduras', subdomain: 'la'},
+IS: {name: 'Iceland', subdomain: 'se'},
+IN: {name: 'India', subdomain: 'in'},
+IE: {name: 'Ireland', subdomain: 'uk'},
+IT: {name: 'Italy', subdomain: 'it'},
+JP: {name: 'Japan', subdomain: 'jp'},
+KR: {name: 'Korea', subdomain: 'kr'},
+LV: {name: 'Latvia', subdomain: 'se'},
+LI: {name: 'Liechtenstein', subdomain: 'ch'},
+LT: {name: 'Lithuania', subdomain: 'se'},
+LU: {name: 'Luxembourg', subdomain: 'nl'},
+MQ: {name: 'Martinique', subdomain: 'fr'},
+YT: {name: 'Mayotte Island', subdomain: 'fr'},
+MX: {name: 'Mexico', subdomain: 'la'},
+MC: {name: 'Monaco', subdomain: 'fr'},
+NL: {name: 'Netherlands', subdomain: 'nl'},
+NC: {name: 'New Caledonia', subdomain: 'fr'},
+NZ: {name: 'New Zealand', subdomain: 'au'},
+NI: {name: 'Nicaragua', subdomain: 'la'},
+NO: {name: 'Norway', subdomain: 'se'},
+PA: {name: 'Panama', subdomain: 'la'},
+PG: {name: 'Papua New Guinea', subdomain: 'au'},
+PY: {name: 'Paraguay', subdomain: 'la'},
+PE: {name: 'Peru', subdomain: 'la'},
+PT: {name: 'Portugal', subdomain: 'www'},
+PR: {name: 'Puerto Rico', subdomain: 'la'},
+RE: {name: 'Reunion Island', subdomain: 'fr'},
+ES: {name: 'Spain', subdomain: 'es'},
+LK: {name: 'Sri Lanka', subdomain: 'in'},
+SE: {name: 'Sweden', subdomain: 'se'},
+CH: {name: 'Switzerland', subdomain: 'ch'},
+GB: {name: 'United Kingdom', subdomain: 'uk'},
+UY: {name: 'Uruguay', subdomain: 'la'},
+VA: {name: 'Vatican City', subdomain: 'it'},
+VE: {name: 'Venezuela', subdomain: 'la'},
+};
+var domainUtils = {
+isExemptUrl: function (url) {
+if(window.overrideDomainSelector){
+return true;
+}
+var exemptions = [
+'/api/parts/',
+'nocookie=true',
+'client=addons',
+'requestedDomain'
+];
+return exemptions.some(function (exemption) {
+return url.indexOf(exemption) != -1;
+});
+},
+endsWith: function( str, suffix ) {
+return str.substring( str.length - suffix.length, str.length ) === suffix;
+},
+getDomain: function (url) {
+var segments = url.split('/');
+return segments[2];
+},
+getSubdomain: function (domain) {
+return domainCountryCodeMap.get(domain);
+},
+setCookies: function (domain, lang) {
+var domainCookie = 'mathworks.com';
+if (this.endsWith(location.host, 'mathworks.cn')) {
+domainCookie = 'mathworks.cn';
+}
+var selectedSubdomain = this.getSubdomain(domain);
+if (this.endsWith(domain, 'mathworks.cn')) {
+selectedSubdomain = 'cn';
+}
+if (selectedSubdomain === 'www') {
+// This is what ePS did in EQUUS and Ruby, so...
+// we're just following suit.
+selectedSubdomain = 'us';
+}
+if (selectedSubdomain !== 'cn' && selectedSubdomain !== 'ch') {
+lang = '';
+}
+var cookieNames = this.getCookieNames(domain);
+var expires = new Date();
+expires.setFullYear(expires.getFullYear() + 68);
+var myJSON = JSON.stringify({
+domain: selectedSubdomain,
+lang: lang,
+v: 2
+});
+$.cookie(cookieNames.mwaPrefsCookieName, myJSON, {path: '/', expires: 20*365, domain: domainCookie});
+},
+getCookieNames: function (domain) {
+var mwaLoginCookieName = 'mwa';
+var mwaPrefsCookieName = 'mwa_prefs';
+var subdomainSuffix = '';
+if (subdomainSuffix != "") {
+mwaLoginCookieName = mwaLoginCookieName + subdomainSuffix;
+mwaPrefsCookieName = mwaPrefsCookieName + subdomainSuffix;
+}
+return {
+mwaLoginCookieName: mwaLoginCookieName,
+mwaPrefsCookieName: mwaPrefsCookieName,
+};
+},
+switchDomain: function (targetDomain, targetLang) {
+var targetUri = location.pathname;
+targetLang = this.getValidLang(this.getSubdomain(targetDomain), targetLang);
+var url = '//' + targetDomain;
+url += targetUri + location.search;
+url = url.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+url = url.replace(/\&$/, '');
+url = url.replace(/\?$/, '');
+var requestedDomainParam = 'requestedDomain=' + targetLang;
+if (url.indexOf('?') > -1) {
+url = url + '&' + requestedDomainParam;
+} else {
+url = url + '?' + requestedDomainParam;
+}
+window.location = url;
+},
+getPrefCookie: function(currentDomain) {
+var cookieNames = this.getCookieNames(currentDomain);
+// regex from: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+var cookieRegex = new RegExp("(?:(?:^|.*;\\s*)"+cookieNames.mwaPrefsCookieName+"\\s*\\=\\s*([^;]*).*$)|^.*$");
+if (document.cookie) {
+var cookieValue = document.cookie.replace(cookieRegex, "$1");
+if (cookieValue) {
+return JSON.parse(decodeURIComponent(cookieValue));
+}
+}
+return "";
+},
+getPrefDomain: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var visitorPrefDomain;
+if (!!mwaPrefsCookieJsonObject) {
+visitorPrefDomain = mwaPrefsCookieJsonObject.domain;
+if (visitorPrefDomain === 'us') {
+visitorPrefDomain = 'www';
+}else if (visitorPrefDomain === 'cn') {
+visitorPrefDomain = 'ww2';
+}
+}
+return countryCodeToDomainMap.get(visitorPrefDomain);
+},
+getPrefLang: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[mwaPrefsCookieJsonObject.domain];
+if (currentDomainLangOptions) {
+var cookiePrefLang = mwaPrefsCookieJsonObject.lang;
+if (currentDomainLangOptions.indexOf(cookiePrefLang) >= 0) {
+return cookiePrefLang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+getCookieVersion: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+return mwaPrefsCookieJsonObject.v;
+},
+getTargetDomainForCookies: function() {
+var targetDomain = "";
+if (this.endsWith(location.host, 'mathworks.cn')) {
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('www');
+}else{
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('ww2');
+}
+return targetDomain;
+},
+getValidLang: function (subdomain, lang) {
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+multilingualDomainLanguageSupport['ww2'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[subdomain];
+if (currentDomainLangOptions) {
+if (currentDomainLangOptions.indexOf(lang) >= 0) {
+return lang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+isDefaultLang: function (subdomain, lang) {
+var multilingualDomainLanguageDefault = {};
+multilingualDomainLanguageDefault['ch'] = 'en';
+multilingualDomainLanguageDefault['cn'] = 'zh';
+multilingualDomainLanguageDefault['ww2'] = 'zh';
+var currentDomainLang = multilingualDomainLanguageDefault[subdomain];
+if (currentDomainLang) {
+if (currentDomainLang === lang) {
+return true;
+} else {
+return false;
+}
+} else if (lang) {
+return false;
+}
+return true;
+}
+};
+$(window).on('load', function() {
+var currentUrl = window.location.href;
+var currentDomain = domainUtils.getDomain(currentUrl);
+var currentSubdomain = domainUtils.getSubdomain(currentDomain);
+var requestedDomainLangRegEx = RegExp('[?&]requestedDomain=([^&]*)').exec(window.location.search);
+if (requestedDomainLangRegEx) {
+var setLang = domainUtils.getValidLang(currentSubdomain, requestedDomainLangRegEx[1])
+domainUtils.setCookies(currentDomain, setLang);
+var URLWithoutRequestedDomain = window.location.href.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\&$/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\?$/, '');
+history.replaceState({}, document.title, URLWithoutRequestedDomain);
+window.location = URLWithoutRequestedDomain;
+}
+$('body').on('click', '.domain_selector_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+var currentCountryText =
+$('a[data-subdomain=\'' + currentSubdomain + '\'][data-default-lang=\'true\'][data-selected-text]')
+.data('selected-text');
+$('#countrySelectorButtonText').text(currentCountryText);
+var visitorPrefDomain = domainUtils.getPrefDomain(currentDomain);
+var visitorPrefLang = domainUtils.getPrefLang(currentDomain);
+var akamaiCountryCode;
+var akamaiprofile = CQ_Analytics.ClientContextMgr.getRegisteredStore('akamaiprofile');
+if (akamaiprofile) {
+akamaiCountryCode = akamaiprofile.getProperty('countryCode');
+}
+var recommendedSubdomain;
+var recommendedLink;
+if (akamaiCountryCode) {
+if (countrySubdomains[akamaiCountryCode] !== undefined) {
+recommendedSubdomain = countrySubdomains[akamaiCountryCode].subdomain;
+} else {
+recommendedSubdomain = 'www';
+}
+if (recommendedSubdomain === 'us') {
+recommendedSubdomain = 'www';
+}else if (recommendedSubdomain === 'cn') {
+recommendedSubdomain = 'ww2';
+}
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+} else if (visitorPrefDomain) {
+recommendedSubdomain = domainUtils.getSubdomain(visitorPrefDomain);
+if (visitorPrefLang) {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-lang=\'' + visitorPrefLang + '\']');
+} else {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-default-lang=\'true\']');
+}
+}
+if (!recommendedLink) {
+recommendedSubdomain = 'www';
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+}
+$('.recommended-country').text(recommendedLink.data('recommended-text'));
+$('#recommended_domain_button').attr('href', recommendedLink.attr('href'));
+$('#recommended_domain_button').attr('data-lang', recommendedLink.attr('data-lang'));
+$('body').on('click', '#recommended_domain_button', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+$('a.worldwide_link').attr('href', recommendedLink.attr('href'));
+$('a.worldwide_link').data('lang', recommendedLink.data('lang'));
+$('body').on('click', 'a.worldwide_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+var href = e.target.getAttribute('href');
+var worldwideLink = '/company/worldwide.html?s_tid=dmselect_cta&requestedDomain=';
+if(href) {
+location.href = href + worldwideLink;
+}
+});
+if (akamaiCountryCode === 'CN') {
+$('#china_performance_alert').show();
+}
+var crossDomain = "";
+if(domainUtils.endsWith(currentDomain, '.mathworks.cn')){
+crossDomain = countryCodeToDomainMap.get('www');
+}else{
+crossDomain = countryCodeToDomainMap.get('ww2');
+}
+if ((!domainUtils.endsWith(currentDomain, '.mathworks.com') && !domainUtils.endsWith(currentDomain, '.mathworks.cn')) || domainUtils.isExemptUrl(currentUrl)) {
+return;
+}
+if (!visitorPrefDomain) {
+if (akamaiCountryCode) {
+var akamaiDeterminedSubdomain = $('a[data-country-code=\'' + akamaiCountryCode + '\']').data('subdomain');
+if ((akamaiCountryCode.toLowerCase() === currentSubdomain) || (akamaiDeterminedSubdomain === currentSubdomain)) {
+domainUtils.setCookies(currentDomain, "");
+} else {
+$('#country-unselected').modal('show');
+}
+return;
+}
+if (currentSubdomain === 'www') {
+domainUtils.setCookies(currentDomain, '');
+} else {
+$('#country-unselected').modal('show');
+}
+} else if (akamaiCountryCode === 'CN' && !(visitorPrefDomain === 'CN') && !domainUtils.getCookieVersion(currentDomain)) {
+$('#country-unselected').modal('show');
+}
+});
+</script> <script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/global_nav.js.download"></script>
+<script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/satellite-5a6285a664746d3edc002109.js.download"></script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/s-code-contents-73da148cb454c4f6e395aa8df704854c99540662.js.download"></script></head>
+  
+<body id="responsive_offcanvas" style="">
+
+  <!-- Mobile TopNav: Start -->
+<div class="header visible-xs visible-sm" id="header_mobile" translate="no">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle topnav_toggle" data-toggle="collapse" data-target="#topnav_collapse">
+<span class="sr-only">Toggle Main Navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link navbar-brand">
+<img src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+</div>
+</div>
+<div class="row visible-xs visible-sm">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse" id="topnav_collapse">
+<ul class="nav navbar-nav" id="topnav"><li class="headernav_login"><a href="https://se.mathworks.com/login?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fstats%2Fnormcdf.html" class="mwa-nav_login" title="Sign In"><span class="visible-xs visible-sm">Sign In</span></a></li>
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml">Get MATLAB</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Mobile TopNav: End -->
+<!-- Desktop TopNav: Start -->
+<div class="header hidden-xs hidden-sm" id="header_desktop" translate="no" style="">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-9">
+<div class="navbar-header">
+<div class="logo_container hidden-xs hidden-sm">
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link pull-left">
+<img src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+<div class="navbar-collapse collapse hidden-xs hidden-sm">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="collapse navbar-collapse" id="headernav_collapse">
+<ul class="nav navbar-nav navbar-right" id="headernav">
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml" class="btn btn_color_blue companion_btn btn-xs">Get MATLAB</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus" title="Contact Us"></a></li>
+<li class="headernav_login"><a href="https://se.mathworks.com/login?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fstats%2Fnormcdf.html" class="mwa-nav_login" title="Sign In"><span class="visible-xs visible-sm">Sign In</span></a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Desktop TopNav: End -->
+<!-- Conjoined Header: Start -->
+<div class="sticky_header_container includes_subnav affix-top">
+<!-- Section Header: Start -->
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 has_horizontal_local_nav" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title add_cursor_pointer">
+<p class="h1">Documentation</p>
+</div>
+<button type="button" class="navbar-toggle collapsed subnav visible-xs" data-toggle="collapse" data-target=".mobile_subnav_content"> <span class="icon-arrow-down icon_24"></span> </button>
+</div>
+<div class="crux_nav_container hidden-xs">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" id="crux_nav_desktop"><li id="crux_nav_documentation" class="crux_nav_active"><a>All</a></li><li id="crux_nav_example"><a href="https://se.mathworks.com/help/stats/examples.html?category=normal-distribution-1">Examples</a></li><li id="crux_nav_function"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;category=normal-distribution-1">Functions</a></li><li id="crux_nav_app"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=app&amp;category=normal-distribution-1">Apps</a></li><li role="presentation" class="dropdown" id="topnav_more" style="display:none;"><a class="dropdown-toggle" data-toggle="dropdown" href="https://se.mathworks.com/help/stats/normcdf.html#" role="button" aria-haspopup="true" aria-expanded="false"> More <span class="caret"></span></a><ul class="dropdown-menu"></ul></li></ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12" id="mobile_search">
+<div class="search_nested_content_container">
+<div id="search_scope_doc" class="collapse in">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2019b" data-language="en" action="https://se.mathworks.com/help/search.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search MATLAB Documentation</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search R2019b Documentation" id="docsearch">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Documentation</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<!-- <li data-toggle="collapse" data-target="#search_scope_doc"><a href="#">Documentation</a></li> -->
+<li data-toggle="collapse" data-target="#search_scope_support" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/normcdf.html#">Support</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/normcdf.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".doc_search_scope_trigger").click(function() {
+$("#search_scope_doc").removeClass("in");
+$("#search").val($("#docsearch").val());
+$("#query").val($("#docsearch").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1" disabled=""></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_support" class="collapse">
+<form id="support_search" action="https://se.mathworks.com/support/search_results.html" method="get" accept-charset="utf-8">
+<div class="input-group">
+<label class="sr-only">Search All Support Resources</label>
+<input id="suggestion" type="hidden" name="suggestion" value="">
+<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+<input id="search" class="form-control conjoined_search" type="text" name="q" placeholder="Search All Support Resources" autocomplete="off">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Support</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/normcdf.html#">Documentation</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_support"><a href="#">Support</a></li>-->
+<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/normcdf.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger").click(function() {
+$("#search_scope_support").removeClass("in");
+$("#docsearch").val($("#search").val());
+$("#query").val($("#search").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="support_submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_site" class="collapse">
+<form name="search" id="site_search" class="site_search" action="https://se.mathworks.com/search/site_search.html" method="get">
+<div class="input-group">
+<label class="sr-only">Search MathWorks.com</label>
+<input type="hidden" name="c[]" value="entire_site">
+<input type="text" name="q" id="query" class="form-control conjoined_search" placeholder="Search MathWorks.com" autocomplete="off" \="">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">MathWorks</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/normcdf.html#">Documentation</a></li>
+<li data-toggle="collapse" data-target="#search_scope_support" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/normcdf.html#">Support</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="#">MathWorks</a></li>-->
+</ul>
+<script>
+$(".site_search_scope_trigger").click(function() {
+$("#search_scope_site").removeClass("in");
+$("#search").val($("#query").val());
+$("#docsearch").val($("#query").val());
+});
+</script>
+<button type="submit" id="searchbutton" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Close Mobile Search</span></button>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Open Mobile Search</span></button>
+</div>
+</div>
+<script>
+$(".section_header_title").click(function(){
+$(window.location).attr('href', '../index.html');
+});
+</script>
+<!-- Section Header: End -->
+<!-- Mobile Local Nav: Start -->
+<div class="row visible-xs" id="mobile_subnav">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse mobile_subnav_content">
+<div class="crux_nav_container">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav subnav" id="crux_nav_mobile"><li id="crux_nav_mobile_documentation" class="crux_nav_active"><a>All</a></li><li id="crux_nav_mobile_example"><a href="https://se.mathworks.com/help/stats/examples.html?category=normal-distribution-1">Examples</a></li><li id="crux_nav_mobile_function"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;category=normal-distribution-1">Functions</a></li><li id="crux_nav_mobile_app"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=app&amp;category=normal-distribution-1">Apps</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Local Nav: End -->
+</div>
+</div>
+<!-- Horo Nav: Start -->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="javascript:void(0)" class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="0"></a>
+<a href="javascript:void(0)" class="offcanvas_actuator_close" tabindex="0"></a>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm">
+<div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ST&amp;s_iid=doc_trial_ST_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Horo Nav: End -->
+</div>
+<!-- Conjoined Header: End -->
+
+  <div class="row-offcanvas row-offcanvas-left">
+  
+    <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+      <nav class="offcanvas_nav" role="navigation">
+          <ul xmlns="http://www.w3.org/1999/xhtml" class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/index.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/probability-distributions-1.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Probability Distributions</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/continuous-distributions.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Continuous Distributions</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/normal-distribution-1.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Normal Distribution</span></a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function notranslate active"><a href="https://se.mathworks.com/help/stats/normcdf.html#responsive_offcanvas"><span class="refname">normcdf</span></a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li class=""><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624094" class="intrnllnk">Syntax</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#description" class="intrnllnk">Description</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624296" class="intrnllnk">Examples</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#bt1xyrb" class="intrnllnk">Standard Normal Distribution cdf</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#mw_277f3967-6fe4-4cc5-9143-2f5829cdf025" class="intrnllnk">Normal Distribution cdf</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#mw_2569e280-2f5d-4724-bb8b-9992a3af895d" class="intrnllnk">Confidence Interval of Normal cdf Value</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#mw_97ec868e-f932-47be-acfe-af4dbb29046b" class="intrnllnk">Complementary cdf (Tail Distribution)</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624534" class="intrnllnk">Test for Normal Distribution Using Function Handle</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624594" class="intrnllnk">Input Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk">x</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk">mu</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk">sigma</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624907" class="intrnllnk">pCov</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624991" class="intrnllnk">alpha</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e625034" class="intrnllnk">Output Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk">p</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pLo" class="intrnllnk">pLo</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pUp" class="intrnllnk">pUp</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e625133" class="intrnllnk">More About</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e625136" class="intrnllnk">Normal Distribution</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#mw_423b6aaa-824d-4733-b64e-c2a06d93bbe0" class="intrnllnk">Algorithms</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e625259" class="intrnllnk">Alternative Functionality</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#References" class="intrnllnk">References</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#bvmb4_0-1" class="intrnllnk">Extended Capabilities</a></li><li><a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_seealso" class="intrnllnk">See Also</a></li></ul>
+
+      </nav>
+      <script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/offcanvas.js.download"></script>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <!-- MOBILE CTA - End -->
+
+
+    <div class="content_container" id="content_container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+                       
+
+
+
+
+
+                   
+    
+                                   
+<section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref">                
+
+       <span id="f1130960" class="anchor_target"></span><h1 class="r2019b notranslate" itemprop="title"><span class="refname">normcdf</span></h1><div class="doc_topic_desc"><div class="purpose_container mwExpandToggle0"><p itemprop="purpose">Normal cumulative distribution function</p><div class="switch mwToggle0"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div>
+<div class="ref_sect"><h2 id="d117e624094">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624104" class="intrnllnk">p = normcdf(x)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624125" class="intrnllnk">p = normcdf(x,mu)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624147" class="intrnllnk">p = normcdf(x,mu,sigma)</a></code></div></div><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624182" class="intrnllnk">[p,pLo,pUp] = normcdf(x,mu,sigma,pCov)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624236" class="intrnllnk">[p,pLo,pUp] = normcdf(x,mu,sigma,pCov,alpha)</a></code></div></div><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624277" class="intrnllnk"><span class="argument_placeholder">___</span> = normcdf(<span class="argument_placeholder">___</span>,'upper')</a></code></div></div></div></div><div class="clear"></div><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><span id="mw_70c2878d-a832-4eb8-b5c1-e4983dab9fc8" class="anchor_target"></span>
+            <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/normcdf.html#bt1xyrb" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e624104" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a> = normcdf(<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>)</code></span>
+                    returns the cumulative distribution function (cdf) of the standard normal
+                    distribution, evaluated at the values in <code class="argument">x</code>.</p></div></div>
+            <div class="description_element"><div class="code_responsive"><p><span id="d117e624125" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a> = normcdf(<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a>)</code></span>
+                    returns the cdf of the normal distribution with mean <code class="argument">mu</code> and
+                    unit standard deviation, evaluated at the values in
+                    <code class="argument">x</code>.</p></div></div>
+            <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/normcdf.html#mw_277f3967-6fe4-4cc5-9143-2f5829cdf025" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e624147" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a> = normcdf(<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a>)</code></span>
+                    returns the cdf of the normal distribution with mean <code class="argument">mu</code> and
+                    standard deviation <code class="argument">sigma</code>, evaluated at the values in
+                        <code class="argument">x</code>.</p></div></div>
+        </div><div class="description_module"><span id="mw_8d406dd3-1452-413e-a178-571ca28f506e" class="anchor_target"></span>
+            <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/normcdf.html#mw_2569e280-2f5d-4724-bb8b-9992a3af895d" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e624182" itemprop="syntax"><code class="synopsis">[<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pLo" class="intrnllnk"><code class="argument">pLo</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pUp" class="intrnllnk"><code class="argument">pUp</code></a>] = normcdf(<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624907" class="intrnllnk"><code class="argument">pCov</code></a>)</code></span>
+                    also returns the 95% confidence bounds
+                        [<code class="argument">pLo</code>,<code class="argument">pUp</code>] of
+                        <code class="argument">p</code> when <code class="argument">mu</code> and
+                        <code class="argument">sigma</code> are estimates. <code class="argument">pCov</code> is the
+                    covariance matrix of the estimated parameters.</p></div></div>
+            <div class="description_element"><div class="code_responsive"><p><span id="d117e624236" itemprop="syntax"><code class="synopsis">[<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pLo" class="intrnllnk"><code class="argument">pLo</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pUp" class="intrnllnk"><code class="argument">pUp</code></a>] = normcdf(<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624907" class="intrnllnk"><code class="argument">pCov</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624991" class="intrnllnk"><code class="argument">alpha</code></a>)</code></span>
+                    specifies the confidence level for the confidence interval
+                        <code class="literal">[pLo,pUp]</code> to be <code class="literal">100(1–alpha)</code>%.</p></div></div>
+        </div><div class="description_module"><span id="mw_19035c6f-e4fe-47d1-89fc-11464378cbf9" class="anchor_target"></span>
+            <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/normcdf.html#mw_97ec868e-f932-47be-acfe-af4dbb29046b" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e624277" itemprop="syntax"><code class="synopsis"><span class="argument_placeholder">___</span> = normcdf(<span class="argument_placeholder">___</span>,'upper')</code></span>
+                    returns the complement of the cdf, evaluated at the values in
+                        <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>, using an algorithm that more accurately computes the
+                    extreme upper-tail probabilities. <code class="literal">'upper'</code> can follow any of
+                    the input arguments in the previous syntaxes.</p></div></div>
+        </div></div><div class="clear"></div><div class="examples"><h2 id="d117e624296">Examples</h2><div class="expandableContent mwExpandToggle1" id="expandableExamples"><p class="switch mwToggle1"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bt1xyrb"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bt1xyrb" data-target="#expand_panel_body_bt1xyrb" aria-controls="expand_panel_body_bt1xyrb" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bt1xyrb">Standard Normal Distribution cdf<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bt1xyrb" aria-labelledby="expand_panel_heading_bt1xyrb" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ComputeNormalDistributioncdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Standard Normal Distribution cdf",
+          "description": "Compute the probability that an observation from a standard normal distribution falls on the interval [&#8211;1 1].",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "normcdf.html"
+
+        },
+          "identifier": "stats.ComputeNormalDistributioncdfExample",
+          "name": "ComputeNormalDistributioncdfExample",
+          "url": "normcdf.html#bt1xyrb"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ComputeNormalDistributioncdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ComputeNormalDistributioncdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Compute the probability that an observation from a standard normal distribution falls on the interval <code class="literal">[–1 1]</code>. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>p = normcdf([-1 1]);
+p(2)-p(1)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>ans = 0.6827
+</pre></div></div></div><p>About 68% of the observations from a normal distribution fall within one standard deviation of the mean 0. </p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ComputeNormalDistributioncdfExample"><meta itemprop="exampletitle" content="Standard Normal Distribution cdf"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_mw_277f3967-6fe4-4cc5-9143-2f5829cdf025"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_mw_277f3967-6fe4-4cc5-9143-2f5829cdf025" data-target="#expand_panel_body_mw_277f3967-6fe4-4cc5-9143-2f5829cdf025" aria-controls="expand_panel_body_mw_277f3967-6fe4-4cc5-9143-2f5829cdf025" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="mw_277f3967-6fe4-4cc5-9143-2f5829cdf025">Normal Distribution cdf<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_mw_277f3967-6fe4-4cc5-9143-2f5829cdf025" aria-labelledby="expand_panel_heading_mw_277f3967-6fe4-4cc5-9143-2f5829cdf025" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/NormcdfComputeNormalDistributionCdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Normal Distribution cdf",
+          "description": "Compute the cdf values evaluated at the values in x for the normal distribution with mean mu and standard deviation sigma.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "normcdf.html"
+
+        },
+          "identifier": "stats.NormcdfComputeNormalDistributionCdfExample",
+          "name": "NormcdfComputeNormalDistributionCdfExample",
+          "url": "normcdf.html#mw_277f3967-6fe4-4cc5-9143-2f5829cdf025"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/NormcdfComputeNormalDistributionCdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "NormcdfComputeNormalDistributionCdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Compute the cdf values evaluated at the values in <code class="literal">x</code> for the normal distribution with mean <code class="literal">mu</code> and standard deviation <code class="literal">sigma</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x = [-2,-1,0,1,2];
+mu = 2;
+sigma = 1;
+p = normcdf(x,mu,sigma)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>p = <span class="emphasis"><em>1×5</em></span>
+
+    0.0000    0.0013    0.0228    0.1587    0.5000
+
+</pre></div></div></div><p>Compute the cdf values evaluated at zero for various normal distributions with different mean parameters. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>mu = [-2,-1,0,1,2];
+sigma = 1;
+p = normcdf(0,mu,sigma)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>p = <span class="emphasis"><em>1×5</em></span>
+
+    0.9772    0.8413    0.5000    0.1587    0.0228
+
+</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-NormcdfComputeNormalDistributionCdfExample"><meta itemprop="exampletitle" content="Normal Distribution cdf"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_mw_2569e280-2f5d-4724-bb8b-9992a3af895d"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_mw_2569e280-2f5d-4724-bb8b-9992a3af895d" data-target="#expand_panel_body_mw_2569e280-2f5d-4724-bb8b-9992a3af895d" aria-controls="expand_panel_body_mw_2569e280-2f5d-4724-bb8b-9992a3af895d" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="mw_2569e280-2f5d-4724-bb8b-9992a3af895d">Confidence Interval of Normal cdf Value<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_mw_2569e280-2f5d-4724-bb8b-9992a3af895d" aria-labelledby="expand_panel_heading_mw_2569e280-2f5d-4724-bb8b-9992a3af895d" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ConfidenceIntervalOfCdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Confidence Interval of Normal cdf Value",
+          "description": "Find the maximum likelihood estimates (MLEs) of the normal distribution parameters, and then find the confidence interval of the corresponding cdf value.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "normcdf.html"
+
+        },
+          "identifier": "stats.ConfidenceIntervalOfCdfExample",
+          "name": "ConfidenceIntervalOfCdfExample",
+          "url": "normcdf.html#mw_2569e280-2f5d-4724-bb8b-9992a3af895d"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ConfidenceIntervalOfCdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ConfidenceIntervalOfCdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Find the maximum likelihood estimates (MLEs) of the normal distribution parameters, and then find the confidence interval of the corresponding cdf value. </p><p>Generate 1000 normal random numbers from the normal distribution with mean 5 and standard deviation 2. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rng(<span style="color:#A020F0">'default'</span>) <span style="color:#228B22">% For reproducibility</span>
+n = 1000; <span style="color:#228B22">% Number of samples</span>
+x = normrnd(5,2,n,1);</pre></div></div></div><p>Find theMLEs for the distribution parameters (mean and standard deviation) by using <a href="https://se.mathworks.com/help/stats/mle.html" class="a"><code class="olink">mle</code></a>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>phat = mle(x)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>phat = <span class="emphasis"><em>1×2</em></span>
+
+    4.9347    1.9969
+
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>muHat = phat(1);
+sigmaHat = phat(2);</pre></div></div></div><p>Estimate the covariance of the distribution parameters by using <code class="literal">normlike</code>. The function <code class="literal">normlike</code> returns an approximation to the asymptotic covariance matrix if you pass the MLEs and the samples used to estimate the MLEs. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[~,pCov] = normlike([muHat,sigmaHat],x)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>pCov = <span class="emphasis"><em>2×2</em></span>
+
+    0.0040   -0.0000
+   -0.0000    0.0020
+
+</pre></div></div></div><p>Find the cdf value at zero and its 95% confidence interval.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[p,pLo,pUp] = normcdf(0,muHat,sigmaHat,pCov)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>p = 0.0067
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>pLo = 0.0047
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>pUp = 0.0095
+</pre></div></div></div><p><code class="literal">p</code> is the cdf value using the normal distribution with the parameters <code class="literal">muHat</code> and <code class="literal">sigmaHat</code>. The interval <code class="literal">[pLo,pUp]</code> is the 95% confidence interval of the cdf evaluated at 0, considering the uncertainty of <code class="literal">muHat</code> and <code class="literal">sigmaHat</code> using <code class="literal">pCov</code>. The 95% confidence interval means the probability that <code class="literal">[pLo,pUp]</code> contains the true cdf value is 0.95. </p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ConfidenceIntervalOfCdfExample"><meta itemprop="exampletitle" content="Confidence Interval of Normal cdf Value"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_mw_97ec868e-f932-47be-acfe-af4dbb29046b"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_mw_97ec868e-f932-47be-acfe-af4dbb29046b" data-target="#expand_panel_body_mw_97ec868e-f932-47be-acfe-af4dbb29046b" aria-controls="expand_panel_body_mw_97ec868e-f932-47be-acfe-af4dbb29046b" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="mw_97ec868e-f932-47be-acfe-af4dbb29046b">Complementary cdf (Tail Distribution)<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_mw_97ec868e-f932-47be-acfe-af4dbb29046b" aria-labelledby="expand_panel_heading_mw_97ec868e-f932-47be-acfe-af4dbb29046b" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ComplementOfCdfExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Complementary cdf (Tail Distribution)",
+          "description": "Determine the probability that an observation from a standard normal distribution will fall on the interval [10,Inf].",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "normcdf.html"
+
+        },
+          "identifier": "stats.ComplementOfCdfExample",
+          "name": "ComplementOfCdfExample",
+          "url": "normcdf.html#mw_97ec868e-f932-47be-acfe-af4dbb29046b"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ComplementOfCdfExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ComplementOfCdfExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Determine the probability that an observation from a standard normal distribution will fall on the interval <code class="literal">[10,Inf]</code>. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>p1 = 1 - normcdf(10)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>p1 = 0
+</pre></div></div></div><p><code class="literal">normcdf(10)</code> is nearly 1, so <code class="literal">p1</code> becomes 0. Specify <code class="literal">'upper'</code> so that <code class="literal">normcdf</code> computes the extreme upper-tail probabilities more accurately. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>p2 = normcdf(10,<span style="color:#A020F0">'upper'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>p2 = 7.6199e-24
+</pre></div></div></div><p>You can also use <code class="literal">'upper'</code> to compute a right-tailed <span class="emphasis"><em>p</em></span>-value. </p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ComplementOfCdfExample"><meta itemprop="exampletitle" content="Complementary cdf (Tail Distribution)"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_d117e624534"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e624534" data-target="#expand_panel_body_d117e624534" aria-controls="expand_panel_body_d117e624534" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="d117e624534">Test for Normal Distribution Using Function Handle<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e624534" aria-labelledby="expand_panel_heading_d117e624534" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/TestForNormalDistributionUsingFunctionHandleExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Test for Normal Distribution Using Function Handle",
+          "description": "",
+          "thumbnailURL": "",
+          "genre": "Live Script",
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "normcdf.html"
+
+        },
+          "identifier": "stats.TestForNormalDistributionUsingFunctionHandleExample",
+          "name": "TestForNormalDistributionUsingFunctionHandleExample",
+          "url": "normcdf.html#d117e624534"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/TestForNormalDistributionUsingFunctionHandleExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "TestForNormalDistributionUsingFunctionHandleExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Use the probability distribution function <code class="literal">normcdf</code> as a function handle in the chi-square goodness-of-fit test (<code class="literal">chi2gof</code>).</p><p>Test the null hypothesis that the sample data in the input vector <code class="literal">x</code> comes from a normal distribution with parameters <span class="emphasis"><em>µ</em></span> and <span class="emphasis"><em>σ</em></span> equal to the mean (<code class="literal">mean</code>) and standard deviation (<code class="literal">std</code>) of the sample data, respectively.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>rng(<span style="color:#A020F0">'default'</span>) <span style="color:#228B22">% For reproducibility</span>
+x = normrnd(50,5,100,1);
+h = chi2gof(x,<span style="color:#A020F0">'cdf'</span>,{@normcdf,mean(x),std(x)})</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>h = 0
+</pre></div></div></div><p>The returned result <code class="literal">h = 0</code> indicates that <code class="literal">chi2gof</code> does not reject the null hypothesis at the default 5% significance level.</p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-TestForNormalDistributionUsingFunctionHandleExample"><meta itemprop="exampletitle" content="Test for Normal Distribution Using Function Handle"></div></div></div><div class="ref_sect"><h2 id="d117e624594">Input Arguments</h2><div class="expandableContent mwExpandToggle2"><p class="switch  mwToggle2"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="d117e624594_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="d117e624599"><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e624599" data-target="#expand_panel_body_d117e624599" aria-controls="expand_panel_body_d117e624599" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_x" class="anchor_target"></span><h3 class="panel-title" id="d117e624599"><code itemprop="name">x</code> — <span itemprop="purpose">Values at which to evaluate cdf</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">scalar value</span> | <span itemprop="inputvalue">array of scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e624599" aria-labelledby="expand_panel_heading_d117e624599" class="panel-collapse collapse in"><div class="panel-body">
+                    <p>Values at which to evaluate the cdf, specified as a scalar value or an
+                        array of scalar values.</p>
+                    <p>If you specify <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624907" class="intrnllnk"><code class="argument">pCov</code></a> to compute the confidence
+                        interval
+                            <code class="literal">[<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pLo" class="intrnllnk"><code class="argument">pLo</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pUp" class="intrnllnk"><code class="argument">pUp</code></a>]</code>,
+                        then <code class="argument">x</code> must be a scalar value.</p>
+                    <p>To evaluate the cdf at multiple values, specify
+        <code class="argument">x</code> using an array. To evaluate the cdfs of multiple distributions,
+    specify <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a> and <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a> using arrays. If one or more of
+    the input arguments <code class="argument">x</code>, <code class="argument">mu</code>, and
+        <code class="argument">sigma</code> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">normcdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. <span>Each element in <a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a> is the cdf value of the
+    distribution specified by the corresponding elements in <code class="argument">mu</code> and
+        <code class="argument">sigma</code>, evaluated at the corresponding element in
+    <code class="argument">x</code>.</span></p>
+                    <p class="description_valueexample"><strong>Example: </strong><code class="literal">[-1,0,3,4]</code></p>
+                <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="d117e624693"><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e624693" data-target="#expand_panel_body_d117e624693" aria-controls="expand_panel_body_d117e624693" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_mu" class="anchor_target"></span><h3 class="panel-title" id="d117e624693"><code itemprop="name">mu</code> — <span itemprop="purpose">Mean</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue defaultvalue"><code class="literal">0</code></span> (default) | <span itemprop="inputvalue">scalar value</span> | <span itemprop="inputvalue">array of scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e624693" aria-labelledby="expand_panel_heading_d117e624693" class="panel-collapse collapse in"><div class="panel-body">
+                    <p>Mean of the normal distribution, specified as a scalar value or an array
+                        of scalar values.</p>
+                    <p>If you specify <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624907" class="intrnllnk"><code class="argument">pCov</code></a> to compute the confidence
+                        interval
+                            <code class="literal">[<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pLo" class="intrnllnk"><code class="argument">pLo</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pUp" class="intrnllnk"><code class="argument">pUp</code></a>]</code>,
+                        then <code class="argument">mu</code> must be a scalar value.</p>
+                    <p>To evaluate the cdf at multiple values, specify
+        <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a> using an array. To evaluate the cdfs of multiple distributions,
+    specify <code class="argument">mu</code> and <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a> using arrays. If one or more of
+    the input arguments <code class="argument">x</code>, <code class="argument">mu</code>, and
+        <code class="argument">sigma</code> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">normcdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. <span>Each element in <a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a> is the cdf value of the
+    distribution specified by the corresponding elements in <code class="argument">mu</code> and
+        <code class="argument">sigma</code>, evaluated at the corresponding element in
+    <code class="argument">x</code>.</span></p>
+                    <p class="description_valueexample"><strong>Example: </strong><code class="literal">[0 1 2; 0 1 2]</code></p>
+                <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="d117e624791"><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e624791" data-target="#expand_panel_body_d117e624791" aria-controls="expand_panel_body_d117e624791" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_sigma" class="anchor_target"></span><h3 class="panel-title" id="d117e624791"><code itemprop="name">sigma</code> — <span itemprop="purpose">Standard deviation</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue defaultvalue"><code class="literal">1</code></span> (default) | <span itemprop="inputvalue">nonnegative scalar value</span> | <span itemprop="inputvalue">array of nonnegative scalar values</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e624791" aria-labelledby="expand_panel_heading_d117e624791" class="panel-collapse collapse in"><div class="panel-body">
+                    <p>Standard deviation of the normal distribution, specified as a nonnegative
+                        scalar value or an array of nonnegative scalar values.</p>
+                    <p>If <code class="argument">sigma</code> is zero, then the output
+                            <a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a> is either 0 or 1. <code class="argument">p</code> is 0 if
+                            <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a> is smaller than <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a>, or 1
+                        otherwise.</p>
+                    <p>If you specify <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624907" class="intrnllnk"><code class="argument">pCov</code></a> to compute the confidence
+                        interval
+                            <code class="literal">[<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pLo" class="intrnllnk"><code class="argument">pLo</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pUp" class="intrnllnk"><code class="argument">pUp</code></a>]</code>,
+                        then <code class="argument">sigma</code> must be a scalar value.</p>
+                    <p>To evaluate the cdf at multiple values, specify
+        <code class="argument">x</code> using an array. To evaluate the cdfs of multiple distributions,
+    specify <code class="argument">mu</code> and <code class="argument">sigma</code> using arrays. If one or more of
+    the input arguments <code class="argument">x</code>, <code class="argument">mu</code>, and
+        <code class="argument">sigma</code> are arrays, then the array sizes must be the same. In this case,
+        <code class="function">normcdf</code> expands each scalar input into a constant array of the same
+    size as the array inputs. <span>Each element in <code class="argument">p</code> is the cdf value of the
+    distribution specified by the corresponding elements in <code class="argument">mu</code> and
+        <code class="argument">sigma</code>, evaluated at the corresponding element in
+    <code class="argument">x</code>.</span></p>
+                    <p class="description_valueexample"><strong>Example: </strong><code class="literal">[1 1 1; 2 2 2]</code></p>
+                <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="d117e624907"><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e624907" data-target="#expand_panel_body_d117e624907" aria-controls="expand_panel_body_d117e624907" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_pCov" class="anchor_target"></span><h3 class="panel-title" id="d117e624907"><code itemprop="name">pCov</code> — <span itemprop="purpose">Covariance of estimates</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">2-by-2 numeric matrix</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e624907" aria-labelledby="expand_panel_heading_d117e624907" class="panel-collapse collapse in"><div class="panel-body">
+                    <p>Covariance of the estimates <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a> and
+                            <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a>, specified as a 2-by-2 matrix.</p>
+                    <p>If you specify <code class="argument">pCov</code> to compute the confidence
+                        interval
+                            <code class="literal">[<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pLo" class="intrnllnk"><code class="argument">pLo</code></a>,<a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-pUp" class="intrnllnk"><code class="argument">pUp</code></a>]</code>,
+                        then <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>, <code class="argument">mu</code>, and
+                            <code class="argument">sigma</code> must be scalar values.</p>
+                    <p>You can estimate <code class="argument">mu</code> and <code class="argument">sigma</code> by
+                        using <a href="https://se.mathworks.com/help/stats/mle.html"><code class="function">mle</code></a>, and estimate the
+                        covariance of <code class="argument">mu</code> and <code class="argument">sigma</code> by
+                        using <a href="https://se.mathworks.com/help/stats/normlike.html"><code class="function">normlike</code></a>. For an example, see
+                            <a href="https://se.mathworks.com/help/stats/normcdf.html#mw_2569e280-2f5d-4724-bb8b-9992a3af895d" class="intrnllnk">Confidence Interval of Normal cdf Value</a>.</p>
+                <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="d117e624991"><div role="tab" data-toggle="collapse" id="expand_panel_heading_d117e624991" data-target="#expand_panel_body_d117e624991" aria-controls="expand_panel_body_d117e624991" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_alpha" class="anchor_target"></span><h3 class="panel-title" id="d117e624991"><code itemprop="name">alpha</code> — <span itemprop="purpose">Significance level</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue defaultvalue">0.05</span> (default) | <span itemprop="inputvalue">scalar in the range (0,1)</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_d117e624991" aria-labelledby="expand_panel_heading_d117e624991" class="panel-collapse collapse in"><div class="panel-body">
+                        <p>Significance level for the confidence interval, specified as a scalar
+                                    in the range (0,1). The confidence level is
+                                                <code class="literal">100(1–alpha)</code>%, where
+                                                <code class="argument">alpha</code> is the probability that
+                                    the confidence interval does not contain the true value.</p>
+                        <p class="description_valueexample"><strong>Example: </strong><code class="literal">0.01</code></p>
+            <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div></div></div></div><div class="ref_sect"><h2 id="d117e625034">Output Arguments</h2><div class="expandableContent mwExpandToggle3"><p class="switch  mwToggle3"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="d117e625034_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_f1130960_sep_shared-p" data-target="#expand_panel_body_f1130960_sep_shared-p" aria-controls="expand_panel_body_f1130960_sep_shared-p" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_p" class="anchor_target"></span><h3 class="panel-title" id="f1130960_sep_shared-p"><code class="name">p</code> — cdf values<br> <span class="add_font_color_general remove_bold"><span class="example_desc">scalar value | array of scalar values</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_f1130960_sep_shared-p" aria-labelledby="expand_panel_heading_f1130960_sep_shared-p" class="panel-collapse collapse in"><div class="panel-body"><p>cdf values, evaluated at the values in <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624599" class="intrnllnk"><code class="argument">x</code></a>, returned as a scalar value or an array of scalar values. <code class="argument">p</code> is the same size as <code class="argument">x</code>, <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a>, and <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a> after any necessary scalar expansion. <span>Each element in <code class="argument">p</code> is the cdf value of the
+    distribution specified by the corresponding elements in <code class="argument">mu</code> and
+        <code class="argument">sigma</code>, evaluated at the corresponding element in
+    <code class="argument">x</code>.</span></p></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_f1130960_sep_shared-pLo" data-target="#expand_panel_body_f1130960_sep_shared-pLo" aria-controls="expand_panel_body_f1130960_sep_shared-pLo" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_pLo" class="anchor_target"></span><h3 class="panel-title" id="f1130960_sep_shared-pLo"><code class="name">pLo</code> — Lower confidence bound for <code class="literal">p</code><br> <span class="add_font_color_general remove_bold"><span class="example_desc">scalar value | array of scalar values</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_f1130960_sep_shared-pLo" aria-labelledby="expand_panel_heading_f1130960_sep_shared-pLo" class="panel-collapse collapse in"><div class="panel-body"><p>Lower confidence bound for <a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a>, returned as a scalar value or an array of scalar values. <code class="argument">pLo</code> has the same size as <code class="argument">p</code>.</p></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_f1130960_sep_shared-pUp" data-target="#expand_panel_body_f1130960_sep_shared-pUp" aria-controls="expand_panel_body_f1130960_sep_shared-pUp" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_pUp" class="anchor_target"></span><h3 class="panel-title" id="f1130960_sep_shared-pUp"><code class="name">pUp</code> — Upper confidence bound for <code class="literal">p</code><br>
+<span class="add_font_color_general remove_bold"><span class="example_desc">scalar value | array of scalar values</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_f1130960_sep_shared-pUp" aria-labelledby="expand_panel_heading_f1130960_sep_shared-pUp" class="panel-collapse collapse in"><div class="panel-body"><p>Upper confidence bound for <a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a>, returned as a scalar value or an array of scalar values. <code class="argument">pUp</code> has the same size as <code class="argument">p</code>.</p></div></div></div></div></div></div></div><div class="moreabout ref_sect"><h2 id="d117e625133">More About</h2><div class="expandableContent mwExpandToggle4"><p class="switch mwToggle4"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true2">collapse all</a></p><div class="expand_collapse"><h3 class="expand_trigger" id="d117e625136" aria-expanded="true" data-toggle="collapse" data-target="#expand_body_d117e625136" aria-controls="expand_body_d117e625136"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>Normal Distribution</h3><div id="expand_body_d117e625136" class="collapsible_content collapse in" aria-expanded="true"><p class="shortdesc">The normal distribution is a two-parameter family of curves. The
+                first parameter, <span class="emphasis"><em>µ</em></span>, is the mean. The second parameter,
+                    <span class="emphasis"><em>σ</em></span>, is the standard deviation.</p><p>The standard normal distribution has zero mean and unit standard deviation.</p><p>The normal cumulative distribution function (cdf) is</p>
+<div id="d117e625153" class="mediaobject"><div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.1em;">p</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.277778em; margin-right: 0.1em;">F</span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;"></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.05em; font-style: italic;">μ</span><span class="MathText MathTextBox symbol" style="position: relative;">,</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.166667em; margin-right: 0.05em; font-style: italic;">σ</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathFraction VBox" style="display: inline-block; position: relative; margin-left: 0.277778em; text-align: center; vertical-align: -13px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.05em; font-style: italic;">σ</span><span class="MathRadical HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.166667em;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 2px;"><span class="StretchyBox" style="display: inline-block; position: relative; text-align: right;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">G</span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox number" style="position: relative;">2</span><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.1em; font-style: italic;">π</span></span></span></span></span></span><span class="MathStyle HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.166667em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra" style="position: relative; display: inline-block; vertical-align: 21px; line-height: 33px; margin-top: -6px; margin-bottom: 6px;"></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -13px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-left: 1px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-left: -6px; margin-top: 21px;"><span class="MathText MathTextBox symbol" style="position: relative;">−</span><span class="MathText MathTextBox symbol" style="position: relative;">∞</span></span></span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.166667em;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">e</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 18px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathFraction VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -13px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox symbol" style="position: relative;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 10px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 10px;"><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-right: 0.03em;">t</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.0555556em;">−</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.05em; font-style: italic;">μ</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 4px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 1px;"><span class="MathText MathTextBox number" style="position: relative;">2</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 10px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 10px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.05em; font-style: italic;">σ</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 4px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="MathText MathTextBox text" style="position: relative;">d</span><span class="MathText MathTextBox text" style="position: relative; margin-right: 0.03em;">t</span><span class="MathText MathTextBox symbol" style="position: relative;">,</span><span class="MathText MathTextBox mtext" style="position: relative; margin-left: 0.166667em;"> </span><span class="MathText MathTextBox mtext" style="position: relative; font-style: normal;">for</span><span class="MathText MathTextBox mtext" style="position: relative;"> </span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">∈</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.277778em; font-style: normal; font-weight: normal;">ℝ</span><span class="MathText MathTextBox symbol" style="position: relative;">.</span></span></span></span></span></p></div></div><p></p><p><span class="inlineequation"><em class="varname">p</em></span> is the probability that a single observation from a normal distribution
+        with parameters <span class="inlineequation"><em class="varname">μ</em></span> and <span class="inlineequation"><em class="varname">σ</em></span> falls in the interval <span class="inlineequation">(-∞,<em class="varname">x</em>]</span>.</p></div></div></div></div><div class="ref_sect"><h2 id="mw_423b6aaa-824d-4733-b64e-c2a06d93bbe0">Algorithms</h2><p>
+            </p>
+<div class="itemizedlist"><ul><li><p>The <code class="function">normcdf</code> function uses the complementary error
+                        function <a href="https://se.mathworks.com/help/matlab/ref/erfc.html"><code class="function">erfc</code></a>. The relationship
+                        between <code class="function">normcdf</code> and <code class="function">erfc</code> is </p>
+<div id="d117e625201" class="mediaobject"><div class="code_responsive"><p class="listprogramlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox mtext" style="position: relative; font-style: normal;">normcdf</span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathFraction VBox" style="display: inline-block; position: relative; margin-left: 0.277778em; text-align: center; vertical-align: -11px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span><span class="MathText MathTextBox mtext" style="position: relative; margin-left: 0.166667em; font-style: normal;">erfc</span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra4" style="position: relative; display: inline-block; vertical-align: 19px; line-height: 36px; margin-top: -6px; margin-bottom: 6px;">(</span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative;">−</span><span class="MathFraction VBox" style="display: inline-block; position: relative; margin-left: 0.166667em; text-align: center; vertical-align: -13px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathRadical HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 2px;"><span class="StretchyBox" style="display: inline-block; position: relative; text-align: right;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">G</span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span></span></span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra4" style="position: relative; display: inline-block; vertical-align: 19px; line-height: 36px; margin-top: -6px; margin-bottom: 6px;">)</span></span></span><span class="MathText MathTextBox symbol" style="position: relative;">.</span></span></span></span></span></p></div></div><p>The complementary error function
+                            <code class="literal">erfc(x)</code> is defined as </p>
+<div id="d117e625210" class="mediaobject"><div class="code_responsive"><p class="listprogramlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox mtext" style="position: relative; font-style: normal;">erfc</span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathText MathTextBox number" style="position: relative; margin-left: 0.277778em;">1</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathText MathTextBox mtext" style="position: relative; margin-left: 0.222222em; font-style: normal;">erf</span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathFraction VBox" style="display: inline-block; position: relative; margin-left: 0.277778em; text-align: center; vertical-align: -13px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathRadical HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 2px;"><span class="StretchyBox" style="display: inline-block; position: relative; text-align: right;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">G</span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.1em; font-style: italic;">π</span></span></span></span></span></span><span class="MathStyle HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.166667em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra" style="position: relative; display: inline-block; vertical-align: 21px; line-height: 33px; margin-top: -6px; margin-bottom: 6px;"></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -13px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-left: 1px; margin-top: 0px;"><span class="MathText MathTextBox symbol" style="position: relative;">∞</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-left: -6px; margin-top: 21px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span></span></span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.166667em;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">e</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox symbol" style="position: relative;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 10px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 10px;"><span class="MathText MathTextBox text" style="position: relative; margin-right: 0.03em;">t</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 4px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span></span></span></span><span class="MathText MathTextBox text" style="position: relative;">d</span><span class="MathText MathTextBox text" style="position: relative; margin-right: 0.03em;">t</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative;">.</span></span></span></span></span></p></div></div><p></p></li><li><p>The <code class="function">normcdf</code> function computes confidence bounds for
+                            <a href="https://se.mathworks.com/help/stats/normcdf.html#f1130960_sep_shared-p" class="intrnllnk"><code class="argument">p</code></a> by using the delta method.
+                            <code class="literal">normcdf(x,mu,sigma)</code> is equivalent to
+                            <code class="literal">normcdf((x–mu)/sigma,0,1)</code>. Therefore, the
+                            <code class="function">normcdf</code> function estimates the variance of
+                            <code class="literal">(x–mu)/sigma</code> using the covariance matrix of
+                            <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624693" class="intrnllnk"><code class="argument">mu</code></a> and <a href="https://se.mathworks.com/help/stats/normcdf.html#d117e624791" class="intrnllnk"><code class="argument">sigma</code></a> by the delta
+                        method, and finds the confidence bounds of <code class="literal">(x–mu)/sigma</code>
+                        using the estimates of this variance. Then, the function transforms the
+                        bounds to the scale of <code class="argument">p</code>. The computed bounds give
+                        approximately the desired confidence level when you estimate
+                            <code class="literal">mu</code>, <code class="literal">sigma</code>, and
+                            <code class="literal">pCov</code> from large samples.</p></li></ul></div><p>
+
+        </p></div><div id="d117e625259_div" class="ref_sect"><h2 id="d117e625259">Alternative Functionality</h2><p>
+            </p>
+<div class="itemizedlist"><ul><li><p><code class="function">normcdf</code> is a function specific to normal
+                        distribution. Statistics and Machine Learning Toolbox™ also offers the generic function <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html"><code class="function">cdf</code></a>, which supports various
+                        probability distributions. To use <code class="function">cdf</code>, create a <a href="https://se.mathworks.com/help/stats/prob.normaldistribution.html"><code class="object">NormalDistribution</code></a> probability
+                        distribution object and pass the object as an input argument or specify the
+                        probability distribution name and its parameters. Note that the
+                        distribution-specific function <code class="function">normcdf</code> is faster
+                        than the generic function <code class="function">cdf</code>.</p></li><li><p>Use the <strong class="app"><a href="https://se.mathworks.com/help/stats/probabilitydistributionfunction-app.html">Probability Distribution Function</a></strong> app to create an
+    interactive plot of the cumulative distribution function (cdf) or probability density function
+    (pdf) for a probability distribution.</p></li></ul></div><p>
+
+        </p></div><div class="bibliography"><h2 id="References">References</h2><div id="d117e625314" class="bibliomixed"><p>[1] Abramowitz, M., and I. A. Stegun. <em class="citetitle">Handbook of Mathematical
+                Functions</em>. New York: Dover, 1964.</p></div><div id="d117e625319" class="bibliomixed"><p>[2] Evans, M., N. Hastings, and B. Peacock. <em class="citetitle">Statistical
+                Distributions</em>. 2nd ed., Hoboken, NJ: John Wiley &amp; Sons, Inc., 1993.
+        </p></div></div><div class="ref_sect"><h2 id="bvmb4_0-1">Extended Capabilities</h2><div class="expand_collapse" id="accordion_bvmb4_0-1" role="tablist" aria-multiselectable="true"><span id="bvmb4_0-2" class="anchor_target"></span><span id="f1130960" class="anchor_target"></span><h3 class="expand_trigger remove_cursor_pointer" id="f1130960_codegen">C/C++ Code Generation<br> <span class=" remove_bold add_font_color_general">Generate C and C++ code using MATLAB® Coder™.</span></h3><span id="mw_0f679577-638f-4325-9b4e-e1c50fba6f11" class="anchor_target"></span><span id="f1130960" class="anchor_target"></span><h3 class="expand_trigger collapsed" id="f1130960_gpuarrays" aria-expanded="false" data-toggle="collapse" data-target="#expand_body_f1130960_gpuarrays" aria-controls="expand_body_f1130960_gpuarrays"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>GPU Arrays<br>
+<span class=" remove_bold add_font_color_general">Accelerate code by running on a graphics processing unit (GPU) using Parallel Computing Toolbox™.</span></h3><div id="expand_body_f1130960_gpuarrays" class="collapsible_content collapse" aria-expanded="false"><p>This function fully supports GPU arrays. For more information, see <a href="https://se.mathworks.com/help/parallel-computing/run-matlab-functions-on-a-gpu.html" class="a">Run MATLAB Functions on a GPU</a> (Parallel Computing Toolbox).</p></div></div></div><div class="ref_sect"><h2 id="f1130960_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/prob.normaldistribution.html"><span itemprop="name"><code class="object">NormalDistribution</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/prob.normaldistribution.cdf.html"><span itemprop="name"><code class="function">cdf</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/matlab/ref/erfc.html"><span itemprop="name"><code class="function">erfc</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/normfit.html"><span itemprop="name"><code class="function">normfit</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/norminv.html"><span itemprop="name"><code class="function">norminv</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/normlike.html"><span itemprop="name"><code class="function">normlike</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/stats/normpdf.html"><span itemprop="name"><code class="function">normpdf</code></span></a></span></p><div class="examples_container"><h3 class="remove_border">Topics</h3><div itemprop="content"><ul class="list-unstyled"><li><a href="https://se.mathworks.com/help/stats/normal-distribution.html" class="a">Normal Distribution</a></li></ul></div></div></div><div class="release_introduced"><h4>Introduced before R2006a</h4></div>
+</div></div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">Open Example</h4> 
+      </div> 
+      <div class="modal-body" id="dialog-body"> 
+        <p>A modified version of this example exists on your system. Do you want to open this version instead?</p> 
+      </div> 
+      <div class="modal-footer"> 
+        <a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, overwrite the modified version</a>
+        <a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a>
+      </div> 
+    </div> 
+  </div> 
+</div><div class="clearfix"></div>
+<div align="center" class="feedbackblock"><iframe id="doc_survey" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/bounce_hub_help.html" style=""></iframe></div><script type="text/javascript" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/docsurvey.js.download"></script>
+
+</section>
+<div class="modal fade" id="matlab-command-dialog" tabindex="-1" role="dialog" aria-labelledby="matlabCommandDialogLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">MATLAB Command</h4>
+      </div>
+      <div class="modal-body" id="dialog-body">
+        <p>You clicked a link that corresponds to this MATLAB command: </p>
+        <pre id="dialog-matlab-command"></pre>
+        <p>Run the command by entering it in the MATLAB Command Window.
+        Web browsers do not support MATLAB commands.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn_secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function registerOpenExampleAction() {
+    var openExampleButtons = $('.examples_short_list a.btn[href^="matlab:"]');
+    $.each(openExampleButtons, function() {
+        var href = $(this).attr('href');
+        $(this).removeClass();
+        $(this).closest('.panel').addClass('panel-default');
+        $(this).closest('.panel-body').removeAttr('style').addClass('add_padding_10');
+        var inBox = false;
+        if ($(this).closest('.panel-body').find('.example_product_list').length >= 1) {
+            inBox=true;
+        }
+        var parentDiv = $(this).parent();
+        var parentPara = $('<p class="text-center add_margin_0"></p>')
+        parentDiv.append(parentPara);
+        parentPara.append($(this));
+        $(this).html('View MATLAB Command');
+        addOpenExampleLinkClickHandler($(this));
+        var matlabCommand = getMatlabCommand(href);
+        var openWithCommand = getOpenWithCommand(matlabCommand);
+        if (window.ow !== undefined &&  openWithCommand) {
+            var component = openWithCommand.split("/")[0];
+            var exampleName = openWithCommand.split("/")[1];
+            var config = {
+                repository: "MATLAB Examples", 
+                component: component,
+                exampleId: exampleName
+            }
+            ow.doesExampleExist(config, function (status) {
+                var matlabLink = $('a[href="matlab:openExample(\'' + openWithCommand+ '\')"]');
+                if (status === 'true') {
+                    var dropDown = $('<button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">'+ getLocalizedString("Try This Example") + '</button>');
+                    parentDiv.prepend(dropDown);
+                    $(dropDown).on('click', function(e) {
+                        e.preventDefault();
+                        ow.load(config);
+                    });
+                    matlabLink.css('display', 'inline-block');
+                } else {
+                    matlabLink.css('display', 'inline-block');
+                    if (inBox) {
+                        matlabLink.parent().addClass('add_padding_top_15 add_border_top');
+                    }
+                }
+                
+            });
+        } else {
+            if (inBox) {
+                $(this).parent().addClass('add_padding_top_15 add_border_top');
+            }
+            $(this).css('display', 'inline-block');
+        }
+    });
+}
+</script>
+
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<div id="location_content" style="display:none;"></div>
+
+
+<div class="modal fade" id="country-unselected" tabindex="-1" role="dialog" aria-labelledby="country-unselected-title" translate="no">
+<div id="country-select-container">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <img alt="MathWorks" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/pic-header-mathworks-logo2.svg" style="width:167px; height:auto;">
+      </div>
+      <div class="modal-body">
+        <div class="row add_margin_40">
+          <div class="col-xs-12">
+            <h1 class="icon-globe icon_color_secondary" id="country-unselected-title">Select a Web Site</h1>
+            <p>Choose a web site to get translated content where available and see local events and offers. Based on your location, we recommend that you select: <strong class="recommended-country">Italia</strong>.</p>
+            <a href="https://it.mathworks.com/" id="recommended_domain_button" class="btn btn_color_blue containsResourceName resourceClass-button" data-lang="it">Select <span class="recommended-country">Italia</span> web site</a>
+          </div>
+        </div>
+        <p>You can also select a web site from the following list:</p>
+				<div class="alert alert-warning" id="china_performance_alert" style="display:none;"> <span class="alert_icon icon-alert-warning"></span>
+					<h3>How to Get Best Site Performance</h3>
+					<p>Select the China site (in Chinese or English) for best site performance. Other MathWorks country sites are not optimized for visits from your location.</p>
+				</div>
+        <div class="row add_margin_30">
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Americas</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://la.mathworks.com/" class="domain_selector_link" data-country-code="LA" data-subdomain="la" data-lang="es" data-default-lang="true" data-selected-text="América Latina" data-recommended-text="América Latina" data-do-not-rewrite="true">América Latina</a> (Español)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="CA" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Canada</a> (English)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="US" data-subdomain="www" data-lang="en" data-default-lang="true" data-selected-text="United States" data-recommended-text="United States" data-do-not-rewrite="true">United States</a> (English)</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <h3 class="add_bottom_rule">Europe</h3>
+            <div class="row">
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled add_margin_0_sm">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="BE" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Belgium</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="DK" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Denmark</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="DE" data-subdomain="de" data-lang="de" data-default-lang="true" data-selected-text="Deutschland" data-recommended-text="Deutschland" data-do-not-rewrite="true">Deutschland</a> (Deutsch)</li>
+                  <li><a href="https://es.mathworks.com/" class="domain_selector_link" data-country-code="ES" data-subdomain="es" data-lang="es" data-default-lang="true" data-selected-text="España" data-recommended-text="España" data-do-not-rewrite="true">España</a> (Español)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="FI" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Finland</a> (English)</li>
+                  <li><a href="https://fr.mathworks.com/" class="domain_selector_link" data-country-code="FR" data-subdomain="fr" data-lang="fr" data-default-lang="true" data-selected-text="France" data-recommended-text="France" data-do-not-rewrite="true">France</a> (Français)</li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="IE" data-subdomain="uk" data-lang="en" data-do-not-rewrite="true">Ireland</a> (English)</li>
+                  <li><a href="https://it.mathworks.com/" class="domain_selector_link" data-country-code="IT" data-subdomain="it" data-lang="it" data-default-lang="true" data-selected-text="Italia" data-recommended-text="Italia" data-do-not-rewrite="true">Italia</a> (Italiano)</li>
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="LU" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Luxembourg</a> (English)</li>
+                </ul>
+              </div>
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="NL" data-subdomain="nl" data-lang="en" data-default-lang="true" data-selected-text="Benelux" data-recommended-text="Netherlands" data-do-not-rewrite="true">Netherlands</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="NO" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Norway</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="AT" data-subdomain="de" data-lang="de" data-do-not-rewrite="true">Österreich</a> (Deutsch)</li>
+                  <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="PT" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Portugal</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="Sweden" data-subdomain="se" data-lang="en" data-default-lang="true" data-selected-text="Nordic" data-recommended-text="Sweden" data-do-not-rewrite="true">Sweden</a> (English)</li>
+                  <li>Switzerland
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="de" data-selected-text="Schweiz" data-recommended-text="Schweiz" data-do-not-rewrite="true">Deutsch</a></li>
+                      <li><a href="https://ch.mathworks.com/" id="swiss_english" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="en" data-default-lang="true" data-selected-text="Switzerland" data-recommended-text="Switzerland" data-do-not-rewrite="true">English</a></li>
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="fr" data-selected-text="Suisse" data-recommended-text="Suisse" data-do-not-rewrite="true">Français</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="GB" data-subdomain="uk" data-lang="en" data-default-lang="true" data-selected-text="United Kingdom" data-recommended-text="United Kingdom" data-do-not-rewrite="true">United Kingdom</a> (English)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Asia Pacific</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="AU" data-subdomain="au" data-lang="en" data-default-lang="true" data-selected-text="Australia" data-recommended-text="Australia" data-do-not-rewrite="true">Australia</a> (English)</li>
+              <li><a href="https://in.mathworks.com/" class="domain_selector_link" data-country-code="IN" data-subdomain="in" data-lang="en" data-default-lang="true" data-selected-text="India" data-recommended-text="India" data-do-not-rewrite="true">India</a> (English)</li>
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="NZ" data-subdomain="au" data-lang="en" data-do-not-rewrite="true">New Zealand</a> (English)</li>
+              <li>中国
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="zh" data-default-lang="true" data-selected-text="中国" data-recommended-text="中国" data-do-not-rewrite="true">简体中文</a></li>
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="en" data-default-lang="true" data-selected-text="China" data-recommended-text="China" data-do-not-rewrite="true">English</a></li>
+                    </ul>
+               </li>
+              <li><a href="https://jp.mathworks.com/" class="domain_selector_link" data-country-code="JP" data-subdomain="jp" data-lang="ja" data-default-lang="true" data-selected-text="日本" data-recommended-text="日本" data-do-not-rewrite="true">日本</a> (日本語)</li>
+              <li><a href="https://kr.mathworks.com/" class="domain_selector_link" data-country-code="KR" data-subdomain="kr" data-lang="ko" data-default-lang="true" data-selected-text="한국" data-recommended-text="한국" data-do-not-rewrite="true">한국</a> (한국어)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center"><a href="https://it.mathworks.com/" class="worldwide_link">Contact your local office</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <div class="cta_container_mobile visible-sm visible-xs">
+      <div class="container-fluid">      
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ST&amp;s_iid=doc_trial_ST_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MOBILE CTA - End -->
+
+        <!-- BODY TRAIL - Begin -->
+        <div class="body_trail_container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="row"><div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/help/stats/index.html?s_cid=doc_ftr">Statistics and Machine Learning Toolbox Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="https://se.mathworks.com/help/stats/release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+<li><a href="https://se.mathworks.com/help/pdf_doc/stats/index.html?s_cid=doc_ftr">PDF Documentation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/support.html?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="https://se.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="https://se.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="https://se.mathworks.com/products/availability.html?s_cid=doc_ftr">Product Requirements</a></li><li><a href="https://se.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-4">
+<div class="panel panel_color_transparent panel_color_fill">
+<div class="panel-body">
+<div class="thumbnail add_margin_5">
+<a href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer"><img class="fluid_image" alt="Mastering Machine Learning: A Step-by-Step Guide with MATLAB" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/mastering-machine-learning-with-matlab-thumbanail.jpg"></a>
+</div>
+<h4><a href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer">Mastering Machine Learning: A Step-by-Step Guide with MATLAB</a></h4>
+<a class="icon-download" href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer">Download ebook</a>
+</div>
+</div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BODY TRAIL - End -->
+
+    <footer id="footer" class="bs-footer">
+        <!-- FAT FOOTER - Begin --> 
+        <div class="container-fluid">
+          <div class="fat_footer_container">
+            <div class="execmatlabweb"> <!--Requried for Doc Test -->
+<div class="row">
+<div class="col-xs-12 col-md-12 col-lg-9 col-lg-push-3 add_margin_20">
+<div class="row">
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Explore Products</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/products/matlab.html?s_tid=hp_ff_p_matlab">MATLAB</a></li>
+<li><a href="https://se.mathworks.com/products/simulink.html?s_tid=hp_ff_p_simulink">Simulink</a></li>
+<li><a href="https://se.mathworks.com/products/matlab/student.html?s_tid=hp_ff_p_student">Student Software</a></li>
+<li><a href="https://se.mathworks.com/hardware-support/home.html?s_tid=hp_ff_p_hwsupport">Hardware Support</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/fileexchange/?s_tid=hp_ff_p_fx">File Exchange</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Try or Buy</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/downloads/web_downloads/?s_iid=hp_ff_t_downloads">Downloads</a></li>
+<li><a href="https://se.mathworks.com/campaigns/products/trials.html?s_iid=hp_ff_p_trial">Trial Software</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us/contact_sales.html?s_iid=hp_ff_t_sales">Contact Sales</a></li>
+<li><a href="https://se.mathworks.com/pricing-licensing.html?s_iid=hp_ff_t_pricing">Pricing and Licensing</a></li>
+<li><a href="https://se.mathworks.com/store/?s_tid=hp_ff_t_buy">How to Buy</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Learn to Use</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/help/?s_tid=hp_ff_l_doc">Documentation</a></li>
+<li><a href="https://se.mathworks.com/support/learn-with-matlab-tutorials.html?s_tid=hp_ff_l_tutorials">Tutorials</a></li>
+<li><a href="https://se.mathworks.com/help/examples.html?s_tid=hp_ff_l_examples">Examples</a></li>
+<li><a href="https://se.mathworks.com/videos.html?s_tid=hp_ff_l_videos">Videos and Webinars</a></li>
+<li><a href="https://se.mathworks.com/services/training.html?s_tid=hp_ff_l_training">Training</a></li>
+</ul>
+</div>
+<div class="clearfix" id="offcanvas_clearfix" style="display:none"></div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Get Support</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/support/install-matlab.html?s_tid=hp_ff_s_install">Installation Help</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_tid=hp_ff_s_answers">Answers</a></li>
+<li><a href="https://se.mathworks.com/services/consulting.html?s_tid=hp_ff_s_consulting">Consulting</a></li>
+<li><a href="https://se.mathworks.com/licensecenter/?s_tid=hp_ff_s_license">License Center</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">About MathWorks</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/company/jobs/opportunities/?s_tid=hp_ff_a_careers">Careers</a></li>
+<li><a href="https://se.mathworks.com/company/newsroom.html?s_tid=hp_ff_a_newsroom">Newsroom</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/soc_mission.html?s_tid=hp_ff_a_socialmission">Social Mission</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=hp_ff_a_contact">Contact Us</a></li>
+<li><a href="https://se.mathworks.com/company.html?s_tid=hp_ff_a_company">About MathWorks</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-3 col-lg-pull-9">
+<p class="h4 add_font_futura_medium add_margin_0"><span translate="no">MathWorks</span></p>
+<p><em>Accelerating the pace of engineering and science</em></p>
+<p>MathWorks is the leading developer of mathematical computing software for engineers and scientists.</p>
+<p><a href="https://se.mathworks.com/discovery.html?s_tid=all_disc_mw_ff">Discover...</a></p>
+</div>
+</div>
+</div>
+          </div>
+        </div>
+        <!-- FAT FOOTER - End -->
+      <div class="container-fluid">
+       <div class="footer" translate="no">
+<div class="row">
+<div class="col-xs-12 col-lg-9">
+<ul class="countrynav" id="countrynav">
+<li class="footernav_country">
+<a href="https://se.mathworks.com/help/stats/normcdf.html#" data-toggle="modal" data-target="#country-unselected">
+<span class="icon-globe icon_color_quinary icon_16"></span>Nordic
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<ul class="footernav">
+<li class="footernav_patents"><a href="https://se.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a></li>
+<li class="footernav_trademarks"><a href="https://se.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a></li>
+<li class="footernav_privacy"><a href="https://se.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a></li>
+<li class="footernav_piracy"><a href="https://se.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a></li>
+<li class="footernav_status"><a href="https://status.mathworks.com/?s_tid=gf_application">Application Status</a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p class="copyright" translate="no">© 1994-2019 The MathWorks, Inc.</p>
+</div>
+<div class="clearfix visible-sm add_margin_10"></div>
+<div class="col-xs-12 col-lg-3">
+<div class="social_media">
+<ul class="social_media_icons">
+<li>
+<a href="http://www.facebook.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/ico-facebook.svg" alt="Facebook" class="ico_facebook">
+</a>
+</li>
+<li>
+<a href="http://www.twitter.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/ico-twitter.svg" alt="Twitter" class="ico_twitter">
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/matlab/" class="svg_link" target="_blank">
+<img class="ico_instagram" alt="Instagram" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/ico-instagram.svg">
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/MATLAB" class="svg_link" target="_blank">
+<img class="ico_youtube" alt="YouTube" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/ico-youtube.svg">
+</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/company/the-mathworks_2" target="_blank" class="svg_link">
+<img src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/ico-linkedin.svg" alt="LinkedIn" class="ico_linkedin">
+</a>
+</li>
+<li>
+<a href="https://se.mathworks.com/company/rss.html" class="svg_link">
+<img src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/ico-rss.svg" alt="RSS" class="ico_rss">
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<p><em>Join the conversation</em></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cookie-banner-text" style="display:none;">This website uses cookies to improve your user experience, personalize content and ads, and analyze website traffic. By continuing to use this website, you consent to our use of cookies. Please see our <a href="https://se.mathworks.com/company/aboutus/policies_statements.html">Privacy Policy</a> to learn more about cookies and how to change your settings.</div>
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript">
+try {
+_satellite.pageBottom();
+} catch (e) {
+//something went wrong
+}
+</script><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/satellite-5672ffbd64746d5bd3002853.js.download"></script><!--DTM LinkedIn Pixel-->
+<img height="1" width="1" style="display:none;" alt="" src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/saved_resource"><script src="./Normal cumulative distribution function - MATLAB normcdf - MathWorks Nordic_files/8664" type="text/javascript"> </script>
+<!-- END Adobe DTM -->
+      </div>
+    </footer>
+
+  </div>
+
+
+
+<a class="btn btn_color_mediumgray" id="go-top"><span class="icon-arrow-open-up icon_24"></span></a><span id="MathEquationRendererScratch" class="MathEquation" style="position: absolute; right: -1000px; bottom: -1000px; white-space: pre-wrap; font-size: 15px;"></span></body></html>

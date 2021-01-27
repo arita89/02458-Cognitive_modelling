@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data -->
+<html lang="en" class="js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear fit to data - 
+MATLAB Answers - MATLAB Central</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="canonical" href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data">
+<!-- BEGIN Adobe DTM -->
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/quant.js.download" async="" type="text/javascript"></script><script async="" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/uwt.js.download"></script><script async="" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/fbevents.js.download"></script><script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/satelliteLib-e8d23c2e444abadc572df06537e2def59c01db09.js.download"></script><script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js.download"></script><script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/satellite-58fe08cb64746d190500a115.js.download"></script><style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility:hidden;}
+</style><script async="" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1023777138');
+</script><script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/last-event-tag-latest.min.js.download"></script>
+<script>AdCloudEvent("B1441C8B533095C00A490D4D@AdobeOrg","mathwgbl");</script>
+<!-- END Adobe DTM --> <script>
+digitalData = {
+ "pageInstanceID" : document.title,
+ "page" : {
+   "pageInfo" : {
+     "pageID" : window.location.pathname.replace(/\/$/, '').replace(/\.(\w)+$/, ''),
+     "destinationURL" : window.location.href
+   },
+   "category" : {
+     "primaryCategory" : "matlabcentral",
+     "subCategory1" : "matlabcentral/answers",
+     "subCategory2" : "",
+   },
+   "attributes" : { }
+ },
+ "product" : [ {
+   "productInfo" : { }
+ } ],
+ "component" : [ ],
+ "events" : [ ],
+ "user": [ ]
+};
+</script>
+
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/site6.css" rel="stylesheet" type="text/css">
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/site6_ie8.css" rel="stylesheet" type="text/css">
+<script src="/includes_content/responsive/scripts/bootstrap/html5shiv-printshiv.js"></script>
+<script src="/includes_content/responsive/scripts/bootstrap/respond.min.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/responsive/css/site6_ie9.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/site6_print.css" rel="stylesheet" type="text/css" media="print">
+<link rel="stylesheet" href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/mlc.css" type="text/css">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/templates/mlc_ie8.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/responsive/css/templates/mlc_ie9.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<link rel="stylesheet" href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/answers.css">
+<!--[if IE 8]>
+<link href="/includes_content/responsive/css/apps/answers/answers_ie8.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<!--[if IE 9]>
+<link href="/includes_content/responsive/css/apps/answers/answers_ie9.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/jquery-latest.js.download"></script>
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/jquery.mobile.custom.min.js.download"></script>
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/bootstrap.min.js.download"></script>
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/global.js.download"></script>
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/anchor.js.download"></script>
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/xvy5baa.css" rel="stylesheet">
+  <link rel="alternate" href="https://www.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="x-default">
+  <link rel="alternate" href="https://www.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-US">
+    <link rel="alternate" href="https://ch.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-CH">
+    <link rel="alternate" href="https://de.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-DE">
+    <link rel="alternate" href="https://au.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-AU">
+    <link rel="alternate" href="https://in.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-IN">
+    <link rel="alternate" href="https://uk.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-UK">
+    <link rel="alternate" href="https://es.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-ES">
+    <link rel="alternate" href="https://fr.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-FR">
+    <link rel="alternate" href="https://it.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-IT">
+    <link rel="alternate" href="https://jp.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-JP">
+    <link rel="alternate" href="https://kr.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-KR">
+    <link rel="alternate" href="https://la.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-MX">
+    <link rel="alternate" href="https://nl.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-NL">
+    <link rel="alternate" href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-SE">
+  <link rel="alternate" href="https://ww2.mathworks.cn/matlabcentral/answers/327828-linear-fit-to-data" hreflang="en-CN">
+
+  <meta name="description" content="Linear fit to data. Learn more about linear fit, polyfit ">
+
+
+<meta content="You may have unsaved changes to a question, answer, or comment." name="confirm-close">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="adknWSL/hTZxbDy6oLR/OTEDonYvEJwT/Ar5iw1vMj8LBy6xcI7QThga0snrKZD3UcyelF0LxNvIro2i/D/1xA==">
+
+
+<link rel="stylesheet" media="screen" href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/application-9e3b3d2cefb148e8379068a46037898e06e3e20560ebe46dba3e66593e2b06a5.css">
+
+
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/satellite-5a6285a664746d3edc002109.js.download"></script><script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/s-code-contents-73da148cb454c4f6e395aa8df704854c99540662.js.download"></script></head><body id="responsive_b" class="mlc" style=""><div hidden="" id="user_locale" data-user-locale="sv-SE"></div>
+
+
+<script type="text/javascript">
+  // CSS hook -- add class="js" to the <html> element
+  document.documentElement.className = document.documentElement.className === '' ? 'js' : document.documentElement.className + ' js';
+</script>
+
+
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/application-cb920c5e9d2d9a875647d4a5480473f48c81aababa5e5aecd6bdb0936a6f57c4.js.download"></script>
+  <script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/antlr3-all.min-c2f711efd937e042123491f17e99170e14cd74abaff1da30689aa83b4ece4657.js.download"></script>
+  <script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/jquery.iframe-transport-4276b2f2823b612632fab55651dddcced504691d04047dee956496a2fb4ec5f0.js.download"></script>
+  <script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/jquery.fileupload-c6c8ad836f9c9b5f0e0c76cd6925d64ec5a2b337004f4a35044f48056e3d5c96.js.download"></script>
+  <script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/jquery.placeholder-d59a2e2de57521ddc1f8741f1cb1c967057f0c6fef7b119ce56aac420467092c.js.download"></script>
+  <script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/matlabmarkup.combined-2dbfc7dd0eb28e7e312cf48703bc4ee86771939459e205f302d494c25b9c3dc2.js.download"></script>
+
+
+<link rel="stylesheet" media="all" href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/application-d212737a639fc563d232c604a2745cb37ea38cb38d3f27d4ea56b42b58ca4410.css">
+<script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/application-76135baf6e779544db6342280a4ffbd3bd8c46dd3bd47542b058c57ae2e77d16.js.download"></script>
+<link href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/mlc6.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" media="screen" href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/mt-5005463ac5d66339e06bc88d6e8971e8f48180e506be25745495923df86258bd.css">
+
+
+  <link rel="stylesheet" media="screen" href="./Linear fit to data - MATLAB Answers - MATLAB Central_files/multicomplete_all_languages-15eeb80df48af1ad2918d8935b6a884ae212c90c38165576c267a55a5a1150ef.css">
+
+<script type="text/javascript">
+  I18n.defaultLocale = "en";
+  I18n.locale = "sv";
+</script>
+
+<script type="text/javascript" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/jquery.cookie.js.download"></script>
+<script type="text/javascript" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/akamai-country-code.js.download"></script>
+<script type="text/javascript">
+var domainCountryCodeMap = new Map();
+var countryCodeToDomainMap = new Map();
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('la.mathworks.com', 'la');
+countryCodeToDomainMap.set('la','la.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('ww2.mathworks.cn', 'ww2');
+countryCodeToDomainMap.set('ww2','ww2.mathworks.cn')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('fr.mathworks.com', 'fr');
+countryCodeToDomainMap.set('fr','fr.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('in.mathworks.com', 'in');
+countryCodeToDomainMap.set('in','in.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+domainCountryCodeMap.set('it.mathworks.com', 'it');
+countryCodeToDomainMap.set('it','it.mathworks.com')
+domainCountryCodeMap.set('jp.mathworks.com', 'jp');
+countryCodeToDomainMap.set('jp','jp.mathworks.com')
+domainCountryCodeMap.set('kr.mathworks.com', 'kr');
+countryCodeToDomainMap.set('kr','kr.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('es.mathworks.com', 'es');
+countryCodeToDomainMap.set('es','es.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('ch.mathworks.com', 'ch');
+countryCodeToDomainMap.set('ch','ch.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+var countrySubdomains = {
+US: {name: 'United States', subdomain: 'www'},
+AD: {name: 'Andorra', subdomain: 'es'},
+AR: {name: 'Argentina', subdomain: 'la'},
+AU: {name: 'Australia', subdomain: 'au'},
+AT: {name: 'Austria', subdomain: 'de'},
+BE: {name: 'Belgium', subdomain: 'nl'},
+BO: {name: 'Bolivia', subdomain: 'la'},
+BV: {name: 'Bouvet Islands', subdomain: 'se'},
+CA: {name: 'Canada', subdomain: 'www'},
+CL: {name: 'Chile', subdomain: 'la'},
+CN: {name: 'China', subdomain: 'cn'},
+CX: {name: 'Christmas Island', subdomain: 'au'},
+CC: {name: 'Cocos-Keeling Islands', subdomain: 'au'},
+CO: {name: 'Colombia', subdomain: 'la'},
+CR: {name: 'Costa Rica', subdomain: 'la'},
+DK: {name: 'Denmark', subdomain: 'se'},
+DO: {name: 'Dominican Republic', subdomain: 'la'},
+EC: {name: 'Ecuador', subdomain: 'la'},
+SV: {name: 'El Salvador', subdomain: 'la'},
+EE: {name: 'Estonia', subdomain: 'se'},
+FO: {name: 'Faroe Islands', subdomain: 'se'},
+FJ: {name: 'Fiji', subdomain: 'au'},
+FI: {name: 'Finland', subdomain: 'se'},
+FR: {name: 'France', subdomain: 'fr'},
+GF: {name: 'French Guiana', subdomain: 'fr'},
+PF: {name: 'French Polynesia', subdomain: 'fr'},
+DE: {name: 'Germany', subdomain: 'de'},
+GL: {name: 'Greenland', subdomain: 'se'},
+GP: {name: 'Guadalupe', subdomain: 'fr'},
+GT: {name: 'Guatemala', subdomain: 'la'},
+HN: {name: 'Honduras', subdomain: 'la'},
+IS: {name: 'Iceland', subdomain: 'se'},
+IN: {name: 'India', subdomain: 'in'},
+IE: {name: 'Ireland', subdomain: 'uk'},
+IT: {name: 'Italy', subdomain: 'it'},
+JP: {name: 'Japan', subdomain: 'jp'},
+KR: {name: 'Korea', subdomain: 'kr'},
+LV: {name: 'Latvia', subdomain: 'se'},
+LI: {name: 'Liechtenstein', subdomain: 'ch'},
+LT: {name: 'Lithuania', subdomain: 'se'},
+LU: {name: 'Luxembourg', subdomain: 'nl'},
+MQ: {name: 'Martinique', subdomain: 'fr'},
+YT: {name: 'Mayotte Island', subdomain: 'fr'},
+MX: {name: 'Mexico', subdomain: 'la'},
+MC: {name: 'Monaco', subdomain: 'fr'},
+NL: {name: 'Netherlands', subdomain: 'nl'},
+NC: {name: 'New Caledonia', subdomain: 'fr'},
+NZ: {name: 'New Zealand', subdomain: 'au'},
+NI: {name: 'Nicaragua', subdomain: 'la'},
+NO: {name: 'Norway', subdomain: 'se'},
+PA: {name: 'Panama', subdomain: 'la'},
+PG: {name: 'Papua New Guinea', subdomain: 'au'},
+PY: {name: 'Paraguay', subdomain: 'la'},
+PE: {name: 'Peru', subdomain: 'la'},
+PT: {name: 'Portugal', subdomain: 'www'},
+PR: {name: 'Puerto Rico', subdomain: 'la'},
+RE: {name: 'Reunion Island', subdomain: 'fr'},
+ES: {name: 'Spain', subdomain: 'es'},
+LK: {name: 'Sri Lanka', subdomain: 'in'},
+SE: {name: 'Sweden', subdomain: 'se'},
+CH: {name: 'Switzerland', subdomain: 'ch'},
+GB: {name: 'United Kingdom', subdomain: 'uk'},
+UY: {name: 'Uruguay', subdomain: 'la'},
+VA: {name: 'Vatican City', subdomain: 'it'},
+VE: {name: 'Venezuela', subdomain: 'la'},
+};
+var domainUtils = {
+isExemptUrl: function (url) {
+if(window.overrideDomainSelector){
+return true;
+}
+var exemptions = [
+'/api/parts/',
+'nocookie=true',
+'client=addons',
+'requestedDomain'
+];
+return exemptions.some(function (exemption) {
+return url.indexOf(exemption) != -1;
+});
+},
+endsWith: function( str, suffix ) {
+return str.substring( str.length - suffix.length, str.length ) === suffix;
+},
+getDomain: function (url) {
+var segments = url.split('/');
+return segments[2];
+},
+getSubdomain: function (domain) {
+return domainCountryCodeMap.get(domain);
+},
+setCookies: function (domain, lang) {
+var domainCookie = 'mathworks.com';
+if (this.endsWith(location.host, 'mathworks.cn')) {
+domainCookie = 'mathworks.cn';
+}
+var selectedSubdomain = this.getSubdomain(domain);
+if (this.endsWith(domain, 'mathworks.cn')) {
+selectedSubdomain = 'cn';
+}
+if (selectedSubdomain === 'www') {
+// This is what ePS did in EQUUS and Ruby, so...
+// we're just following suit.
+selectedSubdomain = 'us';
+}
+if (selectedSubdomain !== 'cn' && selectedSubdomain !== 'ch') {
+lang = '';
+}
+var cookieNames = this.getCookieNames(domain);
+var expires = new Date();
+expires.setFullYear(expires.getFullYear() + 68);
+var myJSON = JSON.stringify({
+domain: selectedSubdomain,
+lang: lang,
+v: 2
+});
+$.cookie(cookieNames.mwaPrefsCookieName, myJSON, {path: '/', expires: 20*365, domain: domainCookie});
+},
+getCookieNames: function (domain) {
+var mwaLoginCookieName = 'mwa';
+var mwaPrefsCookieName = 'mwa_prefs';
+var subdomainSuffix = '';
+if (subdomainSuffix != "") {
+mwaLoginCookieName = mwaLoginCookieName + subdomainSuffix;
+mwaPrefsCookieName = mwaPrefsCookieName + subdomainSuffix;
+}
+return {
+mwaLoginCookieName: mwaLoginCookieName,
+mwaPrefsCookieName: mwaPrefsCookieName,
+};
+},
+switchDomain: function (targetDomain, targetLang) {
+var targetUri = location.pathname;
+targetLang = this.getValidLang(this.getSubdomain(targetDomain), targetLang);
+var url = '//' + targetDomain;
+url += targetUri + location.search;
+url = url.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+url = url.replace(/\&$/, '');
+url = url.replace(/\?$/, '');
+var requestedDomainParam = 'requestedDomain=' + targetLang;
+if (url.indexOf('?') > -1) {
+url = url + '&' + requestedDomainParam;
+} else {
+url = url + '?' + requestedDomainParam;
+}
+window.location = url;
+},
+getPrefCookie: function(currentDomain) {
+var cookieNames = this.getCookieNames(currentDomain);
+// regex from: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+var cookieRegex = new RegExp("(?:(?:^|.*;\\s*)"+cookieNames.mwaPrefsCookieName+"\\s*\\=\\s*([^;]*).*$)|^.*$");
+if (document.cookie) {
+var cookieValue = document.cookie.replace(cookieRegex, "$1");
+if (cookieValue) {
+return JSON.parse(decodeURIComponent(cookieValue));
+}
+}
+return "";
+},
+getPrefDomain: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var visitorPrefDomain;
+if (!!mwaPrefsCookieJsonObject) {
+visitorPrefDomain = mwaPrefsCookieJsonObject.domain;
+if (visitorPrefDomain === 'us') {
+visitorPrefDomain = 'www';
+}else if (visitorPrefDomain === 'cn') {
+visitorPrefDomain = 'ww2';
+}
+}
+return countryCodeToDomainMap.get(visitorPrefDomain);
+},
+getPrefLang: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[mwaPrefsCookieJsonObject.domain];
+if (currentDomainLangOptions) {
+var cookiePrefLang = mwaPrefsCookieJsonObject.lang;
+if (currentDomainLangOptions.indexOf(cookiePrefLang) >= 0) {
+return cookiePrefLang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+getCookieVersion: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+return mwaPrefsCookieJsonObject.v;
+},
+getTargetDomainForCookies: function() {
+var targetDomain = "";
+if (this.endsWith(location.host, 'mathworks.cn')) {
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('www');
+}else{
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('ww2');
+}
+return targetDomain;
+},
+getValidLang: function (subdomain, lang) {
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+multilingualDomainLanguageSupport['ww2'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[subdomain];
+if (currentDomainLangOptions) {
+if (currentDomainLangOptions.indexOf(lang) >= 0) {
+return lang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+isDefaultLang: function (subdomain, lang) {
+var multilingualDomainLanguageDefault = {};
+multilingualDomainLanguageDefault['ch'] = 'en';
+multilingualDomainLanguageDefault['cn'] = 'zh';
+multilingualDomainLanguageDefault['ww2'] = 'zh';
+var currentDomainLang = multilingualDomainLanguageDefault[subdomain];
+if (currentDomainLang) {
+if (currentDomainLang === lang) {
+return true;
+} else {
+return false;
+}
+} else if (lang) {
+return false;
+}
+return true;
+}
+};
+$(window).on('load', function() {
+var currentUrl = window.location.href;
+var currentDomain = domainUtils.getDomain(currentUrl);
+var currentSubdomain = domainUtils.getSubdomain(currentDomain);
+var requestedDomainLangRegEx = RegExp('[?&]requestedDomain=([^&]*)').exec(window.location.search);
+if (requestedDomainLangRegEx) {
+var setLang = domainUtils.getValidLang(currentSubdomain, requestedDomainLangRegEx[1])
+domainUtils.setCookies(currentDomain, setLang);
+var URLWithoutRequestedDomain = window.location.href.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\&$/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\?$/, '');
+history.replaceState({}, document.title, URLWithoutRequestedDomain);
+window.location = URLWithoutRequestedDomain;
+}
+$('body').on('click', '.domain_selector_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+var currentCountryText =
+$('a[data-subdomain=\'' + currentSubdomain + '\'][data-default-lang=\'true\'][data-selected-text]')
+.data('selected-text');
+$('#countrySelectorButtonText').text(currentCountryText);
+var visitorPrefDomain = domainUtils.getPrefDomain(currentDomain);
+var visitorPrefLang = domainUtils.getPrefLang(currentDomain);
+var akamaiCountryCode;
+var akamaiprofile = CQ_Analytics.ClientContextMgr.getRegisteredStore('akamaiprofile');
+if (akamaiprofile) {
+akamaiCountryCode = akamaiprofile.getProperty('countryCode');
+}
+var recommendedSubdomain;
+var recommendedLink;
+if (akamaiCountryCode) {
+if (countrySubdomains[akamaiCountryCode] !== undefined) {
+recommendedSubdomain = countrySubdomains[akamaiCountryCode].subdomain;
+} else {
+recommendedSubdomain = 'www';
+}
+if (recommendedSubdomain === 'us') {
+recommendedSubdomain = 'www';
+}else if (recommendedSubdomain === 'cn') {
+recommendedSubdomain = 'ww2';
+}
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+} else if (visitorPrefDomain) {
+recommendedSubdomain = domainUtils.getSubdomain(visitorPrefDomain);
+if (visitorPrefLang) {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-lang=\'' + visitorPrefLang + '\']');
+} else {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-default-lang=\'true\']');
+}
+}
+if (!recommendedLink) {
+recommendedSubdomain = 'www';
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+}
+$('.recommended-country').text(recommendedLink.data('recommended-text'));
+$('#recommended_domain_button').attr('href', recommendedLink.attr('href'));
+$('#recommended_domain_button').attr('data-lang', recommendedLink.attr('data-lang'));
+$('body').on('click', '#recommended_domain_button', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+$('a.worldwide_link').attr('href', recommendedLink.attr('href'));
+$('a.worldwide_link').data('lang', recommendedLink.data('lang'));
+$('body').on('click', 'a.worldwide_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+var href = e.target.getAttribute('href');
+var worldwideLink = '/company/worldwide.html?s_tid=dmselect_cta&requestedDomain=';
+if(href) {
+location.href = href + worldwideLink;
+}
+});
+if (akamaiCountryCode === 'CN') {
+$('#china_performance_alert').show();
+}
+var crossDomain = "";
+if(domainUtils.endsWith(currentDomain, '.mathworks.cn')){
+crossDomain = countryCodeToDomainMap.get('www');
+}else{
+crossDomain = countryCodeToDomainMap.get('ww2');
+}
+if ((!domainUtils.endsWith(currentDomain, '.mathworks.com') && !domainUtils.endsWith(currentDomain, '.mathworks.cn')) || domainUtils.isExemptUrl(currentUrl)) {
+return;
+}
+if (!visitorPrefDomain) {
+if (akamaiCountryCode) {
+var akamaiDeterminedSubdomain = $('a[data-country-code=\'' + akamaiCountryCode + '\']').data('subdomain');
+if ((akamaiCountryCode.toLowerCase() === currentSubdomain) || (akamaiDeterminedSubdomain === currentSubdomain)) {
+domainUtils.setCookies(currentDomain, "");
+} else {
+$('#country-unselected').modal('show');
+}
+return;
+}
+if (currentSubdomain === 'www') {
+domainUtils.setCookies(currentDomain, '');
+} else {
+$('#country-unselected').modal('show');
+}
+} else if (akamaiCountryCode === 'CN' && !(visitorPrefDomain === 'CN') && !domainUtils.getCookieVersion(currentDomain)) {
+$('#country-unselected').modal('show');
+}
+});
+</script> <script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/global_nav.js.download"></script>
+
+  
+
+
+  <!-- Mobile TopNav: Start -->
+<div class="header visible-xs visible-sm" id="header_mobile" translate="no">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle topnav_toggle" data-toggle="collapse" data-target="#topnav_collapse">
+<span class="sr-only">Toggle Main Navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link navbar-brand">
+<img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+</div>
+</div>
+<div class="row visible-xs visible-sm">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse" id="topnav_collapse">
+<ul class="nav navbar-nav" id="topnav"><li class="headernav_login"><a href="https://se.mathworks.com/login?uri=https%3A%2F%2Fse.mathworks.com%2Fmatlabcentral%2Fanswers%2F327828-linear-fit-to-data" class="mwa-nav_login" title="Sign In"><span class="visible-xs visible-sm">Sign In</span></a></li>
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml">Get MATLAB</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Mobile TopNav: End -->
+<!-- Desktop TopNav: Start -->
+<div class="header hidden-xs hidden-sm" id="header_desktop" translate="no" style="">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<div class="row">
+<div class="col-md-9">
+<div class="navbar-header">
+<div class="logo_container hidden-xs hidden-sm">
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link pull-left">
+<img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+<div class="navbar-collapse collapse hidden-xs hidden-sm">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="collapse navbar-collapse" id="headernav_collapse">
+<ul class="nav navbar-nav navbar-right" id="headernav">
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml" class="btn btn_color_blue companion_btn btn-xs">Get MATLAB</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus" title="Contact Us"></a></li>
+<li class="headernav_login"><a href="https://se.mathworks.com/login?uri=https%3A%2F%2Fse.mathworks.com%2Fmatlabcentral%2Fanswers%2F327828-linear-fit-to-data" class="mwa-nav_login" title="Sign In"><span class="visible-xs visible-sm">Sign In</span></a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Desktop TopNav: End -->
+<!-- Conjoined Header: Start -->
+<div class="sticky_header_container includes_subnav affix">
+<!-- Section Header: Start -->
+<div class="section_header level_3">
+<div class="container">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 col-sm-6 col-sm-push-6 col-md-5 col-md-push-7" id="mobile_search">
+<div class="search_nested_content_container">
+<div id="search_scope_answers" class="collapse in">
+<form id="answerssearch_form" name="answerssearch_form" class="filterless" method="get" data-language="en" action="https://se.mathworks.com/matlabcentral/answers/">
+<div class="input-group tokenized_search_field">
+<div class="form-control">
+<label class="sr-only">Search Answers</label>
+<span class="nugget"> <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#" title="Clear Filters" class="icon-remove"> <span class="label">Clear Filters</span> </a> </span>
+<input type="search" class="conjoined_search form-control" autocomplete="off" name="term" placeholder="Search Answers" id="answerssearch" value="
+">
+</div>
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Answers</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<!-- <li data-toggle="collapse" data-target="#search_scope_answers" class="answers_search_scope_trigger"><a href="#">Answers</a></li> -->
+<li data-toggle="collapse" data-target="#search_scope_support" class="answers_search_scope_trigger"><a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#">Support</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="answers_search_scope_trigger"><a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#">MathWorks</a></li>
+</ul>
+<script>
+$(".answers_search_scope_trigger").click(function() {
+$("#search_scope_answers").removeClass("in");
+$("#supportsearch").val($("#answerssearch").val());
+$("#query").val($("#answerssearch").val());
+});
+</script>
+<button type="submit" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_support" class="collapse">
+<form id="supportsearch_form" name="supportsearch_form" class="filterless" method="get" data-language="en" action="https://se.mathworks.com/support/search_results.html">
+<div class="input-group tokenized_search_field">
+<div class="form-control">
+<label class="sr-only">Search Support</label>
+<span class="nugget"> <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#" title="Clear Filters" class="icon-remove"> <span class="label">Clear Filters</span> </a> </span>
+<input type="search" class="conjoined_search form-control" autocomplete="off" name="q" placeholder="Search Support" id="supportsearch">
+</div>
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Support</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_answers" class="support_search_scope_trigger"><a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#">Answers</a></li>
+<!-- <li data-toggle="collapse" data-target="#search_scope_support" class="support_search_scope_trigger"><a href="#">Support</a></li> -->
+<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger").click(function() {
+$("#search_scope_support").removeClass("in");
+$("#answerssearch").val($("#supportsearch").val());
+$("#query").val($("#supportsearch").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_site" class="collapse">
+<form name="search" id="site_search" class="site_search filterless" action="https://se.mathworks.com/search/site_search.html" method="get">
+<div class="input-group">
+<div class="form-control">
+<label class="sr-only">Search MathWorks.com</label>
+<input type="hidden" name="c[]" value="entire_site">
+<span class="nugget"> <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#" title="Clear Filters" class="icon-remove"> <span class="label">Clear Filters</span> </a> </span>
+<input type="search" name="q" id="query" class="conjoined_search form-control" placeholder="Search MathWorks.com" autocomplete="off" \="">
+</div>
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">MathWorks</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_answers" class="site_search_scope_trigger"><a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#">Answers</a></li>
+<li data-toggle="collapse" data-target="#search_scope_support" class="site_search_scope_trigger"><a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#">Support</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_site" class="site_search_scope_trigger"><a href="#">MathWorks</a></li>-->
+</ul>
+<script>
+$(".site_search_scope_trigger").click(function() {
+$("#search_scope_site").removeClass("in");
+$("#answerssearch").val($("#query").val());
+$("#supportsearch").val($("#query").val());
+});
+</script>
+<button type="submit" id="searchbutton" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Close Mobile Search</span></button>
+</div>
+<div class="col-sm-6 col-sm-pull-6 col-md-7 col-md-pull-5 has_horizontal_local_nav" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title add_cursor_pointer">
+<p class="h1">MATLAB Answers</p>
+</div>
+<button type="button" class="navbar-toggle collapsed subnav visible-xs visible-sm" data-toggle="collapse" data-target=".mobile_subnav_content"> <span class="icon-arrow-down icon_24"></span> </button>
+</div>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Open Mobile Search</span></button>
+</div>
+</div>
+<script>
+$(".section_header_title").click(function(){
+$(window.location).attr('href', '/matlabcentral/answers/index');
+});
+</script>
+<!-- Section Header: End -->
+<!-- Mobile Local Nav: Start -->
+<div class="row visible-xs visible-sm" id="mobile_subnav">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse mobile_subnav_content">
+<ul class="nav navbar-nav subnav">
+<li class="dropdown" translate="no">
+  <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATLAB Central<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li class="topnav_about_mlc"><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc_dpdn">Community Home</a></li>
+    <li class="topnav_answers"><a href="https://se.mathworks.com/matlabcentral/answers/index/?s_tid=gn_mlc_an">MATLAB Answers</a></li>
+    <li class="topnav_fileexchange"><a href="https://se.mathworks.com/matlabcentral/fileexchange/?s_tid=gn_mlc_fx">File Exchange</a></li>
+    <li class="topnav_cody"><a href="https://se.mathworks.com/matlabcentral/cody/?s_tid=gn_mlc_cody">Cody</a></li>
+    <li class="topnav_blogs"><a href="https://blogs.mathworks.com/?s_tid=gn_mlc_blg">Blogs</a></li>
+    <li class="topnav_thingspeak"><a href="https://se.mathworks.com/products/thingspeak.html?s_tid=gn_mlc_TS">ThingSpeak</a></li>
+    <li class="topnav_sb"><a href="https://se.mathworks.com/matlabcentral/simbiology.html?s_tid=gn_mlc_sb">SimBiology Community</a></li>
+    <li class="topnav_pec"><a href="https://se.mathworks.com/matlabcentral/topics/power-electronics-control.html?s_tid=gn_mlc_pec">Power Electronics Community</a></li>
+  </ul>
+</li>
+<li><a id="landing_link" href="https://se.mathworks.com/matlabcentral/answers/index?s_tid=al">Home</a></li>
+<li class="notranslate"><a rel="nofollow" id="ask_question_link" href="https://se.mathworks.com/matlabcentral/answers/questions/new/?s_tid=gn_mlc_ans_ask">Ask</a></li>
+<li><a rel="nofollow" id="answer_question_link" class="notranslate" href="https://se.mathworks.com/matlabcentral/answers/?status=unanswered&amp;s_tid=gn_mlc_ans_ans">Answer</a></li>
+<li><a rel="nofollow" id="questions_link" class="notranslate" href="https://se.mathworks.com/matlabcentral/answers/?s_tid=gn_mlc_ans_ans">Browse</a></li>
+<li translate="no">
+  <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" data-toggle="dropdown" data-target="#" id="more_link">More<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a id="contributors_link" href="https://se.mathworks.com/matlabcentral/answers/contributors/?s_tid=gn_mlc_ans_cnt">Contributors</a></li>
+    <li><a rel="nofollow" id="activity_link" href="https://se.mathworks.com/matlabcentral/answers/activities?s_tid=gn_mlc_ans_rec">Recent Activity</a></li>
+    <li><a rel="nofollow" id="flags_link" href="https://se.mathworks.com/matlabcentral/answers/flagged?s_tid=gn_mlc_ans_FC">Flagged Content</a></li>
+    <li><a rel="nofollow" id="spam_link" href="https://se.mathworks.com/matlabcentral/answers/manage-spam">Flagged as Spam</a></li>
+  </ul>
+</li>
+<li><a rel="nofollow" id="help_link" href="https://se.mathworks.com/matlabcentral/answers/help?s_tid=gn_mlc_ans_hlp">Help</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+<!-- Mobile Local Nav: End -->
+</div>
+</div>
+<!-- Horo Nav: Start -->
+<div class="horizontal_nav hidden-xs hidden-sm">
+<div class="horizontal_nav_container">
+<div class="container">
+<div class="row">
+<div class="col-md-8 col-lg-9 hidden-xs hidden-sm">
+<nav class="navbar navbar-default" role="navigation" id="subnav">
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li class="dropdown" translate="no">
+  <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MATLAB Central<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li class="topnav_about_mlc"><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc_dpdn">Community Home</a></li>
+    <li class="topnav_answers"><a href="https://se.mathworks.com/matlabcentral/answers/index/?s_tid=gn_mlc_an">MATLAB Answers</a></li>
+    <li class="topnav_fileexchange"><a href="https://se.mathworks.com/matlabcentral/fileexchange/?s_tid=gn_mlc_fx">File Exchange</a></li>
+    <li class="topnav_cody"><a href="https://se.mathworks.com/matlabcentral/cody/?s_tid=gn_mlc_cody">Cody</a></li>
+    <li class="topnav_blogs"><a href="https://blogs.mathworks.com/?s_tid=gn_mlc_blg">Blogs</a></li>
+    <li class="topnav_thingspeak"><a href="https://se.mathworks.com/products/thingspeak.html?s_tid=gn_mlc_TS">ThingSpeak</a></li>
+    <li class="topnav_sb"><a href="https://se.mathworks.com/matlabcentral/simbiology.html?s_tid=gn_mlc_sb">SimBiology Community</a></li>
+    <li class="topnav_pec"><a href="https://se.mathworks.com/matlabcentral/topics/power-electronics-control.html?s_tid=gn_mlc_pec">Power Electronics Community</a></li>
+  </ul>
+</li>
+<li><a id="landing_link" href="https://se.mathworks.com/matlabcentral/answers/index?s_tid=al">Home</a></li>
+<li class="notranslate"><a rel="nofollow" id="ask_question_link" href="https://se.mathworks.com/matlabcentral/answers/questions/new/?s_tid=gn_mlc_ans_ask">Ask</a></li>
+<li><a rel="nofollow" id="answer_question_link" class="notranslate" href="https://se.mathworks.com/matlabcentral/answers/?status=unanswered&amp;s_tid=gn_mlc_ans_ans">Answer</a></li>
+<li><a rel="nofollow" id="questions_link" class="notranslate" href="https://se.mathworks.com/matlabcentral/answers/?s_tid=gn_mlc_ans_ans">Browse</a></li>
+<li translate="no">
+  <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data" data-toggle="dropdown" data-target="#" id="more_link">More<span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li><a id="contributors_link" href="https://se.mathworks.com/matlabcentral/answers/contributors/?s_tid=gn_mlc_ans_cnt">Contributors</a></li>
+    <li><a rel="nofollow" id="activity_link" href="https://se.mathworks.com/matlabcentral/answers/activities?s_tid=gn_mlc_ans_rec">Recent Activity</a></li>
+    <li><a rel="nofollow" id="flags_link" href="https://se.mathworks.com/matlabcentral/answers/flagged?s_tid=gn_mlc_ans_FC">Flagged Content</a></li>
+    <li><a rel="nofollow" id="spam_link" href="https://se.mathworks.com/matlabcentral/answers/manage-spam">Flagged as Spam</a></li>
+  </ul>
+</li>
+<li><a rel="nofollow" id="help_link" href="https://se.mathworks.com/matlabcentral/answers/help?s_tid=gn_mlc_ans_hlp">Help</a></li>
+
+</ul>
+</div>
+</nav>
+</div>
+<div class="col-md-4 col-lg-3 hidden-xs hidden-sm">
+<div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/programs/trials/trial_request.html?eventid=56763&amp;prodcode=ML&amp;s_iid=mlcans_trial_mlc_cta1" class="icon-download">Trial software</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Horo Nav: End -->
+</div>
+<!-- Conjoined Header: End -->
+    
+
+    
+
+  <div class="content_container_no_conflict">
+    <div class="container">        
+      <div class="row">
+        <div class="col-xs-12">
+            
+
+
+
+
+
+
+
+     
+    
+
+
+
+		
+
+
+
+
+<div translate="no">
+  
+</div>
+
+
+
+<div class="alert alert-success" id="follow_confirmation" style="display:none" translate="no">
+  <span class="alert_icon icon-alert-success"></span>
+  <h3>You are now following this question</h3>
+  <ul>
+      <li>You will see updates in your <a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile/activities">activity feed</a>.</li>
+      <li>You may receive emails, depending on your <a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile/notification_preferences">notification preferences</a>.</li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-9">
+		<div class="panel panel-default panel_color_default panel_color_fill">
+		 	<div class="panel-body">
+        <div class="row small">
+					<div class="col-xs-12 col-sm-12 col-md-2">
+							<div class="col-xs-4 col-sm-4 col-md-12" translate="no">
+								<a class="author_inline analyticsMlcProfileModal" data-cp-link-id="1" href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla"><img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/0eb3ea9da5d718dce81d76fb76ee01183479b7d9" alt="JDilla" class="avatar-img"></a>
+<div class="profile mlc_author_popover" data-cp-popup-id="1">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="profile__name anlalyticsMlcProfileView" property="name"><a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">JDilla <span>(view profile)</span></a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="profile__image">
+        <a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">
+            <img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/0eb3ea9da5d718dce81d76fb76ee01183479b7d9">
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-8   profile__stats analyticsMlcProfileLink">
+      
+  <ul class="contributor-page-popup" translate="no">
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A129679"><span property="question_count">12 questions asked</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A129679"><span property="answer_count">2 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">0 accepted answers</span>
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">reputation: 0</span>
+    </li>
+  </ul>
+
+    </div>
+
+  </div>
+</div>
+
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 tools-no-paddings">
+								<div class="question-tools" id="question_tools_div">
+									<div class="col-xs-12 tools_spacer" translate="no"> </div>
+
+                  <div class="follow col-xs-3 col-sm-2 col-md-12" id="toggle_follow_question" translate="no">
+                    <button id="follow_link" class="btn btn-link" disabled="disabled" title="Sign in to follow activity">
+                        <span class="follow_icon icon-add-circle" data-action="follow"></span>Follow
+                    </button>
+                  </div>
+
+									<div id="votes_question_327828" class="vote col-xs-12 col-sm-3 col-md-12" translate="no">
+										<form class="vote-form show-modal-on-error" action="https://se.mathworks.com/matlabcentral/answers/votes" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+											<input type="hidden" value="Question" name="vote[votable_type]"><input type="hidden" value="327828" name="vote[votable_id]">
+											<button type="submit" class="login btn btn-link" disabled="disabled" title="Sign in to vote for questions and answers"><span class="icon-like vote_icon"></span><span class="vote_prompt">Vote</span></button><div class="vote_count"><span class="pipe"></span>0</div>
+</form>									</div>
+									<div class="col-xs-12 visible-xs tools_spacer" translate="no"> </div>
+
+									
+
+
+
+
+									</div>
+							 	</div>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-10">
+								<div class="question" id="question_327828">
+								<div class="row">
+									<div class="col-sm-11 col-xs-11 col-md-11">
+										<h2 id="title_question_327828" class="add_font_color_emphasize">Linear fit to data</h2>
+									</div>
+								</div>
+                  <div class="row" style="position:relative" translate="no">
+                      <div class="col-xs-12 col-sm-12 col-md-8">
+                          <div id="asked_question_327828" class="contribution">
+                              Asked by <a class="author_inline analyticsMlcProfileModal" data-cp-link-id="2" href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">JDilla</a>
+<div class="profile mlc_author_popover" data-cp-popup-id="2">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="profile__name anlalyticsMlcProfileView" property="name"><a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">JDilla <span>(view profile)</span></a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="profile__image">
+        <a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">
+            <img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/0eb3ea9da5d718dce81d76fb76ee01183479b7d9">
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-8   profile__stats analyticsMlcProfileLink">
+      
+  <ul class="contributor-page-popup" translate="no">
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A129679"><span property="question_count">12 questions asked</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A129679"><span property="answer_count">2 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">0 accepted answers</span>
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">reputation: 0</span>
+    </li>
+  </ul>
+
+    </div>
+
+  </div>
+</div>
+ <span class="question-ask-date">on 3 Mar 2017</span>
+                                  <button class="btn btn-sm companion_btn btn_color_blue mt-button has-spinner mt-button-leaf" id="leaf-question-translation-btn" translate="no" onclick="translateContent(this, 327828, &quot;leaf-question&quot;); window._kiq.push([&quot;set&quot;, { &quot;event&quot;: &quot;Ondemand MT&quot; }]);"></button>
+                          </div>
+                          <div class="contribution latest-activity" translate="no">
+  <strong>Latest activity</strong> <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#comment_433605">Commented on</a> by <a class="author_inline analyticsMlcProfileModal" data-cp-link-id="3" href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">JDilla</a>
+<div class="profile mlc_author_popover" data-cp-popup-id="3">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="profile__name anlalyticsMlcProfileView" property="name"><a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">JDilla <span>(view profile)</span></a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="profile__image">
+        <a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">
+            <img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/0eb3ea9da5d718dce81d76fb76ee01183479b7d9">
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-8   profile__stats analyticsMlcProfileLink">
+      
+  <ul class="contributor-page-popup" translate="no">
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A129679"><span property="question_count">12 questions asked</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A129679"><span property="answer_count">2 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">0 accepted answers</span>
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">reputation: 0</span>
+    </li>
+  </ul>
+
+    </div>
+
+  </div>
+</div>
+ on 3 Mar 2017
+</div>
+
+                          
+                      </div>
+                      
+<div id="views_md_question_327828" class="view-counts-desktop hidden-xs hidden-sm col-md-4">
+  <div class="contribution text-right">
+    2 401 views (last 30 days)
+  </div>
+</div>
+
+<div id="views_sm_question_327828" class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+  <div class="contribution">
+    2 401 views (last 30 days)
+  </div>
+</div>
+                  </div>
+
+                    
+
+
+                    
+
+                    <div id="body_question_327828" class="panel panel-default add_text_wrapping">
+											<div class="panel-body">
+                          <div class="rtcContent"><div class="SectionBlock containment"><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">I have a data series, and I'm trying to fit two straight lines through a certain amount of points (91 data points from 2002 - 2003.5, then another 91 points from 2003.5 onwards)</span></span></div><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">I was thinking of using polyfit with n=1, but I don't quite understand how to use it. I then need to find the equations of the lines generated in the form y = mx+c, so maybe polyval?</span></span></div><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">I've attached a figure to demonstrate what I'm trying to achieve.</span></span></div><div class="paragraphNode wrappable" style="text-align: center;"><img class="imageNode" style="vertical-align: baseline;" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/image.jpeg"></div></div></div>
+											</div>
+                    </div>
+
+
+                    
+<div class="panel panel-default panel_icon_16 comments" id="comments_question_327828" data-state="closed">
+	<div class="panel-body">
+		<h4 translate="no"><span class="icon-feedback icon_16"></span>&nbsp;&nbsp;<span class="comments-count">0 Comments</span></h4>
+
+
+		<div class="toggle-comments hidden" translate="no"><span>Show</span><span class="hidden">Hide</span> <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#toggle-comments" class="hidden-comments-count">all comments</a></div>
+
+
+
+	    <p translate="no"><a href="https://se.mathworks.com/login?uri=https%3A%2F%2Fse.mathworks.com%2Fmatlabcentral%2Fanswers%2F327828-linear-fit-to-data&amp;form_type=community">Sign in</a> to comment.</p>
+	</div>
+</div>
+
+
+</div>                </div>
+                    </div>
+        </div>
+    </div>
+
+<div class="row small visible-xs" translate="no">
+	<div class="col-xs-12 col-sm-12 tags_block">
+
+	<h3 class="add_bottom_rule add_margin_5">
+		Tags
+	</h3>
+
+	<div id="tags_question_327828_m" class="answer-tag-list">
+		<ul class="list-unstyled list-inline">
+  <li><a tag_display="tag_component" rel="nofollow" class="tag_component" href="https://se.mathworks.com/matlabcentral/answers/?term=tag%3A%22linear+fit%22">linear fit</a></li><li><a tag_display="tag_component" rel="nofollow" class="tag_component" href="https://se.mathworks.com/matlabcentral/answers/?term=tag%3A%22polyfit%22">polyfit</a></li>
+</ul>
+
+	</div>
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 add_margin_10" id="related_info_spacer_m"></div>
+</div>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading" id="answers_list" translate="no">
+	<h2 class="add_font_color_emphasize" id="answer_count_question_327828"><span class="icon-answers"></span> 1 Answer</h2>
+</div>
+
+		<div class="panel-body">
+	<div class="row small">
+		<div class="col-xs-12 col-sm-12 col-md-2" translate="no">
+			<div class="col-xs-4 col-sm-4 col-md-12">
+				<a class="author_inline analyticsMlcProfileModal" data-cp-link-id="4" href="https://se.mathworks.com/matlabcentral/profile/authors/5465148-aniruddha-katre"><img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/29e994efd165feb638523f2a401268f039ea5361" alt="Aniruddha Katre" class="avatar-img"></a>
+<div class="profile mlc_author_popover" data-cp-popup-id="4">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="profile__name anlalyticsMlcProfileView" property="name"><a href="https://se.mathworks.com/matlabcentral/profile/authors/5465148-aniruddha-katre">Aniruddha Katre <span>(view profile)</span></a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="profile__image">
+        <a href="https://se.mathworks.com/matlabcentral/profile/authors/5465148-aniruddha-katre">
+            <img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/29e994efd165feb638523f2a401268f039ea5361">
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-8   profile__stats analyticsMlcProfileLink">
+      
+  <ul class="contributor-page-popup" translate="no">
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A116748"><span property="question_count">0 questions asked</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A116748"><span property="answer_count">27 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">14 accepted answers</span>
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">reputation: 86</span>
+    </li>
+  </ul>
+
+    </div>
+
+  </div>
+</div>
+
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 tools-no-paddings">
+				<ul class="list-unstyled" id="tools_answer_257066">
+				<div class="col-xs-12 tools_spacer" translate="no"> </div>
+<div id="votes_answer_257066" class="vote col-xs-6 col-sm-2 col-md-12" translate="no">
+  <form class="vote-form show-modal-on-error" action="https://se.mathworks.com/matlabcentral/answers/votes" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
+    <input type="hidden" value="Answer" name="vote[votable_type]"><input type="hidden" value="257066" name="vote[votable_id]">
+    <button type="submit" class="login btn btn-link" disabled="disabled" title="Sign in to vote for questions and answers"><span class="icon-like vote_icon"></span><span class="vote_prompt">Vote</span></button><div class="vote_count"><span class="pipe"></span>2</div>
+</form></div>
+
+
+
+<div class="col-xs-12 visible-xs visible-sm tools_spacer" translate="no"> </div>
+
+
+
+
+
+<div class="answer-link col-xs-3 col-sm-2 col-md-12" translate="no">
+	<a title="Direct link to this answer" data-toggle="modal" data-target="#permalink_answer_257066" href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#"><span class="icon-link"></span>Link</a>
+</div>
+<div class="modal fade" id="permalink_answer_257066" tabindex="-1" role="dialog" aria-labelledby="permalink_answer_257066_label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title add_margin_0" id="permalink_answer_257066_label"> Direct link to this answer</h4>
+</div>
+        <div class="modal-body">
+  <p class="link-wrapper"><a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#answer_257066" id="anchor_permalink_answer_257066">https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#answer_257066</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn companion_btn btn_color_blue" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn_color_blue copy_permalink" id="copy_permalink_answer_257066">Copy to Clipboard</button>
+        </div>
+      </div>
+  </div>
+</div>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-10">
+		<div class="answer" id="answer_257066">
+			<div id="created_answer_257066" class="contribution" translate="no">
+  Answer by <a class="author_inline analyticsMlcProfileModal" data-cp-link-id="5" href="https://se.mathworks.com/matlabcentral/profile/authors/5465148-aniruddha-katre">Aniruddha Katre</a>
+    <span id="staff_indicator" class="icon-mw-staff add_font_color_darkblue" data-toggle="tooltip" title="" data-original-title="MathWorks Staff"></span>
+<div class="profile mlc_author_popover" data-cp-popup-id="5">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="profile__name anlalyticsMlcProfileView" property="name"><a href="https://se.mathworks.com/matlabcentral/profile/authors/5465148-aniruddha-katre">Aniruddha Katre <span>(view profile)</span></a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="profile__image">
+        <a href="https://se.mathworks.com/matlabcentral/profile/authors/5465148-aniruddha-katre">
+            <img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/29e994efd165feb638523f2a401268f039ea5361">
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-8   profile__stats analyticsMlcProfileLink">
+      
+  <ul class="contributor-page-popup" translate="no">
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A116748"><span property="question_count">0 questions asked</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A116748"><span property="answer_count">27 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">14 accepted answers</span>
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">reputation: 86</span>
+    </li>
+  </ul>
+
+    </div>
+
+  </div>
+</div>
+ <span class="answered-date">on 3 Mar 2017</span>
+			<button class="btn btn-sm companion_btn btn_color_blue mt-button has-spinner mt-button-leaf" id="leaf-answer-translation-btn" translate="no" onclick="translateContent(this, 257066, &quot;answers&quot;); window._kiq.push([&quot;set&quot;, { &quot;event&quot;: &quot;Ondemand MT&quot; }]);"></button>
+</div>
+
+
+				<br>
+
+				
+
+			
+
+		
+<div class="row">
+	<div class="col-xs-12">
+		<div id="body_answer_257066" class="panel panel-default add_text_wrapping">
+				<div class="panel-body">
+					<div class="rtcContent"><div class="SectionBlock containment"><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">You are on the right track. You can use polyfit to fit a trend line to the data. The output of polyfit is a vector of coefficients corresponding to the polynomial you fit to the data. You can then use polyval for those coefficients to create the trend-line to add to the plot.</span></span></div><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">Your x-data for polyfit will be the dates, and the y-data will be the 91 values that you want to fit a straight line to.</span></span></div><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">Here's a quick example:</span></span></div><div class="clipboard"><button title="Copy code to clipboard" class="btn-clipboard"><span data-pseudo-content="Copy"></span></button></div><div class="CodeBlock contiguous"><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper Comment">% Create and Plot Raw Data</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">x = 1:100;</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">y = 0.25*x + randn(1,100);</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">plot(x,y,</span><span class="textWrapper String">'LineWidth'</span><span class="textWrapper">,2)</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper"></span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper Comment">% Fit line to data using polyfit</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper"></span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">c = polyfit(x,y,1);</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper"></span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper Comment">% Display evaluated equation y = m*x + b</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">disp([</span><span class="textWrapper String">'Equation is y = ' </span><span class="textWrapper">num2str(c(1)) </span><span class="textWrapper String">'*x + ' </span><span class="textWrapper">num2str(c(2))])</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper"></span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper Comment">% Evaluate fit equation using polyval</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper"></span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">y_est = polyval(c,x);</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper"></span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper Comment">% Add trend line to plot</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">hold </span><span class="textWrapper String">on</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">plot(x,y_est,</span><span class="textWrapper String">'r--'</span><span class="textWrapper">,</span><span class="textWrapper String">'LineWidth'</span><span class="textWrapper">,2)</span></span></div><div class="lineNode mwRichTextComponentLine plainTextFixedSize"><span class="textBox"><span class="textWrapper">hold </span><span class="textWrapper String">off</span></span></div></div></div></div>
+				</div>
+			</div>
+
+	</div>
+</div>
+
+
+		
+<div class="panel panel-default panel_icon_16 comments" id="comments_answer_257066" data-state="closed">
+	<div class="panel-body">
+		<h4 translate="no"><span class="icon-feedback icon_16"></span>&nbsp;&nbsp;<span class="comments-count">1 Comment</span></h4>
+
+
+		<div class="toggle-comments hidden" translate="no"><span>Show</span><span class="hidden">Hide</span> <a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#toggle-comments" class="hidden-comments-count">all comments</a></div>
+
+		<div class="row">
+
+
+	<div class="comment col-xs-12 col-sm-12" id="comment_433605">
+
+
+			<div class="row">
+
+				<div class="col-xs-12 col-sm-6" translate="no">
+  <a class="author_inline analyticsMlcProfileModal" data-cp-link-id="6" href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">JDilla</a>
+<div class="profile mlc_author_popover" data-cp-popup-id="6">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="profile__name anlalyticsMlcProfileView" property="name"><a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">JDilla <span>(view profile)</span></a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="profile__image">
+        <a href="https://se.mathworks.com/matlabcentral/profile/authors/6270382-jdilla">
+            <img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/0eb3ea9da5d718dce81d76fb76ee01183479b7d9">
+        </a>
+      </div>
+    </div>
+    <div class="col-xs-8   profile__stats analyticsMlcProfileLink">
+      
+  <ul class="contributor-page-popup" translate="no">
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A129679"><span property="question_count">12 questions asked</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="https://se.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A129679"><span property="answer_count">2 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">0 accepted answers</span>
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">reputation: 0</span>
+    </li>
+  </ul>
+
+    </div>
+
+  </div>
+</div>
+ <span class="comment-date">on 3 Mar 2017</span>
+ 	<div class="col-xs-12 visible-xs visible-sm comment_spacer"></div>
+</div>
+
+
+				<div class="col-xs-12 col-sm-6 comment-tools" translate="no">
+			<button class="btn btn-sm companion_btn btn_color_blue mt-button has-spinner mt-button-leaf pull-right" id="leaf-comment-translation-btn" translate="no" onclick="translateContent(this, 433605, &quot;comments&quot;); window._kiq.push([&quot;set&quot;, { &quot;event&quot;: &quot;Ondemand MT&quot; }]);"></button>
+
+
+
+	<a id="toggle_permalink_comment_433605" class="permalink comment_link" title="Direct link to this comment" data-toggle="modal" data-target="#permalink_comment_433605" rel="nofollow" href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#comment_433605"><span class="icon-link"></span></a>
+	<div class="modal fade" id="permalink_comment_433605" tabindex="-1" role="dialog" aria-labelledby="permalink_comment_433605_label">
+	    <div class="modal-dialog" role="document">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+	          <h4 class="modal-title add_margin_0" id="permalink_comment_433605_label"> Direct link to this comment</h4>
+	        </div>
+	        <div class="modal-body">
+		<p class="link-wrapper"><a href="https://uk.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#comment_433605" id="anchor_permalink_comment_433605">https://uk.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#comment_433605</a></p>
+	        </div>
+	        <div class="modal-footer">
+	          <button type="button" class="btn companion_btn btn_color_blue" data-dismiss="modal">Cancel</button>
+	          <button type="button" class="btn btn_color_blue copy_permalink" id="copy_permalink_comment_433605">Copy to Clipboard</button>
+	        </div>
+	      </div>
+  	</div>
+	</div>
+</div>
+
+
+			</div>
+
+			
+
+
+			
+
+			
+<div class="row">
+  <div class="col-xs-12">
+   <div id="body_comment_433605" class="panel panel-default add_text_wrapping">
+     <div class="panel-body">
+       <div class="rtcContent"><div class="SectionBlock containment"><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">Thank you for the response. As you can see, in my diagram, I want the best fit line to only go up to a certain x value. I've used indexing to do this.</span></span></div><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">I am having trouble in selecting the 91 y-values.</span></span></div><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">To generate my data, I am loading a text file full of dates with corresponding y values.</span></span></div><div class="paragraphNode wrappable"><span class="textBox"><span class="textWrapper">Selecting the data with the brush tool and creating a variable with these values is giving me way too many points to my best fit line. This is where I am having trouble.</span></span></div></div></div>
+     </div>
+   </div>
+
+  </div>
+</div>
+
+
+</div></div>
+
+
+
+	    <p translate="no"><a href="https://se.mathworks.com/login?uri=https%3A%2F%2Fse.mathworks.com%2Fmatlabcentral%2Fanswers%2F327828-linear-fit-to-data&amp;form_type=community">Sign in</a> to comment.</p>
+	</div>
+</div>
+
+</div>		</div>
+	</div>
+</div>
+
+
+
+      <hr class="answer-separator-hr">
+    <div class="panel-footer" translate="no">
+        <p><a href="https://se.mathworks.com/login?uri=https%3A%2F%2Fse.mathworks.com%2Fmatlabcentral%2Fanswers%2F327828-linear-fit-to-data&amp;form_type=community">Sign in</a> to answer this question.</p>
+    </div>
+
+</div>
+</div>
+
+	<div class="col-xs-12 col-sm-3" id="additional_info">
+		<div class="hidden-xs">
+		    <h3 id="main-heading-1" class="hidden main-heading" translate="no">See Also</h3>
+			
+<div id="relatedContentMicro" class="relatedContentMicro notranslate" itemid="327828" excludeids=""></div>
+
+<div id="relatedContentMacro" class="relatedContentMacro notranslate" itemid="327828"></div>
+
+		</div>
+
+		<div class="row small hidden-xs">
+            <div class="col-xs-12 col-sm-12 tags_block">
+
+	<h3 class="add_bottom_rule add_margin_5">
+		Tags
+	</h3>
+
+	<div id="tags_question_327828" class="answer-tag-list">
+		<ul class="list-unstyled list-inline">
+  <li><a tag_display="tag_component" rel="nofollow" class="tag_component" href="https://se.mathworks.com/matlabcentral/answers/?term=tag%3A%22linear+fit%22">linear fit</a></li><li><a tag_display="tag_component" rel="nofollow" class="tag_component" href="https://se.mathworks.com/matlabcentral/answers/?term=tag%3A%22polyfit%22">polyfit</a></li>
+</ul>
+
+	</div>
+
+</div>
+
+            <div class="col-xs-12 col-sm-12 add_margin_10"></div>
+		</div>
+
+    <div id="relatedContentSpotlight" class="relatedContentSpotlight" questionid="327828" questiontitle="Linear fit to data" questiontags="linear fit polyfit">
+    </div>
+
+    <div id="staticSpotlight" class="hidden">
+        <div class="random_callout">
+    <div class="panel panel-default panel_color_default panel_color_fill add_margin_20" style="display: block;">
+  <div class="panel-body">
+    <h3>Discover what MATLAB<sup>®</sup> can do for your career.</h3>
+    <p>Opportunities for recent engineering grads.</p>
+    <a href="https://se.mathworks.com/company/jobs/opportunities/students/infographic.html?source=7677" class="icon-chevron">Apply Today </a> </div>
+</div></div>
+
+    </div>
+	</div>
+</div>
+
+<div class="modal fade" id="error_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="alert alert-danger error">
+          <span class="alert_icon icon-alert-error icon_32"></span>
+          <h4>An Error Occurred</h4>
+          <p>Unable to complete the action because of changes made to the page. Reload the page to see its updated state.</p>
+        </div>
+      </div>
+      <div class="modal-footer modal_close_footer">
+        <button type="button" class="btn btn_secondary pull-right" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  setTimeout(function() {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "/matlabcentral/answers/C623322ED49BD", true);
+    xmlHttp.send( null );
+  }, 5000);
+</script>
+
+<script>
+  $("#follow_link").click(function() {
+    var span = $("#follow_link").find('span').first();
+    $("#follow_link").html('<span class="icon-spinner add_rotating"></span>');
+    if (span.attr('data-action') == 'follow') {
+      $.post('/matlabcentral/profile/authors//follows', {followed_type: 'Question', followed_id: '327828', title: 'Linear fit to data', contributor: false})
+        .done(function() {
+          setFollowed();
+        })
+    } else {
+      $.post('/matlabcentral/profile/authors//follows/destroy', {followed_type: 'Question', followed_id: '327828'})
+        .done(function() {
+          setUnfollowed();
+        })
+    };
+  });
+
+  function setFollowed() {
+    $("#follow_link").html('<span class="follow_icon icon-remove-circle" data-action="unfollow"></span>Unfollow');
+    $('.follow_checkbox').prop('checked', false);
+    $('.follow_checkbox_div').hide();
+    $('#follow_confirmation').show(250);
+  };
+
+  function setUnfollowed() {
+    $("#follow_link").html('<span class="follow_icon icon-add-circle" data-action="follow"></span>Follow');
+    $('#follow_confirmation').hide(250);
+  };
+</script>
+
+
+<br>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      resize_eq_images();
+      show_copy_code({tracking_id: "q_327828" });
+    });
+  </script>
+
+
+
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<div id="location_content" style="display:none;"></div>
+
+
+<div class="modal fade" id="country-unselected" tabindex="-1" role="dialog" aria-labelledby="country-unselected-title" translate="no">
+<div id="country-select-container">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <img alt="MathWorks" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/pic-header-mathworks-logo2.svg" style="width:167px; height:auto;">
+      </div>
+      <div class="modal-body">
+        <div class="row add_margin_40">
+          <div class="col-xs-12">
+            <h1 class="icon-globe icon_color_secondary" id="country-unselected-title">Select a Web Site</h1>
+            <p>Choose a web site to get translated content where available and see local events and offers. Based on your location, we recommend that you select: <strong class="recommended-country">Italia</strong>.</p>
+            <a href="https://it.mathworks.com/" id="recommended_domain_button" class="btn btn_color_blue containsResourceName resourceClass-button" data-lang="it">Select <span class="recommended-country">Italia</span> web site</a>
+          </div>
+        </div>
+        <p>You can also select a web site from the following list:</p>
+				<div class="alert alert-warning" id="china_performance_alert" style="display:none;"> <span class="alert_icon icon-alert-warning"></span>
+					<h3>How to Get Best Site Performance</h3>
+					<p>Select the China site (in Chinese or English) for best site performance. Other MathWorks country sites are not optimized for visits from your location.</p>
+				</div>
+        <div class="row add_margin_30">
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Americas</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://la.mathworks.com/" class="domain_selector_link" data-country-code="LA" data-subdomain="la" data-lang="es" data-default-lang="true" data-selected-text="América Latina" data-recommended-text="América Latina" data-do-not-rewrite="true">América Latina</a> (Español)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="CA" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Canada</a> (English)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="US" data-subdomain="www" data-lang="en" data-default-lang="true" data-selected-text="United States" data-recommended-text="United States" data-do-not-rewrite="true">United States</a> (English)</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <h3 class="add_bottom_rule">Europe</h3>
+            <div class="row">
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled add_margin_0_sm">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="BE" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Belgium</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="DK" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Denmark</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="DE" data-subdomain="de" data-lang="de" data-default-lang="true" data-selected-text="Deutschland" data-recommended-text="Deutschland" data-do-not-rewrite="true">Deutschland</a> (Deutsch)</li>
+                  <li><a href="https://es.mathworks.com/" class="domain_selector_link" data-country-code="ES" data-subdomain="es" data-lang="es" data-default-lang="true" data-selected-text="España" data-recommended-text="España" data-do-not-rewrite="true">España</a> (Español)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="FI" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Finland</a> (English)</li>
+                  <li><a href="https://fr.mathworks.com/" class="domain_selector_link" data-country-code="FR" data-subdomain="fr" data-lang="fr" data-default-lang="true" data-selected-text="France" data-recommended-text="France" data-do-not-rewrite="true">France</a> (Français)</li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="IE" data-subdomain="uk" data-lang="en" data-do-not-rewrite="true">Ireland</a> (English)</li>
+                  <li><a href="https://it.mathworks.com/" class="domain_selector_link" data-country-code="IT" data-subdomain="it" data-lang="it" data-default-lang="true" data-selected-text="Italia" data-recommended-text="Italia" data-do-not-rewrite="true">Italia</a> (Italiano)</li>
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="LU" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Luxembourg</a> (English)</li>
+                </ul>
+              </div>
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="NL" data-subdomain="nl" data-lang="en" data-default-lang="true" data-selected-text="Benelux" data-recommended-text="Netherlands" data-do-not-rewrite="true">Netherlands</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="NO" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Norway</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="AT" data-subdomain="de" data-lang="de" data-do-not-rewrite="true">Österreich</a> (Deutsch)</li>
+                  <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="PT" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Portugal</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="Sweden" data-subdomain="se" data-lang="en" data-default-lang="true" data-selected-text="Nordic" data-recommended-text="Sweden" data-do-not-rewrite="true">Sweden</a> (English)</li>
+                  <li>Switzerland
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="de" data-selected-text="Schweiz" data-recommended-text="Schweiz" data-do-not-rewrite="true">Deutsch</a></li>
+                      <li><a href="https://ch.mathworks.com/" id="swiss_english" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="en" data-default-lang="true" data-selected-text="Switzerland" data-recommended-text="Switzerland" data-do-not-rewrite="true">English</a></li>
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="fr" data-selected-text="Suisse" data-recommended-text="Suisse" data-do-not-rewrite="true">Français</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="GB" data-subdomain="uk" data-lang="en" data-default-lang="true" data-selected-text="United Kingdom" data-recommended-text="United Kingdom" data-do-not-rewrite="true">United Kingdom</a> (English)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Asia Pacific</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="AU" data-subdomain="au" data-lang="en" data-default-lang="true" data-selected-text="Australia" data-recommended-text="Australia" data-do-not-rewrite="true">Australia</a> (English)</li>
+              <li><a href="https://in.mathworks.com/" class="domain_selector_link" data-country-code="IN" data-subdomain="in" data-lang="en" data-default-lang="true" data-selected-text="India" data-recommended-text="India" data-do-not-rewrite="true">India</a> (English)</li>
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="NZ" data-subdomain="au" data-lang="en" data-do-not-rewrite="true">New Zealand</a> (English)</li>
+              <li>中国
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="zh" data-default-lang="true" data-selected-text="中国" data-recommended-text="中国" data-do-not-rewrite="true">简体中文</a></li>
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="en" data-default-lang="true" data-selected-text="China" data-recommended-text="China" data-do-not-rewrite="true">English</a></li>
+                    </ul>
+               </li>
+              <li><a href="https://jp.mathworks.com/" class="domain_selector_link" data-country-code="JP" data-subdomain="jp" data-lang="ja" data-default-lang="true" data-selected-text="日本" data-recommended-text="日本" data-do-not-rewrite="true">日本</a> (日本語)</li>
+              <li><a href="https://kr.mathworks.com/" class="domain_selector_link" data-country-code="KR" data-subdomain="kr" data-lang="ko" data-default-lang="true" data-selected-text="한국" data-recommended-text="한국" data-do-not-rewrite="true">한국</a> (한국어)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center"><a href="https://it.mathworks.com/" class="worldwide_link">Contact your local office</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+  
+
+        </div>
+      </div>
+    </div>
+  </div>
+      
+  
+  <!-- MOBILE CTA - Begin -->
+  <div class="cta_container_mobile visible-sm visible-xs">
+    <div class="container-fluid">      
+      <div class="row add_margin_20">
+        <div class="col-xs-12">
+          <div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/programs/trials/trial_request.html?eventid=56763&amp;prodcode=ML&amp;s_iid=mlcans_trial_mlc_cta1" class="icon-download">Trial software</a></li>
+</ul>
+</div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MOBILE CTA - End -->
+
+  <footer id="footer" class="bs-footer"> 
+      <!-- FAT FOOTER - Begin --> 
+        <div class="fat_footer_container">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="grid_192">
+<div class="fat_footer">
+<div class="execmatlabweb"> <!--Requried for Doc Test -->
+<div class="row">
+<div class="col-xs-12 col-md-12 col-lg-9 col-lg-push-3 add_margin_20">
+<div class="row">
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Explore Products</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/products/matlab.html?s_tid=hp_ff_p_matlab">MATLAB</a></li>
+<li><a href="https://se.mathworks.com/products/simulink.html?s_tid=hp_ff_p_simulink">Simulink</a></li>
+<li><a href="https://se.mathworks.com/academia/student_version.html?s_tid=hp_ff_p_student">Student Software</a></li>
+<li><a href="https://se.mathworks.com/hardware-support/home.html?s_tid=hp_ff_p_hwsupport">Hardware Support</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/fileexchange/?s_tid=hp_ff_p_fx">File Exchange</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Try or Buy</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/downloads/web_downloads/?s_iid=hp_ff_t_downloads">Downloads</a></li>
+<li><a href="https://se.mathworks.com/campaigns/products/trials.html?s_iid=hp_ff_p_trial">Trial Software</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us/contact_sales.html?s_iid=hp_ff_t_sales">Contact Sales</a></li>
+<li><a href="https://se.mathworks.com/pricing-licensing.html?s_iid=hp_ff_t_pricing">Pricing and Licensing</a></li>
+<li><a href="https://se.mathworks.com/store/?s_tid=hp_ff_t_buy">How to Buy</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Learn to Use</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/help/?s_tid=hp_ff_l_doc">Documentation</a></li>
+<li><a href="https://se.mathworks.com/support/learn-with-matlab-tutorials.html?s_tid=hp_ff_l_tutorials">Tutorials</a></li>
+<li><a href="https://se.mathworks.com/help/examples.html?s_tid=hp_ff_l_examples">Examples</a></li>
+<li><a href="https://se.mathworks.com/videos.html?s_tid=hp_ff_l_videos">Videos and Webinars</a></li>
+<li><a href="https://se.mathworks.com/services/training.html?s_tid=hp_ff_l_training">Training</a></li>
+</ul>
+</div>
+<div class="clearfix" id="offcanvas_clearfix" style="display:none"></div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Get Support</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/support/install-matlab.html?s_tid=hp_ff_s_install">Installation Help</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_tid=hp_ff_s_answers">Answers</a></li>
+<li><a href="https://se.mathworks.com/services/consulting.html?s_tid=hp_ff_s_consulting">Consulting</a></li>
+<li><a href="https://se.mathworks.com/licensecenter/?s_tid=hp_ff_s_license">License Center</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">About MathWorks</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/company/jobs/opportunities/?s_tid=hp_ff_a_careers">Careers</a></li>
+<li><a href="https://se.mathworks.com/company/newsroom.html?s_tid=hp_ff_a_newsroom">Newsroom</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/soc_mission.html?s_tid=hp_ff_a_socialmission">Social Mission</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=hp_ff_a_contact">Contact Us</a></li>
+<li><a href="https://se.mathworks.com/company.html?s_tid=hp_ff_a_company">About MathWorks</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-3 col-lg-pull-9">
+<p class="h4 add_font_futura_medium add_margin_0"><span translate="no">MathWorks</span></p>
+<p><em>Accelerating the pace of engineering and science</em></p>
+<p>MathWorks is the leading developer of mathematical computing software for engineers and scientists.</p>
+<p><a href="https://se.mathworks.com/discovery.html?s_tid=all_disc_mw_ff">Discover...</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- FAT FOOTER - End -->
+    <!-- BASIC FOOTER CONTENT - Begin --> 
+    <div class="container"> 
+      <div class="footer" translate="no">
+<div class="row">
+<div class="col-xs-12 col-md-9">
+<ul class="countrynav" id="countrynav">
+<li class="footernav_country">
+<a href="https://se.mathworks.com/matlabcentral/answers/327828-linear-fit-to-data#" data-toggle="modal" data-target="#country-unselected">
+<span class="icon-globe icon_color_quinary icon_16"></span>Nordic
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<ul class="footernav">
+<li class="footernav_patents"><a href="https://se.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a></li>
+<li class="footernav_trademarks"><a href="https://se.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a></li>
+<li class="footernav_privacy"><a href="https://se.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a></li>
+<li class="footernav_piracy"><a href="https://se.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a></li>
+<li class="footernav_status"><a href="https://status.mathworks.com/?s_tid=gf_application">Application Status</a></li>
+<li class="footernav_terms"><a href="https://se.mathworks.com/matlabcentral/termsofuse.html">Terms of Use</a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p class="copyright" translate="no">© 1994-2019 The MathWorks, Inc.</p>
+</div>
+<div class="clearfix visible-sm add_margin_10"></div>
+<div class="col-xs-12 col-md-3">
+<div class="social_media">
+<ul class="social_media_icons">
+<li>
+<a href="http://www.facebook.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/ico-facebook.svg" alt="Facebook" class="ico_facebook">
+</a>
+</li>
+<li>
+<a href="http://www.twitter.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/ico-twitter.svg" alt="Twitter" class="ico_twitter">
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/matlab/" class="svg_link" target="_blank">
+<img class="ico_instagram" alt="Instagram" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/ico-instagram.svg">
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/MATLAB" class="svg_link" target="_blank">
+<img class="ico_youtube" alt="YouTube" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/ico-youtube.svg">
+</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/company/the-mathworks_2" target="_blank" class="svg_link">
+<img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/ico-linkedin.svg" alt="LinkedIn" class="ico_linkedin">
+</a>
+</li>
+<li>
+<a href="https://se.mathworks.com/company/rss.html" class="svg_link">
+<img src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/ico-rss.svg" alt="RSS" class="ico_rss">
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<p><em>Join the conversation</em></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cookie-banner-text" style="display:none;">This website uses cookies to improve your user experience, personalize content and ads, and analyze website traffic. By continuing to use this website, you consent to our use of cookies. Please see our <a href="https://se.mathworks.com/company/aboutus/policies_statements.html">Privacy Policy</a> to learn more about cookies and how to change your settings.</div>
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript">
+try {
+_satellite.pageBottom();
+} catch (e) {
+//something went wrong
+}
+</script><script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/satellite-5672ffbd64746d5bd3002853.js.download"></script><!--DTM LinkedIn Pixel-->
+<img height="1" width="1" style="display:none;" alt="" src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/saved_resource"><script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/8664" type="text/javascript"> </script>
+<!-- END Adobe DTM -->
+    </div>
+    <!-- BASIC FAT FOOTER CONTENT - End -->
+  </footer>
+
+    <script src="./Linear fit to data - MATLAB Answers - MATLAB Central_files/lightbox-min.js.download"></script> 
+    <script>
+      $(document).ready(function ($) {
+
+        // delegate calls to data-toggle="lightbox"
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+          event.preventDefault();
+          return $(this).ekkoLightbox({
+            onShown: function() {
+				if ($('.ekko-lightbox-container iframe').length) {
+				  $(".ekko-lightbox-container iframe").attr("scrolling","no");
+				  $(".ekko-lightbox-container iframe").load(lightboxIframeHeight);
+				}
+            },
+            onNavigate: function(direction, itemIndex) {
+              if (window.console) {
+                return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+              }
+            }
+          });
+        });
+		
+		// resize
+		$(window).resize(lightboxIframeHeight)	
+
+		// lightbox height function
+		function lightboxIframeHeight() {
+			if ($('.ekko-lightbox-container iframe').length) {
+				whichIframeHeight = $('.ekko-lightbox-container iframe').contents().find('body').height() + 20;
+				$(".ekko-lightbox-container iframe").css("height",whichIframeHeight);
+			}
+		}
+
+        //Programatically call
+        $('#open-image').click(function (e) {
+          e.preventDefault();
+          $(this).ekkoLightbox();
+        });
+        $('#open-youtube').click(function (e) {
+          e.preventDefault();
+          $(this).ekkoLightbox();
+        });
+      });
+    </script> 
+
+
+
+<a class="btn btn_color_mediumgray" id="go-top" style="display: inline; opacity: 0.982279;"><span class="icon-arrow-open-up icon_24"></span></a></body></html>

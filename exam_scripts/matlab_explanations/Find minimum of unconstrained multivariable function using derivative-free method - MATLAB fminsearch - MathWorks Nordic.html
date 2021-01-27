@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://se.mathworks.com/help/matlab/ref/fminsearch.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Find minimum of unconstrained multivariable function using
+derivative-free method - MATLAB fminsearch
+- MathWorks Nordic</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6.css" rel="stylesheet" type="text/css">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6_offcanvas.css" rel="stylesheet" type="text/css">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/site6_crux.css" rel="stylesheet" type="text/css">
+<script async="" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/uwt.js.download"></script><script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/quant.js.download" async="" type="text/javascript"></script><script async="" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/fbevents.js.download"></script><script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/jquery-latest.js.download"></script>
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/jquery.mobile.custom.download"></script>
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/bootstrap.min.js.download"></script>
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/global.js.download"></script>
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/xvy5baa.css" rel="stylesheet">
+<!-- BEGIN Adobe DTM -->
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/satelliteLib-e8d23c2.download"></script><script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/mbox-contents-95c6a4.download"></script><script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/satellite-58fe08cb64.download"></script><style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility:hidden;}
+</style><script async="" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1023777138');
+</script><script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/last-event-tag-lates.download"></script>
+<script>AdCloudEvent("B1441C8B533095C00A490D4D@AdobeOrg","mathwgbl");</script>
+<!-- END Adobe DTM -->
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/doc_center.css" rel="stylesheet" type="text/css">
+<link href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/matlab_dialog.js.download"></script>
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/livecontrolpopoverha.download"></script>
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/openwith.js.download"></script>
+<style>
+.examples_short_list a.btn {display: none;}
+</style>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "../index.html",
+"name": "MATLAB"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "../mathematics.html",
+"name": "Mathematics"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "../optimization.html",
+"name": "Optimization"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "VisibleBreadcrumbs",
+"itemListElement":
+[
+"optimization"
+],
+"itemListOrder": "http://schema.org/ItemListOrderAscending"
+}
+</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "ExtendedCapabilities",
+"itemListElement":
+[
+{
+"@type": "ListItem",
+"position": 1,
+"item":
+{
+"@context": "http://schema.org",
+"@type": "PropertyValue",
+"name": "codegen",
+"value": "limited"
+}
+}
+]
+}
+</script>
+<meta xmlns="http://www.w3.org/1999/xhtml" name="chunktype" content="refpage"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="function:fminsearch">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fcn">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ref/function">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="Nonlinear programming solver."><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/l10n.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/docscripts.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/f1help.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/mw.toc_2.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/mw.imagescaling.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/mw.imageanimation.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/mw.breadcrumb.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/jquery.highlight.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/underscore-min.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/examples.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/doc_omniture.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/overload.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/helpservices.js.download"></script>
+<!-- Additions/overrides from the doc side -->
+<script type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/docsearch.js.download"></script>
+<script type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/jquery.toggleval.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/MathRenderer.js.download"></script><style type="text/css">math { visibility: hidden; }</style><link type="text/css" rel="stylesheet" href="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/main.css"><script type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/dojo.js.download"></script>
+<script type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/jquery.cookie.js.download"></script>
+<script type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/akamai-country-code..download"></script>
+<script type="text/javascript">
+var domainCountryCodeMap = new Map();
+var countryCodeToDomainMap = new Map();
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('la.mathworks.com', 'la');
+countryCodeToDomainMap.set('la','la.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('ww2.mathworks.cn', 'ww2');
+countryCodeToDomainMap.set('ww2','ww2.mathworks.cn')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('fr.mathworks.com', 'fr');
+countryCodeToDomainMap.set('fr','fr.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('in.mathworks.com', 'in');
+countryCodeToDomainMap.set('in','in.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+domainCountryCodeMap.set('it.mathworks.com', 'it');
+countryCodeToDomainMap.set('it','it.mathworks.com')
+domainCountryCodeMap.set('jp.mathworks.com', 'jp');
+countryCodeToDomainMap.set('jp','jp.mathworks.com')
+domainCountryCodeMap.set('kr.mathworks.com', 'kr');
+countryCodeToDomainMap.set('kr','kr.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('es.mathworks.com', 'es');
+countryCodeToDomainMap.set('es','es.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('ch.mathworks.com', 'ch');
+countryCodeToDomainMap.set('ch','ch.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+var countrySubdomains = {
+US: {name: 'United States', subdomain: 'www'},
+AD: {name: 'Andorra', subdomain: 'es'},
+AR: {name: 'Argentina', subdomain: 'la'},
+AU: {name: 'Australia', subdomain: 'au'},
+AT: {name: 'Austria', subdomain: 'de'},
+BE: {name: 'Belgium', subdomain: 'nl'},
+BO: {name: 'Bolivia', subdomain: 'la'},
+BV: {name: 'Bouvet Islands', subdomain: 'se'},
+CA: {name: 'Canada', subdomain: 'www'},
+CL: {name: 'Chile', subdomain: 'la'},
+CN: {name: 'China', subdomain: 'cn'},
+CX: {name: 'Christmas Island', subdomain: 'au'},
+CC: {name: 'Cocos-Keeling Islands', subdomain: 'au'},
+CO: {name: 'Colombia', subdomain: 'la'},
+CR: {name: 'Costa Rica', subdomain: 'la'},
+DK: {name: 'Denmark', subdomain: 'se'},
+DO: {name: 'Dominican Republic', subdomain: 'la'},
+EC: {name: 'Ecuador', subdomain: 'la'},
+SV: {name: 'El Salvador', subdomain: 'la'},
+EE: {name: 'Estonia', subdomain: 'se'},
+FO: {name: 'Faroe Islands', subdomain: 'se'},
+FJ: {name: 'Fiji', subdomain: 'au'},
+FI: {name: 'Finland', subdomain: 'se'},
+FR: {name: 'France', subdomain: 'fr'},
+GF: {name: 'French Guiana', subdomain: 'fr'},
+PF: {name: 'French Polynesia', subdomain: 'fr'},
+DE: {name: 'Germany', subdomain: 'de'},
+GL: {name: 'Greenland', subdomain: 'se'},
+GP: {name: 'Guadalupe', subdomain: 'fr'},
+GT: {name: 'Guatemala', subdomain: 'la'},
+HN: {name: 'Honduras', subdomain: 'la'},
+IS: {name: 'Iceland', subdomain: 'se'},
+IN: {name: 'India', subdomain: 'in'},
+IE: {name: 'Ireland', subdomain: 'uk'},
+IT: {name: 'Italy', subdomain: 'it'},
+JP: {name: 'Japan', subdomain: 'jp'},
+KR: {name: 'Korea', subdomain: 'kr'},
+LV: {name: 'Latvia', subdomain: 'se'},
+LI: {name: 'Liechtenstein', subdomain: 'ch'},
+LT: {name: 'Lithuania', subdomain: 'se'},
+LU: {name: 'Luxembourg', subdomain: 'nl'},
+MQ: {name: 'Martinique', subdomain: 'fr'},
+YT: {name: 'Mayotte Island', subdomain: 'fr'},
+MX: {name: 'Mexico', subdomain: 'la'},
+MC: {name: 'Monaco', subdomain: 'fr'},
+NL: {name: 'Netherlands', subdomain: 'nl'},
+NC: {name: 'New Caledonia', subdomain: 'fr'},
+NZ: {name: 'New Zealand', subdomain: 'au'},
+NI: {name: 'Nicaragua', subdomain: 'la'},
+NO: {name: 'Norway', subdomain: 'se'},
+PA: {name: 'Panama', subdomain: 'la'},
+PG: {name: 'Papua New Guinea', subdomain: 'au'},
+PY: {name: 'Paraguay', subdomain: 'la'},
+PE: {name: 'Peru', subdomain: 'la'},
+PT: {name: 'Portugal', subdomain: 'www'},
+PR: {name: 'Puerto Rico', subdomain: 'la'},
+RE: {name: 'Reunion Island', subdomain: 'fr'},
+ES: {name: 'Spain', subdomain: 'es'},
+LK: {name: 'Sri Lanka', subdomain: 'in'},
+SE: {name: 'Sweden', subdomain: 'se'},
+CH: {name: 'Switzerland', subdomain: 'ch'},
+GB: {name: 'United Kingdom', subdomain: 'uk'},
+UY: {name: 'Uruguay', subdomain: 'la'},
+VA: {name: 'Vatican City', subdomain: 'it'},
+VE: {name: 'Venezuela', subdomain: 'la'},
+};
+var domainUtils = {
+isExemptUrl: function (url) {
+if(window.overrideDomainSelector){
+return true;
+}
+var exemptions = [
+'/api/parts/',
+'nocookie=true',
+'client=addons',
+'requestedDomain'
+];
+return exemptions.some(function (exemption) {
+return url.indexOf(exemption) != -1;
+});
+},
+endsWith: function( str, suffix ) {
+return str.substring( str.length - suffix.length, str.length ) === suffix;
+},
+getDomain: function (url) {
+var segments = url.split('/');
+return segments[2];
+},
+getSubdomain: function (domain) {
+return domainCountryCodeMap.get(domain);
+},
+setCookies: function (domain, lang) {
+var domainCookie = 'mathworks.com';
+if (this.endsWith(location.host, 'mathworks.cn')) {
+domainCookie = 'mathworks.cn';
+}
+var selectedSubdomain = this.getSubdomain(domain);
+if (this.endsWith(domain, 'mathworks.cn')) {
+selectedSubdomain = 'cn';
+}
+if (selectedSubdomain === 'www') {
+// This is what ePS did in EQUUS and Ruby, so...
+// we're just following suit.
+selectedSubdomain = 'us';
+}
+if (selectedSubdomain !== 'cn' && selectedSubdomain !== 'ch') {
+lang = '';
+}
+var cookieNames = this.getCookieNames(domain);
+var expires = new Date();
+expires.setFullYear(expires.getFullYear() + 68);
+var myJSON = JSON.stringify({
+domain: selectedSubdomain,
+lang: lang,
+v: 2
+});
+$.cookie(cookieNames.mwaPrefsCookieName, myJSON, {path: '/', expires: 20*365, domain: domainCookie});
+},
+getCookieNames: function (domain) {
+var mwaLoginCookieName = 'mwa';
+var mwaPrefsCookieName = 'mwa_prefs';
+var subdomainSuffix = '';
+if (subdomainSuffix != "") {
+mwaLoginCookieName = mwaLoginCookieName + subdomainSuffix;
+mwaPrefsCookieName = mwaPrefsCookieName + subdomainSuffix;
+}
+return {
+mwaLoginCookieName: mwaLoginCookieName,
+mwaPrefsCookieName: mwaPrefsCookieName,
+};
+},
+switchDomain: function (targetDomain, targetLang) {
+var targetUri = location.pathname;
+targetLang = this.getValidLang(this.getSubdomain(targetDomain), targetLang);
+var url = '//' + targetDomain;
+url += targetUri + location.search;
+url = url.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+url = url.replace(/\&$/, '');
+url = url.replace(/\?$/, '');
+var requestedDomainParam = 'requestedDomain=' + targetLang;
+if (url.indexOf('?') > -1) {
+url = url + '&' + requestedDomainParam;
+} else {
+url = url + '?' + requestedDomainParam;
+}
+window.location = url;
+},
+getPrefCookie: function(currentDomain) {
+var cookieNames = this.getCookieNames(currentDomain);
+// regex from: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+var cookieRegex = new RegExp("(?:(?:^|.*;\\s*)"+cookieNames.mwaPrefsCookieName+"\\s*\\=\\s*([^;]*).*$)|^.*$");
+if (document.cookie) {
+var cookieValue = document.cookie.replace(cookieRegex, "$1");
+if (cookieValue) {
+return JSON.parse(decodeURIComponent(cookieValue));
+}
+}
+return "";
+},
+getPrefDomain: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var visitorPrefDomain;
+if (!!mwaPrefsCookieJsonObject) {
+visitorPrefDomain = mwaPrefsCookieJsonObject.domain;
+if (visitorPrefDomain === 'us') {
+visitorPrefDomain = 'www';
+}else if (visitorPrefDomain === 'cn') {
+visitorPrefDomain = 'ww2';
+}
+}
+return countryCodeToDomainMap.get(visitorPrefDomain);
+},
+getPrefLang: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[mwaPrefsCookieJsonObject.domain];
+if (currentDomainLangOptions) {
+var cookiePrefLang = mwaPrefsCookieJsonObject.lang;
+if (currentDomainLangOptions.indexOf(cookiePrefLang) >= 0) {
+return cookiePrefLang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+getCookieVersion: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+return mwaPrefsCookieJsonObject.v;
+},
+getTargetDomainForCookies: function() {
+var targetDomain = "";
+if (this.endsWith(location.host, 'mathworks.cn')) {
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('www');
+}else{
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('ww2');
+}
+return targetDomain;
+},
+getValidLang: function (subdomain, lang) {
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+multilingualDomainLanguageSupport['ww2'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[subdomain];
+if (currentDomainLangOptions) {
+if (currentDomainLangOptions.indexOf(lang) >= 0) {
+return lang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+isDefaultLang: function (subdomain, lang) {
+var multilingualDomainLanguageDefault = {};
+multilingualDomainLanguageDefault['ch'] = 'en';
+multilingualDomainLanguageDefault['cn'] = 'zh';
+multilingualDomainLanguageDefault['ww2'] = 'zh';
+var currentDomainLang = multilingualDomainLanguageDefault[subdomain];
+if (currentDomainLang) {
+if (currentDomainLang === lang) {
+return true;
+} else {
+return false;
+}
+} else if (lang) {
+return false;
+}
+return true;
+}
+};
+$(window).on('load', function() {
+var currentUrl = window.location.href;
+var currentDomain = domainUtils.getDomain(currentUrl);
+var currentSubdomain = domainUtils.getSubdomain(currentDomain);
+var requestedDomainLangRegEx = RegExp('[?&]requestedDomain=([^&]*)').exec(window.location.search);
+if (requestedDomainLangRegEx) {
+var setLang = domainUtils.getValidLang(currentSubdomain, requestedDomainLangRegEx[1])
+domainUtils.setCookies(currentDomain, setLang);
+var URLWithoutRequestedDomain = window.location.href.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\&$/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\?$/, '');
+history.replaceState({}, document.title, URLWithoutRequestedDomain);
+window.location = URLWithoutRequestedDomain;
+}
+$('body').on('click', '.domain_selector_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+var currentCountryText =
+$('a[data-subdomain=\'' + currentSubdomain + '\'][data-default-lang=\'true\'][data-selected-text]')
+.data('selected-text');
+$('#countrySelectorButtonText').text(currentCountryText);
+var visitorPrefDomain = domainUtils.getPrefDomain(currentDomain);
+var visitorPrefLang = domainUtils.getPrefLang(currentDomain);
+var akamaiCountryCode;
+var akamaiprofile = CQ_Analytics.ClientContextMgr.getRegisteredStore('akamaiprofile');
+if (akamaiprofile) {
+akamaiCountryCode = akamaiprofile.getProperty('countryCode');
+}
+var recommendedSubdomain;
+var recommendedLink;
+if (akamaiCountryCode) {
+if (countrySubdomains[akamaiCountryCode] !== undefined) {
+recommendedSubdomain = countrySubdomains[akamaiCountryCode].subdomain;
+} else {
+recommendedSubdomain = 'www';
+}
+if (recommendedSubdomain === 'us') {
+recommendedSubdomain = 'www';
+}else if (recommendedSubdomain === 'cn') {
+recommendedSubdomain = 'ww2';
+}
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+} else if (visitorPrefDomain) {
+recommendedSubdomain = domainUtils.getSubdomain(visitorPrefDomain);
+if (visitorPrefLang) {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-lang=\'' + visitorPrefLang + '\']');
+} else {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-default-lang=\'true\']');
+}
+}
+if (!recommendedLink) {
+recommendedSubdomain = 'www';
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+}
+$('.recommended-country').text(recommendedLink.data('recommended-text'));
+$('#recommended_domain_button').attr('href', recommendedLink.attr('href'));
+$('#recommended_domain_button').attr('data-lang', recommendedLink.attr('data-lang'));
+$('body').on('click', '#recommended_domain_button', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+$('a.worldwide_link').attr('href', recommendedLink.attr('href'));
+$('a.worldwide_link').data('lang', recommendedLink.data('lang'));
+$('body').on('click', 'a.worldwide_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+var href = e.target.getAttribute('href');
+var worldwideLink = '/company/worldwide.html?s_tid=dmselect_cta&requestedDomain=';
+if(href) {
+location.href = href + worldwideLink;
+}
+});
+if (akamaiCountryCode === 'CN') {
+$('#china_performance_alert').show();
+}
+var crossDomain = "";
+if(domainUtils.endsWith(currentDomain, '.mathworks.cn')){
+crossDomain = countryCodeToDomainMap.get('www');
+}else{
+crossDomain = countryCodeToDomainMap.get('ww2');
+}
+if ((!domainUtils.endsWith(currentDomain, '.mathworks.com') && !domainUtils.endsWith(currentDomain, '.mathworks.cn')) || domainUtils.isExemptUrl(currentUrl)) {
+return;
+}
+if (!visitorPrefDomain) {
+if (akamaiCountryCode) {
+var akamaiDeterminedSubdomain = $('a[data-country-code=\'' + akamaiCountryCode + '\']').data('subdomain');
+if ((akamaiCountryCode.toLowerCase() === currentSubdomain) || (akamaiDeterminedSubdomain === currentSubdomain)) {
+domainUtils.setCookies(currentDomain, "");
+} else {
+$('#country-unselected').modal('show');
+}
+return;
+}
+if (currentSubdomain === 'www') {
+domainUtils.setCookies(currentDomain, '');
+} else {
+$('#country-unselected').modal('show');
+}
+} else if (akamaiCountryCode === 'CN' && !(visitorPrefDomain === 'CN') && !domainUtils.getCookieVersion(currentDomain)) {
+$('#country-unselected').modal('show');
+}
+});
+</script> <script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/global_nav.js.download"></script>
+<script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/satellite-5a6285a664.download"></script><script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/s-code-contents-73da.download"></script></head>
+  
+<body id="responsive_offcanvas" class="no_animate" style="">
+
+  <!-- Mobile TopNav: Start -->
+<div class="header visible-xs visible-sm" id="header_mobile" translate="no" style="">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle topnav_toggle" data-toggle="collapse" data-target="#topnav_collapse">
+<span class="sr-only">Toggle Main Navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link navbar-brand">
+<img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+</div>
+</div>
+<div class="row visible-xs visible-sm">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse" id="topnav_collapse">
+<ul class="nav navbar-nav" id="topnav"><li class="headernav_login dropdown"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#" class="dropdown-toggle mwa_image_drop_down" data-toggle="dropdown" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)" title="Arianna" role="button"><span class="visible-xs visible-sm"><span class="mobile_account_image" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)"></span>Arianna<b class="caret"></b></span></a><ul class="dropdown-menu" role="menu"><li class="mwa-nav_account"><a href="https://se.mathworks.com/mwaccount/">My Account</a></li><li class="mwa-nav_community"><a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile?s_tid=gn_comm">My Community Profile</a></li><li class="mwa-nav_associate"><a href="https://se.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Link License</a></li><li class="mwa-nav_logout"><a href="https://se.mathworks.com/login/logout?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fmatlab%2Fref%2Ffminsearch.html">Sign Out</a></li></ul></li>
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml">Get MATLAB</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Mobile TopNav: End -->
+<!-- Desktop TopNav: Start -->
+<div class="header hidden-xs hidden-sm" id="header_desktop" translate="no">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-9">
+<div class="navbar-header">
+<div class="logo_container hidden-xs hidden-sm">
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link pull-left">
+<img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+<div class="navbar-collapse collapse hidden-xs hidden-sm">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="collapse navbar-collapse" id="headernav_collapse">
+<ul class="nav navbar-nav navbar-right" id="headernav">
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml" class="btn btn_color_blue companion_btn btn-xs">Get MATLAB</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus" title="Contact Us"></a></li>
+<li class="headernav_login dropdown"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#" class="dropdown-toggle mwa_image_drop_down" data-toggle="dropdown" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)" title="Arianna" role="button"><span class="visible-xs visible-sm"><span class="mobile_account_image" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)"></span>Arianna<b class="caret"></b></span></a><ul class="dropdown-menu" role="menu"><li class="mwa-nav_account"><a href="https://se.mathworks.com/mwaccount/">My Account</a></li><li class="mwa-nav_community"><a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile?s_tid=gn_comm">My Community Profile</a></li><li class="mwa-nav_associate"><a href="https://se.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Link License</a></li><li class="mwa-nav_logout"><a href="https://se.mathworks.com/login/logout?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fmatlab%2Fref%2Ffminsearch.html">Sign Out</a></li></ul></li></ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Desktop TopNav: End -->
+<!-- Conjoined Header: Start -->
+<div class="sticky_header_container includes_subnav affix-top">
+<!-- Section Header: Start -->
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 has_horizontal_local_nav" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title add_cursor_pointer">
+<p class="h1">Documentation</p>
+</div>
+<button type="button" class="navbar-toggle collapsed subnav visible-xs" data-toggle="collapse" data-target=".mobile_subnav_content"> <span class="icon-arrow-down icon_24"></span> </button>
+</div>
+<div class="crux_nav_container hidden-xs">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" id="crux_nav_desktop"><li id="crux_nav_documentation" class="crux_nav_active active"><a>All</a></li><li id="crux_nav_example"><a href="https://se.mathworks.com/help/matlab/examples.html?category=optimization&amp;s_tid=CRUX_gn_example">Examples</a></li><li id="crux_nav_function"><a href="https://se.mathworks.com/help/matlab/referencelist.html?type=function&amp;category=optimization&amp;s_tid=CRUX_gn_function">Functions</a></li><li role="presentation" class="dropdown" id="topnav_more" style="display: none;"><a class="dropdown-toggle" data-toggle="dropdown" href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#?s_tid=CRUX_gn_topnav_more" role="button" aria-haspopup="true" aria-expanded="false"> More <span class="caret"></span></a><ul class="dropdown-menu"></ul></li></ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12" id="mobile_search">
+<div class="search_nested_content_container">
+<div id="search_scope_doc" class="collapse in">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2019b" data-language="en" action="https://se.mathworks.com/help/search.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search MATLAB Documentation</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search R2019b Documentation" id="docsearch">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Documentation</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<!-- <li data-toggle="collapse" data-target="#search_scope_doc"><a href="#">Documentation</a></li> -->
+<li data-toggle="collapse" data-target="#search_scope_support" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#">Support</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".doc_search_scope_trigger").click(function() {
+$("#search_scope_doc").removeClass("in");
+$("#search").val($("#docsearch").val());
+$("#query").val($("#docsearch").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1" disabled=""></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_support" class="collapse">
+<form id="support_search" action="https://se.mathworks.com/support/search_results.html" method="get" accept-charset="utf-8">
+<div class="input-group">
+<label class="sr-only">Search All Support Resources</label>
+<input id="suggestion" type="hidden" name="suggestion" value="">
+<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+<input id="search" class="form-control conjoined_search" type="text" name="q" placeholder="Search All Support Resources" autocomplete="off">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Support</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#">Documentation</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_support"><a href="#">Support</a></li>-->
+<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger").click(function() {
+$("#search_scope_support").removeClass("in");
+$("#docsearch").val($("#search").val());
+$("#query").val($("#search").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="support_submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_site" class="collapse">
+<form name="search" id="site_search" class="site_search" action="https://se.mathworks.com/search/site_search.html" method="get">
+<div class="input-group">
+<label class="sr-only">Search MathWorks.com</label>
+<input type="hidden" name="c[]" value="entire_site">
+<input type="text" name="q" id="query" class="form-control conjoined_search" placeholder="Search MathWorks.com" autocomplete="off" \="">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">MathWorks</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#">Documentation</a></li>
+<li data-toggle="collapse" data-target="#search_scope_support" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#">Support</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="#">MathWorks</a></li>-->
+</ul>
+<script>
+$(".site_search_scope_trigger").click(function() {
+$("#search_scope_site").removeClass("in");
+$("#search").val($("#query").val());
+$("#docsearch").val($("#query").val());
+});
+</script>
+<button type="submit" id="searchbutton" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Close Mobile Search</span></button>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Open Mobile Search</span></button>
+</div>
+</div>
+<script>
+$(".section_header_title").click(function(){
+$(window.location).attr('href', '../../index.html');
+});
+</script>
+<!-- Section Header: End -->
+<!-- Mobile Local Nav: Start -->
+<div class="row visible-xs" id="mobile_subnav">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse mobile_subnav_content">
+<div class="crux_nav_container">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav subnav" id="crux_nav_mobile"><li id="crux_nav_mobile_documentation" class="crux_nav_active"><a>All</a></li><li id="crux_nav_mobile_example"><a href="https://se.mathworks.com/help/matlab/examples.html?category=optimization">Examples</a></li><li id="crux_nav_mobile_function"><a href="https://se.mathworks.com/help/matlab/referencelist.html?type=function&amp;category=optimization">Functions</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Local Nav: End -->
+</div>
+</div>
+<!-- Horo Nav: Start -->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator active" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="javascript:void(0)" class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="0"></a>
+<a href="javascript:void(0)" class="offcanvas_actuator_close" tabindex="0"></a>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm">
+<div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ML&amp;s_iid=doc_trial_ML_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Horo Nav: End -->
+</div>
+<!-- Conjoined Header: End -->
+
+  <div class="row-offcanvas row-offcanvas-left active">
+  
+    <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+      <nav class="offcanvas_nav" role="navigation">
+          <ul xmlns="http://www.w3.org/1999/xhtml" class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/index.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/matlab/index.html?s_tid=CRUX_lftnav">MATLAB</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/matlab/mathematics.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Mathematics</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/matlab/optimization.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Optimization</span></a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function notranslate active"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#responsive_offcanvas"><span class="refname">fminsearch</span></a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#d117e431630" class="intrnllnk">Syntax</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#description" class="intrnllnk">Description</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-5" class="intrnllnk">Examples</a><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-6" class="intrnllnk">Minimize Rosenbrock's Function</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-7" class="intrnllnk">Monitor Optimization Process</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-8" class="intrnllnk">Minimize a Function Specified by a File</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-9" class="intrnllnk">Minimize with Extra Parameters</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-10" class="intrnllnk">Find Minimum Location and Value</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-11" class="intrnllnk">Inspect Optimization Process</a></li></ul></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-3" class="intrnllnk">Input Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fun" class="intrnllnk">fun</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x0" class="intrnllnk">x0</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-options" class="intrnllnk">options</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-problem" class="intrnllnk">problem</a></li></ul></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-4" class="intrnllnk">Output Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x" class="intrnllnk">x</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fval" class="intrnllnk">fval</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-exitflag" class="intrnllnk">exitflag</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-output" class="intrnllnk">output</a></li></ul></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-14" class="intrnllnk">Tips</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-12" class="intrnllnk">Algorithms</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#References" class="intrnllnk">References</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvlc7lf-1" class="intrnllnk">Extended Capabilities</a></li><li><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1_seealso" class="intrnllnk">See Also</a></li></ul>
+
+      </nav>
+      <script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/offcanvas.js.download"></script>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <!-- MOBILE CTA - End -->
+
+
+    <div class="content_container" id="content_container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+                       
+
+
+
+
+
+                   
+    
+                                   
+<section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref">                
+
+       <span id="bvadxhn-1" class="anchor_target"></span><h1 class="r2019b notranslate" itemprop="title"><span class="refname">fminsearch</span></h1><div class="doc_topic_desc"><div class="purpose_container mwExpandToggle0"><p itemprop="purpose">Find minimum of unconstrained multivariable function using
+derivative-free method</p><div class="switch mwToggle0"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div>
+<div class="ref_sect"><h2 id="d117e431630">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#d117e431638" class="intrnllnk">x = fminsearch(fun,x0)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#d117e431671" class="intrnllnk">x = fminsearch(fun,x0,options)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#d117e431700" class="intrnllnk">x = fminsearch(problem)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#d117e431718" class="intrnllnk">[x,fval]
+= fminsearch(<span class="argument_placeholder">___</span>)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#d117e431747" class="intrnllnk">[x,fval,exitflag]
+= fminsearch(<span class="argument_placeholder">___</span>)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#d117e431768" class="intrnllnk">[x,fval,exitflag,output]
+= fminsearch(<span class="argument_placeholder">___</span>)</a></code></div></div></div></div><div class="clear"></div><span id="bvadxhn-2" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="refsummary" itemprop="content">
+  <div class="shortsummary"><p>Nonlinear programming solver. Searches for the minimum of a problem specified
+   by</p></div>
+  <div id="d117e431615" class="mediaobject"><div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -12px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox code" style="position: relative; font-style: normal;">min</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span></span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.422222em; margin-right: 0.2em;">f</span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span></span></span></span></span></p></div></div>
+  <p><em class="varname">f</em>(<em class="varname">x</em>) is a function that returns a scalar, and
+    <em class="varname">x</em> is a vector or a matrix.</p>
+ </div><div class="description_module"><div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-6" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e431638" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x" class="intrnllnk"><code class="argument">x</code></a> = fminsearch(<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fun" class="intrnllnk"><code class="argument">fun</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x0" class="intrnllnk"><code class="argument">x0</code></a>)</code></span> starts
+at the point <code class="literal">x0</code> and attempts to find a local minimum <code class="literal">x</code> of
+the function described in <code class="literal">fun</code>.</p></div></div><div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-7" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e431671" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x" class="intrnllnk"><code class="argument">x</code></a> = fminsearch(<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fun" class="intrnllnk"><code class="argument">fun</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x0" class="intrnllnk"><code class="argument">x0</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-options" class="intrnllnk"><code class="argument">options</code></a>)</code></span> minimizes
+with the optimization options specified in the structure <code class="literal">options</code>.
+Use <a href="https://se.mathworks.com/help/matlab/ref/optimset.html"><code class="function">optimset</code></a> to set these options.</p></div></div><div class="description_element"><div class="code_responsive"><p><span id="d117e431700" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x" class="intrnllnk"><code class="argument">x</code></a> = fminsearch(<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-problem" class="intrnllnk"><code class="argument">problem</code></a>)</code></span> finds
+the minimum for <code class="literal">problem</code>, where <code class="literal">problem</code> is
+a structure.</p></div></div><div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-10" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e431718" itemprop="syntax"><code class="synopsis">[<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fval" class="intrnllnk"><code class="argument">fval</code></a>]
+= fminsearch(<span class="argument_placeholder">___</span>)</code></span>, for any previous input syntax,
+returns in <code class="literal">fval</code> the value of the objective function <code class="literal">fun</code> at
+the solution <code class="literal">x</code>.</p></div></div><div class="description_element"><div class="code_responsive"><p><span id="d117e431747" itemprop="syntax"><code class="synopsis">[<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fval" class="intrnllnk"><code class="argument">fval</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-exitflag" class="intrnllnk"><code class="argument">exitflag</code></a>]
+= fminsearch(<span class="argument_placeholder">___</span>)</code></span> additionally returns a value <code class="literal">exitflag</code> that
+describes the exit condition.</p></div></div><div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-11" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e431768" itemprop="syntax"><code class="synopsis">[<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x" class="intrnllnk"><code class="argument">x</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fval" class="intrnllnk"><code class="argument">fval</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-exitflag" class="intrnllnk"><code class="argument">exitflag</code></a>,<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-output" class="intrnllnk"><code class="argument">output</code></a>]
+= fminsearch(<span class="argument_placeholder">___</span>)</code></span> additionally returns a structure <code class="literal">output</code> with
+information about the optimization process.</p></div></div></div></div><div class="clear"></div><div class="examples"><h2 id="bvadxhn-5">Examples</h2><div class="expandableContent mwExpandToggle1" id="expandableExamples"><p class="switch mwToggle1"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvadxhn-6"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-6" data-target="#expand_panel_body_bvadxhn-6" aria-controls="expand_panel_body_bvadxhn-6" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvadxhn-6">Minimize Rosenbrock's Function<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-6" aria-labelledby="expand_panel_heading_bvadxhn-6" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;matlab/MinimizeRosenbrocksFunctionExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Minimize Rosenbrock's Function",
+          "description": "Minimize Rosenbrock's function, a notoriously difficult optimization problem for many algorithms:",
+          "thumbnailURL": "../../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "fminsearch.html"
+
+        },
+          "identifier": "matlab.MinimizeRosenbrocksFunctionExample",
+          "name": "MinimizeRosenbrocksFunctionExample",
+          "url": "fminsearch.html#bvadxhn-6"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('matlab/MinimizeRosenbrocksFunctionExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "MinimizeRosenbrocksFunctionExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Minimize Rosenbrock's function, a notoriously difficult optimization problem for many algorithms:</p><p></p>
+<div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.2em; margin-right: 0.2em;">f</span><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathText MathTextBox number" style="position: relative; margin-left: 0.277778em;">1</span><span class="MathText MathTextBox number" style="position: relative;">0</span><span class="MathText MathTextBox number" style="position: relative;">0</span><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.222222em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: -1px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">+</span><span class="MathText MathTextBox extra1" style="position: relative; margin-left: 0.222222em;">(</span><span class="MathText MathTextBox number" style="position: relative;">1</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.222222em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative;">.</span></span></span></span></span></p></div><p></p><p>The function is minimized at the point <code class="literal">x = [1,1]</code> with minimum value <code class="literal">0</code>.</p><p>Set the start point to <code class="literal">x0 = [-1.2,1]</code> and minimize Rosenbrock's function using <code class="literal">fminsearch</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>fun = @(x)100*(x(2) - x(1)^2)^2 + (1 - x(1))^2;
+x0 = [-1.2,1];
+x = fminsearch(fun,x0)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>x = <span class="emphasis"><em>1×2</em></span>
+
+    1.0000    1.0000
+
+</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="matlab-MinimizeRosenbrocksFunctionExample"><meta itemprop="exampletitle" content="Minimize Rosenbrock&#39;s Function"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvadxhn-7"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-7" data-target="#expand_panel_body_bvadxhn-7" aria-controls="expand_panel_body_bvadxhn-7" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvadxhn-7">Monitor Optimization Process<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-7" aria-labelledby="expand_panel_heading_bvadxhn-7" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;matlab/MonitorTheOptimizationProcessExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Monitor Optimization Process",
+          "description": "Set options to monitor the process as fminsearch attempts to locate a minimum.",
+          "thumbnailURL": "../../examples/matlab/win64/MonitorTheOptimizationProcessExample_01.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "fminsearch.html"
+
+        },
+          "identifier": "matlab.MonitorTheOptimizationProcessExample",
+          "name": "MonitorTheOptimizationProcessExample",
+          "url": "fminsearch.html#bvadxhn-7"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('matlab/MonitorTheOptimizationProcessExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "MonitorTheOptimizationProcessExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Set options to monitor the process as <code class="literal">fminsearch</code> attempts to locate a minimum.</p><p>Set options to plot the objective function at each iteration.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>options = optimset(<span style="color:#A020F0">'PlotFcns'</span>,@optimplotfval);</pre></div></div></div><p>Set the objective function to Rosenbrock's function,</p><p></p>
+<div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.2em; margin-right: 0.2em;">f</span><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathText MathTextBox number" style="position: relative; margin-left: 0.277778em;">1</span><span class="MathText MathTextBox number" style="position: relative;">0</span><span class="MathText MathTextBox number" style="position: relative;">0</span><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.222222em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: -1px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">+</span><span class="MathText MathTextBox extra1" style="position: relative; margin-left: 0.222222em;">(</span><span class="MathText MathTextBox number" style="position: relative;">1</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.222222em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative;">.</span></span></span></span></span></p></div><p></p><p>The function is minimized at the point <code class="literal">x = [1,1]</code> with minimum value <code class="literal">0</code>.</p><p>Set the start point to <code class="literal">x0 = [-1.2,1]</code> and minimize Rosenbrock's function using <code class="literal">fminsearch</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>fun = @(x)100*(x(2) - x(1)^2)^2 + (1 - x(1))^2;
+x0 = [-1.2,1];
+x = fminsearch(fun,x0,options)</pre></div></div></div><div class="informalfigure"><div id="d117e432658" class="mediaobject"><p><img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/MonitorTheOptimizationPro.png" alt="" width="583"></p></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>x = <span class="emphasis"><em>1×2</em></span>
+
+    1.0000    1.0000
+
+</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="matlab-MonitorTheOptimizationProcessExample"><meta itemprop="exampletitle" content="Monitor Optimization Process"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvadxhn-8"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-8" data-target="#expand_panel_body_bvadxhn-8" aria-controls="expand_panel_body_bvadxhn-8" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvadxhn-8">Minimize a Function Specified by a File<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-8" aria-labelledby="expand_panel_heading_bvadxhn-8" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;matlab/MinimizeAFunctionThatIsSpecifiedByAFileExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Minimize a Function Specified by a File",
+          "description": "Minimize an objective function whose values are given by executing a file. A function file must accept a real vector x and return a real scalar that is the value of the objective function.",
+          "thumbnailURL": "../../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "fminsearch.html"
+
+        },
+          "identifier": "matlab.MinimizeAFunctionThatIsSpecifiedByAFileExample",
+          "name": "MinimizeAFunctionThatIsSpecifiedByAFileExample",
+          "url": "fminsearch.html#bvadxhn-8"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('matlab/MinimizeAFunctionThatIsSpecifiedByAFileExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "MinimizeAFunctionThatIsSpecifiedByAFileExample.m",
+        "objectivefcn1.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><div class="procedure"><p class="shortdesc">Minimize an objective function whose values are given by executing a file. A function file must accept a real vector <code class="literal">x</code> and return a real scalar that is the value of the objective function.</p><p>Copy the following code and include it as a file named <code class="literal">objectivefcn1.m</code> on your MATLAB® path.</p><div class="code_responsive"><pre id="d117e432714" class="programlisting"><span style="color:#0000FF">function</span> f = objectivefcn1(x)
+f = 0;
+<span style="color:#0000FF">for</span> k = -10:10
+    f = f + exp(-(x(1)-x(2))^2 - 2*x(1)^2)*cos(x(2))*sin(2*x(2));
+<span style="color:#0000FF">end</span>
+
+</pre></div><p>Start at <code class="literal">x0 = [0.25,-0.25]</code> and search for a minimum of <code class="literal">objectivefcn</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x0 = [0.25,-0.25];
+x = fminsearch(@objectivefcn1,x0)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>x =
+
+   -0.1696   -0.5086
+
+</pre></div></div></div></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="matlab-MinimizeAFunctionThatIsSpecifiedByAFileExample"><meta itemprop="exampletitle" content="Minimize a Function Specified by a File"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvadxhn-9"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-9" data-target="#expand_panel_body_bvadxhn-9" aria-controls="expand_panel_body_bvadxhn-9" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvadxhn-9">Minimize with Extra Parameters<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-9" aria-labelledby="expand_panel_heading_bvadxhn-9" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;matlab/MinimizeWithExtraParametersExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Minimize with Extra Parameters",
+          "description": "Sometimes your objective function has extra parameters. These parameters are not variables to optimize, they are fixed values during the optimization. For example, suppose that you have a parameter a in the Rosenbrock-type function",
+          "thumbnailURL": "../../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "fminsearch.html"
+
+        },
+          "identifier": "matlab.MinimizeWithExtraParametersExample",
+          "name": "MinimizeWithExtraParametersExample",
+          "url": "fminsearch.html#bvadxhn-9"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('matlab/MinimizeWithExtraParametersExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "MinimizeWithExtraParametersExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Sometimes your objective function has extra parameters. These parameters are not variables to optimize, they are fixed values during the optimization. For example, suppose that you have a parameter <code class="literal">a</code> in the Rosenbrock-type function</p><p></p>
+<div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.2em; margin-right: 0.2em;">f</span><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox symbol" style="position: relative;">,</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.166667em;">a</span><span class="MathText MathTextBox extra1" style="position: relative;">)</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathText MathTextBox number" style="position: relative; margin-left: 0.277778em;">1</span><span class="MathText MathTextBox number" style="position: relative;">0</span><span class="MathText MathTextBox number" style="position: relative;">0</span><span class="MathText MathTextBox extra1" style="position: relative;">(</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.222222em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: -1px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">+</span><span class="MathText MathTextBox extra1" style="position: relative; margin-left: 0.222222em;">(</span><span class="MathText MathTextBox text" style="position: relative;">a</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.222222em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox extra1" style="position: relative;">)</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative;">.</span></span></span></span></span></p></div><p></p><p>This function has a minimum value of 0 at <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.277778em;">a</span></span></span></span></span></span>, <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.277778em;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">a</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span></span></span></span></span></span>. If, for example, <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">a</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathText MathTextBox number" style="position: relative; margin-left: 0.277778em;">3</span></span></span></span></span></span>, you can include the parameter in your objective function by creating an anonymous function.</p><p>Create the objective function with its extra parameters as extra arguments.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>f = @(x,a)100*(x(2) - x(1)^2)^2 + (a-x(1))^2;</pre></div></div></div><p>Put the parameter in your MATLAB® workspace.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>a = 3;</pre></div></div></div><p>Create an anonymous function of <code class="literal">x</code> alone that includes the workspace value of the parameter.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>fun = @(x)f(x,a);</pre></div></div></div><p>Solve the problem starting at <code class="literal">x0 = [-1,1.9]</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x0 = [-1,1.9];
+x = fminsearch(fun,x0)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>x = <span class="emphasis"><em>1×2</em></span>
+
+    3.0000    9.0000
+
+</pre></div></div></div><p>For more information about using extra parameters in your objective function, see <a href="https://se.mathworks.com/help/matlab/math/parameterizing-functions.html" class="a">Parameterizing Functions</a>.</p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="matlab-MinimizeWithExtraParametersExample"><meta itemprop="exampletitle" content="Minimize with Extra Parameters"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvadxhn-10"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-10" data-target="#expand_panel_body_bvadxhn-10" aria-controls="expand_panel_body_bvadxhn-10" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvadxhn-10">Find Minimum Location and Value<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-10" aria-labelledby="expand_panel_heading_bvadxhn-10" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;matlab/FindMinimumLocationAndValueExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Find Minimum Location and Value",
+          "description": "Find both the location and value of a minimum of an objective function using fminsearch.",
+          "thumbnailURL": "../../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "fminsearch.html"
+
+        },
+          "identifier": "matlab.FindMinimumLocationAndValueExample",
+          "name": "FindMinimumLocationAndValueExample",
+          "url": "fminsearch.html#bvadxhn-10"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('matlab/FindMinimumLocationAndValueExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "FindMinimumLocationAndValueExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Find both the location and value of a minimum of an objective function using <code class="literal">fminsearch</code>.</p><p>Write an anonymous objective function for a three-variable problem.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x0 = [1,2,3];
+fun = @(x)-norm(x+x0)^2*exp(-norm(x-x0)^2 + sum(x));</pre></div></div></div><p>Find the minimum of <code class="literal">fun</code> starting at <code class="literal">x0</code>. Find the value of the minimum as well.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[x,fval] = fminsearch(fun,x0)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>x = <span class="emphasis"><em>1×3</em></span>
+
+    1.5359    2.5645    3.5932
+
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>fval = -5.9565e+04
+</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="matlab-FindMinimumLocationAndValueExample"><meta itemprop="exampletitle" content="Find Minimum Location and Value"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_bvadxhn-11"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-11" data-target="#expand_panel_body_bvadxhn-11" aria-controls="expand_panel_body_bvadxhn-11" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="bvadxhn-11">Inspect Optimization Process<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-11" aria-labelledby="expand_panel_heading_bvadxhn-11" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;matlab/InspectTheOptimizationProcessExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Inspect Optimization Process",
+          "description": "Inspect the results of an optimization, both while it is running and after it finishes.",
+          "thumbnailURL": "../../examples/matlab/win64/InspectTheOptimizationProcessExample_01.png",
+          "genre": "Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "fminsearch.html"
+
+        },
+          "identifier": "matlab.InspectTheOptimizationProcessExample",
+          "name": "InspectTheOptimizationProcessExample",
+          "url": "fminsearch.html#bvadxhn-11"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('matlab/InspectTheOptimizationProcessExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "InspectTheOptimizationProcessExample.m",
+        "objectivefcn1.m"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script>
+
+<p class="shortdesc">Inspect the results of an optimization, both while it is running and after it finishes.</p>
+
+<div class="procedure"><p>Set options to provide iterative display, which gives information on the optimization as the solver runs. Also, set a plot function to show the objective function value as the solver runs.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>options = optimset(<span style="color:#A020F0">'Display'</span>,<span style="color:#A020F0">'iter'</span>,<span style="color:#A020F0">'PlotFcns'</span>,@optimplotfval);
+</pre></div></div></div><p>Set an objective function and start point.</p><div class="code_responsive"><pre id="d117e433007" class="programlisting"><span style="color:#0000FF">function</span> f = objectivefcn1(x)
+f = 0;
+<span style="color:#0000FF">for</span> k = -10:10
+    f = f + exp(-(x(1)-x(2))^2 - 2*x(1)^2)*cos(x(2))*sin(2*x(2));
+<span style="color:#0000FF">end</span>
+
+</pre></div><p>Include the code for <code class="literal">objectivefcn1</code> as a file on your MATLAB® path.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>x0 = [0.25,-0.25];
+fun = @objectivefcn1;
+</pre></div></div></div><p>Obtain all solver outputs. Use these outputs to inspect the results after the solver finishes.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[x,fval,exitflag,output] = fminsearch(fun,x0,options)
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre> 
+ Iteration   Func-count     min f(x)         Procedure
+     0            1         -6.70447         
+     1            3         -6.89837         initial simplex
+     2            5         -7.34101         expand
+     3            7         -7.91894         expand
+     4            9         -9.07939         expand
+     5           11         -10.5047         expand
+     6           13         -12.4957         expand
+     7           15         -12.6957         reflect
+     8           17         -12.8052         contract outside
+     9           19         -12.8052         contract inside
+    10           21         -13.0189         expand
+    11           23         -13.0189         contract inside
+    12           25         -13.0374         reflect
+    13           27          -13.122         reflect
+    14           28          -13.122         reflect
+    15           29          -13.122         reflect
+    16           31          -13.122         contract outside
+    17           33         -13.1279         contract inside
+    18           35         -13.1279         contract inside
+    19           37         -13.1296         contract inside
+    20           39         -13.1301         contract inside
+    21           41         -13.1305         reflect
+    22           43         -13.1306         contract inside
+    23           45         -13.1309         contract inside
+    24           47         -13.1309         contract inside
+    25           49          -13.131         reflect
+    26           51          -13.131         contract inside
+    27           53          -13.131         contract inside
+    28           55          -13.131         contract inside
+    29           57          -13.131         contract outside
+    30           59          -13.131         contract inside
+    31           61          -13.131         contract inside
+    32           63          -13.131         contract inside
+    33           65          -13.131         contract outside
+    34           67          -13.131         contract inside
+    35           69          -13.131         contract inside
+ 
+Optimization terminated:
+ the current x satisfies the termination criteria using OPTIONS.TolX of 1.000000e-04 
+ and F(X) satisfies the convergence criteria using OPTIONS.TolFun of 1.000000e-04 
+
+
+x =
+
+   -0.1696   -0.5086
+
+
+fval =
+
+  -13.1310
+
+
+exitflag =
+
+     1
+
+
+output = 
+
+  struct with fields:
+
+    iterations: 35
+     funcCount: 69
+     algorithm: 'Nelder-Mead simplex direct search'
+       message: 'Optimization terminated:...'
+
+</pre></div></div></div><div class="informalfigure"><div id="d117e433023" class="mediaobject"><p><img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/InspectTheOptimizationPro.png" alt=""></p></div></div><p>The value of <code class="literal">exitflag</code> is <code class="literal">1</code>, meaning <code class="literal">fminsearch</code> likely converged to a local minimum.</p><p>The <code class="literal">output</code> structure shows the number of iterations. The iterative display and the plot show this information as well. The <code class="literal">output</code> structure also shows the number of function evaluations, which the iterative display shows, but the chosen plot function does not.</p></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="matlab-InspectTheOptimizationProcessExample"><meta itemprop="exampletitle" content="Inspect Optimization Process"></div></div></div><div class="ref_sect"><h2 id="bvadxhn-3">Input Arguments</h2><div class="expandableContent mwExpandToggle2"><p class="switch  mwToggle2"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bvadxhn-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bvadxhn-1-fun"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-fun" data-target="#expand_panel_body_bvadxhn-1-fun" aria-controls="expand_panel_body_bvadxhn-1-fun" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_fun" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-fun"><code itemprop="name">fun</code> — <span itemprop="purpose">Function to minimize</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">function handle</span> | <span itemprop="inputvalue">function name</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-fun" aria-labelledby="expand_panel_heading_bvadxhn-1-fun" class="panel-collapse collapse in"><div class="panel-body">
+<p>Function to minimize, specified as a function handle or function
+name. <code class="literal">fun</code> is a function that accepts a vector or
+array <code class="literal">x</code> and returns a real scalar <code class="literal">f</code> (the
+objective function evaluated at <code class="literal">x</code>).</p>
+<p>Specify <code class="literal">fun</code> as a function handle for a file:</p>
+<div class="code_responsive"><pre class="programlisting">x = fminsearch(@myfun,x0)</pre></div>
+<p>where <code class="literal">myfun</code> is a MATLAB<sup>®</sup> function such
+as</p>
+<div class="code_responsive"><pre class="programlisting">function f = myfun(x)
+f = ...            % Compute function value at x</pre></div>
+<p>You can also specify <code class="literal">fun</code> as a function handle
+for an anonymous function:</p>
+<div class="code_responsive"><pre class="programlisting">x = fminsearch(@(x)norm(x)^2,x0);</pre></div>
+<p class="description_valueexample"><strong>Example: </strong><code class="literal">fun = @(x)-x*exp(-3*x)</code></p>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">char</code> | <code itemprop="datatype">function_handle</code> | <code itemprop="datatype">string</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bvadxhn-1-x0"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-x0" data-target="#expand_panel_body_bvadxhn-1-x0" aria-controls="expand_panel_body_bvadxhn-1-x0" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_x0" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-x0"><code itemprop="name">x0</code> — <span itemprop="purpose">Initial point</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">real vector</span> | <span itemprop="inputvalue">real array</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-x0" aria-labelledby="expand_panel_heading_bvadxhn-1-x0" class="panel-collapse collapse in"><div class="panel-body">
+<p>Initial point, specified as a real vector or real array. Solvers
+use the number of elements in, and size of, <code class="literal">x0</code> to
+determine the number and size of variables that <a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-fun" class="intrnllnk"><code class="argument">fun</code></a> accepts.</p>
+<p class="description_valueexample"><strong>Example: </strong><code class="literal">x0 = [1,2,3,4]</code></p>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">double</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bvadxhn-1-options"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-options" data-target="#expand_panel_body_bvadxhn-1-options" aria-controls="expand_panel_body_bvadxhn-1-options" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_options" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-options"><code itemprop="name">options</code> — <span itemprop="purpose">Optimization options</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">structure such as <code class="literal">optimset</code> returns</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-options" aria-labelledby="expand_panel_heading_bvadxhn-1-options" class="panel-collapse collapse in"><div class="panel-body">
+<p>Optimization options, specified as a structure such as <code class="function">optimset</code> returns.
+You can use <a href="https://se.mathworks.com/help/matlab/ref/optimset.html"><code class="function">optimset</code></a> to set
+or change the values of these fields in the options structure. See <a href="https://se.mathworks.com/help/matlab/math/setting-options.html" class="a">Set Options</a> for
+detailed information.</p>
+<div class="table-responsive"><table class="table table-condensed"><colgroup><col class="tcol1" width="31%"><col class="tcol2" width="69%"></colgroup><tbody><tr><td><p><code class="literal">Display</code></p></td><td><p>Level of display (see <a href="https://se.mathworks.com/help/matlab/math/iterative-display.html" class="a">Iterative Display</a>):</p>
+<div class="itemizedlist"><ul><li><p><code class="literal">'notify'</code> (default) displays output
+only if the function does not converge.</p></li><li><p><code class="literal">'final'</code> displays just the final
+output.</p></li><li><p><code class="literal">'off'</code> or <code class="literal">'none'</code> displays
+no output.</p></li><li><p><code class="literal">'iter'</code> displays output at each
+iteration.</p></li></ul></div><p>
+</p></td></tr><tr><td><code class="literal">FunValCheck</code></td><td><p>Check whether objective function values are valid. <code class="literal">'on'</code> displays
+an error when the objective function returns a value that is <code class="literal">complex</code> or <code class="literal">NaN</code>.
+The default <code class="literal">'off'</code> displays no error.</p></td></tr><tr><td><p><code class="literal">MaxFunEvals</code></p></td><td><p>Maximum number of function evaluations allowed, a positive
+integer. The default  is <code class="literal">200*numberOfVariables</code>.
+See <a href="https://se.mathworks.com/help/matlab/math/setting-options.html#bt00l89-1" class="a">Tolerances and Stopping Criteria</a>.</p></td></tr><tr><td><p><code class="literal">MaxIter</code></p></td><td><p>Maximum number of iterations allowed, a positive integer.
+The default value is <code class="literal">200*numberOfVariables</code>. See <a href="https://se.mathworks.com/help/matlab/math/setting-options.html#bt00l89-1" class="a">Tolerances and Stopping Criteria</a>.</p></td></tr><tr><td><code class="literal">OutputFcn</code></td><td><p>Specify one or more user-defined functions that an optimization
+function calls at each iteration, either as a function handle or as
+a cell array of function handles. The default is none (<code class="literal">[]</code>).
+See <a href="https://se.mathworks.com/help/matlab/math/output-functions.html" class="a">Output Functions</a>.</p></td></tr><tr><td><p><code class="literal">PlotFcns</code></p></td><td><p>Plots various measures of progress while the algorithm
+executes. Select from predefined plots or write your own. Pass a function
+handle or a cell array of function handles. The default is none (<code class="literal">[]</code>):</p>
+<div class="itemizedlist"><ul><li><p><code class="literal">@optimplotx</code> plots the current point.</p></li><li><p><code class="literal">@optimplotfunccount</code> plots the function
+count.</p></li><li><p><code class="literal">@optimplotfval</code> plots the function
+value.</p></li></ul></div><p>
+For information on writing a custom plot function,
+see <a href="https://se.mathworks.com/help/matlab/math/plot-functions.html" class="a">Plot Functions</a>.</p></td></tr><tr><td><p><code class="literal">TolFun</code></p></td><td><p>Termination tolerance on the function value, a positive
+scalar. The default is <code class="literal">1e-4</code>. See <a href="https://se.mathworks.com/help/matlab/math/setting-options.html#bt00l89-1" class="a">Tolerances and Stopping Criteria</a>.
+Unlike other solvers, <code class="function">fminsearch</code> stops when it
+satisfies <span class="emphasis"><em>both</em></span> <code class="literal">TolFun</code> and <code class="literal">TolX</code>.</p></td></tr><tr><td><p><code class="literal">TolX</code></p></td><td><p>Termination tolerance on <code class="literal">x</code>, a positive
+scalar. The default value  is <code class="literal">1e-4</code>. See <a href="https://se.mathworks.com/help/matlab/math/setting-options.html#bt00l89-1" class="a">Tolerances and Stopping Criteria</a>.
+Unlike other solvers, <code class="function">fminsearch</code> stops when it
+satisfies <span class="emphasis"><em>both</em></span> <code class="literal">TolFun</code> and <code class="literal">TolX</code>.</p></td></tr></tbody></table></div>
+<p class="description_valueexample"><strong>Example: </strong><code class="literal">options = optimset('Display','iter')</code></p>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">struct</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bvadxhn-1-problem"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-problem" data-target="#expand_panel_body_bvadxhn-1-problem" aria-controls="expand_panel_body_bvadxhn-1-problem" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_problem" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-problem"><code itemprop="name">problem</code> — <span itemprop="purpose">Problem structure</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">structure</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-problem" aria-labelledby="expand_panel_heading_bvadxhn-1-problem" class="panel-collapse collapse in"><div class="panel-body">
+<p>Problem structure, specified as a structure with the following
+fields.</p>
+<div class="table-responsive"><table class="table table-condensed"><colgroup><col class="tcol1" width="39%"><col class="tcol2" width="61%"></colgroup><thead><tr><th>Field Name</th><th>Entry</th></tr></thead><tbody><tr><td><p><code class="literal">objective</code> </p></td><td>Objective function</td></tr><tr><td><p><code class="literal">x0</code> </p></td><td>Initial point for <code class="literal">x</code></td></tr><tr><td><p><code class="literal">solver</code> </p></td><td><code class="literal">'fminsearch'</code></td></tr><tr><td><p><code class="literal">options</code> </p></td><td>Options structure such as returned by <a href="https://se.mathworks.com/help/matlab/ref/optimset.html"><code class="function">optimset</code></a></td></tr></tbody></table></div>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">struct</code></p></div></div></div></div></div></div></div></div><div class="ref_sect"><h2 id="bvadxhn-4">Output Arguments</h2><div class="expandableContent mwExpandToggle3"><p class="switch  mwToggle3"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="bvadxhn-4_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-x" data-target="#expand_panel_body_bvadxhn-1-x" aria-controls="expand_panel_body_bvadxhn-1-x" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_x" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-x"><code class="name">x</code> — Solution<br> <span class="add_font_color_general remove_bold"><span class="example_desc">real vector | real array</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-x" aria-labelledby="expand_panel_heading_bvadxhn-1-x" class="panel-collapse collapse in"><div class="panel-body">
+<p>Solution, returned as a real vector or real array. The size
+of <code class="literal">x</code> is the same as the size of <a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-x0" class="intrnllnk"><code class="argument">x0</code></a>.
+Typically, <code class="literal">x</code> is a local solution to the problem
+when <a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-1-exitflag" class="intrnllnk"><code class="argument">exitflag</code></a> is positive.</p>
+</div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-fval" data-target="#expand_panel_body_bvadxhn-1-fval" aria-controls="expand_panel_body_bvadxhn-1-fval" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_fval" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-fval"><code class="name">fval</code> — Objective function value at solution<br> <span class="add_font_color_general remove_bold"><span class="example_desc">real number</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-fval" aria-labelledby="expand_panel_heading_bvadxhn-1-fval" class="panel-collapse collapse in"><div class="panel-body">
+<p>Objective function value at the solution, returned as a real
+number. Generally, <code class="literal">fval</code>&nbsp;=&nbsp;<code class="literal">fun(x)</code>. </p>
+</div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-exitflag" data-target="#expand_panel_body_bvadxhn-1-exitflag" aria-controls="expand_panel_body_bvadxhn-1-exitflag" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_exitflag" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-exitflag"><code class="name">exitflag</code> — Reason <code class="literal">fminsearch</code> stopped<br> <span class="add_font_color_general remove_bold"><span class="example_desc">integer</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-exitflag" aria-labelledby="expand_panel_heading_bvadxhn-1-exitflag" class="panel-collapse collapse in"><div class="panel-body">
+<p>Reason <code class="literal">fminsearch</code> stopped, returned as an
+integer.</p>
+<div class="table-responsive"><table class="table table-condensed"><colgroup><col class="tcol1" width="35%"><col class="tcol2" width="65%"></colgroup><tbody><tr><td><p><code class="literal">1</code></p></td><td><p>The function converged to a solution <code class="literal">x</code>.</p></td></tr><tr><td><p><code class="literal">0</code></p></td><td><p>Number of iterations exceeded <code class="literal">options.MaxIter</code> or
+ number of function evaluations exceeded <code class="literal">options.MaxFunEvals</code>.</p></td></tr><tr><td><p><code class="literal remove_text_wrapping">-1</code></p></td><td><p>The algorithm was terminated by the output function.</p></td></tr></tbody></table></div>
+</div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bvadxhn-1-output" data-target="#expand_panel_body_bvadxhn-1-output" aria-controls="expand_panel_body_bvadxhn-1-output" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_output" class="anchor_target"></span><h3 class="panel-title" id="bvadxhn-1-output"><code class="name">output</code> — Information about the optimization process<br> <span class="add_font_color_general remove_bold"><span class="example_desc">structure</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bvadxhn-1-output" aria-labelledby="expand_panel_heading_bvadxhn-1-output" class="panel-collapse collapse in"><div class="panel-body">
+<p>Information about the optimization process, returned as a structure
+with fields:</p>
+<div class="table-responsive"><table class="table table-condensed"><colgroup><col class="tcol1" width="50%"><col class="tcol2" width="50%"></colgroup><tbody><tr><td><code class="literal">iterations</code></td><td><p>Number of iterations</p></td></tr><tr><td><code class="literal">funcCount</code></td><td><p>Number of function evaluations</p></td></tr><tr><td><code class="literal">algorithm</code></td><td><p><code class="literal">'Nelder-Mead simplex direct search'</code></p></td></tr><tr><td><code class="literal">message</code></td><td><p>Exit message</p></td></tr></tbody></table></div>
+</div></div></div></div></div></div></div><div class="ref_sect"><h2 id="bvadxhn-14">Tips</h2><div class="itemizedlist"><ul><li><p><code class="function">fminsearch</code> only minimizes over
+the real numbers, that is, the vector or array <em class="varname">x</em> must
+only consist of real numbers and <em class="varname">f</em>(<em class="varname">x</em>)
+must only return real numbers. When <em class="varname">x</em> has complex
+values, split <em class="varname">x</em> into real and imaginary parts.</p></li><li><p>Use <code class="function">fminsearch</code> to solve nondifferentiable
+problems or problems with discontinuities, particularly if no discontinuity
+occurs near the solution.</p></li></ul></div></div><div class="ref_sect"><h2 id="bvadxhn-12">Algorithms</h2><p><code class="literal">fminsearch</code> uses the simplex search method
+of Lagarias et al. <a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#bvadxhn-13" class="intrnllnk">[1]</a>. This is a direct search method that does not use numerical
+or analytic gradients as in <a href="https://se.mathworks.com/help/optim/ug/fminunc.html"><code class="function">fminunc</code></a>.
+The algorithm is described in detail in <a href="https://se.mathworks.com/help/matlab/math/optimizing-nonlinear-functions.html#bsgpq6p-11" class="a">fminsearch Algorithm</a>.
+The algorithm is not guaranteed to converge to a local minimum.</p></div><div class="bibliography"><h2 id="References">References</h2><div id="bvadxhn-13" class="bibliomixed"><p>[1] Lagarias, J. C., J. A. Reeds, M. H. Wright,
+and P. E. Wright. “Convergence  Properties of the Nelder-Mead
+Simplex Method in Low Dimensions.” <em class="citetitle">SIAM  Journal
+of Optimization</em>. Vol. 9, Number 1, 1998, pp. 112–147.</p></div></div><div class="ref_sect"><h2 id="bvlc7lf-1">Extended Capabilities</h2><div class="expand_collapse" id="accordion_bvlc7lf-1" role="tablist" aria-multiselectable="true"><span id="bvlc7lf-2" class="anchor_target"></span><span id="bvadxhn-1" class="anchor_target"></span><h3 class="expand_trigger collapsed" id="bvadxhn-1_codegen" aria-expanded="false" data-toggle="collapse" data-target="#expand_body_bvadxhn-1_codegen" aria-controls="expand_body_bvadxhn-1_codegen"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>C/C++ Code Generation<br> <span class=" remove_bold add_font_color_general">Generate C and C++ code using MATLAB® Coder™.</span></h3><div id="expand_body_bvadxhn-1_codegen" class="collapsible_content collapse" aria-expanded="false"><p>For C/C++ code generation:</p><div class="itemizedlist"><ul><li><p><code class="function">fminsearch</code> ignores the <code class="literal">Display</code> option
+and does not give iterative display or an exit message. To check solution
+quality, examine the exit flag.</p></li><li><p>The output structure does not include the <code class="literal">algorithm</code> or <code class="literal">message</code> fields.</p></li><li><p><code class="function">fminsearch</code> ignores the <code class="literal">OutputFcn</code> and <code class="literal">PlotFcns</code> options.</p></li></ul></div></div></div></div><div class="ref_sect"><h2 id="bvadxhn-1_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/matlab/ref/fminbnd.html"><span itemprop="name"><code class="function">fminbnd</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/matlab/ref/optimset.html"><span itemprop="name"><code class="function">optimset</code></span></a></span></p><div class="examples_container"><h3 class="remove_border">Topics</h3><div itemprop="content"><ul class="list-unstyled"><li><a href="https://se.mathworks.com/help/matlab/math/optimizing-nonlinear-functions.html#bsgpq6p-10" class="a">Minimizing Functions of Several Variables</a></li><li><a href="https://se.mathworks.com/help/matlab/math/example-curve-fitting-via-optimization.html" class="a">Curve Fitting via Optimization</a></li><li><a href="https://se.mathworks.com/help/matlab/matlab_prog/creating-a-function-handle.html" class="a">Create Function Handle</a></li><li><a href="https://se.mathworks.com/help/matlab/matlab_prog/anonymous-functions.html" class="a">Anonymous Functions</a></li></ul></div></div></div><div class="release_introduced"><h4>Introduced before R2006a</h4></div>
+</div></div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">Open Example</h4> 
+      </div> 
+      <div class="modal-body" id="dialog-body"> 
+        <p>A modified version of this example exists on your system. Do you want to open this version instead?</p> 
+      </div> 
+      <div class="modal-footer"> 
+        <a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, overwrite the modified version</a>
+        <a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a>
+      </div> 
+    </div> 
+  </div> 
+</div><div class="clearfix"></div>
+<div align="center" class="feedbackblock"><iframe id="doc_survey" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/bounce_hub_help.html" style=""></iframe></div><script type="text/javascript" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/docsurvey.js.download"></script>
+
+</section>
+<div class="modal fade" id="matlab-command-dialog" tabindex="-1" role="dialog" aria-labelledby="matlabCommandDialogLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">MATLAB Command</h4>
+      </div>
+      <div class="modal-body" id="dialog-body">
+        <p>You clicked a link that corresponds to this MATLAB command: </p>
+        <pre id="dialog-matlab-command"></pre>
+        <p>Run the command by entering it in the MATLAB Command Window.
+        Web browsers do not support MATLAB commands.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn_secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function registerOpenExampleAction() {
+    var openExampleButtons = $('.examples_short_list a.btn[href^="matlab:"]');
+    $.each(openExampleButtons, function() {
+        var href = $(this).attr('href');
+        $(this).removeClass();
+        $(this).closest('.panel').addClass('panel-default');
+        $(this).closest('.panel-body').removeAttr('style').addClass('add_padding_10');
+        var inBox = false;
+        if ($(this).closest('.panel-body').find('.example_product_list').length >= 1) {
+            inBox=true;
+        }
+        var parentDiv = $(this).parent();
+        var parentPara = $('<p class="text-center add_margin_0"></p>')
+        parentDiv.append(parentPara);
+        parentPara.append($(this));
+        $(this).html('View MATLAB Command');
+        addOpenExampleLinkClickHandler($(this));
+        var matlabCommand = getMatlabCommand(href);
+        var openWithCommand = getOpenWithCommand(matlabCommand);
+        if (window.ow !== undefined &&  openWithCommand) {
+            var component = openWithCommand.split("/")[0];
+            var exampleName = openWithCommand.split("/")[1];
+            var config = {
+                repository: "MATLAB Examples", 
+                component: component,
+                exampleId: exampleName
+            }
+            ow.doesExampleExist(config, function (status) {
+                var matlabLink = $('a[href="matlab:openExample(\'' + openWithCommand+ '\')"]');
+                if (status === 'true') {
+                    var dropDown = $('<button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">'+ getLocalizedString("Try This Example") + '</button>');
+                    parentDiv.prepend(dropDown);
+                    $(dropDown).on('click', function(e) {
+                        e.preventDefault();
+                        ow.load(config);
+                    });
+                    matlabLink.css('display', 'inline-block');
+                } else {
+                    matlabLink.css('display', 'inline-block');
+                    if (inBox) {
+                        matlabLink.parent().addClass('add_padding_top_15 add_border_top');
+                    }
+                }
+                
+            });
+        } else {
+            if (inBox) {
+                $(this).parent().addClass('add_padding_top_15 add_border_top');
+            }
+            $(this).css('display', 'inline-block');
+        }
+    });
+}
+</script>
+
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<div id="location_content" style="display:none;"></div>
+
+
+<div class="modal fade" id="country-unselected" tabindex="-1" role="dialog" aria-labelledby="country-unselected-title" translate="no">
+<div id="country-select-container">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <img alt="MathWorks" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/pic-header-mathwork(1).svg" style="width:167px; height:auto;">
+      </div>
+      <div class="modal-body">
+        <div class="row add_margin_40">
+          <div class="col-xs-12">
+            <h1 class="icon-globe icon_color_secondary" id="country-unselected-title">Select a Web Site</h1>
+            <p>Choose a web site to get translated content where available and see local events and offers. Based on your location, we recommend that you select: <strong class="recommended-country">Sweden</strong>.</p>
+            <a href="https://se.mathworks.com/" id="recommended_domain_button" class="btn btn_color_blue containsResourceName resourceClass-button" data-lang="en">Select <span class="recommended-country">Sweden</span> web site</a>
+          </div>
+        </div>
+        <p>You can also select a web site from the following list:</p>
+				<div class="alert alert-warning" id="china_performance_alert" style="display:none;"> <span class="alert_icon icon-alert-warning"></span>
+					<h3>How to Get Best Site Performance</h3>
+					<p>Select the China site (in Chinese or English) for best site performance. Other MathWorks country sites are not optimized for visits from your location.</p>
+				</div>
+        <div class="row add_margin_30">
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Americas</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://la.mathworks.com/" class="domain_selector_link" data-country-code="LA" data-subdomain="la" data-lang="es" data-default-lang="true" data-selected-text="América Latina" data-recommended-text="América Latina" data-do-not-rewrite="true">América Latina</a> (Español)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="CA" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Canada</a> (English)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="US" data-subdomain="www" data-lang="en" data-default-lang="true" data-selected-text="United States" data-recommended-text="United States" data-do-not-rewrite="true">United States</a> (English)</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <h3 class="add_bottom_rule">Europe</h3>
+            <div class="row">
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled add_margin_0_sm">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="BE" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Belgium</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="DK" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Denmark</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="DE" data-subdomain="de" data-lang="de" data-default-lang="true" data-selected-text="Deutschland" data-recommended-text="Deutschland" data-do-not-rewrite="true">Deutschland</a> (Deutsch)</li>
+                  <li><a href="https://es.mathworks.com/" class="domain_selector_link" data-country-code="ES" data-subdomain="es" data-lang="es" data-default-lang="true" data-selected-text="España" data-recommended-text="España" data-do-not-rewrite="true">España</a> (Español)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="FI" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Finland</a> (English)</li>
+                  <li><a href="https://fr.mathworks.com/" class="domain_selector_link" data-country-code="FR" data-subdomain="fr" data-lang="fr" data-default-lang="true" data-selected-text="France" data-recommended-text="France" data-do-not-rewrite="true">France</a> (Français)</li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="IE" data-subdomain="uk" data-lang="en" data-do-not-rewrite="true">Ireland</a> (English)</li>
+                  <li><a href="https://it.mathworks.com/" class="domain_selector_link" data-country-code="IT" data-subdomain="it" data-lang="it" data-default-lang="true" data-selected-text="Italia" data-recommended-text="Italia" data-do-not-rewrite="true">Italia</a> (Italiano)</li>
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="LU" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Luxembourg</a> (English)</li>
+                </ul>
+              </div>
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="NL" data-subdomain="nl" data-lang="en" data-default-lang="true" data-selected-text="Benelux" data-recommended-text="Netherlands" data-do-not-rewrite="true">Netherlands</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="NO" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Norway</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="AT" data-subdomain="de" data-lang="de" data-do-not-rewrite="true">Österreich</a> (Deutsch)</li>
+                  <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="PT" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Portugal</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="Sweden" data-subdomain="se" data-lang="en" data-default-lang="true" data-selected-text="Nordic" data-recommended-text="Sweden" data-do-not-rewrite="true">Sweden</a> (English)</li>
+                  <li>Switzerland
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="de" data-selected-text="Schweiz" data-recommended-text="Schweiz" data-do-not-rewrite="true">Deutsch</a></li>
+                      <li><a href="https://ch.mathworks.com/" id="swiss_english" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="en" data-default-lang="true" data-selected-text="Switzerland" data-recommended-text="Switzerland" data-do-not-rewrite="true">English</a></li>
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="fr" data-selected-text="Suisse" data-recommended-text="Suisse" data-do-not-rewrite="true">Français</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="GB" data-subdomain="uk" data-lang="en" data-default-lang="true" data-selected-text="United Kingdom" data-recommended-text="United Kingdom" data-do-not-rewrite="true">United Kingdom</a> (English)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Asia Pacific</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="AU" data-subdomain="au" data-lang="en" data-default-lang="true" data-selected-text="Australia" data-recommended-text="Australia" data-do-not-rewrite="true">Australia</a> (English)</li>
+              <li><a href="https://in.mathworks.com/" class="domain_selector_link" data-country-code="IN" data-subdomain="in" data-lang="en" data-default-lang="true" data-selected-text="India" data-recommended-text="India" data-do-not-rewrite="true">India</a> (English)</li>
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="NZ" data-subdomain="au" data-lang="en" data-do-not-rewrite="true">New Zealand</a> (English)</li>
+              <li>中国
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="zh" data-default-lang="true" data-selected-text="中国" data-recommended-text="中国" data-do-not-rewrite="true">简体中文</a></li>
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="en" data-default-lang="true" data-selected-text="China" data-recommended-text="China" data-do-not-rewrite="true">English</a></li>
+                    </ul>
+               </li>
+              <li><a href="https://jp.mathworks.com/" class="domain_selector_link" data-country-code="JP" data-subdomain="jp" data-lang="ja" data-default-lang="true" data-selected-text="日本" data-recommended-text="日本" data-do-not-rewrite="true">日本</a> (日本語)</li>
+              <li><a href="https://kr.mathworks.com/" class="domain_selector_link" data-country-code="KR" data-subdomain="kr" data-lang="ko" data-default-lang="true" data-selected-text="한국" data-recommended-text="한국" data-do-not-rewrite="true">한국</a> (한국어)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center"><a href="https://se.mathworks.com/" class="worldwide_link">Contact your local office</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <div class="cta_container_mobile visible-sm visible-xs">
+      <div class="container-fluid">      
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ML&amp;s_iid=doc_trial_ML_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MOBILE CTA - End -->
+
+        <!-- BODY TRAIL - Begin -->
+        <div class="body_trail_container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="row"><div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/help/matlab/index.html?s_cid=doc_ftr">MATLAB Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/help/matlab/referencelist.html?type=function&amp;s_cid=doc_ftr">Functions</a></li>
+<li><a href="https://se.mathworks.com/help/matlab/release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+<li><a href="https://se.mathworks.com/help/pdf_doc/matlab/index.html?s_cid=doc_ftr">PDF Documentation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/support.html?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="https://se.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="https://se.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="https://se.mathworks.com/products/availability.html?s_cid=doc_ftr">Product Requirements</a></li><li><a href="https://se.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-4">
+<div class="panel panel_color_transparent panel_color_fill">
+<div class="panel-body">
+<div class="thumbnail add_margin_5">
+<a href="https://www.mathworks.com/campaigns/offers/deep-learning-with-matlab.html?s_iid=doc_eb_ML_footer"><img class="fluid_image" alt="Introducing Deep Learning with MATLAB" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/deep-learning-with-matlab.jpg"></a>
+</div>
+<h4><a href="https://www.mathworks.com/campaigns/offers/deep-learning-with-matlab.html?s_iid=doc_eb_ML_footer">Introducing Deep Learning with MATLAB</a></h4>
+<a class="icon-download" href="https://www.mathworks.com/campaigns/offers/deep-learning-with-matlab.html?s_iid=doc_eb_ML_footer">Download ebook</a>
+</div>
+</div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BODY TRAIL - End -->
+
+    <footer id="footer" class="bs-footer">
+        <!-- FAT FOOTER - Begin --> 
+        <div class="container-fluid">
+          <div class="fat_footer_container">
+            <div class="execmatlabweb"> <!--Requried for Doc Test -->
+<div class="row">
+<div class="col-xs-12 col-md-12 col-lg-9 col-lg-push-3 add_margin_20">
+<div class="row">
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Explore Products</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/products/matlab.html?s_tid=hp_ff_p_matlab">MATLAB</a></li>
+<li><a href="https://se.mathworks.com/products/simulink.html?s_tid=hp_ff_p_simulink">Simulink</a></li>
+<li><a href="https://se.mathworks.com/products/matlab/student.html?s_tid=hp_ff_p_student">Student Software</a></li>
+<li><a href="https://se.mathworks.com/hardware-support/home.html?s_tid=hp_ff_p_hwsupport">Hardware Support</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/fileexchange/?s_tid=hp_ff_p_fx">File Exchange</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Try or Buy</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/downloads/web_downloads/?s_iid=hp_ff_t_downloads">Downloads</a></li>
+<li><a href="https://se.mathworks.com/campaigns/products/trials.html?s_iid=hp_ff_p_trial">Trial Software</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us/contact_sales.html?s_iid=hp_ff_t_sales">Contact Sales</a></li>
+<li><a href="https://se.mathworks.com/pricing-licensing.html?s_iid=hp_ff_t_pricing">Pricing and Licensing</a></li>
+<li><a href="https://se.mathworks.com/store/?s_tid=hp_ff_t_buy">How to Buy</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Learn to Use</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/help/?s_tid=hp_ff_l_doc">Documentation</a></li>
+<li><a href="https://se.mathworks.com/support/learn-with-matlab-tutorials.html?s_tid=hp_ff_l_tutorials">Tutorials</a></li>
+<li><a href="https://se.mathworks.com/help/examples.html?s_tid=hp_ff_l_examples">Examples</a></li>
+<li><a href="https://se.mathworks.com/videos.html?s_tid=hp_ff_l_videos">Videos and Webinars</a></li>
+<li><a href="https://se.mathworks.com/services/training.html?s_tid=hp_ff_l_training">Training</a></li>
+</ul>
+</div>
+<div class="clearfix" id="offcanvas_clearfix" style="display:none"></div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Get Support</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/support/install-matlab.html?s_tid=hp_ff_s_install">Installation Help</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_tid=hp_ff_s_answers">Answers</a></li>
+<li><a href="https://se.mathworks.com/services/consulting.html?s_tid=hp_ff_s_consulting">Consulting</a></li>
+<li><a href="https://se.mathworks.com/licensecenter/?s_tid=hp_ff_s_license">License Center</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">About MathWorks</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/company/jobs/opportunities/?s_tid=hp_ff_a_careers">Careers</a></li>
+<li><a href="https://se.mathworks.com/company/newsroom.html?s_tid=hp_ff_a_newsroom">Newsroom</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/soc_mission.html?s_tid=hp_ff_a_socialmission">Social Mission</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=hp_ff_a_contact">Contact Us</a></li>
+<li><a href="https://se.mathworks.com/company.html?s_tid=hp_ff_a_company">About MathWorks</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-3 col-lg-pull-9">
+<p class="h4 add_font_futura_medium add_margin_0"><span translate="no">MathWorks</span></p>
+<p><em>Accelerating the pace of engineering and science</em></p>
+<p>MathWorks is the leading developer of mathematical computing software for engineers and scientists.</p>
+<p><a href="https://se.mathworks.com/discovery.html?s_tid=all_disc_mw_ff">Discover...</a></p>
+</div>
+</div>
+</div>
+          </div>
+        </div>
+        <!-- FAT FOOTER - End -->
+      <div class="container-fluid">
+       <div class="footer" translate="no">
+<div class="row">
+<div class="col-xs-12 col-lg-9">
+<ul class="countrynav" id="countrynav">
+<li class="footernav_country">
+<a href="https://se.mathworks.com/help/matlab/ref/fminsearch.html#" data-toggle="modal" data-target="#country-unselected">
+<span class="icon-globe icon_color_quinary icon_16"></span>Nordic
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<ul class="footernav">
+<li class="footernav_patents"><a href="https://se.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a></li>
+<li class="footernav_trademarks"><a href="https://se.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a></li>
+<li class="footernav_privacy"><a href="https://se.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a></li>
+<li class="footernav_piracy"><a href="https://se.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a></li>
+<li class="footernav_status"><a href="https://status.mathworks.com/?s_tid=gf_application">Application Status</a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p class="copyright" translate="no">© 1994-2019 The MathWorks, Inc.</p>
+</div>
+<div class="clearfix visible-sm add_margin_10"></div>
+<div class="col-xs-12 col-lg-3">
+<div class="social_media">
+<ul class="social_media_icons">
+<li>
+<a href="http://www.facebook.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/ico-facebook.svg" alt="Facebook" class="ico_facebook">
+</a>
+</li>
+<li>
+<a href="http://www.twitter.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/ico-twitter.svg" alt="Twitter" class="ico_twitter">
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/matlab/" class="svg_link" target="_blank">
+<img class="ico_instagram" alt="Instagram" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/ico-instagram.svg">
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/MATLAB" class="svg_link" target="_blank">
+<img class="ico_youtube" alt="YouTube" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/ico-youtube.svg">
+</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/company/the-mathworks_2" target="_blank" class="svg_link">
+<img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/ico-linkedin.svg" alt="LinkedIn" class="ico_linkedin">
+</a>
+</li>
+<li>
+<a href="https://se.mathworks.com/company/rss.html" class="svg_link">
+<img src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/ico-rss.svg" alt="RSS" class="ico_rss">
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<p><em>Join the conversation</em></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cookie-banner-text" style="display:none;">This website uses cookies to improve your user experience, personalize content and ads, and analyze website traffic. By continuing to use this website, you consent to our use of cookies. Please see our <a href="https://se.mathworks.com/company/aboutus/policies_statements.html">Privacy Policy</a> to learn more about cookies and how to change your settings.</div>
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript">
+try {
+_satellite.pageBottom();
+} catch (e) {
+//something went wrong
+}
+</script><script src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/satellite-5672ffbd64.download"></script><!--DTM LinkedIn Pixel-->
+<img height="1" width="1" style="display:none;" alt="" src="./Find minimum of unconstrained multivariable function using derivative-free method - MATLAB fminsearch - MathWorks Nordic_files/saved_resource">
+<!-- END Adobe DTM -->
+      </div>
+    </footer>
+
+  </div>
+
+
+
+<a class="btn btn_color_mediumgray" id="go-top"><span class="icon-arrow-open-up icon_24"></span></a><span id="MathEquationRendererScratch" class="MathEquation" style="position: absolute; right: -1000px; bottom: -1000px; white-space: pre-wrap; font-size: 15px;"></span></body></html>

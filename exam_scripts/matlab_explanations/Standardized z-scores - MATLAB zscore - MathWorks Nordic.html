@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://se.mathworks.com/help/stats/zscore.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standardized z-scores - MATLAB zscore
+- MathWorks Nordic</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6.css" rel="stylesheet" type="text/css">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6_lg.css" rel="stylesheet" media="screen and (min-width: 1200px)">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6_md.css" rel="stylesheet" media="screen and (min-width: 992px) and (max-width: 1199px)">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6_sm+xs.css" rel="stylesheet" media="screen and (max-width: 991px)">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6_sm.css" rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 991px)">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6_xs.css" rel="stylesheet" media="screen and (max-width: 767px)">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6_offcanvas.css" rel="stylesheet" type="text/css">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/site6_crux.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" async="" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/elqCfg.min.js.download"></script><script async="" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/uwt.js.download"></script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/quant.js.download" async="" type="text/javascript"></script><script async="" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/fbevents.js.download"></script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/jquery-latest.js.download"></script>
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/jquery.mobile.custom.min.js.download"></script>
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/bootstrap.min.js.download"></script>
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/global.js.download"></script>
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/xvy5baa.css" rel="stylesheet">
+<!-- BEGIN Adobe DTM -->
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/satelliteLib-e8d23c2e444abadc572df06537e2def59c01db09.js.download"></script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/mbox-contents-95c6a4d9c82a8d20476522984666120b54192e9b.js.download"></script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/satellite-58fe08cb64746d190500a115.js.download"></script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/satellite-56972e2c64746d54aa00cb73.js.download"></script><style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility:hidden;}
+</style><script async="" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-1023777138');
+</script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/last-event-tag-latest.min.js.download"></script>
+<script>AdCloudEvent("B1441C8B533095C00A490D4D@AdobeOrg","mathwgbl");</script>
+<!-- END Adobe DTM -->
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/doc_center.css" rel="stylesheet" type="text/css">
+<link href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/doc_center_print.css" rel="stylesheet" type="text/css" media="print">
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/matlab_dialog.js.download"></script>
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/livecontrolpopoverhandler.js.download"></script>
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/openwith.js.download"></script>
+<style>
+.examples_short_list a.btn {display: none;}
+</style>
+<script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "BreadcrumbList",
+"itemListElement":
+[{
+"@type": "ListItem",
+"position": 1,
+"item": {
+"@id": "index.html",
+"name": "Statistics and Machine Learning Toolbox"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 2,
+"item": {
+"@id": "exploratory-data-analysis.html",
+"name": "Descriptive Statistics and Visualization"
+}
+}
+,
+{
+"@type": "ListItem",
+"position": 3,
+"item": {
+"@id": "descriptive-statistics.html",
+"name": "Descriptive Statistics"
+}
+}]
+}</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "VisibleBreadcrumbs",
+"itemListElement":
+[
+"descriptive-statistics"
+],
+"itemListOrder": "http://schema.org/ItemListOrderAscending"
+}
+</script><script xmlns="http://www.w3.org/1999/xhtml" type="application/ld+json">
+{
+"@context": "http://schema.org",
+"@type": "ItemList",
+"name": "ExtendedCapabilities",
+"itemListElement":
+[
+{
+"@type": "ListItem",
+"position": 1,
+"item":
+{
+"@context": "http://schema.org",
+"@type": "PropertyValue",
+"name": "codegen",
+"value": "limited"
+}
+},
+{
+"@type": "ListItem",
+"position": 2,
+"item":
+{
+"@context": "http://schema.org",
+"@type": "PropertyValue",
+"name": "gpuarrays",
+"value": "limited"
+}
+},
+{
+"@type": "ListItem",
+"position": 3,
+"item":
+{
+"@context": "http://schema.org",
+"@type": "PropertyValue",
+"name": "tall",
+"value": "full"
+}
+}
+]
+}
+</script>
+<meta xmlns="http://www.w3.org/1999/xhtml" name="chunktype" content="refpage"><meta xmlns="http://www.w3.org/1999/xhtml" name="refentity" itemprop="refentity" content="function:zscore">
+<meta xmlns="http://www.w3.org/1999/xhtml" http-equiv="Content-Script-Type" content="text/javascript">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="toctype" itemprop="pagetype" content="fcn">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="infotype" itemprop="infotype" content="ref/function">
+<meta xmlns="http://www.w3.org/1999/xhtml" name="description" itemprop="description" content="This MATLAB function returns the z-score for each element of X such that columns of X are centered to have mean 0 and scaled to have standard deviation 1."><script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/l10n.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/docscripts.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/f1help.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/mw.toc_2.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/mw.imagescaling.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/mw.imageanimation.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/mw.breadcrumb.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/jquery.highlight.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/underscore-min.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/examples.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/doc_omniture.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/overload.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/helpservices.js.download"></script>
+<!-- Additions/overrides from the doc side -->
+<script type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/docsearch.js.download"></script>
+<script type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/jquery.toggleval.js.download"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/MathRenderer.js.download"></script><style type="text/css">math { visibility: hidden; }</style><link type="text/css" rel="stylesheet" href="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/main.css"><script type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/dojo.js.download"></script>
+<script type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/jquery.cookie.js.download"></script>
+<script type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/akamai-country-code.js.download"></script>
+<script type="text/javascript">
+var domainCountryCodeMap = new Map();
+var countryCodeToDomainMap = new Map();
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('la.mathworks.com', 'la');
+countryCodeToDomainMap.set('la','la.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('ww2.mathworks.cn', 'ww2');
+countryCodeToDomainMap.set('ww2','ww2.mathworks.cn')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('fr.mathworks.com', 'fr');
+countryCodeToDomainMap.set('fr','fr.mathworks.com')
+domainCountryCodeMap.set('de.mathworks.com', 'de');
+countryCodeToDomainMap.set('de','de.mathworks.com')
+domainCountryCodeMap.set('in.mathworks.com', 'in');
+countryCodeToDomainMap.set('in','in.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+domainCountryCodeMap.set('it.mathworks.com', 'it');
+countryCodeToDomainMap.set('it','it.mathworks.com')
+domainCountryCodeMap.set('jp.mathworks.com', 'jp');
+countryCodeToDomainMap.set('jp','jp.mathworks.com')
+domainCountryCodeMap.set('kr.mathworks.com', 'kr');
+countryCodeToDomainMap.set('kr','kr.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('nl.mathworks.com', 'nl');
+countryCodeToDomainMap.set('nl','nl.mathworks.com')
+domainCountryCodeMap.set('au.mathworks.com', 'au');
+countryCodeToDomainMap.set('au','au.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('www.mathworks.com', 'www');
+countryCodeToDomainMap.set('www','www.mathworks.com')
+domainCountryCodeMap.set('es.mathworks.com', 'es');
+countryCodeToDomainMap.set('es','es.mathworks.com')
+domainCountryCodeMap.set('se.mathworks.com', 'se');
+countryCodeToDomainMap.set('se','se.mathworks.com')
+domainCountryCodeMap.set('ch.mathworks.com', 'ch');
+countryCodeToDomainMap.set('ch','ch.mathworks.com')
+domainCountryCodeMap.set('uk.mathworks.com', 'uk');
+countryCodeToDomainMap.set('uk','uk.mathworks.com')
+var countrySubdomains = {
+US: {name: 'United States', subdomain: 'www'},
+AD: {name: 'Andorra', subdomain: 'es'},
+AR: {name: 'Argentina', subdomain: 'la'},
+AU: {name: 'Australia', subdomain: 'au'},
+AT: {name: 'Austria', subdomain: 'de'},
+BE: {name: 'Belgium', subdomain: 'nl'},
+BO: {name: 'Bolivia', subdomain: 'la'},
+BV: {name: 'Bouvet Islands', subdomain: 'se'},
+CA: {name: 'Canada', subdomain: 'www'},
+CL: {name: 'Chile', subdomain: 'la'},
+CN: {name: 'China', subdomain: 'cn'},
+CX: {name: 'Christmas Island', subdomain: 'au'},
+CC: {name: 'Cocos-Keeling Islands', subdomain: 'au'},
+CO: {name: 'Colombia', subdomain: 'la'},
+CR: {name: 'Costa Rica', subdomain: 'la'},
+DK: {name: 'Denmark', subdomain: 'se'},
+DO: {name: 'Dominican Republic', subdomain: 'la'},
+EC: {name: 'Ecuador', subdomain: 'la'},
+SV: {name: 'El Salvador', subdomain: 'la'},
+EE: {name: 'Estonia', subdomain: 'se'},
+FO: {name: 'Faroe Islands', subdomain: 'se'},
+FJ: {name: 'Fiji', subdomain: 'au'},
+FI: {name: 'Finland', subdomain: 'se'},
+FR: {name: 'France', subdomain: 'fr'},
+GF: {name: 'French Guiana', subdomain: 'fr'},
+PF: {name: 'French Polynesia', subdomain: 'fr'},
+DE: {name: 'Germany', subdomain: 'de'},
+GL: {name: 'Greenland', subdomain: 'se'},
+GP: {name: 'Guadalupe', subdomain: 'fr'},
+GT: {name: 'Guatemala', subdomain: 'la'},
+HN: {name: 'Honduras', subdomain: 'la'},
+IS: {name: 'Iceland', subdomain: 'se'},
+IN: {name: 'India', subdomain: 'in'},
+IE: {name: 'Ireland', subdomain: 'uk'},
+IT: {name: 'Italy', subdomain: 'it'},
+JP: {name: 'Japan', subdomain: 'jp'},
+KR: {name: 'Korea', subdomain: 'kr'},
+LV: {name: 'Latvia', subdomain: 'se'},
+LI: {name: 'Liechtenstein', subdomain: 'ch'},
+LT: {name: 'Lithuania', subdomain: 'se'},
+LU: {name: 'Luxembourg', subdomain: 'nl'},
+MQ: {name: 'Martinique', subdomain: 'fr'},
+YT: {name: 'Mayotte Island', subdomain: 'fr'},
+MX: {name: 'Mexico', subdomain: 'la'},
+MC: {name: 'Monaco', subdomain: 'fr'},
+NL: {name: 'Netherlands', subdomain: 'nl'},
+NC: {name: 'New Caledonia', subdomain: 'fr'},
+NZ: {name: 'New Zealand', subdomain: 'au'},
+NI: {name: 'Nicaragua', subdomain: 'la'},
+NO: {name: 'Norway', subdomain: 'se'},
+PA: {name: 'Panama', subdomain: 'la'},
+PG: {name: 'Papua New Guinea', subdomain: 'au'},
+PY: {name: 'Paraguay', subdomain: 'la'},
+PE: {name: 'Peru', subdomain: 'la'},
+PT: {name: 'Portugal', subdomain: 'www'},
+PR: {name: 'Puerto Rico', subdomain: 'la'},
+RE: {name: 'Reunion Island', subdomain: 'fr'},
+ES: {name: 'Spain', subdomain: 'es'},
+LK: {name: 'Sri Lanka', subdomain: 'in'},
+SE: {name: 'Sweden', subdomain: 'se'},
+CH: {name: 'Switzerland', subdomain: 'ch'},
+GB: {name: 'United Kingdom', subdomain: 'uk'},
+UY: {name: 'Uruguay', subdomain: 'la'},
+VA: {name: 'Vatican City', subdomain: 'it'},
+VE: {name: 'Venezuela', subdomain: 'la'},
+};
+var domainUtils = {
+isExemptUrl: function (url) {
+if(window.overrideDomainSelector){
+return true;
+}
+var exemptions = [
+'/api/parts/',
+'nocookie=true',
+'client=addons',
+'requestedDomain'
+];
+return exemptions.some(function (exemption) {
+return url.indexOf(exemption) != -1;
+});
+},
+endsWith: function( str, suffix ) {
+return str.substring( str.length - suffix.length, str.length ) === suffix;
+},
+getDomain: function (url) {
+var segments = url.split('/');
+return segments[2];
+},
+getSubdomain: function (domain) {
+return domainCountryCodeMap.get(domain);
+},
+setCookies: function (domain, lang) {
+var domainCookie = 'mathworks.com';
+if (this.endsWith(location.host, 'mathworks.cn')) {
+domainCookie = 'mathworks.cn';
+}
+var selectedSubdomain = this.getSubdomain(domain);
+if (this.endsWith(domain, 'mathworks.cn')) {
+selectedSubdomain = 'cn';
+}
+if (selectedSubdomain === 'www') {
+// This is what ePS did in EQUUS and Ruby, so...
+// we're just following suit.
+selectedSubdomain = 'us';
+}
+if (selectedSubdomain !== 'cn' && selectedSubdomain !== 'ch') {
+lang = '';
+}
+var cookieNames = this.getCookieNames(domain);
+var expires = new Date();
+expires.setFullYear(expires.getFullYear() + 68);
+var myJSON = JSON.stringify({
+domain: selectedSubdomain,
+lang: lang,
+v: 2
+});
+$.cookie(cookieNames.mwaPrefsCookieName, myJSON, {path: '/', expires: 20*365, domain: domainCookie});
+},
+getCookieNames: function (domain) {
+var mwaLoginCookieName = 'mwa';
+var mwaPrefsCookieName = 'mwa_prefs';
+var subdomainSuffix = '';
+if (subdomainSuffix != "") {
+mwaLoginCookieName = mwaLoginCookieName + subdomainSuffix;
+mwaPrefsCookieName = mwaPrefsCookieName + subdomainSuffix;
+}
+return {
+mwaLoginCookieName: mwaLoginCookieName,
+mwaPrefsCookieName: mwaPrefsCookieName,
+};
+},
+switchDomain: function (targetDomain, targetLang) {
+var targetUri = location.pathname;
+targetLang = this.getValidLang(this.getSubdomain(targetDomain), targetLang);
+var url = '//' + targetDomain;
+url += targetUri + location.search;
+url = url.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+url = url.replace(/\&$/, '');
+url = url.replace(/\?$/, '');
+var requestedDomainParam = 'requestedDomain=' + targetLang;
+if (url.indexOf('?') > -1) {
+url = url + '&' + requestedDomainParam;
+} else {
+url = url + '?' + requestedDomainParam;
+}
+window.location = url;
+},
+getPrefCookie: function(currentDomain) {
+var cookieNames = this.getCookieNames(currentDomain);
+// regex from: https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+var cookieRegex = new RegExp("(?:(?:^|.*;\\s*)"+cookieNames.mwaPrefsCookieName+"\\s*\\=\\s*([^;]*).*$)|^.*$");
+if (document.cookie) {
+var cookieValue = document.cookie.replace(cookieRegex, "$1");
+if (cookieValue) {
+return JSON.parse(decodeURIComponent(cookieValue));
+}
+}
+return "";
+},
+getPrefDomain: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var visitorPrefDomain;
+if (!!mwaPrefsCookieJsonObject) {
+visitorPrefDomain = mwaPrefsCookieJsonObject.domain;
+if (visitorPrefDomain === 'us') {
+visitorPrefDomain = 'www';
+}else if (visitorPrefDomain === 'cn') {
+visitorPrefDomain = 'ww2';
+}
+}
+return countryCodeToDomainMap.get(visitorPrefDomain);
+},
+getPrefLang: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[mwaPrefsCookieJsonObject.domain];
+if (currentDomainLangOptions) {
+var cookiePrefLang = mwaPrefsCookieJsonObject.lang;
+if (currentDomainLangOptions.indexOf(cookiePrefLang) >= 0) {
+return cookiePrefLang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+getCookieVersion: function (currentDomain) {
+var mwaPrefsCookieJsonObject = this.getPrefCookie(currentDomain);
+return mwaPrefsCookieJsonObject.v;
+},
+getTargetDomainForCookies: function() {
+var targetDomain = "";
+if (this.endsWith(location.host, 'mathworks.cn')) {
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('www');
+}else{
+targetDomain = window.location.protocol + "//" + countryCodeToDomainMap.get('ww2');
+}
+return targetDomain;
+},
+getValidLang: function (subdomain, lang) {
+var multilingualDomainLanguageSupport = {};
+multilingualDomainLanguageSupport['ch'] = ['en','de','fr'];
+multilingualDomainLanguageSupport['cn'] = ['zh','en'];
+multilingualDomainLanguageSupport['ww2'] = ['zh','en'];
+var currentDomainLangOptions = multilingualDomainLanguageSupport[subdomain];
+if (currentDomainLangOptions) {
+if (currentDomainLangOptions.indexOf(lang) >= 0) {
+return lang;
+} else {
+return currentDomainLangOptions[0];
+}
+}
+return '';
+},
+isDefaultLang: function (subdomain, lang) {
+var multilingualDomainLanguageDefault = {};
+multilingualDomainLanguageDefault['ch'] = 'en';
+multilingualDomainLanguageDefault['cn'] = 'zh';
+multilingualDomainLanguageDefault['ww2'] = 'zh';
+var currentDomainLang = multilingualDomainLanguageDefault[subdomain];
+if (currentDomainLang) {
+if (currentDomainLang === lang) {
+return true;
+} else {
+return false;
+}
+} else if (lang) {
+return false;
+}
+return true;
+}
+};
+$(window).on('load', function() {
+var currentUrl = window.location.href;
+var currentDomain = domainUtils.getDomain(currentUrl);
+var currentSubdomain = domainUtils.getSubdomain(currentDomain);
+var requestedDomainLangRegEx = RegExp('[?&]requestedDomain=([^&]*)').exec(window.location.search);
+if (requestedDomainLangRegEx) {
+var setLang = domainUtils.getValidLang(currentSubdomain, requestedDomainLangRegEx[1])
+domainUtils.setCookies(currentDomain, setLang);
+var URLWithoutRequestedDomain = window.location.href.replace(/requestedDomain=[a-z]?[a-z]?&?/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\&$/, '');
+URLWithoutRequestedDomain = URLWithoutRequestedDomain.replace(/\?$/, '');
+history.replaceState({}, document.title, URLWithoutRequestedDomain);
+window.location = URLWithoutRequestedDomain;
+}
+$('body').on('click', '.domain_selector_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+var currentCountryText =
+$('a[data-subdomain=\'' + currentSubdomain + '\'][data-default-lang=\'true\'][data-selected-text]')
+.data('selected-text');
+$('#countrySelectorButtonText').text(currentCountryText);
+var visitorPrefDomain = domainUtils.getPrefDomain(currentDomain);
+var visitorPrefLang = domainUtils.getPrefLang(currentDomain);
+var akamaiCountryCode;
+var akamaiprofile = CQ_Analytics.ClientContextMgr.getRegisteredStore('akamaiprofile');
+if (akamaiprofile) {
+akamaiCountryCode = akamaiprofile.getProperty('countryCode');
+}
+var recommendedSubdomain;
+var recommendedLink;
+if (akamaiCountryCode) {
+if (countrySubdomains[akamaiCountryCode] !== undefined) {
+recommendedSubdomain = countrySubdomains[akamaiCountryCode].subdomain;
+} else {
+recommendedSubdomain = 'www';
+}
+if (recommendedSubdomain === 'us') {
+recommendedSubdomain = 'www';
+}else if (recommendedSubdomain === 'cn') {
+recommendedSubdomain = 'ww2';
+}
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+} else if (visitorPrefDomain) {
+recommendedSubdomain = domainUtils.getSubdomain(visitorPrefDomain);
+if (visitorPrefLang) {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-lang=\'' + visitorPrefLang + '\']');
+} else {
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-default-lang=\'true\']');
+}
+}
+if (!recommendedLink) {
+recommendedSubdomain = 'www';
+recommendedLink = $('a[data-subdomain=\'' + recommendedSubdomain + '\'][data-recommended-text]');
+}
+$('.recommended-country').text(recommendedLink.data('recommended-text'));
+$('#recommended_domain_button').attr('href', recommendedLink.attr('href'));
+$('#recommended_domain_button').attr('data-lang', recommendedLink.attr('data-lang'));
+$('body').on('click', '#recommended_domain_button', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+domainUtils.switchDomain(selectedDomain, selectedLang);
+});
+$('a.worldwide_link').attr('href', recommendedLink.attr('href'));
+$('a.worldwide_link').data('lang', recommendedLink.data('lang'));
+$('body').on('click', 'a.worldwide_link', function (e) {
+e.preventDefault();
+var selectedDomain = domainUtils.getDomain(this.href);
+var selectedLang = $(this).data('lang');
+domainUtils.setCookies(selectedDomain, selectedLang);
+var href = e.target.getAttribute('href');
+var worldwideLink = '/company/worldwide.html?s_tid=dmselect_cta&requestedDomain=';
+if(href) {
+location.href = href + worldwideLink;
+}
+});
+if (akamaiCountryCode === 'CN') {
+$('#china_performance_alert').show();
+}
+var crossDomain = "";
+if(domainUtils.endsWith(currentDomain, '.mathworks.cn')){
+crossDomain = countryCodeToDomainMap.get('www');
+}else{
+crossDomain = countryCodeToDomainMap.get('ww2');
+}
+if ((!domainUtils.endsWith(currentDomain, '.mathworks.com') && !domainUtils.endsWith(currentDomain, '.mathworks.cn')) || domainUtils.isExemptUrl(currentUrl)) {
+return;
+}
+if (!visitorPrefDomain) {
+if (akamaiCountryCode) {
+var akamaiDeterminedSubdomain = $('a[data-country-code=\'' + akamaiCountryCode + '\']').data('subdomain');
+if ((akamaiCountryCode.toLowerCase() === currentSubdomain) || (akamaiDeterminedSubdomain === currentSubdomain)) {
+domainUtils.setCookies(currentDomain, "");
+} else {
+$('#country-unselected').modal('show');
+}
+return;
+}
+if (currentSubdomain === 'www') {
+domainUtils.setCookies(currentDomain, '');
+} else {
+$('#country-unselected').modal('show');
+}
+} else if (akamaiCountryCode === 'CN' && !(visitorPrefDomain === 'CN') && !domainUtils.getCookieVersion(currentDomain)) {
+$('#country-unselected').modal('show');
+}
+});
+</script> <script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/global_nav.js.download"></script>
+<script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/satellite-5a6285a664746d3edc002109.js.download"></script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/s-code-contents-73da148cb454c4f6e395aa8df704854c99540662.js.download"></script></head>
+  
+<body id="responsive_offcanvas" class="no_animate" style="">
+
+  <!-- Mobile TopNav: Start -->
+<div class="header visible-xs visible-sm" id="header_mobile" translate="no" style="">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle topnav_toggle" data-toggle="collapse" data-target="#topnav_collapse">
+<span class="sr-only">Toggle Main Navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link navbar-brand">
+<img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+</div>
+</div>
+<div class="row visible-xs visible-sm">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse" id="topnav_collapse">
+<ul class="nav navbar-nav" id="topnav"><li class="headernav_login dropdown"><a href="https://se.mathworks.com/help/stats/zscore.html#" class="dropdown-toggle mwa_image_drop_down" data-toggle="dropdown" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)" title="Arianna" role="button"><span class="visible-xs visible-sm"><span class="mobile_account_image" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)"></span>Arianna<b class="caret"></b></span></a><ul class="dropdown-menu" role="menu"><li class="mwa-nav_account"><a href="https://se.mathworks.com/mwaccount/">My Account</a></li><li class="mwa-nav_community"><a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile?s_tid=gn_comm">My Community Profile</a></li><li class="mwa-nav_associate"><a href="https://se.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Link License</a></li><li class="mwa-nav_logout"><a href="https://se.mathworks.com/login/logout?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fstats%2Fzscore.html">Sign Out</a></li></ul></li>
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus">Contact Us</a></li>
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml">Get MATLAB</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Mobile TopNav: End -->
+<!-- Desktop TopNav: Start -->
+<div class="header hidden-xs hidden-sm" id="header_desktop" translate="no">
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-9">
+<div class="navbar-header">
+<div class="logo_container hidden-xs hidden-sm">
+<a href="https://se.mathworks.com/?s_tid=gn_logo" class="svg_link pull-left">
+<img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/pic-header-mathworks-logo.svg" class="mw_logo" alt="MathWorks">
+</a>
+</div>
+<div class="navbar-collapse collapse hidden-xs hidden-sm">
+<ul class="nav navbar-nav" id="topnav">
+<li class="topnav_products "><a href="https://se.mathworks.com/products.html?s_tid=gn_ps">Products</a></li>
+<li class="topnav_solutions "><a href="https://se.mathworks.com/solutions.html?s_tid=gn_sol">Solutions</a></li>
+<li class="topnav_academia "><a href="https://se.mathworks.com/academia.html?s_tid=gn_acad">Academia</a></li>
+<li class="topnav_support "><a href="https://se.mathworks.com/support.html?s_tid=gn_supp">Support</a></li>
+<li class="topnav_community "><a href="https://se.mathworks.com/matlabcentral/?s_tid=gn_mlc">Community</a></li>
+<li class="topnav_events "><a href="https://se.mathworks.com/company/events.html?s_tid=gn_ev">Events</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-3">
+<div class="collapse navbar-collapse" id="headernav_collapse">
+<ul class="nav navbar-nav navbar-right" id="headernav">
+<li class="headernav_store"><a href="https://se.mathworks.com/products/get-matlab.html?s_tid=gn_getml" class="btn btn_color_blue companion_btn btn-xs">Get MATLAB</a></li>
+<li class="headernav_contact"><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=gn_cntus" title="Contact Us"></a></li>
+<li class="headernav_login dropdown"><a href="https://se.mathworks.com/help/stats/zscore.html#" class="dropdown-toggle mwa_image_drop_down" data-toggle="dropdown" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)" title="Arianna" role="button"><span class="visible-xs visible-sm"><span class="mobile_account_image" style="background-image:url(/matlabcentral/profiles/7854473_1565692803210_DEF.jpg), url(/images/responsive/global/ico-header-account-active.svg)"></span>Arianna<b class="caret"></b></span></a><ul class="dropdown-menu" role="menu"><li class="mwa-nav_account"><a href="https://se.mathworks.com/mwaccount/">My Account</a></li><li class="mwa-nav_community"><a href="https://se.mathworks.com/matlabcentral/profile/authors/my_profile?s_tid=gn_comm">My Community Profile</a></li><li class="mwa-nav_associate"><a href="https://se.mathworks.com/licensecenter/workflows/associate_license?s_tid=gn_aslc">Link License</a></li><li class="mwa-nav_logout"><a href="https://se.mathworks.com/login/logout?uri=https%3A%2F%2Fse.mathworks.com%2Fhelp%2Fstats%2Fzscore.html">Sign Out</a></li></ul></li></ul>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Desktop TopNav: End -->
+<!-- Conjoined Header: Start -->
+<div class="sticky_header_container includes_subnav affix-top">
+<!-- Section Header: Start -->
+<div class="section_header level_3">
+<div class="container-fluid">
+<div class="row" id="mobile_search_row">
+<div class="col-xs-12 has_horizontal_local_nav" id="section_header_title">
+<div class="section_header_content">
+<div class="section_header_title add_cursor_pointer">
+<p class="h1">Documentation</p>
+</div>
+<button type="button" class="navbar-toggle collapsed subnav visible-xs" data-toggle="collapse" data-target=".mobile_subnav_content"> <span class="icon-arrow-down icon_24"></span> </button>
+</div>
+<div class="crux_nav_container hidden-xs">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" id="crux_nav_desktop"><li id="crux_nav_documentation" class="crux_nav_active active"><a>All</a></li><li id="crux_nav_example"><a href="https://se.mathworks.com/help/stats/examples.html?category=descriptive-statistics&amp;s_tid=CRUX_gn_example">Examples</a></li><li id="crux_nav_function"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;category=descriptive-statistics&amp;s_tid=CRUX_gn_function">Functions</a></li><li id="crux_nav_app"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=app&amp;category=descriptive-statistics&amp;s_tid=CRUX_gn_app">Apps</a></li><li role="presentation" class="dropdown" id="topnav_more" style="display: none;"><a class="dropdown-toggle" data-toggle="dropdown" href="https://se.mathworks.com/help/stats/zscore.html#?s_tid=CRUX_gn_topnav_more" role="button" aria-haspopup="true" aria-expanded="false"> More <span class="caret"></span></a><ul class="dropdown-menu"></ul></li></ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12" id="mobile_search">
+<div class="search_nested_content_container">
+<div id="search_scope_doc" class="collapse in">
+<form id="docsearch_form" name="docsearch_form" method="get" data-release="R2019b" data-language="en" action="https://se.mathworks.com/help/search.html">
+<div class="input-group tokenized_search_field">
+<label class="sr-only">Search MATLAB Documentation</label>
+<input type="text" class="form-control conjoined_search" autocomplete="off" name="qdoc" placeholder="Search R2019b Documentation" id="docsearch">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Documentation</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<!-- <li data-toggle="collapse" data-target="#search_scope_doc"><a href="#">Documentation</a></li> -->
+<li data-toggle="collapse" data-target="#search_scope_support" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/zscore.html#">Support</a></li>
+<li data-toggle="collapse" data-target="#search_scope_site" class="doc_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/zscore.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".doc_search_scope_trigger").click(function() {
+$("#search_scope_doc").removeClass("in");
+$("#search").val($("#docsearch").val());
+$("#query").val($("#docsearch").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1" disabled=""></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_support" class="collapse">
+<form id="support_search" action="https://se.mathworks.com/support/search_results.html" method="get" accept-charset="utf-8">
+<div class="input-group">
+<label class="sr-only">Search All Support Resources</label>
+<input id="suggestion" type="hidden" name="suggestion" value="">
+<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+<input id="search" class="form-control conjoined_search" type="text" name="q" placeholder="Search All Support Resources" autocomplete="off">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">Support</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/zscore.html#">Documentation</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_support"><a href="#">Support</a></li>-->
+<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/zscore.html#">MathWorks</a></li>
+</ul>
+<script>
+$(".support_search_scope_trigger").click(function() {
+$("#search_scope_support").removeClass("in");
+$("#docsearch").val($("#search").val());
+$("#query").val($("#search").val());
+});
+</script>
+<button type="submit" name="submitsearch" id="support_submitsearch" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+<div id="search_scope_site" class="collapse">
+<form name="search" id="site_search" class="site_search" action="https://se.mathworks.com/search/site_search.html" method="get">
+<div class="input-group">
+<label class="sr-only">Search MathWorks.com</label>
+<input type="hidden" name="c[]" value="entire_site">
+<input type="text" name="q" id="query" class="form-control conjoined_search" placeholder="Search MathWorks.com" autocomplete="off" \="">
+<div class="input-group-btn">
+<button type="button" class="btn btn_search_adjacent dropdown-toggle" data-toggle="dropdown" tabindex="-1"><span class="caret"></span><span class="search_scope_label">MathWorks</span></button>
+<ul class="dropdown-menu list-unstyled dropdown-menu-right" role="menu">
+<li data-toggle="collapse" data-target="#search_scope_doc" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/zscore.html#">Documentation</a></li>
+<li data-toggle="collapse" data-target="#search_scope_support" class="site_search_scope_trigger"><a href="https://se.mathworks.com/help/stats/zscore.html#">Support</a></li>
+<!--<li data-toggle="collapse" data-target="#search_scope_site" class="support_search_scope_trigger"><a href="#">MathWorks</a></li>-->
+</ul>
+<script>
+$(".site_search_scope_trigger").click(function() {
+$("#search_scope_site").removeClass("in");
+$("#search").val($("#query").val());
+$("#docsearch").val($("#query").val());
+});
+</script>
+<button type="submit" id="searchbutton" class="btn icon-search btn_search_adjacent btn_search icon_16" tabindex="-1"></button>
+</div>
+</div>
+</form>
+</div>
+</div>
+<button class="btn icon-remove btn_search pull-right icon_32 visible-xs" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Close Mobile Search</span></button>
+</div>
+<div class="visible-xs" id="search_actuator">
+<button class="btn icon-search btn_search pull-right icon_16" data-toggle="collapse" href="#mobile_search" aria-expanded="false" aria-controls="mobile_search"><span class="sr-only">Open Mobile Search</span></button>
+</div>
+</div>
+<script>
+$(".section_header_title").click(function(){
+$(window.location).attr('href', '../index.html');
+});
+</script>
+<!-- Section Header: End -->
+<!-- Mobile Local Nav: Start -->
+<div class="row visible-xs" id="mobile_subnav">
+<div class="col-xs-12">
+<div class="navbar-collapse collapse mobile_subnav_content">
+<div class="crux_nav_container">
+<div class="crux_nav">
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav subnav" id="crux_nav_mobile"><li id="crux_nav_mobile_documentation" class="crux_nav_active"><a>All</a></li><li id="crux_nav_mobile_example"><a href="https://se.mathworks.com/help/stats/examples.html?category=descriptive-statistics">Examples</a></li><li id="crux_nav_mobile_function"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;category=descriptive-statistics">Functions</a></li><li id="crux_nav_mobile_app"><a href="https://se.mathworks.com/help/stats/referencelist.html?type=app&amp;category=descriptive-statistics">Apps</a></li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Local Nav: End -->
+</div>
+</div>
+<!-- Horo Nav: Start -->
+<div class="horizontal_nav">
+<div class="horizontal_nav_container">
+<div class="offcanvas_actuator active" data-toggle="offcanvas" data-target="#sidebar" id="nav_toggle">
+<button type="button" class="btn">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-menu"></span>
+</button>
+<a href="javascript:void(0)" class="offcanvas_actuator_label" id="translation_icon-menu" tabindex="0"></a>
+<a href="javascript:void(0)" class="offcanvas_actuator_close" tabindex="0"></a>
+</div>
+<div class="offcanvas_horizontal_nav">
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-12 hidden-xs hidden-sm">
+<div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ST&amp;s_iid=doc_trial_ST_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Horo Nav: End -->
+</div>
+<!-- Conjoined Header: End -->
+
+  <div class="row-offcanvas row-offcanvas-left active">
+  
+    <div class="sidebar-offcanvas" id="sidebar" role="navigation">
+      <nav class="offcanvas_nav" role="navigation">
+          <ul xmlns="http://www.w3.org/1999/xhtml" class="nav_breadcrumb" id="ul_left_nav_ancestors"><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/index.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Documentation Home</span></a></li></ul>
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav_disambiguation"><li><a href="https://se.mathworks.com/help/stats/index.html?s_tid=CRUX_lftnav">Statistics and Machine Learning Toolbox</a>
+</li>
+<li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/exploratory-data-analysis.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Descriptive Statistics and Visualization</span></a></li><li itemscope="" itemtype="http://www.data-vocabulary.org/Breadcrumb" itemprop="breadcrumb"><a href="https://se.mathworks.com/help/stats/descriptive-statistics.html?s_tid=CRUX_lftnav" itemprop="url"><span itemprop="title">Descriptive Statistics</span></a></li></ul><ul xmlns="http://www.w3.org/1999/xhtml" class="nav_scrollspy nav">
+<li class="nav_scrollspy_function notranslate active"><a href="https://se.mathworks.com/help/stats/zscore.html#responsive_offcanvas"><span class="refname">zscore</span></a></li>
+<li class="nav_scrollspy_title" id="SSPY810-refentry">On this page</li>
+<!--ADD_REFENTRY_TITLE_HERE 11--><li><a href="https://se.mathworks.com/help/stats/zscore.html#d117e898470" class="intrnllnk">Syntax</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#description" class="intrnllnk">Description</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob-4" class="intrnllnk">Examples</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg_tse" class="intrnllnk">Z-Scores of Two Data Vectors</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg_to5-1" class="intrnllnk">Z-Scores for a Population vs. Sample</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg_tqb-1" class="intrnllnk">Z-Scores of a Data Matrix</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#mw_8669f0bf-2b1b-4757-9839-da899195d380" class="intrnllnk">Z-Scores of Multidimensional Array</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg_tq7-1" class="intrnllnk">Z-Scores, Mean, and Standard Deviation</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob-2" class="intrnllnk">Input Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk">X</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xt" class="intrnllnk">flag</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yb" class="intrnllnk">dim</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#mw_2940311e-3429-4971-808b-974bb6a7ef8e" class="intrnllnk">vecdim</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob-3" class="intrnllnk">Output Arguments</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk">Z</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#bthj85k" class="intrnllnk">mu</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#bthj856" class="intrnllnk">sigma</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg5k75" class="intrnllnk">More About</a><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#btikeav" class="intrnllnk">Z-Score</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#bth9btf" class="intrnllnk">Multidimensional Array</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#bth9bt0-1" class="intrnllnk">First Nonsingleton Dimension</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob_sep_btikfbf-1" class="intrnllnk">Sample Standard Deviation</a></li></ul><ul class="nav"><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob_sep_btikfcc-1" class="intrnllnk">Population Standard Deviation</a></li></ul></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#bth_8rd-1" class="intrnllnk">Algorithms</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#bvmb7wx-1" class="intrnllnk">Extended Capabilities</a></li><li><a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob_seealso" class="intrnllnk">See Also</a></li></ul>
+
+      </nav>
+      <script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/offcanvas.js.download"></script>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <!-- MOBILE CTA - End -->
+
+
+    <div class="content_container" id="content_container">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+                       
+
+
+
+
+
+                   
+    
+                                   
+<section xmlns="http://www.w3.org/1999/xhtml" id="doc_center_content" lang="en"><div id="pgtype-ref-function"><div class="function_ref">                
+
+       <span id="btg0kob" class="anchor_target"></span><h1 class="r2019b notranslate" itemprop="title"><span class="refname">zscore</span></h1><div class="doc_topic_desc"><div class="purpose_container mwExpandToggle0"><p itemprop="purpose">Standardized <em class="varname">z</em>-scores</p><div class="switch mwToggle0"><a href="javascript:void(0);" id="expandAllPage" data-allexpanded="true1">collapse all in page</a></div></div></div>
+<div class="ref_sect"><h2 id="d117e898470">Syntax</h2><div class="syntax_signature"><div class="syntax_signature_module"><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#btg0ks8-1" class="intrnllnk">Z = zscore(X)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#d117e898562" class="intrnllnk">Z = zscore(X,flag)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#d117e898634" class="intrnllnk">Z = zscore(X,flag,'all')</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#d117e898661" class="intrnllnk">Z = zscore(X,flag,dim)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#d117e898713" class="intrnllnk">Z = zscore(X,flag,vecdim)</a></code></div><div class="code_responsive"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#d117e898753" class="intrnllnk">[Z,mu,sigma]
+= zscore(<span class="argument_placeholder">___</span>)</a></code></div></div></div></div><div class="clear"></div><span id="btg0kob-1" class="anchor_target"></span><h2 id="description">Description</h2><div class="descriptions"><div class="description_module"><span id="btg0ksw" class="anchor_target"></span>
+<div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/zscore.html#btg_tse" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="btg0ks8-1" itemprop="syntax"><code id="btg0ks8-1" class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk"><code class="argument">Z</code></a> = zscore(<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a>)</code></span> returns
+the <a href="https://se.mathworks.com/help/stats/zscore.html#btikeav" class="intrnllnk"><em class="varname">z</em>-score</a> for
+each element of <code class="literal">X</code> such that columns of <code class="literal">X</code> are
+centered to have mean 0 and scaled to have standard deviation 1. <code class="literal">Z</code> is
+the same size as <code class="literal">X</code>. </p><div class="itemizedlist"><ul><li><p>If <code class="literal">X</code> is a vector, then <code class="literal">Z</code> is
+a vector of <em class="varname">z</em>-scores. </p></li><li><p>If <code class="literal">X</code> is a matrix, then <code class="literal">Z</code> is
+a matrix of the same size as <code class="literal">X</code>, and each column
+of <code class="literal">Z</code> has mean 0 and standard deviation 1. </p></li><li><p>For <a href="https://se.mathworks.com/help/stats/zscore.html#bth9btf" class="intrnllnk">multidimensional arrays</a>, <em class="varname">z</em>-scores
+in <code class="literal">Z</code> are computed along the <a href="https://se.mathworks.com/help/stats/zscore.html#bth9bt0-1" class="intrnllnk">first
+nonsingleton dimension</a> of <code class="literal">X</code>.</p></li></ul></div></div></div>
+<div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/zscore.html#btg_to5-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e898562" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk"><code class="argument">Z</code></a> = zscore(<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xt" class="intrnllnk"><code class="argument">flag</code></a>)</code></span> scales <code class="literal">X</code> using
+the standard deviation indicated by <code class="literal">flag</code>. </p><div class="itemizedlist"><ul><li><p>If <code class="literal">flag</code> is 0 (default), then <code class="literal">zscore</code> scales <code class="literal">X</code> using
+the <a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob_sep_btikfbf-1" class="intrnllnk">sample standard deviation</a>, with <em class="varname">n</em> -
+1 in the denominator of the standard deviation formula. <code class="literal">zscore(X,0)</code> is
+the same as <code class="literal">zscore(X)</code>.</p></li><li><p>If <code class="literal">flag</code> is 1, then <code class="literal">zscore</code> scales <code class="literal">X</code> using
+the <a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob_sep_btikfcc-1" class="intrnllnk">population standard deviation</a>,
+with <em class="varname">n</em> in the denominator of standard deviation
+formula.</p></li></ul></div></div></div>
+      <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/zscore.html#mw_8669f0bf-2b1b-4757-9839-da899195d380" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e898634" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk"><code class="argument">Z</code></a> = zscore(<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xt" class="intrnllnk"><code class="argument">flag</code></a>,'all')</code></span>
+          standardizes <code class="argument">X</code> by using the mean and standard deviation of all the
+          values in <code class="argument">X</code>.</p></div></div>
+<div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/zscore.html#btg_tqb-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e898661" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk"><code class="argument">Z</code></a> = zscore(<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xt" class="intrnllnk"><code class="argument">flag</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yb" class="intrnllnk"><code class="argument">dim</code></a>)</code></span>
+          standardizes <code class="literal">X</code> along the operating dimension <code class="literal">dim</code>.
+          For example, for a matrix <code class="literal">X</code>, if <code class="literal">dim</code> = 1, then
+            <code class="literal">zscore</code> uses the means and standard deviations along the columns of
+            <code class="literal">X</code>, if <code class="literal">dim</code> = 2, then <code class="literal">zscore</code> uses
+          the means and standard deviations along the rows of <code class="literal">X</code>.</p></div></div>
+      <div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/zscore.html#mw_8669f0bf-2b1b-4757-9839-da899195d380" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e898713" itemprop="syntax"><code class="synopsis"><a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk"><code class="argument">Z</code></a> = zscore(<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xt" class="intrnllnk"><code class="argument">flag</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#mw_2940311e-3429-4971-808b-974bb6a7ef8e" class="intrnllnk"><code class="argument">vecdim</code></a>)</code></span>
+          standardizes <code class="argument">X</code> over the dimensions specified by the vector
+            <code class="argument">vecdim</code>. For example, if <code class="argument">X</code> is a matrix, then
+            <code class="literal">zscore(X,0,[1 2])</code> is equivalent to
+            <code class="literal">zscore(X,0,'all')</code> because every element of a matrix is contained in
+          the array slice defined by dimensions 1 and 2.</p></div></div>
+<div class="description_element"><p class="syntax_example"><a href="https://se.mathworks.com/help/stats/zscore.html#btg_tq7-1" class="intrnllnk">example</a></p><div class="code_responsive"><p><span id="d117e898753" itemprop="syntax"><code class="synopsis">[<a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk"><code class="argument">Z</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#bthj85k" class="intrnllnk"><code class="argument">mu</code></a>,<a href="https://se.mathworks.com/help/stats/zscore.html#bthj856" class="intrnllnk"><code class="argument">sigma</code></a>]
+= zscore(<span class="argument_placeholder">___</span>)</code></span> also returns the means and standard
+deviations used for centering and scaling, <code class="literal">mu</code> and <code class="literal">sigma</code>,
+respectively. You can use any of the input arguments in the previous
+syntaxes.</p></div></div>
+</div></div><div class="clear"></div><div class="examples"><h2 id="btg0kob-4">Examples</h2><div class="expandableContent mwExpandToggle1" id="expandableExamples"><p class="switch mwToggle1"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true3">collapse all</a></p><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_btg_tse"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_btg_tse" data-target="#expand_panel_body_btg_tse" aria-controls="expand_panel_body_btg_tse" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="btg_tse">Z-Scores of Two Data Vectors<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_btg_tse" aria-labelledby="expand_panel_heading_btg_tse" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ZScoresofTwoDataVectorsExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Z-Scores of Two Data Vectors",
+          "description": "Compute and plot the z-scores of two data vectors, and then compare the results.",
+          "thumbnailURL": "../examples/stats/win64/ZScoresofTwoDataVectorsExample_02.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "zscore.html"
+
+        },
+          "identifier": "stats.ZScoresofTwoDataVectorsExample",
+          "name": "ZScoresofTwoDataVectorsExample",
+          "url": "zscore.html#btg_tse"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ZScoresofTwoDataVectorsExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ZScoresofTwoDataVectorsExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Compute and plot the <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores of two data vectors, and then compare the results. </p><p>Load the sample data. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>load <span style="color:#A020F0">lawdata</span></pre></div></div></div><p>Two variables load into the workspace: <code class="literal">gpa</code> and <code class="literal">lsat</code>. </p><p>Plot both variables on the same axes. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>plot([gpa,lsat])
+legend(<span style="color:#A020F0">'gpa'</span>,<span style="color:#A020F0">'lsat'</span>,<span style="color:#A020F0">'Location'</span>,<span style="color:#A020F0">'East'</span>)</pre></div></div></div><div class="informalfigure"><div id="d117e899311" class="mediaobject"><p><img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ZScoresofTwoDataVectorsExample_01.png" alt="" width="583"></p></div></div><p>It is difficult to compare these two measures because they are on a very different scale. </p><p>Plot the <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores of <code class="literal">gpa</code> and <code class="literal">lsat</code> on the same axes. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Zgpa = zscore(gpa);
+Zlsat = zscore(lsat);
+plot([Zgpa, Zlsat])
+legend(<span style="color:#A020F0">'gpa z-scores'</span>,<span style="color:#A020F0">'lsat z-scores'</span>,<span style="color:#A020F0">'Location'</span>,<span style="color:#A020F0">'Northeast'</span>)</pre></div></div></div><div class="informalfigure"><div id="d117e899333" class="mediaobject"><p><img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ZScoresofTwoDataVectorsExample_02.png" alt="" width="583"></p></div></div><p>Now, you can see the relative performance of individuals with respect to both their <code class="literal">gpa</code> and <code class="literal">lsat</code> results. For example, the third individual’s <code class="literal">gpa</code> and <code class="literal">lsat</code> results are both one standard deviation below the sample mean. The eleventh individual’s <code class="literal">gpa</code> is around the sample mean but has an <code class="literal">lsat</code> score almost 1.25 standard deviations above the sample average. </p><p>Check the mean and standard deviation of the <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores you created. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre> mean([Zgpa,Zlsat])</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>ans = <span class="emphasis"><em>1×2</em></span>
+10<sup>-14</sup> ×
+
+   -0.1088    0.0357
+
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre> std([Zgpa,Zlsat])</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>ans = <span class="emphasis"><em>1×2</em></span>
+
+     1     1
+
+</pre></div></div></div><p>By definition, <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores of <code class="literal">gpa</code> and <code class="literal">lsat</code> have mean 0 and standard deviation 1. </p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ZScoresofTwoDataVectorsExample"><meta itemprop="exampletitle" content="ZScores of Two Data Vectors"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_btg_to5-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_btg_to5-1" data-target="#expand_panel_body_btg_to5-1" aria-controls="expand_panel_body_btg_to5-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="btg_to5-1">Z-Scores for a Population vs. Sample<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_btg_to5-1" aria-labelledby="expand_panel_heading_btg_to5-1" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ZScoresforaPopulationvsSampleExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Z-Scores for a Population vs. Sample",
+          "description": "Load the sample data.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "zscore.html"
+
+        },
+          "identifier": "stats.ZScoresforaPopulationvsSampleExample",
+          "name": "ZScoresforaPopulationvsSampleExample",
+          "url": "zscore.html#btg_to5-1"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ZScoresforaPopulationvsSampleExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ZScoresforaPopulationvsSampleExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Load the sample data. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>load <span style="color:#A020F0">lawdata</span></pre></div></div></div><p>Two variables load into the workspace: <code class="literal">gpa</code> and <code class="literal">lsat</code>. </p><p>Compute the <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores of <code class="literal">gpa</code> using the population formula for standard deviation. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Z1 = zscore(gpa,1); <span style="color:#228B22">% population formula</span>
+Z0 = zscore(gpa,0); <span style="color:#228B22">% sample formula</span>
+disp([Z1 Z0])</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>    1.2554    1.2128
+    0.8728    0.8432
+   -1.2100   -1.1690
+   -0.2749   -0.2656
+    1.4679    1.4181
+   -0.1049   -0.1013
+   -0.4024   -0.3888
+    1.4254    1.3771
+    1.1279    1.0896
+    0.1502    0.1451
+    0.1077    0.1040
+   -1.5076   -1.4565
+   -1.4226   -1.3743
+   -0.9125   -0.8815
+   -0.5724   -0.5530
+</pre></div></div></div><p>For a sample from a population, the population standard deviation formula with <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">n</span></span></span></span></span></span> in the denominator corresponds to the maximum likelihood estimate of the population standard deviation, and might be biased. The sample standard deviation formula, on the other hand, is the unbiased estimator of the population standard deviation for a sample. </p><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ZScoresforaPopulationvsSampleExample"><meta itemprop="exampletitle" content="ZScores for a Population vs. Sample"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_btg_tqb-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_btg_tqb-1" data-target="#expand_panel_body_btg_tqb-1" aria-controls="expand_panel_body_btg_tqb-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="btg_tqb-1">Z-Scores of a Data Matrix<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_btg_tqb-1" aria-labelledby="expand_panel_heading_btg_tqb-1" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ZScoresofaDataMatrixExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Z-Scores of a Data Matrix",
+          "description": "Compute z-scores using the mean and standard deviation computed along the columns or rows of a data matrix.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "zscore.html"
+
+        },
+          "identifier": "stats.ZScoresofaDataMatrixExample",
+          "name": "ZScoresofaDataMatrixExample",
+          "url": "zscore.html#btg_tqb-1"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ZScoresofaDataMatrixExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ZScoresofaDataMatrixExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Compute <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores using the mean and standard deviation computed along the columns or rows of a data matrix. </p><p>Load the sample data. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>load <span style="color:#A020F0">flu</span></pre></div></div></div><p>The dataset array <code class="literal">flu</code> is loaded in the workplace. <code class="literal">flu</code> has 52 observations on 11 variables. The first variable contains dates (in weeks). The other variables contain the flu estimates for different regions in the U.S. </p><p>Convert the dataset array to a data matrix. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>flu2 = double(flu(:,2:end));</pre></div></div></div><p>The new data matrix, <code class="literal">flu2</code>, is a 52-by-10 double data matrix. The rows correspond to the weeks and the columns correspond to the U.S. regions in the data set array <code class="literal">flu</code>. </p><p>Standardize the flu estimate for each region (the <span class="emphasis"><em>columns</em></span> of <code class="literal">flu2</code>). </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Z1 = zscore(flu2,[ ],1);</pre></div></div></div><p>You can see the <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores in the variable editor by double-clicking on the matrix <code class="literal">Z1</code> created in the workspace. </p><p>Standardize the flu estimate for each week (the <span class="emphasis"><em>rows</em></span> of <code class="literal">flu2</code>). </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Z2 = zscore(flu2,[ ],2);</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ZScoresofaDataMatrixExample"><meta itemprop="exampletitle" content="ZScores of a Data Matrix"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_mw_8669f0bf-2b1b-4757-9839-da899195d380"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_mw_8669f0bf-2b1b-4757-9839-da899195d380" data-target="#expand_panel_body_mw_8669f0bf-2b1b-4757-9839-da899195d380" aria-controls="expand_panel_body_mw_8669f0bf-2b1b-4757-9839-da899195d380" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="mw_8669f0bf-2b1b-4757-9839-da899195d380">Z-Scores of Multidimensional Array<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_mw_8669f0bf-2b1b-4757-9839-da899195d380" aria-labelledby="expand_panel_heading_mw_8669f0bf-2b1b-4757-9839-da899195d380" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ZScoresOfMultidimensionalArrayExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Z-Scores of Multidimensional Array",
+          "description": "Find the z-scores of a multidimensional array by specifying to standardize the data along different dimensions. Compare the results when using the 'all', dim, and vecdim input arguments.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "zscore.html"
+
+        },
+          "identifier": "stats.ZScoresOfMultidimensionalArrayExample",
+          "name": "ZScoresOfMultidimensionalArrayExample",
+          "url": "zscore.html#mw_8669f0bf-2b1b-4757-9839-da899195d380"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ZScoresOfMultidimensionalArrayExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ZScoresOfMultidimensionalArrayExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Find the z-scores of a multidimensional array by specifying to standardize the data along different dimensions. Compare the results when using the <code class="literal">'all'</code>, <code class="literal">dim</code>, and <code class="literal">vecdim</code> input arguments.</p><p>Create a 3-by-4-by-2 array.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>X = reshape(1:24,[3 4 2])</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>X = 
+X(:,:,1) =
+
+     1     4     7    10
+     2     5     8    11
+     3     6     9    12
+
+
+X(:,:,2) =
+
+    13    16    19    22
+    14    17    20    23
+    15    18    21    24
+
+</pre></div></div></div><p>Standardize <code class="literal">X</code> by using the mean and standard deviation of all the values in <code class="literal">X</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Zall = zscore(X,0,<span style="color:#A020F0">'all'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Zall = 
+Zall(:,:,1) =
+
+   -1.6263   -1.2021   -0.7778   -0.3536
+   -1.4849   -1.0607   -0.6364   -0.2121
+   -1.3435   -0.9192   -0.4950   -0.0707
+
+
+Zall(:,:,2) =
+
+    0.0707    0.4950    0.9192    1.3435
+    0.2121    0.6364    1.0607    1.4849
+    0.3536    0.7778    1.2021    1.6263
+
+</pre></div></div></div><p>The resulting multidimensional array of z-scores has mean 0 and standard deviation 1. For example, compute the mean and standard deviation of <code class="literal">Zall</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>mZall = mean(Zall(:,:,:),<span style="color:#A020F0">'all'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>mZall = -9.2519e-18
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>sZall = std(Zall(:,:,:),0,<span style="color:#A020F0">'all'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>sZall = 1.0000
+</pre></div></div></div><p>Now standardize <code class="literal">X</code> along the second dimension.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Zdim = zscore(X,0,2)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Zdim = 
+Zdim(:,:,1) =
+
+   -1.1619   -0.3873    0.3873    1.1619
+   -1.1619   -0.3873    0.3873    1.1619
+   -1.1619   -0.3873    0.3873    1.1619
+
+
+Zdim(:,:,2) =
+
+   -1.1619   -0.3873    0.3873    1.1619
+   -1.1619   -0.3873    0.3873    1.1619
+   -1.1619   -0.3873    0.3873    1.1619
+
+</pre></div></div></div><p>The elements in each row of each page of <code class="literal">Zdim</code> have mean 0 and standard deviation 1. For example, compute the mean and standard deviation of the first row of the second page of <code class="literal">Zdim</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>mZdim = mean(Zdim(1,:,2),<span style="color:#A020F0">'all'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>mZdim = 0
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>sZdim = std(Zdim(1,:,2),0,<span style="color:#A020F0">'all'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>sZdim = 1
+</pre></div></div></div><p>Finally, standardize <code class="literal">X</code> based on the second and third dimensions.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>Zvecdim = zscore(X,0,[2 3])</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Zvecdim = 
+Zvecdim(:,:,1) =
+
+   -1.4289   -1.0206   -0.6124   -0.2041
+   -1.4289   -1.0206   -0.6124   -0.2041
+   -1.4289   -1.0206   -0.6124   -0.2041
+
+
+Zvecdim(:,:,2) =
+
+    0.2041    0.6124    1.0206    1.4289
+    0.2041    0.6124    1.0206    1.4289
+    0.2041    0.6124    1.0206    1.4289
+
+</pre></div></div></div><p>The elements in each <code class="literal">Zvecdim(i,:,:)</code> slice have mean 0 and standard deviation 1. For example, compute the mean and standard deviation of the elements in <code class="literal">Zvecdim(1,:,:)</code>.</p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>mZvecdim = mean(Zvecdim(1,:,:),<span style="color:#A020F0">'all'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>mZvecdim = 2.7756e-17
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>sZvecdim = std(Zvecdim(1,:,:),0,<span style="color:#A020F0">'all'</span>)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>sZvecdim = 1
+</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ZScoresOfMultidimensionalArrayExample"><meta itemprop="exampletitle" content="ZScores of Multidimensional Array"></div><div class="panel-group" role="tablist" aria-multiselectable="true" id="expand_panel_heading_btg_tq7-1"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_btg_tq7-1" data-target="#expand_panel_body_btg_tq7-1" aria-controls="expand_panel_body_btg_tq7-1" class="panel-heading add_cursor_pointer" aria-expanded="true"><h3 class="panel-title" id="btg_tq7-1">Z-Scores, Mean, and Standard Deviation<br> </h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_btg_tq7-1" aria-labelledby="expand_panel_heading_btg_tq7-1" class="panel-collapse collapse in"><div class="panel-body"><div class="pull-right examples_short_list" style="width:250px; margin-left: 10px; margin-bottom: 10px;"><div data-pane="metadata" style="margin-bottom: 0px;" class="panel metadata_container panel-default"><div class="panel-body metadata_content add_padding_10"><div class="row"><div class="col-xs-12"><button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">Try This Example</button><p class="text-center add_margin_0"><a class="" href="matlab:openExample(&#39;stats/ZScoresMeanandStandardDeviationExample&#39;)" style="display: inline-block;">View MATLAB Command</a></p></div></div></div></div></div><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "DigitalDocument",
+          "headline": "Z-Scores, Mean, and Standard Deviation",
+          "description": "Return the mean and standard deviation used to compute the z-scores.",
+          "thumbnailURL": "../includes/product/images/doc_center/DefaultImage.png",
+          "genre": "Live Script",
+          "isBasedOn": {
+          "@type": "Product",
+          "name": "MATLAB"
+
+        },
+          "isPartOf": {
+          "@type": "CreativeWork",
+          "url": "zscore.html"
+
+        },
+          "identifier": "stats.ZScoresMeanandStandardDeviationExample",
+          "name": "ZScoresMeanandStandardDeviationExample",
+          "url": "zscore.html#btg_tq7-1"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "PropertyValue",
+          "name": "open_command",
+          "value": "matlab:openExample('stats/ZScoresMeanandStandardDeviationExample')"
+
+        }</script><script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+          "name": "ExampleSourceFiles",
+
+        "itemListElement":
+        [
+        "ZScoresMeanandStandardDeviationExample.mlx"
+        ],
+        "itemListOrder": "http://schema.org/ItemListOrderAscending"
+        }
+        </script><p class="shortdesc">Return the mean and standard deviation used to compute the <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores. </p><p>Load the sample data. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>load <span style="color:#A020F0">lawdata</span></pre></div></div></div><p>Two variables load into the workspace: <code class="literal">gpa</code> and <code class="literal">lsat</code>. </p><p>Return the <span class="inlineequation"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span></span></span></span></span></span>-scores, mean, and standard deviation of <code class="literal">gpa</code>. </p><div class="code_responsive"><div class="programlisting"><div class="codeinput"><pre>[Z,gpamean,gpastdev] = zscore(gpa)</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>Z = <span class="emphasis"><em>15×1</em></span>
+
+    1.2128
+    0.8432
+   -1.1690
+   -0.2656
+    1.4181
+   -0.1013
+   -0.3888
+    1.3771
+    1.0896
+    0.1451
+      ⋮
+
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>gpamean = 3.0947
+</pre></div></div></div><div class="code_responsive"><div class="programlisting"><div class="codeoutput"><pre>gpastdev = 0.2435
+</pre></div></div></div><div class="procedure"></div></div></div></div></div><div itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/Example" itemprop="example" class="em_example"><meta itemprop="exampleid" content="stats-ZScoresMeanandStandardDeviationExample"><meta itemprop="exampletitle" content="ZScores, Mean, and Standard Deviation"></div></div></div><div class="ref_sect"><h2 id="btg0kob-2">Input Arguments</h2><div class="expandableContent mwExpandToggle2"><p class="switch  mwToggle2"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="btg0kob-2_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bthj8xb"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bthj8xb" data-target="#expand_panel_body_bthj8xb" aria-controls="expand_panel_body_bthj8xb" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_X" class="anchor_target"></span><h3 class="panel-title" id="bthj8xb"><code itemprop="name">X</code> — <span itemprop="purpose">Input data</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">vector</span> | <span itemprop="inputvalue">matrix</span> | <span itemprop="inputvalue">multidimensional array</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bthj8xb" aria-labelledby="expand_panel_heading_bthj8xb" class="panel-collapse collapse in"><div class="panel-body">
+<p>Input data, specified as a vector, matrix, or multidimensional
+array.</p>
+<p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">double</code> | <code itemprop="datatype">single</code></p></div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bthj8xt"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bthj8xt" data-target="#expand_panel_body_bthj8xt" aria-controls="expand_panel_body_bthj8xt" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_flag" class="anchor_target"></span><h3 class="panel-title" id="bthj8xt"><code itemprop="name">flag</code> — <span itemprop="purpose">Indicator for the standard deviation</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue defaultvalue">0</span> (default) | <span itemprop="inputvalue">1</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bthj8xt" aria-labelledby="expand_panel_heading_bthj8xt" class="panel-collapse collapse in"><div class="panel-body">
+<p>Indicator for the standard deviation used to compute the <em class="varname">z</em>-scores,
+            specified as 0 or 1.</p>
+<div class="itemizedlist"><ul><li><p>If <code class="literal">flag</code> is 0 (default), then <code class="literal">zscore</code> scales
+                  <code class="literal">X</code> using the <a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob_sep_btikfbf-1" class="intrnllnk">sample standard deviation</a>.
+                  <code class="literal">zscore(X,0)</code> is the same as <code class="literal">zscore(X)</code>.
+              </p></li><li><p>If <code class="literal">flag</code> is 1, then <code class="literal">zscore</code> scales <code class="literal">X</code> using
+the <a href="https://se.mathworks.com/help/stats/zscore.html#btg0kob_sep_btikfcc-1" class="intrnllnk">population standard deviation</a>.</p></li></ul></div>
+</div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="bthj8yb"><div role="tab" data-toggle="collapse" id="expand_panel_heading_bthj8yb" data-target="#expand_panel_body_bthj8yb" aria-controls="expand_panel_body_bthj8yb" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_dim" class="anchor_target"></span><h3 class="panel-title" id="bthj8yb"><code itemprop="name">dim</code> — <span itemprop="purpose">Dimension</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">positive integer scalar</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bthj8yb" aria-labelledby="expand_panel_heading_bthj8yb" class="panel-collapse collapse in"><div class="panel-body">
+<p>Dimension along which to calculate the <em class="varname">z</em>-scores of <code class="literal">X</code>,
+            specified as a positive integer scalar. If you do not specify a value, then the default
+            value is the first array dimension whose size does not equal 1.</p>
+          <p>For example, for a matrix <code class="literal">X</code>, if <code class="literal">dim</code> = 1, then
+              <code class="literal">zscore</code> uses the means and standard deviations along the columns of
+              <code class="literal">X</code>, and if <code class="literal">dim</code> = 2, then
+              <code class="literal">zscore</code> uses the means and standard deviations along the rows of
+              <code class="literal">X</code>.</p>
+</div></div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div itemscope="" itemprop="inputargument" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/NamedInputArgument" itemid="mw_2940311e-3429-4971-808b-974bb6a7ef8e"><div role="tab" data-toggle="collapse" id="expand_panel_heading_mw_2940311e-3429-4971-808b-974bb6a7ef8e" data-target="#expand_panel_body_mw_2940311e-3429-4971-808b-974bb6a7ef8e" aria-controls="expand_panel_body_mw_2940311e-3429-4971-808b-974bb6a7ef8e" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="inputarg_vecdim" class="anchor_target"></span><h3 class="panel-title" id="mw_2940311e-3429-4971-808b-974bb6a7ef8e"><code itemprop="name">vecdim</code> — <span itemprop="purpose">Vector of dimensions</span><br> <span class="add_font_color_general remove_bold"><span class="example_desc"><span itemprop="inputvalue">positive integer vector</span></span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_mw_2940311e-3429-4971-808b-974bb6a7ef8e" aria-labelledby="expand_panel_heading_mw_2940311e-3429-4971-808b-974bb6a7ef8e" class="panel-collapse collapse in"><div class="panel-body">
+          <p>Vector of dimensions along which to calculate the <em class="varname">z</em>-scores of
+              <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a>, specified as a positive integer vector. Each element of
+              <code class="argument">vecdim</code> represents a dimension of the input array
+              <code class="argument">X</code>. The output <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yr" class="intrnllnk"><code class="argument">Z</code></a> has the same dimensions as
+              <code class="argument">X</code>, but the mean <a href="https://se.mathworks.com/help/stats/zscore.html#bthj85k" class="intrnllnk"><code class="argument">mu</code></a> and standard deviation
+              <a href="https://se.mathworks.com/help/stats/zscore.html#bthj856" class="intrnllnk"><code class="argument">sigma</code></a> each have length 1 in the operating dimensions. The other
+            dimension lengths are the same for <code class="argument">X</code>, <code class="argument">mu</code>, and
+              <code class="argument">sigma</code>.</p>
+          <p>For example, if <code class="argument">X</code> is a 2-by-3-by-3 array, then
+              <code class="literal">zscore(X,0,[1 2])</code> uses the means and standard deviations along the
+            pages of <code class="argument">X</code> to standardize the values of
+            <code class="argument">X</code>.</p>
+        <p class="datatypelist"><strong>Data Types: </strong><code itemprop="datatype">single</code> | <code itemprop="datatype">double</code></p></div></div></div></div></div></div></div></div><div class="ref_sect"><h2 id="btg0kob-3">Output Arguments</h2><div class="expandableContent mwExpandToggle3"><p class="switch  mwToggle3"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true">collapse all</a></p><div class="panel-group" id="btg0kob-3_panel-group" role="tablist" aria-multiselectable="true"><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bthj8yr" data-target="#expand_panel_body_bthj8yr" aria-controls="expand_panel_body_bthj8yr" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_Z" class="anchor_target"></span><h3 class="panel-title" id="bthj8yr"><code class="name">Z</code> — <em class="varname">z-</em>scores<br> <span class="add_font_color_general remove_bold"><span class="example_desc">vector | matrix | multidimensional array</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bthj8yr" aria-labelledby="expand_panel_heading_bthj8yr" class="panel-collapse collapse in"><div class="panel-body">
+<p><em class="varname">z-</em>scores, returned as a vector, matrix, or multidimensional array.
+              <code class="argument">Z</code> has the same dimensions as <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a>.</p>
+          <p>The values of <code class="argument">Z</code> depend on whether you specify
+              <code class="literal">'all'</code>, <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8yb" class="intrnllnk"><code class="argument">dim</code></a>, or <a href="https://se.mathworks.com/help/stats/zscore.html#mw_2940311e-3429-4971-808b-974bb6a7ef8e" class="intrnllnk"><code class="argument">vecdim</code></a>. If
+            you do not specify any of these input arguments, then the following conditions apply:</p>
+<div class="itemizedlist"><ul><li><p>If <code class="argument">X</code> is a vector, then <code class="argument">Z</code> is a vector
+                  of <em class="varname">z</em>-scores with mean 0 and variance 1.</p></li><li><p>If <code class="argument">X</code> is an array, then <code class="function">zscore</code>
+                  standardizes along the first nonsingleton dimension of
+                  <code class="argument">X</code>.</p></li></ul></div><p>
+</p>
+          <p>For an example that demonstrates the differences in <code class="argument">Z</code> when you
+            use <code class="literal">'all'</code>, <code class="argument">dim</code>, and <code class="argument">vecdim</code>,
+            see <a href="https://se.mathworks.com/help/stats/zscore.html#mw_8669f0bf-2b1b-4757-9839-da899195d380" class="intrnllnk">Z-Scores of Multidimensional Array</a>.</p>
+</div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bthj85k" data-target="#expand_panel_body_bthj85k" aria-controls="expand_panel_body_bthj85k" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_mu" class="anchor_target"></span><h3 class="panel-title" id="bthj85k"><code class="name">mu</code> — Mean <br> <span class="add_font_color_general remove_bold"><span class="example_desc">scalar | vector | matrix | multidimensional array</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bthj85k" aria-labelledby="expand_panel_heading_bthj85k" class="panel-collapse collapse in"><div class="panel-body">
+<p>Mean of <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a> used to compute the <em class="varname">z</em>-scores, returned as a
+            scalar, vector, matrix, or multidimensional array. <code class="argument">mu</code> has length 1
+            in the specified operating dimensions. The other dimension lengths are the same for
+              <code class="argument">X</code> and <code class="argument">mu</code>.</p>
+          <p>For example, if <code class="argument">X</code> is a 2-by-3-by-3 array and
+              <a href="https://se.mathworks.com/help/stats/zscore.html#mw_2940311e-3429-4971-808b-974bb6a7ef8e" class="intrnllnk"><code class="argument">vecdim</code></a> is <code class="literal">[1 2]</code>, then <code class="argument">mu</code>
+            is a 1-by-1-by-3 array of means. Each value in <code class="argument">mu</code> corresponds to
+            the mean of a page in <code class="argument">X</code>.</p>
+          <div class="informalfigure"><div id="d117e899182" class="mediaobject"><p><img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/vectordimargument.png" alt="" height="169" width="365"></p></div></div>
+</div></div></div></div><div class="panel-group" role="tablist" aria-multiselectable="true"><div class="panel panel-default "><div role="tab" data-toggle="collapse" id="expand_panel_heading_bthj856" data-target="#expand_panel_body_bthj856" aria-controls="expand_panel_body_bthj856" class="panel-heading add_cursor_pointer" aria-expanded="true"><span id="outputarg_sigma" class="anchor_target"></span><h3 class="panel-title" id="bthj856"><code class="name">sigma</code> — Standard deviation<br> <span class="add_font_color_general remove_bold"><span class="example_desc">scalar | vector | matrix | multidimensional array</span></span></h3><span class="icon-arrow-open-down icon_24"></span><span class="icon-arrow-open-right icon_24"></span></div><div role="tabpanel" id="expand_panel_body_bthj856" aria-labelledby="expand_panel_heading_bthj856" class="panel-collapse collapse in"><div class="panel-body">
+<p>Standard deviation of <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a> used to compute the <em class="varname">z</em>-scores,
+            returned as a scalar, vector, matrix, or multidimensional array.
+              <code class="argument">sigma</code> has length 1 in the specified operating dimensions. The
+            other dimension lengths are the same for <code class="argument">X</code> and
+              <code class="argument">sigma</code>.</p>
+          <p>For example, if <code class="argument">X</code> is a 2-by-3-by-3 array and
+              <a href="https://se.mathworks.com/help/stats/zscore.html#mw_2940311e-3429-4971-808b-974bb6a7ef8e" class="intrnllnk"><code class="argument">vecdim</code></a> is <code class="literal">[1 2]</code>, then
+              <code class="argument">sigma</code> is a 1-by-1-by-3 array of standard deviations. Each value
+            in <code class="argument">sigma</code> corresponds to the standard deviation of a page in
+              <code class="argument">X</code>.</p>
+          <div class="informalfigure"><div id="d117e899254" class="mediaobject"><p><img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/vectordimargument.png" alt="" height="169" width="365"></p></div></div>
+</div></div></div></div></div></div></div><div class="moreabout ref_sect"><h2 id="btg5k75">More About</h2><div class="expandableContent mwExpandToggle4"><p class="switch mwToggle4"><a href="javascript:void(0);" class="expandAllLink" data-allexpanded="true2">collapse all</a></p><div class="expand_collapse"><h3 class="expand_trigger" id="btikeav" aria-expanded="true" data-toggle="collapse" data-target="#expand_body_btikeav" aria-controls="expand_body_btikeav"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>Z-Score</h3><div id="expand_body_btikeav" class="collapsible_content collapse in" aria-expanded="true"><p class="shortdesc">For a random variable <em class="varname">X</em> with
+mean μ and standard deviation σ, the <em class="varname">z</em>-score
+of a value <em class="varname">x</em> is </p>
+<div id="d117e899743" class="mediaobject"><div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathFraction VBox" style="display: inline-block; position: relative; margin-left: 0.277778em; text-align: center; vertical-align: -11px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">(</span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.272222em; font-style: italic;">μ</span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">)</span></span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.05em; font-style: italic;">σ</span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.166667em;">.</span></span></span></span></span></p></div></div><p>For sample data with mean <span class="inlineequation"><span class="inlinemediaobject"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathDelimiter HorizontalStretchyBox" style="display: block; position: relative; margin-left: 0.025em; height: 2px; font-style: normal;"><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 0px;">‾</span><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 3px;">‾</span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em; margin-right: 0.05em;">X</span></span></span></span></span></span></span></span></span> and standard deviation <em class="varname">S</em>,
+the <em class="varname">z</em>-score of a data point <em class="varname">x</em> is</p>
+<div id="d117e899763" class="mediaobject"><div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">z</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathFraction VBox" style="display: inline-block; position: relative; margin-left: 0.277778em; text-align: center; vertical-align: -11px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">(</span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em;">x</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript VBox" style="display: inline-block; position: relative; margin-left: 0.222222em; text-align: center; vertical-align: 0px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathDelimiter HorizontalStretchyBox" style="display: block; position: relative; margin-left: 0.025em; height: 2px; font-style: normal;"><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 0px;">‾</span><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 3px;">‾</span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em; margin-right: 0.05em;">X</span></span></span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">)</span></span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox text" style="position: relative; margin-right: 0.05em;">S</span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.166667em;">.</span></span></span></span></span></p></div></div><p></p><p><em class="varname">z</em>-scores measure the distance of a data point
+from the mean in terms of the standard deviation. This is also called <span class="emphasis"><em>standardization</em></span> of
+data. The standardized data set has mean 0 and standard deviation
+1, and retains the shape properties of the original data set (same
+skewness and kurtosis).</p><p>You can use <em class="varname">z</em>-scores to put data on the same
+scale before further analysis. This lets you to compare two or more
+data sets with different units. </p></div></div><div class="expand_collapse"><h3 class="expand_trigger" id="bth9btf" aria-expanded="true" data-toggle="collapse" data-target="#expand_body_bth9btf" aria-controls="expand_body_bth9btf"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>Multidimensional Array</h3><div id="expand_body_bth9btf" class="collapsible_content collapse in" aria-expanded="true"><p class="shortdesc">A <span class="emphasis"><em>multidimensional array</em></span> is
+an array with more than two dimensions. For example, if X is a 1-by-3-by-4
+array, then <code class="literal">X</code> is a three-dimensional array.</p></div></div><div class="expand_collapse"><h3 class="expand_trigger" id="bth9bt0-1" aria-expanded="true" data-toggle="collapse" data-target="#expand_body_bth9bt0-1" aria-controls="expand_body_bth9bt0-1"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>First Nonsingleton Dimension</h3><div id="expand_body_bth9bt0-1" class="collapsible_content collapse in" aria-expanded="true"><p class="shortdesc">A <span class="emphasis"><em>first nonsingleton dimension</em></span> 
+is the first dimension of an array whose size is not equal to 1. For
+example, if <code class="literal">X</code> is a 1-by-2-by-3-by-4 array, then
+the second dimension is the first nonsingleton dimension of <code class="literal">X</code>.
+ </p></div></div><div class="expand_collapse"><span id="btg0kob.btikfbf-1" class="anchor_target"></span><h3 class="expand_trigger" id="btg0kob_sep_btikfbf-1" aria-expanded="true" data-toggle="collapse" data-target="#expand_body_btg0kob_sep_btikfbf-1" aria-controls="expand_body_btg0kob_sep_btikfbf-1"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>Sample Standard Deviation</h3><div id="expand_body_btg0kob_sep_btikfbf-1" class="collapsible_content collapse in" aria-expanded="true"><p class="shortdesc">The <span class="emphasis"><em>sample standard deviation</em></span>
+        <em class="varname">S</em> is given by</p>
+<div id="d117e899815" class="mediaobject"><div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative; margin-right: 0.05em;">S</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathRadical HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.277778em;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 36px;"><span class="StretchyBox" style="display: inline-block; position: relative; text-align: right; height: 47px; width: 15px; vertical-align: -46px;"><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 10px;"></span><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 16px;"></span><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 23px;"></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathFraction VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -11px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathStyle HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra" style="position: relative; display: inline-block; vertical-align: 15px; line-height: 22px; margin-top: 0px; margin-bottom: 0px;"></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -7px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative;">n</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 9px;"><span class="MathText MathTextBox text" style="position: relative;">i</span><span class="MathText MathTextBox symbol" style="position: relative;">=</span><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.166667em;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra2" style="position: relative; display: inline-block; vertical-align: 13px; line-height: 18px; margin-top: -6px; margin-bottom: 6px;">(</span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative;">i</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathScript VBox" style="display: inline-block; position: relative; margin-left: 0.222222em; text-align: center; vertical-align: 0px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathDelimiter HorizontalStretchyBox" style="display: block; position: relative; margin-left: 0.025em; height: 2px; font-style: normal;"><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 0px;">‾</span><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 3px;">‾</span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em; margin-right: 0.05em;">X</span></span></span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra2" style="position: relative; display: inline-block; vertical-align: 13px; line-height: 18px; margin-top: -6px; margin-bottom: 6px;">)</span></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 10px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span></span></span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 1px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox text" style="position: relative;">n</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathText MathTextBox number" style="position: relative; margin-left: 0.222222em;">1</span></span></span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.166667em;">.</span></span></span></span></span></p></div></div><p><em class="varname">S</em> is the square root of an unbiased estimator of the
+        variance of the population from which <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a> is drawn, as long as
+            <code class="argument">X</code> consists of independent, identically distributed samples. <span class="inlineequation"><span class="inlinemediaobject"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathDelimiter HorizontalStretchyBox" style="display: block; position: relative; margin-left: 0.025em; height: 2px; font-style: normal;"><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 0px;">‾</span><span class="MathTextBox symbol" style="position: absolute; top: 1px; left: 3px;">‾</span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative; margin-left: 0.05em; margin-right: 0.05em;">X</span></span></span></span></span></span></span></span></span> is the sample mean.</p><p>Notice that the denominator in this variance formula is <em class="varname">n</em> – 1.</p></div></div><div class="expand_collapse"><span id="btg0kob.btikfcc-1" class="anchor_target"></span><h3 class="expand_trigger" id="btg0kob_sep_btikfcc-1" aria-expanded="true" data-toggle="collapse" data-target="#expand_body_btg0kob_sep_btikfcc-1" aria-controls="expand_body_btg0kob_sep_btikfcc-1"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>Population Standard Deviation</h3><div id="expand_body_btg0kob_sep_btikfcc-1" class="collapsible_content collapse in" aria-expanded="true"><p class="shortdesc">If the data is the entire population of values, then you can use the
+            <span class="emphasis"><em>population standard deviation</em></span>, </p>
+<div id="d117e899847" class="mediaobject"><div class="code_responsive"><p class="programlistingindent"><span><span class="MathEquation" style="font-size: 15px;"><span class="MathRoot HBox" style="display: inline-block; position: relative;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox symbol" style="position: relative; margin-right: 0.05em; font-style: italic;">σ</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.277778em;">=</span><span class="MathRadical HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.277778em;"><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 36px;"><span class="StretchyBox" style="display: inline-block; position: relative; text-align: right; height: 47px; width: 15px; vertical-align: -46px;"><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 3px;"></span><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 10px;"></span><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 16px;"></span><span class="MathTextBox extra" style="position: absolute; margin-left: 0.702em; display: block; top: 23px;"></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: 0px;"><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 0px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathFraction VBox" style="display: inline-block; position: relative; text-align: center; vertical-align: -11px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 0px;"><span class="MathStyle HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra" style="position: relative; display: inline-block; vertical-align: 15px; line-height: 22px; margin-top: 0px; margin-bottom: 0px;"></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -7px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative;">n</span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 9px;"><span class="MathText MathTextBox text" style="position: relative;">i</span><span class="MathText MathTextBox symbol" style="position: relative;">=</span><span class="MathText MathTextBox number" style="position: relative;">1</span></span></span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px; margin-left: 0.166667em;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">(</span></span><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathScript HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathRow HBox" style="display: inline-block; position: relative; font-size: 15px;"><span class="MathText MathTextBox text" style="position: relative;">x</span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: -3px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox text" style="position: relative;">i</span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.222222em;">−</span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.272222em; font-style: italic;">μ</span></span><span class="MathDelimiter StretchyBox" style="display: inline-block; position: relative; text-align: center;"><span class="MathTextBox extra1" style="position: relative; display: inline-block;">)</span></span></span></span><span class="VBox" style="display: inline-block; position: relative; text-align: left; vertical-align: 5px;"><span class="MathRow HBox" style="display: block; position: relative; font-size: 10px; margin-top: 0px;"><span class="MathText MathTextBox number" style="position: relative;">2</span></span></span></span></span></span></span></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="rulebox" style="display: block; border-bottom-style: solid; border-bottom-width: 1px; width: 100%; height: 0px; z-index: 1; margin-top: 1px;"></span><span class="WhiteSpaceBox" style="display: none;"></span><span class="MathRow HBox" style="display: block; position: relative; font-size: 15px; margin-top: 1px;"><span class="MathText MathTextBox text" style="position: relative;">n</span></span></span></span></span></span><span class="MathText MathTextBox symbol" style="position: relative; margin-left: 0.166667em;">.</span></span></span></span></span></p></div></div><p>If <a href="https://se.mathworks.com/help/stats/zscore.html#bthj8xb" class="intrnllnk"><code class="argument">X</code></a> is a random sample from a population, then the
+        mean <em class="varname">μ</em> is estimated by the sample mean, and <em class="varname">σ</em> is the
+        biased maximum likelihood estimator of the population standard deviation.</p><p>Notice that the denominator in this variance formula is <em class="varname">n</em>.</p></div></div></div></div><div class="ref_sect"><h2 id="bth_8rd-1">Algorithms</h2><p><code class="literal">zscore</code> returns <code class="literal">NaN</code>s for
+any sample containing <code class="literal">NaN</code>s.</p><p><code class="literal">zscore</code> returns <code class="literal">0</code>s for any sample that is constant (all
+      values are the same). For example, if <code class="literal">X</code> is a vector of the same numeric
+      value, then <code class="literal">Z</code> is a vector of <code class="literal">0</code>s.</p></div><div class="ref_sect"><h2 id="bvmb7wx-1">Extended Capabilities</h2><div class="expand_collapse" id="accordion_bvmb7wx-1" role="tablist" aria-multiselectable="true"><span id="bvmb7wx-2" class="anchor_target"></span><span id="btg0kob" class="anchor_target"></span><h3 class="expand_trigger collapsed" id="btg0kob_tall" aria-expanded="false" data-toggle="collapse" data-target="#expand_body_btg0kob_tall" aria-controls="expand_body_btg0kob_tall"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>Tall Arrays<br> <span class=" remove_bold add_font_color_general">Calculate with arrays that have more rows than fit in memory. </span></h3><div id="expand_body_btg0kob_tall" class="collapsible_content collapse" aria-expanded="false"><p class="shortdesc">This function fully supports tall arrays. For
+more information, see <a href="https://se.mathworks.com/help/matlab/tall-arrays.html" class="a">Tall Arrays</a> (MATLAB).</p></div><span id="bvmb7wx-3" class="anchor_target"></span><span id="btg0kob" class="anchor_target"></span><h3 class="expand_trigger collapsed" id="btg0kob_codegen" aria-expanded="false" data-toggle="collapse" data-target="#expand_body_btg0kob_codegen" aria-controls="expand_body_btg0kob_codegen"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>C/C++ Code Generation<br> <span class=" remove_bold add_font_color_general">Generate C and C++ code using MATLAB® Coder™.</span></h3><div id="expand_body_btg0kob_codegen" class="collapsible_content collapse" aria-expanded="false"><p>
+        <span>Usage notes and limitations:</span>
+      </p><div class="itemizedlist"><ul><li><p>The <code class="literal">'all'</code> and <code class="literal">vecdim</code> input arguments are not supported.</p></li><li><p>The <code class="literal">dim</code> input argument must be a compile-time constant.</p></li><li><p>If you do not specify the <code class="literal">dim</code> input
+    argument, the working (or operating) dimension can be different in the generated code. As a
+    result, run-time errors can occur. For more details, see <a href="https://se.mathworks.com/help/coder/ug/restrictions-on-variable-sizing-in-toolbox-functions-supported-for-code-generation.html#br957yj" class="a">Automatic dimension restriction</a> (MATLAB Coder).</p></li></ul></div><p>For more information on code generation, see <a href="https://se.mathworks.com/help/stats/introduction-to-code-generation.html" class="a">Introduction to Code Generation</a> and <a href="https://se.mathworks.com/help/stats/general-code-generation-workflow.html" class="a">General Code Generation Workflow</a>.</p></div><span id="mw_bedb739c-ad34-4464-98e5-57286202d802" class="anchor_target"></span><span id="btg0kob" class="anchor_target"></span><h3 class="expand_trigger collapsed" id="btg0kob_gpuarrays" aria-expanded="false" data-toggle="collapse" data-target="#expand_body_btg0kob_gpuarrays" aria-controls="expand_body_btg0kob_gpuarrays"><span class="icon-arrow-open-down"></span><span class="icon-arrow-open-right"></span>GPU Arrays<br> <span class=" remove_bold add_font_color_general">Accelerate code by running on a graphics processing unit (GPU) using Parallel Computing Toolbox™.</span></h3><div id="expand_body_btg0kob_gpuarrays" class="collapsible_content collapse" aria-expanded="false"><p>Usage notes and limitations:</p><div class="itemizedlist"><ul><li><p>The <code class="literal">'all'</code> and <code class="literal">vecdim</code> input arguments are not supported.</p></li></ul></div><p>For more information, see <a href="https://se.mathworks.com/help/parallel-computing/run-matlab-functions-on-a-gpu.html" class="a">Run MATLAB Functions on a GPU</a> (Parallel Computing Toolbox).</p></div></div></div><div class="ref_sect"><h2 id="btg0kob_seealso">See Also</h2><p><span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/matlab/ref/mean.html"><span itemprop="name"><code class="function">mean</code></span></a></span> | <span itemscope="" itemtype="http://www.mathworks.com/help/schema/MathWorksDocPage/SeeAlso" itemprop="seealso"><a itemprop="url" href="https://se.mathworks.com/help/matlab/ref/std.html"><span itemprop="name"><code class="function">std</code></span></a></span></p></div><div class="release_introduced"><h4>Introduced before R2006a</h4></div>
+</div></div>
+<div class="modal fade" id="open-example-dialog" tabindex="-1" role="dialog" aria-labelledby="openExampleDialogLabel" aria-hidden="true"> 
+  <div class="modal-dialog"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button> 
+        <h4 class="modal-title">Open Example</h4> 
+      </div> 
+      <div class="modal-body" id="dialog-body"> 
+        <p>A modified version of this example exists on your system. Do you want to open this version instead?</p> 
+      </div> 
+      <div class="modal-footer"> 
+        <a id="open-example-dialog-replace" class="btn btn_color_blue companion_btn" data-dismiss="modal">No, overwrite the modified version</a>
+        <a id="open-example-dialog-continue" class="btn btn_color_blue" data-dismiss="modal">Yes</a>
+      </div> 
+    </div> 
+  </div> 
+</div><div class="clearfix"></div>
+<div align="center" class="feedbackblock"><iframe id="doc_survey" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/bounce_hub_help.html" style=""></iframe></div><script type="text/javascript" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/docsurvey.js.download"></script>
+
+</section>
+<div class="modal fade" id="matlab-command-dialog" tabindex="-1" role="dialog" aria-labelledby="matlabCommandDialogLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">MATLAB Command</h4>
+      </div>
+      <div class="modal-body" id="dialog-body">
+        <p>You clicked a link that corresponds to this MATLAB command: </p>
+        <pre id="dialog-matlab-command"></pre>
+        <p>Run the command by entering it in the MATLAB Command Window.
+        Web browsers do not support MATLAB commands.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn_secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function registerOpenExampleAction() {
+    var openExampleButtons = $('.examples_short_list a.btn[href^="matlab:"]');
+    $.each(openExampleButtons, function() {
+        var href = $(this).attr('href');
+        $(this).removeClass();
+        $(this).closest('.panel').addClass('panel-default');
+        $(this).closest('.panel-body').removeAttr('style').addClass('add_padding_10');
+        var inBox = false;
+        if ($(this).closest('.panel-body').find('.example_product_list').length >= 1) {
+            inBox=true;
+        }
+        var parentDiv = $(this).parent();
+        var parentPara = $('<p class="text-center add_margin_0"></p>')
+        parentDiv.append(parentPara);
+        parentPara.append($(this));
+        $(this).html('View MATLAB Command');
+        addOpenExampleLinkClickHandler($(this));
+        var matlabCommand = getMatlabCommand(href);
+        var openWithCommand = getOpenWithCommand(matlabCommand);
+        if (window.ow !== undefined &&  openWithCommand) {
+            var component = openWithCommand.split("/")[0];
+            var exampleName = openWithCommand.split("/")[1];
+            var config = {
+                repository: "MATLAB Examples", 
+                component: component,
+                exampleId: exampleName
+            }
+            ow.doesExampleExist(config, function (status) {
+                var matlabLink = $('a[href="matlab:openExample(\'' + openWithCommand+ '\')"]');
+                if (status === 'true') {
+                    var dropDown = $('<button class="btn btn_color_blue btn-block add_margin_10 hidden-xs analyticsOpenWith">'+ getLocalizedString("Try This Example") + '</button>');
+                    parentDiv.prepend(dropDown);
+                    $(dropDown).on('click', function(e) {
+                        e.preventDefault();
+                        ow.load(config);
+                    });
+                    matlabLink.css('display', 'inline-block');
+                } else {
+                    matlabLink.css('display', 'inline-block');
+                    if (inBox) {
+                        matlabLink.parent().addClass('add_padding_top_15 add_border_top');
+                    }
+                }
+                
+            });
+        } else {
+            if (inBox) {
+                $(this).parent().addClass('add_padding_top_15 add_border_top');
+            }
+            $(this).css('display', 'inline-block');
+        }
+    });
+}
+</script>
+
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+<div id="location_content" style="display:none;"></div>
+
+
+<div class="modal fade" id="country-unselected" tabindex="-1" role="dialog" aria-labelledby="country-unselected-title" translate="no">
+<div id="country-select-container">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <img alt="MathWorks" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/pic-header-mathworks-logo2.svg" style="width:167px; height:auto;">
+      </div>
+      <div class="modal-body">
+        <div class="row add_margin_40">
+          <div class="col-xs-12">
+            <h1 class="icon-globe icon_color_secondary" id="country-unselected-title">Select a Web Site</h1>
+            <p>Choose a web site to get translated content where available and see local events and offers. Based on your location, we recommend that you select: <strong class="recommended-country">Sweden</strong>.</p>
+            <a href="https://se.mathworks.com/" id="recommended_domain_button" class="btn btn_color_blue containsResourceName resourceClass-button" data-lang="en">Select <span class="recommended-country">Sweden</span> web site</a>
+          </div>
+        </div>
+        <p>You can also select a web site from the following list:</p>
+				<div class="alert alert-warning" id="china_performance_alert" style="display:none;"> <span class="alert_icon icon-alert-warning"></span>
+					<h3>How to Get Best Site Performance</h3>
+					<p>Select the China site (in Chinese or English) for best site performance. Other MathWorks country sites are not optimized for visits from your location.</p>
+				</div>
+        <div class="row add_margin_30">
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Americas</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://la.mathworks.com/" class="domain_selector_link" data-country-code="LA" data-subdomain="la" data-lang="es" data-default-lang="true" data-selected-text="América Latina" data-recommended-text="América Latina" data-do-not-rewrite="true">América Latina</a> (Español)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="CA" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Canada</a> (English)</li>
+              <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="US" data-subdomain="www" data-lang="en" data-default-lang="true" data-selected-text="United States" data-recommended-text="United States" data-do-not-rewrite="true">United States</a> (English)</li>
+            </ul>
+          </div>
+          <div class="col-sm-4 col-md-6">
+            <h3 class="add_bottom_rule">Europe</h3>
+            <div class="row">
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled add_margin_0_sm">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="BE" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Belgium</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="DK" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Denmark</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="DE" data-subdomain="de" data-lang="de" data-default-lang="true" data-selected-text="Deutschland" data-recommended-text="Deutschland" data-do-not-rewrite="true">Deutschland</a> (Deutsch)</li>
+                  <li><a href="https://es.mathworks.com/" class="domain_selector_link" data-country-code="ES" data-subdomain="es" data-lang="es" data-default-lang="true" data-selected-text="España" data-recommended-text="España" data-do-not-rewrite="true">España</a> (Español)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="FI" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Finland</a> (English)</li>
+                  <li><a href="https://fr.mathworks.com/" class="domain_selector_link" data-country-code="FR" data-subdomain="fr" data-lang="fr" data-default-lang="true" data-selected-text="France" data-recommended-text="France" data-do-not-rewrite="true">France</a> (Français)</li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="IE" data-subdomain="uk" data-lang="en" data-do-not-rewrite="true">Ireland</a> (English)</li>
+                  <li><a href="https://it.mathworks.com/" class="domain_selector_link" data-country-code="IT" data-subdomain="it" data-lang="it" data-default-lang="true" data-selected-text="Italia" data-recommended-text="Italia" data-do-not-rewrite="true">Italia</a> (Italiano)</li>
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="LU" data-subdomain="nl" data-lang="en" data-do-not-rewrite="true">Luxembourg</a> (English)</li>
+                </ul>
+              </div>
+              <div class="col-xs-6 col-sm-12 col-md-6">
+                <ul class="list-unstyled">
+                  <li><a href="https://nl.mathworks.com/" class="domain_selector_link" data-country-code="NL" data-subdomain="nl" data-lang="en" data-default-lang="true" data-selected-text="Benelux" data-recommended-text="Netherlands" data-do-not-rewrite="true">Netherlands</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="NO" data-subdomain="se" data-lang="en" data-do-not-rewrite="true">Norway</a> (English)</li>
+                  <li><a href="https://de.mathworks.com/" class="domain_selector_link" data-country-code="AT" data-subdomain="de" data-lang="de" data-do-not-rewrite="true">Österreich</a> (Deutsch)</li>
+                  <li><a href="https://www.mathworks.com/" class="domain_selector_link" data-country-code="PT" data-subdomain="www" data-lang="en" data-do-not-rewrite="true">Portugal</a> (English)</li>
+                  <li><a href="https://se.mathworks.com/" class="domain_selector_link" data-country-code="Sweden" data-subdomain="se" data-lang="en" data-default-lang="true" data-selected-text="Nordic" data-recommended-text="Sweden" data-do-not-rewrite="true">Sweden</a> (English)</li>
+                  <li>Switzerland
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="de" data-selected-text="Schweiz" data-recommended-text="Schweiz" data-do-not-rewrite="true">Deutsch</a></li>
+                      <li><a href="https://ch.mathworks.com/" id="swiss_english" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="en" data-default-lang="true" data-selected-text="Switzerland" data-recommended-text="Switzerland" data-do-not-rewrite="true">English</a></li>
+                      <li><a href="https://ch.mathworks.com/" class="domain_selector_link" data-country-code="CH" data-subdomain="ch" data-lang="fr" data-selected-text="Suisse" data-recommended-text="Suisse" data-do-not-rewrite="true">Français</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="https://uk.mathworks.com/" class="domain_selector_link" data-country-code="GB" data-subdomain="uk" data-lang="en" data-default-lang="true" data-selected-text="United Kingdom" data-recommended-text="United Kingdom" data-do-not-rewrite="true">United Kingdom</a> (English)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-md-3">
+            <h3 class="add_bottom_rule">Asia Pacific</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="AU" data-subdomain="au" data-lang="en" data-default-lang="true" data-selected-text="Australia" data-recommended-text="Australia" data-do-not-rewrite="true">Australia</a> (English)</li>
+              <li><a href="https://in.mathworks.com/" class="domain_selector_link" data-country-code="IN" data-subdomain="in" data-lang="en" data-default-lang="true" data-selected-text="India" data-recommended-text="India" data-do-not-rewrite="true">India</a> (English)</li>
+              <li><a href="https://au.mathworks.com/" class="domain_selector_link" data-country-code="NZ" data-subdomain="au" data-lang="en" data-do-not-rewrite="true">New Zealand</a> (English)</li>
+              <li>中国
+                    <ul class="list-unstyled add_indent_20">
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="zh" data-default-lang="true" data-selected-text="中国" data-recommended-text="中国" data-do-not-rewrite="true">简体中文</a></li>
+                      <li><a href="https://ww2.mathworks.cn/" class="domain_selector_link" data-country-code="CN" data-subdomain="ww2" data-lang="en" data-default-lang="true" data-selected-text="China" data-recommended-text="China" data-do-not-rewrite="true">English</a></li>
+                    </ul>
+               </li>
+              <li><a href="https://jp.mathworks.com/" class="domain_selector_link" data-country-code="JP" data-subdomain="jp" data-lang="ja" data-default-lang="true" data-selected-text="日本" data-recommended-text="日本" data-do-not-rewrite="true">日本</a> (日本語)</li>
+              <li><a href="https://kr.mathworks.com/" class="domain_selector_link" data-country-code="KR" data-subdomain="kr" data-lang="ko" data-default-lang="true" data-selected-text="한국" data-recommended-text="한국" data-do-not-rewrite="true">한국</a> (한국어)</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-center"><a href="https://se.mathworks.com/" class="worldwide_link">Contact your local office</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+  
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE CTA - Begin -->
+    <div class="cta_container_mobile visible-sm visible-xs">
+      <div class="container-fluid">      
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="cta_box">
+<ul class="list-inline">
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/campaigns/products/trials.html?prodcode=ST&amp;s_iid=doc_trial_ST_tb" class="icon-download">Trial Software</a></li>
+<li class="cta_item cta_item_general"><a href="https://se.mathworks.com/support/web_downloads_bounce.html?s_cid=1008_degr_docdn_270055" class="icon-download">Product Updates</a></li>
+</ul>
+</div> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MOBILE CTA - End -->
+
+        <!-- BODY TRAIL - Begin -->
+        <div class="body_trail_container">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="row"><div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/help/stats/index.html?s_cid=doc_ftr">Statistics and Machine Learning Toolbox Documentation</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/help/stats/referencelist.html?type=function&amp;s_cid=doc_ftr">Functions and Other Reference</a></li>
+<li><a href="https://se.mathworks.com/help/stats/release-notes.html?s_cid=doc_ftr">Release Notes</a></li>
+<li><a href="https://se.mathworks.com/help/pdf_doc/stats/index.html?s_cid=doc_ftr">PDF Documentation</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4"><h5><a href="https://se.mathworks.com/support.html?s_cid=doc_ftr">Support</a></h5>
+<ul class="list-unstyled hidden-xs"><li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_cid=doc_ftr">MATLAB Answers</a></li><li><a href="https://se.mathworks.com/support/install-matlab.html?s_cid=doc_ftr">Installation Help</a></li><li><a href="https://se.mathworks.com/support/bugreports/?s_cid=doc_ftr">Bug Reports</a></li><li><a href="https://se.mathworks.com/products/availability.html?s_cid=doc_ftr">Product Requirements</a></li><li><a href="https://se.mathworks.com/downloads/?s_cid=doc_ftr">Software Downloads</a></li></ul>
+</div>
+<div class="col-xs-12 col-sm-4">
+<div class="panel panel_color_transparent panel_color_fill">
+<div class="panel-body">
+<div class="thumbnail add_margin_5">
+<a href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer"><img class="fluid_image" alt="Mastering Machine Learning: A Step-by-Step Guide with MATLAB" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/mastering-machine-learning-with-matlab-thumbanail.jpg"></a>
+</div>
+<h4><a href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer">Mastering Machine Learning: A Step-by-Step Guide with MATLAB</a></h4>
+<a class="icon-download" href="https://www.mathworks.com/campaigns/offers/mastering-machine-learning-with-matlab.html?s_iid=doc_eb2_ST_footer">Download ebook</a>
+</div>
+</div>
+</div>
+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- BODY TRAIL - End -->
+
+    <footer id="footer" class="bs-footer">
+        <!-- FAT FOOTER - Begin --> 
+        <div class="container-fluid">
+          <div class="fat_footer_container">
+            <div class="execmatlabweb"> <!--Requried for Doc Test -->
+<div class="row">
+<div class="col-xs-12 col-md-12 col-lg-9 col-lg-push-3 add_margin_20">
+<div class="row">
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Explore Products</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/products/matlab.html?s_tid=hp_ff_p_matlab">MATLAB</a></li>
+<li><a href="https://se.mathworks.com/products/simulink.html?s_tid=hp_ff_p_simulink">Simulink</a></li>
+<li><a href="https://se.mathworks.com/products/matlab/student.html?s_tid=hp_ff_p_student">Student Software</a></li>
+<li><a href="https://se.mathworks.com/hardware-support/home.html?s_tid=hp_ff_p_hwsupport">Hardware Support</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/fileexchange/?s_tid=hp_ff_p_fx">File Exchange</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Try or Buy</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/downloads/web_downloads/?s_iid=hp_ff_t_downloads">Downloads</a></li>
+<li><a href="https://se.mathworks.com/campaigns/products/trials.html?s_iid=hp_ff_p_trial">Trial Software</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us/contact_sales.html?s_iid=hp_ff_t_sales">Contact Sales</a></li>
+<li><a href="https://se.mathworks.com/pricing-licensing.html?s_iid=hp_ff_t_pricing">Pricing and Licensing</a></li>
+<li><a href="https://se.mathworks.com/store/?s_tid=hp_ff_t_buy">How to Buy</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Learn to Use</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/help/?s_tid=hp_ff_l_doc">Documentation</a></li>
+<li><a href="https://se.mathworks.com/support/learn-with-matlab-tutorials.html?s_tid=hp_ff_l_tutorials">Tutorials</a></li>
+<li><a href="https://se.mathworks.com/help/examples.html?s_tid=hp_ff_l_examples">Examples</a></li>
+<li><a href="https://se.mathworks.com/videos.html?s_tid=hp_ff_l_videos">Videos and Webinars</a></li>
+<li><a href="https://se.mathworks.com/services/training.html?s_tid=hp_ff_l_training">Training</a></li>
+</ul>
+</div>
+<div class="clearfix" id="offcanvas_clearfix" style="display:none"></div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">Get Support</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/support/install-matlab.html?s_tid=hp_ff_s_install">Installation Help</a></li>
+<li><a href="https://se.mathworks.com/matlabcentral/answers/index?s_tid=hp_ff_s_answers">Answers</a></li>
+<li><a href="https://se.mathworks.com/services/consulting.html?s_tid=hp_ff_s_consulting">Consulting</a></li>
+<li><a href="https://se.mathworks.com/licensecenter/?s_tid=hp_ff_s_license">License Center</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-2">
+<p class="ff_section_title">About MathWorks</p>
+<ul class="list-unstyled">
+<li><a href="https://se.mathworks.com/company/jobs/opportunities/?s_tid=hp_ff_a_careers">Careers</a></li>
+<li><a href="https://se.mathworks.com/company/newsroom.html?s_tid=hp_ff_a_newsroom">Newsroom</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/soc_mission.html?s_tid=hp_ff_a_socialmission">Social Mission</a></li>
+<li><a href="https://se.mathworks.com/company/aboutus/contact_us.html?s_tid=hp_ff_a_contact">Contact Us</a></li>
+<li><a href="https://se.mathworks.com/company.html?s_tid=hp_ff_a_company">About MathWorks</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-3 col-lg-pull-9">
+<p class="h4 add_font_futura_medium add_margin_0"><span translate="no">MathWorks</span></p>
+<p><em>Accelerating the pace of engineering and science</em></p>
+<p>MathWorks is the leading developer of mathematical computing software for engineers and scientists.</p>
+<p><a href="https://se.mathworks.com/discovery.html?s_tid=all_disc_mw_ff">Discover...</a></p>
+</div>
+</div>
+</div>
+          </div>
+        </div>
+        <!-- FAT FOOTER - End -->
+      <div class="container-fluid">
+       <div class="footer" translate="no">
+<div class="row">
+<div class="col-xs-12 col-lg-9">
+<ul class="countrynav" id="countrynav">
+<li class="footernav_country">
+<a href="https://se.mathworks.com/help/stats/zscore.html#" data-toggle="modal" data-target="#country-unselected">
+<span class="icon-globe icon_color_quinary icon_16"></span>Nordic
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<ul class="footernav">
+<li class="footernav_patents"><a href="https://se.mathworks.com/company/aboutus/policies_statements/patents.html?s_tid=gf_pat">Patents</a></li>
+<li class="footernav_trademarks"><a href="https://se.mathworks.com/company/aboutus/policies_statements/trademarks.html?s_tid=gf_trd">Trademarks</a></li>
+<li class="footernav_privacy"><a href="https://se.mathworks.com/company/aboutus/policies_statements.html?s_tid=gf_priv">Privacy Policy</a></li>
+<li class="footernav_piracy"><a href="https://se.mathworks.com/company/aboutus/policies_statements/piracy.html?s_tid=gf_pir">Preventing Piracy</a></li>
+<li class="footernav_status"><a href="https://status.mathworks.com/?s_tid=gf_application">Application Status</a></li>
+</ul>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<p class="copyright" translate="no">© 1994-2019 The MathWorks, Inc.</p>
+</div>
+<div class="clearfix visible-sm add_margin_10"></div>
+<div class="col-xs-12 col-lg-3">
+<div class="social_media">
+<ul class="social_media_icons">
+<li>
+<a href="http://www.facebook.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ico-facebook.svg" alt="Facebook" class="ico_facebook">
+</a>
+</li>
+<li>
+<a href="http://www.twitter.com/MATLAB" target="_blank" class="svg_link">
+<img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ico-twitter.svg" alt="Twitter" class="ico_twitter">
+</a>
+</li>
+<li>
+<a href="https://www.instagram.com/matlab/" class="svg_link" target="_blank">
+<img class="ico_instagram" alt="Instagram" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ico-instagram.svg">
+</a>
+</li>
+<li>
+<a href="https://www.youtube.com/user/MATLAB" class="svg_link" target="_blank">
+<img class="ico_youtube" alt="YouTube" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ico-youtube.svg">
+</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/company/the-mathworks_2" target="_blank" class="svg_link">
+<img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ico-linkedin.svg" alt="LinkedIn" class="ico_linkedin">
+</a>
+</li>
+<li>
+<a href="https://se.mathworks.com/company/rss.html" class="svg_link">
+<img src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/ico-rss.svg" alt="RSS" class="ico_rss">
+</a>
+</li>
+</ul>
+<div class="clearfix"></div>
+<p><em>Join the conversation</em></p>
+</div>
+</div>
+</div>
+</div>
+<div id="cookie-banner-text" style="display:none;">This website uses cookies to improve your user experience, personalize content and ads, and analyze website traffic. By continuing to use this website, you consent to our use of cookies. Please see our <a href="https://se.mathworks.com/company/aboutus/policies_statements.html">Privacy Policy</a> to learn more about cookies and how to change your settings.</div>
+<!-- BEGIN Adobe DTM -->
+<script type="text/javascript">
+try {
+_satellite.pageBottom();
+} catch (e) {
+//something went wrong
+}
+</script><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/satellite-5672ffbd64746d5bd3002853.js.download"></script><!--DTM LinkedIn Pixel-->
+<img height="1" width="1" style="display:none;" alt="" src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/saved_resource"><script src="./Standardized z-scores - MATLAB zscore - MathWorks Nordic_files/8664" type="text/javascript"> </script>
+<!-- END Adobe DTM -->
+      </div>
+    </footer>
+
+  </div>
+
+
+
+<a class="btn btn_color_mediumgray" id="go-top"><span class="icon-arrow-open-up icon_24"></span></a><span id="MathEquationRendererScratch" class="MathEquation" style="position: absolute; right: -1000px; bottom: -1000px; white-space: pre-wrap; font-size: 15px;"></span></body></html>

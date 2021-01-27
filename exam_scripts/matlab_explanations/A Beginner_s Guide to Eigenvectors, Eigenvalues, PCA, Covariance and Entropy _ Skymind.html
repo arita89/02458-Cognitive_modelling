@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://skymind.ai/wiki/eigenvector -->
+<html lang="en" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.async-hide { opacity: 0 !important} </style>
+<script type="text/javascript" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/pd.js.download"></script><script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/5485555.js.download" type="text/javascript" id="hs-analytics"></script><script async="" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/gtm.js.download"></script><script id="twitter-wjs" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/widgets.js.download"></script><script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/sdk.js.download" async="" crossorigin="anonymous"></script><script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-T2DSBKT':true});</script>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+      
+        A Beginner's Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy | Skymind
+      
+    </title>
+<meta content="Skymind" property="og:site_name">
+<meta content="A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy" property="og:title">
+<meta content="article" property="og:type">
+<meta content="Eigenvectors and their relationship to matrices in plain language and without a great deal of math." property="og:description">
+<meta name="description" content="Eigenvectors and their relationship to matrices in plain language and without a great deal of math.">
+<meta content="http://skymind.ai/wiki/eigenvector" property="og:url">
+
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/css" rel="stylesheet" type="text/css">
+
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/bootstrap.min.css" rel="stylesheet">
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/font-awesome.min.css" rel="stylesheet">
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/lineicons.css" rel="stylesheet">
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/bootstrap-select.min.css" rel="stylesheet">
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/animate.css" rel="stylesheet">
+
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/style.css" rel="stylesheet">
+<link href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/blue-orange.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="https://skymind.ai/images/favicon.png">
+
+<!--[if lt IE 9]>
+    <script src="/js/lib/html5shiv.min.js"></script>
+    <script src="/js/lib/respond.min.js"></script>
+    <![endif]-->
+<script async="" defer="" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/buttons.js.download"></script>
+<link rel="stylesheet" href="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style><script charset="utf-8" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/button.9a57558490548c2dde66afe19af6c010.js.download"></script></head>
+<body class="blog-page" data-scroll-animation="false">
+
+<header class="row" id="header">
+<style>
+.alert-box {
+	background-color: #f2f2f2;
+	color: #000;
+	font-size: 14px;
+  font-weight: 500;
+	line-height: 23px;
+	padding: 13px 16px;
+	text-align: center;
+}
+
+.badge {
+  font-size: 14px !important;
+  padding: 5px 9px !important;
+  background: rgb(43,216,9);
+  background: linear-gradient(129deg, rgba(43,216,9,1) 0%, rgba(4,242,221,1) 100%);
+}
+</style>
+<p class="alert-box links-main">
+<span class="badge">New</span> Skymind is launching an automated reinforcement learning platform for simulation modeling. <a href="https://www.pathmind.com/">GET EARLY ACCESS</a>
+</p>
+<nav class="navbar navbar-default navbar-fixed-top is-scrolling">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="https://skymind.ai/"><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/logo_blue.png" alt=""></a>
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+ </button>
+</div>
+<div class="collapse navbar-collapse" id="main-navbar">
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown">
+<a href="https://skymind.ai/wiki/eigenvector#" class="dropdown-toggle" data-toggle="dropdown">Products <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="https://skymind.ai/product/model-serving">Model Serving</a></li>
+<li><a href="https://skymind.ai/product/distributed-training">Distributed Training</a></li>
+<li><a href="https://pathmind.com/" target="_blank">Reinforcement Learning</a></li>
+<li><a href="https://skymind.ai/product/open-source">Open-Source Libraries</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a href="https://skymind.ai/wiki/eigenvector#" class="dropdown-toggle" data-toggle="dropdown">Learn <span class="caret"></span></a>
+<ul class="dropdown-menu">
+<li><a href="https://skymind.ai/wiki">AI Wiki</a></li>
+<li><a href="https://skymind.ai/ai-book">Introduction to AI eBook</a></li>
+<li><a href="https://docs.skymind.ai/" target="_blank">Documentation</a></li>
+</ul>
+</li>
+
+
+<li><a href="https://skymind.ai/about">About</a></li>
+<a href="https://skymind.ai/contact" class=" btn btn-warning pull-right hidden-sm hidden-xs">Contact Us</a>
+</ul>
+</div>
+</div>
+</nav>
+<style>
+  header.row .navbar.is-scrolling {
+    background: #fff !important;
+    opacity: 0.95;
+  }
+</style>
+</header>
+
+<section class="row page-header">
+<div class="container">
+<div class="row">
+<h2>A.I. Wiki</h2>
+<h4>A Beginner’s Guide to Important Topics in AI, Machine Learning, and Deep Learning.</h4>
+</div>
+</div>
+</section>
+
+<div class="section-cta sticky">
+<div class="container">
+<div class="col-md-7 text-center" style="margin-top: -7px;">
+<h3 style="color:#fff;">Subscribe to Our Bi-Weekly AI Newsletter</h3>
+</div>
+<div class="col-md-5" style="margin-top: 2px">
+<div class="form">
+<iframe src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/jsv68v.html" width="100%" height="40px" type="text/html" frameborder="0" allowtransparency="true" style="border: 0"></iframe>
+</div>
+</div>
+</div>
+</div>
+
+<section class="row blog-section" style="padding-top: 72px;">
+<div class="container">
+<div class="row">
+<div class="col-sm-4 sidebar">
+<div class="row m0 widget widget-search wow fadeInUp">
+
+<input type="checkbox" id="wiki-toggle">
+<label for="wiki-toggle">
+<i class="fa fa-search"></i> Search
+</label>
+<div class="collapseable">
+<div class="input-group">
+<input id="wiki-search-input" type="search" class="form-control" placeholder="Search articles..." onkeyup="wikiSearchFn()">
+<span class="input-group-addon"><i class="fa fa-search"></i></span>
+</div>
+<div class="wiki-links">
+<ul id="wiki-links-ul">
+<li><a href="https://skymind.ai/wiki/accuracy-precision-recall-f1">Accuracy, Precision, Recall, and F1</a></li>
+<li><a href="https://skymind.ai/wiki/ai-infrastructure-machine-learning-operations-mlops">AI Infrastructure</a></li>
+<li><a href="https://skymind.ai/wiki/ai-regulation"></a></li>
+<li><a href="https://skymind.ai/wiki/ai-vs-machine-learning-vs-deep-learning">AI vs. ML vs. DL</a></li>
+<li><a href="https://skymind.ai/wiki/ai-winter">AI Winter</a></li>
+<li><a href="https://skymind.ai/wiki/apache-spark-deep-learning">Apache Spark &amp; Deep Learning</a></li>
+<li><a href="https://skymind.ai/wiki/arbiter">Arbiter - Hyperparameter Optimization</a></li>
+<li><a href="https://skymind.ai/wiki/attention-mechanism-memory-network">Attention Mechanisms &amp; Memory Networks</a></li>
+<li><a href="https://skymind.ai/wiki/automl-automated-machine-learning-ai">Automated Machine Learning &amp; AI</a></li>
+<li><a href="https://skymind.ai/wiki/autonomous-vehicle">AI &amp; Autonomous Vehicles</a></li>
+<li><a href="https://skymind.ai/wiki/backpropagation">Backpropagation</a></li>
+<li><a href="https://skymind.ai/wiki/bagofwords-tf-idf">Bag of Words &amp; TF-IDF</a></li>
+<li><a href="https://skymind.ai/wiki/bayes-theorem-naive-bayes">Bayes' Theorem &amp; Naive Bayes Classifiers</a></li>
+<li><a href="https://skymind.ai/wiki/clojure-ai">Clojure AI</a></li>
+<li><a href="https://skymind.ai/wiki/comparison-frameworks-dl4j-tensorflow-pytorch">Comparison of AI Frameworks</a></li>
+<li><a href="https://skymind.ai/wiki/convolutional-network">Convolutional Neural Network (CNN)</a></li>
+<li><a href="https://skymind.ai/wiki/data-for-deep-learning">Data for Deep Learning</a></li>
+<li><a href="https://skymind.ai/wiki/datasets-ml">Datasets and Machine Learning</a></li>
+<li><a href="https://skymind.ai/wiki/datavec">DataVec</a></li>
+<li><a href="https://skymind.ai/wiki/decision-tree">Decision Tree</a></li>
+<li><a href="https://skymind.ai/wiki/deep-autoencoder">Deep Autoencoders</a></li>
+<li><a href="https://skymind.ai/wiki/deep-belief-network">Deep-Belief Networks</a></li>
+<li><a href="https://skymind.ai/wiki/deep-reinforcement-learning">Deep Reinforcement Learning</a></li>
+<li><a href="https://skymind.ai/wiki/deeplearning-research-papers">Deep Learning Resources</a></li>
+<li><a href="https://skymind.ai/wiki/deeplearning4j">Deeplearning4j</a></li>
+<li><a href="https://skymind.ai/wiki/define-artificial-intelligence-ai">Define Artificial Intelligence (AI)</a></li>
+<li><a href="https://skymind.ai/wiki/denoising-autoencoder">Denoising Autoencoders</a></li>
+<li><a href="https://skymind.ai/wiki/devops-machine-learning">Machine Learning DevOps</a></li>
+<li><a href="https://skymind.ai/wiki/differentiableprogramming">Differentiable Programming</a></li>
+
+<li><a href="https://skymind.ai/wiki/eigenvector">Eigenvectors, Eigenvalues, PCA, Covariance and Entropy</a></li>
+<li><a href="https://skymind.ai/wiki/evolutionary-genetic-algorithm">Evolutionary &amp; Genetic Algorithms</a></li>
+<li><a href="https://skymind.ai/wiki/fraud-detection">Fraud and Anomaly Detection</a></li>
+<li><a href="https://skymind.ai/wiki/generative-adversarial-network-gan">Generative Adversarial Network (GAN)</a></li>
+<li><a href="https://skymind.ai/wiki/glossary">Glossary</a></li>
+<li><a href="https://skymind.ai/wiki/gluon">Gluon</a></li>
+<li><a href="https://skymind.ai/wiki/graph-analysis">Graph Analytics</a></li>
+<li><a href="https://skymind.ai/wiki/hopfieldnetworks">Hopfield Networks</a></li>
+<li><a href="https://skymind.ai/wiki/index">Wiki Home</a></li>
+<li><a href="https://skymind.ai/wiki/java-ai">Why Use Java for AI?</a></li>
+<li><a href="https://skymind.ai/wiki/java-data-science">Java for Data Science</a></li>
+<li><a href="https://skymind.ai/wiki/jumpy">Jumpy</a></li>
+<li><a href="https://skymind.ai/wiki/logistic-regression">Logistic Regression</a></li>
+<li><a href="https://skymind.ai/wiki/lstm">LSTMs &amp; RNNs</a></li>
+<li><a href="https://skymind.ai/wiki/machine-learning-algorithms">Machine Learning Algorithms</a></li>
+<li><a href="https://skymind.ai/wiki/machine-learning-demos">Machine Learning Demos</a></li>
+<li><a href="https://skymind.ai/wiki/machine-learning-library-software">Machine Learning Software</a></li>
+<li><a href="https://skymind.ai/wiki/machine-learning-operations-mlops">Machine Learning Operations (MLOps)</a></li>
+<li><a href="https://skymind.ai/wiki/machine-learning-research-groups-labs">Machine Learning Research Groups &amp; Labs</a></li>
+<li><a href="https://skymind.ai/wiki/machine-learning-workflow">Machine Learning Workflows</a></li>
+<li><a href="https://skymind.ai/wiki/machine-learning">Machine Learning</a></li>
+<li><a href="https://skymind.ai/wiki/markov-chain-monte-carlo">Markov Chain Monte Carlo</a></li>
+<li><a href="https://skymind.ai/wiki/mnist">MNIST database</a></li>
+<li><a href="https://skymind.ai/wiki/multilayer-perceptron">Multilayer Perceptron</a></li>
+<li><a href="https://skymind.ai/wiki/nativejars"></a></li>
+<li><a href="https://skymind.ai/wiki/natural-language-processing-nlp">Natural Language Processing (NLP)</a></li>
+<li><a href="https://skymind.ai/wiki/nd4j-tensor-java">ND4J - Tensors in Java</a></li>
+<li><a href="https://skymind.ai/wiki/neural-network-tuning">Neural Network Tuning</a></li>
+
+<li><a href="https://skymind.ai/wiki/neural-network">Neural Networks</a></li>
+<li><a href="https://skymind.ai/wiki/open-datasets">Open Datasets</a></li>
+<li><a href="https://skymind.ai/wiki/python-ai">Python AI</a></li>
+<li><a href="https://skymind.ai/wiki/questions-when-applying-deep-learning">Questions When Applying Deep Learning</a></li>
+<li><a href="https://skymind.ai/wiki/radial-basis-function-network-rbf">Radial Basis Function Networks</a></li>
+<li><a href="https://skymind.ai/wiki/random-forest">Random Forest</a></li>
+<li><a href="https://skymind.ai/wiki/recurrent-network-rnn">Recurrent Network (RNN)</a></li>
+<li><a href="https://skymind.ai/wiki/recursive-neural-tensor-network">Recursive Neural Tensor Network</a></li>
+<li><a href="https://skymind.ai/wiki/reinforcement-learning-definitions">Reinforcement Learning Definitions</a></li>
+<li><a href="https://skymind.ai/wiki/restricted-boltzmann-machine">Restricted Boltzmann Machine (RBM)</a></li>
+<li><a href="https://skymind.ai/wiki/robotic-process-automation-rpa">Robotic Process Automation (RPA) &amp; AI</a></li>
+<li><a href="https://skymind.ai/wiki/scala-ai">Scala AI</a></li>
+<li><a href="https://skymind.ai/wiki/single-layer-network">Single-layer Network</a></li>
+<li><a href="https://skymind.ai/wiki/spiking-neural-network-snn">Spiking Neural Networks</a></li>
+<li><a href="https://skymind.ai/wiki/strong-ai-general-ai">Strong AI vs. Weak AI</a></li>
+<li><a href="https://skymind.ai/wiki/supervised-learning">Supervised Learning</a></li>
+<li><a href="https://skymind.ai/wiki/symbolic-reasoning">Symbolic Reasoning</a></li>
+<li><a href="https://skymind.ai/wiki/thought-vectors">Thought Vectors</a></li>
+<li><a href="https://skymind.ai/wiki/unsupervised-learning">Unsupervised Learning</a></li>
+<li><a href="https://skymind.ai/wiki/use-cases">Deep Learning Use Cases</a></li>
+<li><a href="https://skymind.ai/wiki/variational-autoencoder">Variational Autoencoder (VAE)</a></li>
+<li><a href="https://skymind.ai/wiki/what-is-deep-learning"></a></li>
+<li><a href="https://skymind.ai/wiki/word2vec">Word2Vec, Doc2Vec and Neural Word Embeddings</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-sm-8">
+<div class="row blog single-blog wow fadeInUp">
+<h1>A Beginner's Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy</h1>
+<div class="text-center">
+<hr>
+<em>
+<h3>Interested in reinforcement learning?</h3>
+<p>Automatically apply RL to simulation use cases (e.g. call centers, warehousing, etc.) using Pathmind.</p>
+<a href="https://www.pathmind.com/" class="btn btn-lg btn-primary m-b-0">Get Started</a>
+</em>
+<hr>
+</div>
+<p>Content:</p>
+<ul>
+<li><a href="https://skymind.ai/wiki/eigenvector#linear">Linear Transformations</a></li>
+<li><a href="https://skymind.ai/wiki/eigenvector#principal">Principal Component Analysis (PCA)</a></li>
+<li><a href="https://skymind.ai/wiki/eigenvector#covariance">Covariance Matrix</a></li>
+<li><a href="https://skymind.ai/wiki/eigenvector#change">Change of Basis</a></li>
+<li><a href="https://skymind.ai/wiki/eigenvector#entropy">Entropy &amp; Information Gain</a></li>
+<li><a href="https://skymind.ai/wiki/eigenvector#code">Just Give Me the Code</a></li>
+<li><a href="https://skymind.ai/wiki/eigenvector#resources">Resources</a></li>
+</ul>
+<p>This post introduces eigenvectors and their relationship to matrices in plain language and without a great deal of math. It builds on those ideas to explain covariance, principal component analysis, and information entropy.</p>
+<p>The <em>eigen</em> in eigenvector comes from German, and it means something like “very own.” For example, in German, “mein eigenes Auto” means “my very own car.” So eigen denotes a special relationship between two things. Something particular, characteristic and definitive. This car, or this vector, is mine and not someone else’s.</p>
+<p>Matrices, in linear algebra, are simply rectangular arrays of numbers, a collection of scalar values between brackets, like a spreadsheet. All square matrices (e.g. 2 x 2 or 3 x 3) have eigenvectors, and they have a very special relationship with them, a bit like Germans have with their cars.</p>
+<p><a class="w-button button-skilcta" href="https://skymind.ai/learn" style="width:75%; margin-top: 15px;" target="_blank">Learn to build AI apps now&nbsp;»</a></p>
+<h2 id="linear-transformations"><a name="linear">Linear Transformations</a></h2>
+<p>We’ll define that relationship after a brief detour into what matrices do, and how they relate to other numbers.</p>
+<p>Matrices are useful because you can do things with them like add and multiply. If you multiply a vector <em>v</em> by a matrix <em>A</em>, you get another vector <em>b</em>, and you could say that the matrix performed a linear transformation on the input vector.</p>
+<p><em>Av = b</em></p>
+<p>It <a href="https://en.wikipedia.org/wiki/Linear_map" target="_blank">maps</a> one vector <em>v</em> to another, <em>b</em>.</p>
+<p>We’ll illustrate with a concrete example. (You can see how this type of matrix multiply, called a dot product, is performed <a href="https://math.stackexchange.com/a/24469" target="_blank">here</a>.)</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/eigen_matrix.png" alt="Eigen matrix"></p>
+<p>So <em>A</em> turned <em>v</em> into <em>b</em>. In the graph below, we see how the matrix mapped the short, low line <em>v</em>, to the long, high one, <em>b</em>.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/two_vectors.png" alt="two vectors"></p>
+<p>You could feed one positive vector after another into matrix A, and each would be projected onto a new space that stretches higher and farther to the right.</p>
+<p>Imagine that all the input vectors <em>v</em> live in a normal grid, like this:</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/space_1.png" alt="input vector space"></p>
+<p>And the matrix projects them all into a new space like the one below, which holds the output vectors <em>b</em>:</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/space_2.png" alt="vector projection"></p>
+<p>Here you can see the two spaces juxtaposed:</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/two_spaces.png" alt="vector space comparisont"></p>
+<p>(<em>Credit: William Gould, Stata Blog</em>)</p>
+<p>And here’s an animation that shows the matrix’s work transforming one space to another:</p>
+<iframe src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/Eigenvectors.html" width="100%" height="300px;" style="border:none;"></iframe>
+<p>The blue lines are eigenvectors.</p>
+<p>You can imagine a matrix like a gust of wind, an invisible force that produces a visible result. And a gust of wind must blow in a certain direction. The eigenvector tells you the direction the matrix is blowing in.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/mona_lisa_eigenvector.png" alt="mona lisa eigenvector">
+(<em>Credit: Wikipedia</em>)</p>
+<p>So out of all the vectors affected by a matrix blowing through one space, which one is the eigenvector? It’s the one that that <em>changes length but not direction</em>; that is, the eigenvector is already pointing in the same direction that the matrix is pushing all vectors toward. An eigenvector is like a weathervane. An eigenvane, as it were.</p>
+<p>The definition of an eigenvector, therefore, is a vector that responds to a matrix as though that matrix were a scalar coefficient. In this equation, A is the matrix, x the vector, and lambda the scalar coefficient, a number like 5 or 37 or pi.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/lambda_eigen.png" alt="lambda eigen"></p>
+<p>You might also say that eigenvectors are axes along which linear transformation acts, stretching or compressing input vectors. They are the lines of change that represent the action of the larger matrix, the very “line” in linear transformation.</p>
+<p>Notice we’re using the plural – axes and lines. Just as a German may have a Volkswagen for grocery shopping, a Mercedes for business travel, and a Porsche for joy rides (each serving a distinct purpose), square matrices can have as many eigenvectors as they have dimensions; i.e. a 2 x 2 matrix could have two eigenvectors, a 3 x 3 matrix three, and an n x n matrix could have n eigenvectors, each one representing its line of action in one dimension.<a href="https://skymind.ai/wiki/eigenvector#ref">1</a></p>
+<p>Because eigenvectors distill the axes of principal force that a matrix moves input along, they are useful in matrix decomposition; i.e. <a href="http://mathworld.wolfram.com/MatrixDiagonalization.html" target="_blank">the diagonalization of a matrix along its eigenvectors</a>. Because those eigenvectors are representative of the matrix, they perform the same task as the autoencoders employed by deep neural networks.</p>
+<p>To quote Yoshua Bengio:</p>
+<blockquote>
+<p>Many mathematical objects can be understood better by breaking them into constituent parts, or ﬁnding some properties of them that are universal, not caused by the way we choose to represent them.</p>
+</blockquote>
+<blockquote>
+<p>For example, integers can be decomposed into prime factors. The way we represent the number 12 will change depending on whether we write it in base ten or in binary, but it will always be true that 12 = 2 × 2 × 3.</p>
+</blockquote>
+<blockquote>
+<p>From this representation we can conclude useful properties, such as that 12 is not divisible by 5, or that any integer multiple of 12 will be divisible by 3.</p>
+</blockquote>
+<blockquote>
+<p>Much as we can discover something about the true nature of an integer by decomposing it into prime factors, we can also decompose matrices in ways that show us information about their functional properties that is not obvious from the representation of the matrix as an array of elements.</p>
+</blockquote>
+<blockquote>
+<p>One of the most widely used kinds of matrix decomposition is called eigen-decomposition, in which we decompose a matrix into a set of eigenvectors and eigenvalues.</p>
+</blockquote>
+<h2 id="principal-component-analysis-pca"><a name="principal">Principal Component Analysis (PCA)</a></h2>
+<p>PCA is a tool for finding patterns in high-dimensional data such as images. Machine-learning practitioners sometimes use PCA to preprocess data for their neural networks. By centering, rotating and scaling data, PCA prioritizes dimensionality (allowing you to drop some low-variance dimensions) and can improve the neural network’s convergence speed and the overall quality of results.</p>
+<div class="text-center">
+<hr>
+<em>
+<h3>Interested in reinforcement learning?</h3>
+<p>Automatically apply RL to simulation use cases (e.g. call centers, warehousing, etc.) using Pathmind.</p>
+<a href="https://www.pathmind.com/" class="btn btn-lg btn-primary m-b-0">Get Started</a>
+</em>
+<hr>
+</div>
+<p>To get to PCA, we’re going to quickly define some basic statistical ideas – <em>mean, standard deviation, variance</em> and <em>covariance</em> – so we can weave them together later. Their equations are closely related.</p>
+<p><em>Mean</em> is simply the average value of all <em>x</em>’s in the set X, which is found by dividing the sum of all data points by the number of data points, <em>n</em>.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/mean.png" alt="mean"></p>
+<p><em>Standard deviation</em>, as fun as that sounds, is simply the square root of the average square distance of data points to the mean. In the equation below, the numerator contains the sum of the differences between each datapoint and the mean, and the denominator is simply the number of data points (minus one), producing the average distance.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/standard_deviation.png" alt="standard deviation"></p>
+<p>Variance is the measure of the data’s spread. If I take a team of <a href="https://www.theguardian.com/world/2015/apr/08/scientists-try-to-answer-why-dutch-people-are-so-tall">Dutch basketball players</a> and measure their height, those measurements won’t have a lot of variance. They’ll all be grouped above six feet.</p>
+<p>But if I throw the Dutch basketball team into a classroom of psychotic kindergartners, then the combined group’s height measurements will have a lot of variance. Variance is the spread, or the amount of difference that data expresses.</p>
+<p>Variance is simply standard deviation squared, and is often expressed as <em>s^2</em>.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/variance.png" alt="variance"></p>
+<p>For both variance and standard deviation, squaring the differences between data points and the mean makes them positive, so that values above and below the mean don’t cancel each other out.</p>
+<p>Let’s assume you plotted the age (x axis) and height (y axis) of those individuals (setting the mean to zero) and came up with an oblong scatterplot:</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/scatterplot.png" alt="scatter plot"></p>
+<p>PCA attempts to draw straight, explanatory lines through data, like linear regression.</p>
+<p>Each straight line represents a “principal component,” or a relationship between an independent and dependent variable. While there are as many principal components as there are dimensions in the data, PCA’s role is to prioritize them.</p>
+<p>The first principal component bisects a scatterplot with a straight line in a way that explains the most variance; that is, it follows the longest dimension of the data. (This happens to coincide with the least error, as expressed by the red lines…) In the graph below, it slices down the length of the “baguette.”</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/scatterplot_line.png" alt="scatterplot line"></p>
+<p>The second principal component cuts through the data perpendicular to the first, fitting the errors produced by the first. There are only two principal components in the graph above, but if it were three-dimensional, the third component would fit the errors from the first and second principal components, and so forth.</p>
+<h2 id="covariance-matrix"><a name="covariance">Covariance Matrix</a></h2>
+<p>While we introduced matrices as something that transformed one set of vectors into another, another way to think about them is as a description of data that captures the forces at work upon it, the forces by which two variables might relate to each other as expressed by their variance and covariance.</p>
+<p>Imagine that we compose a square matrix of numbers that describe the variance of the data, and the covariance among variables. This is the <em>covariance matrix</em>. It is an empirical description of data we observe.</p>
+<p>Finding the eigenvectors and eigenvalues of the covariance matrix is the equivalent of fitting those straight, principal-component lines to the variance of the data. Why? Because eigenvectors <em>trace the principal lines of force</em>, and the axes of greatest variance and covariance illustrate where the data is most susceptible to change.</p>
+<p>Think of it like this: If a variable changes, it is being acted upon by a force known or unknown. If two variables change together, in all likelihood that is either because one is acting upon the other, or they are both subject to the same hidden and unnamed force.</p>
+<p>When a matrix performs a linear transformation, eigenvectors trace the lines of force it applies to input; when a matrix is populated with the variance and covariance of the data, eigenvectors reflect the forces that have been applied to the given. One applies force and the other reflects it.</p>
+<p><em>Eigenvalues</em> are simply the coefficients attached to eigenvectors, which give the axes magnitude. In this case, they are the measure of the data’s covariance. By ranking your eigenvectors in order of their eigenvalues, highest to lowest, you get the principal components in order of significance.</p>
+<p>For a 2 x 2 matrix, a covariance matrix might look like this:</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/covariance_matrix.png" alt="covariance matrix"></p>
+<p>The numbers on the upper left and lower right represent the variance of the x and y variables, respectively, while the identical numbers on the lower left and upper right represent the covariance between x and y. Because of that identity, such matrices are known as symmetrical. As you can see, the covariance is positive, since the graph near the top of the PCA section points up and to the right.</p>
+<p>If two variables increase and decrease together (a line going up and to the right), they have a positive covariance, and if one decreases while the other increases, they have a negative covariance (a line going down and to the right).</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/covariances.png" alt="covariances"></p>
+<p>(<em>Credit: Vincent Spruyt</em>)</p>
+<p>Notice that when one variable or the other doesn’t move at all, and the graph shows no diagonal motion, there is no covariance whatsoever. Covariance answers the question: do these two variables dance together? If one remains null while the other moves, the answer is no.</p>
+<p>Also, in the equation below, you’ll notice that there is only a small difference between covariance and variance.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/covariance.png" alt="covariance"></p>
+<p>vs.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/variance.png" alt="variance"></p>
+<p>The great thing about calculating covariance is that, in a high-dimensional space where you can’t eyeball intervariable relationships, you can know how two variables move together by the positive, negative or non-existent character of their covariance. (<em>Correlation</em> is a kind of normalized covariance, with a value between -1 and 1.)</p>
+<p>To sum up, the covariance matrix defines the shape of the data. Diagonal spread along eigenvectors is expressed by the covariance, while x-and-y-axis-aligned spread is expressed by the variance.</p>
+<p>Causality has a bad name in statistics, so take this with a grain of salt:</p>
+<p>While not entirely accurate, it may help to think of each component as a causal force in the Dutch basketball player example above, with the first principal component being age; the second possibly gender; the third nationality (implying nations’ differing healthcare systems), and each of those occupying its own dimension in relation to height. Each acts on height to different degrees. You can read covariance as traces of possible cause.</p>
+<h3 id="change-of-basis"><a name="change">Change of Basis</a></h3>
+<p>Because the eigenvectors of the covariance matrix are orthogonal to each other, they can be used to reorient the data from the x and y axes to the axes represented by the principal components. You <a href="https://en.wikipedia.org/wiki/Change_of_basis" target="_blank">re-base the coordinate system</a> for the dataset in a new space defined by its lines of greatest variance.</p>
+<p>The x and y axes we’ve shown above are what’s called the basis of a matrix; that is, they provide the points of the matrix with x, y coordinates. But it is possible to recast a matrix along other axes; for example, the eigenvectors of a matrix can serve as the foundation of a new set of coordinates for the same matrix. Matrices and vectors are animals in themselves, independent of the numbers linked to a specific coordinate system like x and y.</p>
+<p><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/basis_change.png" alt="basis change"></p>
+<p>In the graph above, we show how the same vector v can be situated differently in two coordinate systems, the x-y axes in black, and the two other axes shown by the red dashes. In the first coordinate system, v = (1,1), and in the second, v = (1,0), but v itself has not changed. Vectors and matrices can therefore be abstracted from the numbers that appear inside the brackets.</p>
+<p>This has profound and almost spiritual implications, one of which is that there exists no natural coordinate system, and mathematical objects in n-dimensional space are subject to multiple descriptions. (Changing matrices’ bases also makes them easier to manipulate.)</p>
+<p>A change of basis for vectors is roughly analogous to changing the base for numbers; i.e. the quantity nine can be described as 9 in base ten, as 1001 in binary, and as 100 in base three (i.e. 1, 2, 10, 11, 12, 20, 21, 22, 100 &lt;– that is “nine”). Same quantity, different symbols; same vector, different coordinates.</p>
+<h2 id="entropy--information-gain"><a name="entropy">Entropy &amp; Information Gain</a></h2>
+<p>In information theory, the term <em>entropy</em> refers to information we don’t have (normally people define “information” as what they know, and jargon has triumphed once again in turning plain language on its head to the detriment of the uninitiated). The information we don’t have about a system, its entropy, is related to its unpredictability: how much it can surprise us.</p>
+<p>If you know that a certain coin has heads embossed on both sides, then flipping the coin gives you absolutely no information, because it will be heads every time. You don’t have to flip it to know. We would say that two-headed coin contains no information, because it has no way to surprise you.</p>
+<p>A balanced, two-sided coin does contain an element of surprise with each coin toss. And a six-sided die, by the same argument, contains even more surprise with each roll, which could produce any one of six results with equal frequency. Both those objects contain <em>information</em> in the technical sense.</p>
+<p>Now let’s imagine the die is loaded, it comes up “three” on five out of six rolls, and we figure out the game is rigged. Suddenly the amount of surprise produced with each roll by this die is greatly reduced. We understand a trend in the die’s behavior that gives us greater predictive capacity.</p>
+<p>Understanding the die is loaded is analogous to finding a principal component in a dataset. You simply identify an underlying pattern.</p>
+<p>That transfer of information, from <em>what we don’t know</em> about the system to <em>what we know</em>, represents a change in entropy. Insight decreases the entropy of the system. Get information, reduce entropy. This is information gain. And yes, this type of entropy is subjective, in that it depends on what we know about the system at hand. (Fwiw, <a href="https://en.wikipedia.org/wiki/Information_gain_in_decision_trees" target="_blank">information gain</a> is synonymous with Kullback-Leibler divergence, which we explored briefly in this tutorial on <a href="https://skymind.ai/wiki/restricted-boltzmann-machine">restricted Boltzmann machines</a>.)</p>
+<p>So each principal component cutting through the scatterplot represents a decrease in the system’s entropy, in its unpredictability.</p>
+<p>It so happens that explaining the shape of the data one principal component at a time, beginning with the component that accounts for the most variance, is similar to walking data through a decision tree. The first component of PCA, like the first if-then-else split in a properly formed decision tree, will be along the dimension that reduces unpredictability the most.</p>
+<p><a name="ref">1)</a> <em>In some cases, matrices may not have a full set of eigenvectors; they can have at most as many linearly independent eigenvectors as their respective order, or number of dimensions.</em></p>
+</div>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_xdm_frame_https" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/xd_arbiter.html" style="border: none;"></iframe></div><div></div></div></div>
+<script async="" defer="" crossorigin="anonymous" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/sdk.js(1).download"></script>
+<script>window.twttr = (function(d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0],
+                        t = window.twttr || {};
+                      if (d.getElementById(id)) return t;
+                      js = d.createElement(s);
+                      js.id = id;
+                      js.src = "https://platform.twitter.com/widgets.js";
+                      fjs.parentNode.insertBefore(js, fjs);
+
+                      t._e = [];
+                      t.ready = function(f) {
+                        t._e.push(f);
+                      };
+
+                      return t;
+                    }(document, "script", "twitter-wjs"));</script>
+<div class="row m0 social-share">
+<div class="fb-share-button fb_iframe_widget" data-href="http://skymind.ai/wiki/eigenvector" data-layout="button" data-size="large" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=38&amp;href=http%3A%2F%2Fskymind.ai%2Fwiki%2Feigenvector&amp;layout=button&amp;locale=en_US&amp;sdk=joey&amp;size=large"><span style="vertical-align: bottom; width: 77px; height: 28px;"><iframe name="f1d41e6df998d8" width="1000px" height="1000px" title="fb:share_button Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/share_button.html" style="border: none; visibility: visible; width: 77px; height: 28px;" class=""></iframe></span></div>
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 76px; height: 28px;" title="Twitter Tweet Button" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/tweet_button.6a44a9d26983bbb5b04ae399f9e496fe.en.html"></iframe>
+</div>
+<style>
+                      .fb-share-button span {
+                        height: 33px !important;
+                        margin-right: 5px !important;
+                      }
+                    </style>
+<div class="media author-about">
+<div class="media-left">
+<a href="https://skymind.ai/wiki/eigenvector#"><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/chrisnicholson.jpg" alt=""></a>
+</div>
+<div class="media-body">
+<h3>Chris Nicholson</h3>
+<p>Chris Nicholson is the CEO of Skymind. He previously led communications and recruiting at the Sequoia-backed robo-advisor, FutureAdvisor, which was acquired by BlackRock. In a prior life, Chris spent a decade reporting on tech and finance for The New York Times, Businessweek and Bloomberg, among others. </p>
+<ul class="nav">
+<li><a href="https://twitter.com/chrisvnicholson"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.linkedin.com/in/chrisvnicholson"><i class="fab fa-linkedin"></i></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="row newsletter">
+<div class="container">
+<div class="row section-header wow fadeInUp">
+<img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/infiniteai.png" alt="" height="70">
+<p>A bi-weekly digest of AI use cases in the news.</p>
+</div>
+<form action="https://skymind.ai/wiki/eigenvector#" id="subscribeform2" class="row newsletter-form" novalidate="novalidate">
+<div class="input-group form-group2">
+<input type="email" class="form-control" name="email" placeholder="Enter Your Email To Subscribe">
+<span class="input-group-addon">
+<button type="submit" id="js-subscribe-btn2"><img src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/right-angle-white.png" alt=""></button>
+</span>
+</div>
+<div id="js-subscribe-result2" class="text-center">
+<p>
+&nbsp;
+</p>
+</div>
+</form>
+</div>
+</section>
+
+
+<footer class="row">
+<div class="container">
+<div class="row m0 social-links">
+<ul class="nav">
+ <li class="wow fadeInUp"><a href="https://www.facebook.com/skymind.io/"><i class="fab fa-facebook"></i></a></li>
+<li class="wow fadeInUp" data-wow-delay="0.1s"><a href="https://twitter.com/skymindio"><i class="fab fa-twitter"></i></a></li>
+<li class="wow fadeInUp" data-wow-delay="0.2s"><a href="https://www.linkedin.com/company/skymind-io"><i class="fab fa-linkedin"></i></a></li>
+</ul>
+</div>
+<div class="row m0 menu-rights">
+<ul class="nav footer-menu">
+<li><a href="https://skymind.ai/press">Press</a></li>
+<li><a href="https://drive.google.com/drive/folders/1S9n-mdI17euhJMDKP-x0T05E1lGY1ly3" target="_blank">Logos</a></li>
+<li><a href="https://skymind.ai/privacy-policy">Privacy Policy</a></li>
+
+</ul>
+<p>Copyright © 2019. Skymind.
+<br class="small-divide"> All rights reserved</p>
+</div>
+</div>
+</footer>
+
+
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/jquery-2.2.0.min.js.download"></script>
+
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/bootstrap.min.js.download"></script>
+
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/jquery.bootstrap-touchspin.min.js.download"></script>
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/bootstrap-select.min.js.download"></script>
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/wow.min.js.download"></script>
+
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/main.js.download"></script>
+
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/subscribe.js.download"></script>
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/validate.js.download"></script>
+
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/embed.js.download"></script>
+
+<script async="" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/js"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-48811288-3', { 'optimize_id': 'GTM-T2DSBKT'});
+</script>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P824SK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P824SK');</script>
+
+<script type="text/javascript">
+piAId = '457082';
+piCId = '67370';
+piHostname = 'pi.pardot.com';
+
+(function() {
+  function async_load(){
+    var s = document.createElement('script'); s.type = 'text/javascript';
+    s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+    var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+  }
+  if(window.attachEvent) { window.attachEvent('onload', async_load); }
+  else { window.addEventListener('load', async_load, false); }
+})();
+</script>
+
+<script type="text/javascript" id="hs-script-loader" async="" defer="" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/5485555.js(1).download"></script>
+
+<script src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/pa-5a1c929041f2c2000700004d.js.download" async=""></script>
+
+<script type="text/javascript">
+      function wikiSearchFn() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('wiki-search-input');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("wiki-links-ul");
+        li = ul.getElementsByTagName('li');
+
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+      }
+    </script>
+
+<script>
+      // When the user scrolls the page, execute myFunction
+      window.onscroll = function() {myFunction()};
+
+      // Get the header
+      var header = document.querySelector(".section-cta");
+      var content = document.querySelector(".blog-section");
+
+      // Get the offset position of the navbar
+      var sticky = header.offsetTop;
+
+      // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      function myFunction() {
+        if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+          content.style.paddingTop = "72px";
+        } else {
+          header.classList.remove("sticky");
+          content.style.paddingTop = "";
+          }
+        }
+    </script>
+
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./A Beginner&#39;s Guide to Eigenvectors, Eigenvalues, PCA, Covariance and Entropy _ Skymind_files/widget_iframe.6a44a9d26983bbb5b04ae399f9e496fe.html" title="Twitter settings iframe" style="display: none;"></iframe></body></html>
